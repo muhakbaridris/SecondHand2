@@ -1,0 +1,6 @@
+module Pods_SecondHand2iOS {
+  umbrella header "Pods-SecondHand2iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

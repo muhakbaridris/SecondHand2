@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16B7DEE2A3D5B8ECA1465BAF /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */; };
+		310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2DD2856541B0066F90D /* AppDelegate.swift */; };
+		310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2DF2856541B0066F90D /* SceneDelegate.swift */; };
+		310AA2E22856541B0066F90D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2E12856541B0066F90D /* ViewController.swift */; };
+		310AA2E52856541B0066F90D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310AA2E32856541B0066F90D /* Main.storyboard */; };
+		310AA2E72856541E0066F90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 310AA2E62856541E0066F90D /* Assets.xcassets */; };
+		310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310AA2E82856541E0066F90D /* LaunchScreen.storyboard */; };
+		310AA2F52856541E0066F90D /* SecondHand2iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2F42856541E0066F90D /* SecondHand2iOSTests.swift */; };
+		310AA2FF2856541E0066F90D /* SecondHand2iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */; };
+		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
+		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
+		349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */; };
+		B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		310AA2F12856541E0066F90D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 310AA2D22856541A0066F90D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 310AA2D92856541B0066F90D;
+			remoteInfo = SecondHand2iOS;
+		};
+		310AA2FB2856541E0066F90D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 310AA2D22856541A0066F90D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 310AA2D92856541B0066F90D;
+			remoteInfo = SecondHand2iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		310AA2DA2856541B0066F90D /* SecondHand2iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondHand2iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		310AA2DD2856541B0066F90D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		310AA2DF2856541B0066F90D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		310AA2E12856541B0066F90D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		310AA2E42856541B0066F90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		310AA2E62856541E0066F90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		310AA2E92856541E0066F90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		310AA2EB2856541E0066F90D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		310AA2F02856541E0066F90D /* SecondHand2iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondHand2iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		310AA2F42856541E0066F90D /* SecondHand2iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSTests.swift; sourceTree = "<group>"; };
+		310AA2FA2856541E0066F90D /* SecondHand2iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondHand2iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITests.swift; sourceTree = "<group>"; };
+		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
+		501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BD978846B0F4B7E3BCF7F5B8 /* Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E04D5CCAFAAF611954479D90 /* Pods-SecondHand2iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		310AA2D72856541B0066F90D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		310AA2ED2856541E0066F90D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		310AA2F72856541E0066F90D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16B7DEE2A3D5B8ECA1465BAF /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		310AA2D12856541A0066F90D = {
+			isa = PBXGroup;
+			children = (
+				310AA2DC2856541B0066F90D /* SecondHand2iOS */,
+				310AA2F32856541E0066F90D /* SecondHand2iOSTests */,
+				310AA2FD2856541E0066F90D /* SecondHand2iOSUITests */,
+				310AA2DB2856541B0066F90D /* Products */,
+				310BA4F20AB255BF26BEE21B /* Pods */,
+				4F8E39B775F15C0131CA66F8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		310AA2DB2856541B0066F90D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				310AA2DA2856541B0066F90D /* SecondHand2iOS.app */,
+				310AA2F02856541E0066F90D /* SecondHand2iOSTests.xctest */,
+				310AA2FA2856541E0066F90D /* SecondHand2iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		310AA2DC2856541B0066F90D /* SecondHand2iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3159B0AF2856576900E19F52 /* App */,
+				3159B0AE2856573800E19F52 /* PresentationLayer */,
+				3159B0B02856579400E19F52 /* Resource */,
+				310AA30D285654370066F90D /* Utility */,
+			);
+			path = SecondHand2iOS;
+			sourceTree = "<group>";
+		};
+		310AA2F32856541E0066F90D /* SecondHand2iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				310AA2F42856541E0066F90D /* SecondHand2iOSTests.swift */,
+			);
+			path = SecondHand2iOSTests;
+			sourceTree = "<group>";
+		};
+		310AA2FD2856541E0066F90D /* SecondHand2iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */,
+				310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */,
+			);
+			path = SecondHand2iOSUITests;
+			sourceTree = "<group>";
+		};
+		310AA30D285654370066F90D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				310AA30E2856552D0066F90D /* CustomToast.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		310BA4F20AB255BF26BEE21B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E04D5CCAFAAF611954479D90 /* Pods-SecondHand2iOS.debug.xcconfig */,
+				BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */,
+				501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */,
+				BD978846B0F4B7E3BCF7F5B8 /* Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig */,
+				796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */,
+				B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3159B0AE2856573800E19F52 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				31EE106D285660C10053EEB3 /* LaunchScreen */,
+				310AA2E32856541B0066F90D /* Main.storyboard */,
+				310AA2E12856541B0066F90D /* ViewController.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		3159B0AF2856576900E19F52 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				310AA2DD2856541B0066F90D /* AppDelegate.swift */,
+				310AA2DF2856541B0066F90D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3159B0B02856579400E19F52 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				310AA2EB2856541E0066F90D /* Info.plist */,
+				310AA2E62856541E0066F90D /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		31EE106D285660C10053EEB3 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				310AA2E82856541E0066F90D /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		4F8E39B775F15C0131CA66F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */,
+				86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */,
+				85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		310AA2D92856541B0066F90D /* SecondHand2iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310AA3042856541E0066F90D /* Build configuration list for PBXNativeTarget "SecondHand2iOS" */;
+			buildPhases = (
+				0B1C967BE5439ADD2A091438 /* [CP] Check Pods Manifest.lock */,
+				310AA2D62856541B0066F90D /* Sources */,
+				310AA2D72856541B0066F90D /* Frameworks */,
+				310AA2D82856541B0066F90D /* Resources */,
+				D51E361CE4F3D676861EE7B0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SecondHand2iOS;
+			productName = SecondHand2iOS;
+			productReference = 310AA2DA2856541B0066F90D /* SecondHand2iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		310AA2EF2856541E0066F90D /* SecondHand2iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310AA3072856541E0066F90D /* Build configuration list for PBXNativeTarget "SecondHand2iOSTests" */;
+			buildPhases = (
+				C5BC556C0ACA99B0BACCCE38 /* [CP] Check Pods Manifest.lock */,
+				310AA2EC2856541E0066F90D /* Sources */,
+				310AA2ED2856541E0066F90D /* Frameworks */,
+				310AA2EE2856541E0066F90D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				310AA2F22856541E0066F90D /* PBXTargetDependency */,
+			);
+			name = SecondHand2iOSTests;
+			productName = SecondHand2iOSTests;
+			productReference = 310AA2F02856541E0066F90D /* SecondHand2iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		310AA2F92856541E0066F90D /* SecondHand2iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310AA30A2856541E0066F90D /* Build configuration list for PBXNativeTarget "SecondHand2iOSUITests" */;
+			buildPhases = (
+				0FACA887F89F7A4B9A71FCD4 /* [CP] Check Pods Manifest.lock */,
+				310AA2F62856541E0066F90D /* Sources */,
+				310AA2F72856541E0066F90D /* Frameworks */,
+				310AA2F82856541E0066F90D /* Resources */,
+				AC60534E1FD503F605B8DBED /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				310AA2FC2856541E0066F90D /* PBXTargetDependency */,
+			);
+			name = SecondHand2iOSUITests;
+			productName = SecondHand2iOSUITests;
+			productReference = 310AA2FA2856541E0066F90D /* SecondHand2iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		310AA2D22856541A0066F90D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					310AA2D92856541B0066F90D = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					310AA2EF2856541E0066F90D = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 310AA2D92856541B0066F90D;
+					};
+					310AA2F92856541E0066F90D = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 310AA2D92856541B0066F90D;
+					};
+				};
+			};
+			buildConfigurationList = 310AA2D52856541A0066F90D /* Build configuration list for PBXProject "SecondHand2iOS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 310AA2D12856541A0066F90D;
+			productRefGroup = 310AA2DB2856541B0066F90D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				310AA2D92856541B0066F90D /* SecondHand2iOS */,
+				310AA2EF2856541E0066F90D /* SecondHand2iOSTests */,
+				310AA2F92856541E0066F90D /* SecondHand2iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		310AA2D82856541B0066F90D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
+				310AA2E72856541E0066F90D /* Assets.xcassets in Resources */,
+				310AA2E52856541B0066F90D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		310AA2EE2856541E0066F90D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		310AA2F82856541E0066F90D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B1C967BE5439ADD2A091438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecondHand2iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FACA887F89F7A4B9A71FCD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecondHand2iOS-SecondHand2iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC60534E1FD503F605B8DBED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5BC556C0ACA99B0BACCCE38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecondHand2iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D51E361CE4F3D676861EE7B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		310AA2D62856541B0066F90D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310AA2E22856541B0066F90D /* ViewController.swift in Sources */,
+				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
+				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
+				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		310AA2EC2856541E0066F90D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310AA2F52856541E0066F90D /* SecondHand2iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		310AA2F62856541E0066F90D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */,
+				310AA2FF2856541E0066F90D /* SecondHand2iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		310AA2F22856541E0066F90D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 310AA2D92856541B0066F90D /* SecondHand2iOS */;
+			targetProxy = 310AA2F12856541E0066F90D /* PBXContainerItemProxy */;
+		};
+		310AA2FC2856541E0066F90D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 310AA2D92856541B0066F90D /* SecondHand2iOS */;
+			targetProxy = 310AA2FB2856541E0066F90D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		310AA2E32856541B0066F90D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310AA2E42856541B0066F90D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		310AA2E82856541E0066F90D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310AA2E92856541E0066F90D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		310AA3022856541E0066F90D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		310AA3032856541E0066F90D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		310AA3052856541E0066F90D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E04D5CCAFAAF611954479D90 /* Pods-SecondHand2iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT5GP7P326;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		310AA3062856541E0066F90D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT5GP7P326;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		310AA3082856541E0066F90D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT5GP7P326;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecondHand2iOS.app/SecondHand2iOS";
+			};
+			name = Debug;
+		};
+		310AA3092856541E0066F90D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT5GP7P326;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecondHand2iOS.app/SecondHand2iOS";
+			};
+			name = Release;
+		};
+		310AA30B2856541E0066F90D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT5GP7P326;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SecondHand2iOS;
+			};
+			name = Debug;
+		};
+		310AA30C2856541E0066F90D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD978846B0F4B7E3BCF7F5B8 /* Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UT5GP7P326;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SecondHand2iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		310AA2D52856541A0066F90D /* Build configuration list for PBXProject "SecondHand2iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310AA3022856541E0066F90D /* Debug */,
+				310AA3032856541E0066F90D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		310AA3042856541E0066F90D /* Build configuration list for PBXNativeTarget "SecondHand2iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310AA3052856541E0066F90D /* Debug */,
+				310AA3062856541E0066F90D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		310AA3072856541E0066F90D /* Build configuration list for PBXNativeTarget "SecondHand2iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310AA3082856541E0066F90D /* Debug */,
+				310AA3092856541E0066F90D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		310AA30A2856541E0066F90D /* Build configuration list for PBXNativeTarget "SecondHand2iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310AA30B2856541E0066F90D /* Debug */,
+				310AA30C2856541E0066F90D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 310AA2D22856541A0066F90D /* Project object */;
+}

@@ -1,0 +1,6 @@
+module Pods_SecondHand2iOS_SecondHand2iOSUITests {
+  umbrella header "Pods-SecondHand2iOS-SecondHand2iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
