@@ -29,6 +29,8 @@
 		318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB15728577722003EB9B1 /* AkunViewController.storyboard */; };
 		318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15928577789003EB9B1 /* AkunViewController.swift */; };
 		349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */; };
+		B190694428584B3A00750F54 /* BarangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190694328584B3A00750F54 /* BarangViewController.swift */; };
+		B190694928584B5C00750F54 /* BarangViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190694828584B5C00750F54 /* BarangViewController.xib */; };
 		B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B190694328584B3A00750F54 /* BarangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarangViewController.swift; sourceTree = "<group>"; };
+		B190694828584B5C00750F54 /* BarangViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarangViewController.xib; sourceTree = "<group>"; };
 		B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD978846B0F4B7E3BCF7F5B8 /* Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		3159B0AE2856573800E19F52 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				B190694228584A0400750F54 /* Barang */,
 				318CB15628577716003EB9B1 /* Akun */,
 				318CB151285775BE003EB9B1 /* DaftarJual */,
 				318CB14C28577138003EB9B1 /* Jual */,
@@ -286,6 +291,15 @@
 				85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B190694228584A0400750F54 /* Barang */ = {
+			isa = PBXGroup;
+			children = (
+				B190694828584B5C00750F54 /* BarangViewController.xib */,
+				B190694328584B3A00750F54 /* BarangViewController.swift */,
+			);
+			path = Barang;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B190694928584B5C00750F54 /* BarangViewController.xib in Resources */,
 				318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */,
 				318CB153285775D7003EB9B1 /* DaftarJualViewController.storyboard in Resources */,
 				318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */,
@@ -537,6 +552,7 @@
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
+				B190694428584B3A00750F54 /* BarangViewController.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
@@ -646,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -700,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -727,7 +743,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -758,7 +774,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -783,7 +799,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8TLZ23A858;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -805,7 +821,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8TLZ23A858;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
