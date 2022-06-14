@@ -92,7 +92,7 @@
 		0C758B3185C489F09056CB67D0583E38 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
 		0EC8D25E70F6ABDF436A17B9A6DEDBD7 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		1365934EBF7F26E50B3535F28E999EA6 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
-		1A47BAB03749E88B5E6492F94E27428F /* Pods-SecondHand2iOSTests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SecondHand2iOSTests"; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A47BAB03749E88B5E6492F94E27428F /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACD77FBCB4A51E3785890AF7C0255B9 /* Pods-SecondHand2iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SecondHand2iOS-umbrella.h"; sourceTree = "<group>"; };
 		1CC624C568431B2BF1279C354C58153E /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
 		1E5A884CBA9DC7BC2679520B7BEAFC0D /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
@@ -129,11 +129,11 @@
 		8C67CD79AF301DB11225832D9A64095E /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		908DFB444B876A4FFC7EC2A77B6102C9 /* Pods-SecondHand2iOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SecondHand2iOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		90F2F940ECAC3689EE003E73F309FFD7 /* Pods-SecondHand2iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SecondHand2iOS-dummy.m"; sourceTree = "<group>"; };
-		92E121F5655D25B9B64AE32EC68BB0F0 /* Pods-SecondHand2iOS-SecondHand2iOSUITests */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests"; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92E121F5655D25B9B64AE32EC68BB0F0 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC33C4B8ED904357365E299DCBA1374 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
 		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = DropDown; path = libDropDown.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C11747B15D27E3E3D2D2BA13B9AE596 /* Pods-SecondHand2iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SecondHand2iOS.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E4D4CB2C40C59E8BC68B772E2884126 /* Pods-SecondHand2iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SecondHand2iOS-resources.sh"; sourceTree = "<group>"; };
 		A4C285C283E6E68DF8C3982622633248 /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
 		A4D369081CA3998BD5C40F2F01AF777D /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		B61469673269ED281FB80DD107D5009C /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
 		BC80357359A7DC54CA12F1A00F6FAA9F /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
 		BD8550C42116C592E8F521BE4F74A476 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
-		C1441E7B241AA6C1B12E647805D2E829 /* Pods-SecondHand2iOS */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-SecondHand2iOS"; path = "libPods-SecondHand2iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1441E7B241AA6C1B12E647805D2E829 /* libPods-SecondHand2iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8815E6EE88DF7EEFE6951A91934304B /* Pods-SecondHand2iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SecondHand2iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		CAEC38610BA737E13AF2E09740EEDEF2 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		D1687840D8DD3A0C64B5E4E060DAEB7B /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
@@ -243,9 +243,9 @@
 			children = (
 				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
 				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
-				C1441E7B241AA6C1B12E647805D2E829 /* Pods-SecondHand2iOS */,
-				92E121F5655D25B9B64AE32EC68BB0F0 /* Pods-SecondHand2iOS-SecondHand2iOSUITests */,
-				1A47BAB03749E88B5E6492F94E27428F /* Pods-SecondHand2iOSTests */,
+				C1441E7B241AA6C1B12E647805D2E829 /* libPods-SecondHand2iOS.a */,
+				92E121F5655D25B9B64AE32EC68BB0F0 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */,
+				1A47BAB03749E88B5E6492F94E27428F /* libPods-SecondHand2iOSTests.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,7 +293,6 @@
 				5BEDCF797DE8E9430EE62D5FB2E013AA /* Resources */,
 				920F01D7C4C4E64AB8715809A6B04FF0 /* Support Files */,
 			);
-			name = DropDown;
 			path = DropDown;
 			sourceTree = "<group>";
 		};
@@ -370,7 +369,6 @@
 				B12FB78868B8E5F85CF0D01C636BD118 /* IQUIViewController+Additions.swift */,
 				EF45B008824DF73C773C2A24BD435DB7 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -434,7 +432,7 @@
 			);
 			name = "Pods-SecondHand2iOSTests";
 			productName = "Pods-SecondHand2iOSTests";
-			productReference = 1A47BAB03749E88B5E6492F94E27428F /* Pods-SecondHand2iOSTests */;
+			productReference = 1A47BAB03749E88B5E6492F94E27428F /* libPods-SecondHand2iOSTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		AB031C2E95E92F1E7F58C8E25ADFB653 /* Pods-SecondHand2iOS-SecondHand2iOSUITests */ = {
@@ -453,7 +451,7 @@
 			);
 			name = "Pods-SecondHand2iOS-SecondHand2iOSUITests";
 			productName = "Pods-SecondHand2iOS-SecondHand2iOSUITests";
-			productReference = 92E121F5655D25B9B64AE32EC68BB0F0 /* Pods-SecondHand2iOS-SecondHand2iOSUITests */;
+			productReference = 92E121F5655D25B9B64AE32EC68BB0F0 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
@@ -490,7 +488,7 @@
 			);
 			name = "Pods-SecondHand2iOS";
 			productName = "Pods-SecondHand2iOS";
-			productReference = C1441E7B241AA6C1B12E647805D2E829 /* Pods-SecondHand2iOS */;
+			productReference = C1441E7B241AA6C1B12E647805D2E829 /* libPods-SecondHand2iOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */ = {
@@ -758,7 +756,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -827,7 +825,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.modulemap";
 				OTHER_LDFLAGS = "";
@@ -850,7 +848,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -913,7 +911,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -978,7 +976,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1000,7 +998,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1022,7 +1020,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1044,7 +1042,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.modulemap";
 				OTHER_LDFLAGS = "";
