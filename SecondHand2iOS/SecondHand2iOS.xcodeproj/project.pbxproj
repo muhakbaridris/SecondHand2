@@ -29,6 +29,9 @@
 		318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB15728577722003EB9B1 /* AkunViewController.storyboard */; };
 		318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15928577789003EB9B1 /* AkunViewController.swift */; };
 		349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */; };
+		5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E6362859C28000208372 /* NotificationTableViewCell.swift */; };
+		5915E6392859C28000208372 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E6372859C28000208372 /* NotificationTableViewCell.xib */; };
+		5915E63B2859C7AD00208372 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5915E63A2859C7AD00208372 /* Assets */; };
 		B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		318CB15728577722003EB9B1 /* AkunViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AkunViewController.storyboard; sourceTree = "<group>"; };
 		318CB15928577789003EB9B1 /* AkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunViewController.swift; sourceTree = "<group>"; };
 		501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5915E6362859C28000208372 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		5915E6372859C28000208372 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		5915E63A2859C7AD00208372 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = SecondHand2iOS/Assets; sourceTree = "<group>"; };
 		796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,7 @@
 		310AA2D12856541A0066F90D = {
 			isa = PBXGroup;
 			children = (
+				5915E63A2859C7AD00208372 /* Assets */,
 				310AA2DC2856541B0066F90D /* SecondHand2iOS */,
 				310AA2F32856541E0066F90D /* SecondHand2iOSTests */,
 				310AA2FD2856541E0066F90D /* SecondHand2iOSUITests */,
@@ -239,6 +246,8 @@
 			children = (
 				318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */,
 				318CB14A28576E15003EB9B1 /* NotifikasiTableViewController.swift */,
+				5915E6362859C28000208372 /* NotificationTableViewCell.swift */,
+				5915E6372859C28000208372 /* NotificationTableViewCell.xib */,
 			);
 			path = Notifikasi;
 			sourceTree = "<group>";
@@ -402,9 +411,11 @@
 				318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */,
 				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
 				310AA2E72856541E0066F90D /* Assets.xcassets in Resources */,
+				5915E63B2859C7AD00208372 /* Assets in Resources */,
 				310AA2E52856541B0066F90D /* TabBarMainViewController.storyboard in Resources */,
 				318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */,
 				318CB14E2857714D003EB9B1 /* JualViewController.storyboard in Resources */,
+				5915E6392859C28000208372 /* NotificationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +549,7 @@
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
+				5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
