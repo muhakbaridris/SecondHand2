@@ -11,29 +11,32 @@ final class LoginViewController: UIViewController{
     
     @IBOutlet weak var emailTextFieldOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
-    @IBOutlet weak var showPasswordButtonOutlet: UIButton!
-    @IBOutlet weak var masukButtonOutlet: UIButton!
+    @IBOutlet weak var buttonShowPasswordOutlet: UIButton!
+    @IBOutlet weak var buttonMasukOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        masukButtonOutlet.layer.cornerRadius = 5
+        buttonMasukOutlet.layer.cornerRadius = 5
+        self.hideKeyboardWhenTappedAround() 
+        self.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "Purple4")
         
     }
     
     @IBAction func showhidePasswordTapIn(_ sender: Any) {
         passwordTextFieldOutlet.togglePasswordVisibility()
         if passwordTextFieldOutlet.isSecureTextEntry == false {
-            showPasswordButtonOutlet.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-            showPasswordButtonOutlet.tintColor = UIColor(named: "Purple4")
+            buttonShowPasswordOutlet.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+            buttonShowPasswordOutlet.tintColor = UIColor(named: "Purple4")
         } else {
-            showPasswordButtonOutlet.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            showPasswordButtonOutlet.tintColor = .systemGray2
+            buttonShowPasswordOutlet.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            buttonShowPasswordOutlet.tintColor = .systemGray2
         }
     }
     
-    @IBAction func masukTapIn(_ sender: Any) {
-        
+    @IBAction func buttonMasukTapIn(_ sender: Any) {
+        print("Tap Button Masuk")
     }
     
 }

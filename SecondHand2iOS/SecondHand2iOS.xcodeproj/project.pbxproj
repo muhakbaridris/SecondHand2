@@ -24,6 +24,7 @@
 		315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F738828592AD0009F3511 /* RegisterViewController.storyboard */; };
 		315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738A28592FBD009F3511 /* UbahAkunViewController.swift */; };
 		315F738E28593AB3009F3511 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738D28593AB3009F3511 /* UITextField+Extension.swift */; };
+		315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738F28599448009F3511 /* UIViewController+Extension.swift */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
 		318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB14628576B33003EB9B1 /* HomeViewController.swift */; };
 		318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */; };
@@ -76,6 +77,7 @@
 		315F738828592AD0009F3511 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		315F738A28592FBD009F3511 /* UbahAkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahAkunViewController.swift; sourceTree = "<group>"; };
 		315F738D28593AB3009F3511 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		315F738F28599448009F3511 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		318CB14628576B33003EB9B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotifikasiTableViewController.storyboard; sourceTree = "<group>"; };
@@ -243,8 +245,8 @@
 		315F738528592A7F009F3511 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				315F738628592A91009F3511 /* RegisterViewController.swift */,
 				315F738828592AD0009F3511 /* RegisterViewController.storyboard */,
+				315F738628592A91009F3511 /* RegisterViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				315F738D28593AB3009F3511 /* UITextField+Extension.swift */,
+				315F738F28599448009F3511 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
+				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
 				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
@@ -797,7 +801,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8TLZ23A858;
+				DEVELOPMENT_TEAM = UT5GP7P326;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
