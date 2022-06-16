@@ -1,20 +1,24 @@
 PODS:
   - DropDown (2.3.13)
+  - IBAnimatable (6.1.0)
   - IQKeyboardManagerSwift (6.5.10)
 
 DEPENDENCIES:
   - DropDown
+  - IBAnimatable
   - IQKeyboardManagerSwift
 
 SPEC REPOS:
   trunk:
     - DropDown
+    - IBAnimatable
     - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
 
-PODFILE CHECKSUM: 78943ae71e64404cc4851b238bbc23ce7c36ada1
+PODFILE CHECKSUM: a812b19051968f39521c1970c445e81c327c8276
 
 COCOAPODS: 1.11.3
