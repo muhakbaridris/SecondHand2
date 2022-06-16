@@ -13,11 +13,12 @@ final class NotifikasiTableViewController: UITableViewController {
     let testdata = ["Penawaran Produk","Penawaran Produk","Penawaran Produk"]
     let namadata = ["Jam Tangan Casio","Jam Tangan Casio","Jam Tangan Casio"]
     let hargadata = ["Rp 250.000","Rp 250.000","Rp 250.000"]
-    let hargatawar = ["Rp 200.000","Rp 200.000","Rp 200.000"]
+    let hargatawar = ["Ditawar Rp 200.000","Ditawar Rp 200.000","Ditawar Rp 200.000"]
     let tanggal = ["20 Apr, 14:04","20 Apr, 14:04","20 Apr, 14:04"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         notificationTableView.register(UINib.init(nibName:"NotificationTableViewCell" , bundle: nil), forCellReuseIdentifier: "NotificationTableViewCell")
         notificationTableView.delegate = self

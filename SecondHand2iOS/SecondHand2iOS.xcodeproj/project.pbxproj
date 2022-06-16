@@ -244,10 +244,10 @@
 		318CB14328576AC7003EB9B1 /* Notifikasi */ = {
 			isa = PBXGroup;
 			children = (
-				318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */,
-				318CB14A28576E15003EB9B1 /* NotifikasiTableViewController.swift */,
 				5915E6362859C28000208372 /* NotificationTableViewCell.swift */,
 				5915E6372859C28000208372 /* NotificationTableViewCell.xib */,
+				318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */,
+				318CB14A28576E15003EB9B1 /* NotifikasiTableViewController.swift */,
 			);
 			path = Notifikasi;
 			sourceTree = "<group>";

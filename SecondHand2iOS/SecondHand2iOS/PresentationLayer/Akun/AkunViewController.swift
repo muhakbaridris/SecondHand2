@@ -11,5 +11,6 @@ final class AkunViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.systemGray
+        
     }
 }
