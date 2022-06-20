@@ -4,6 +4,7 @@ target 'SecondHand2iOS' do
   pod 'IQKeyboardManagerSwift'
   pod 'DropDown'
   pod 'IBAnimatable'
+  pod 'Alamofire'
 
   target 'SecondHand2iOSTests' do
     inherit! :search_paths
