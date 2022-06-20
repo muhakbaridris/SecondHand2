@@ -14,6 +14,9 @@ final class LoginViewController: UIViewController{
     @IBOutlet weak var buttonShowPasswordOutlet: UIButton!
     @IBOutlet weak var buttonMasukOutlet: UIButton!
     
+    let callAPI = RequestAPI()
+    var loginResponse: [LoginResponseModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
@@ -40,11 +43,13 @@ final class LoginViewController: UIViewController{
             CustomToast.show(message: "Lengkapi Data", bgColor: .systemRed, textColor: .white, labelFont: .systemFont(ofSize: 17), showIn: .bottom, controller: self)
         } else {
             let loginData = LoginModel(email: emailTextFieldOutlet.text!, password: passwordTextFieldOutlet.text!)
-            RequestAPI.shareInstance.loginSecondHand(login: loginData) { result in
+            
+            callAPI.loginUserSecondHand(login: loginData) { result in
                 switch result {
-                case .success(let json):                    
-                    print(json as AnyObject)
-                case .failure(let err):
+                case let .success(data):
+                    self.loginResponse.append(data)
+                    
+                case let .failure(err):
                     print(err.localizedDescription)
                 }
             }

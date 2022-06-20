@@ -12,7 +12,8 @@ struct LoginModel: Codable{
     let password: String
 }
 
-struct SHLoginResponseModel: Codable {
+struct LoginResponseModel: Decodable {
+    let id: Int
     let name: String
     let email: String
     let access_token: String
