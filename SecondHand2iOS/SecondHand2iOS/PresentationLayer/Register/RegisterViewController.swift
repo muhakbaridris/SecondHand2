@@ -17,16 +17,15 @@ final class RegisterViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonDaftarOutlet.layer.cornerRadius = 5
         self.hideKeyboardWhenTappedAround()
         self.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Purple4")
-        
+        buttonDaftarOutlet.layer.cornerRadius = 5
         
     }
     
     @IBAction func showhidePasswordTapIn(_ sender: Any) {
-        buatPasswordTextFieldOutlet.togglePasswordVisibility()
+        buatPasswordTextFieldOutlet.isSecureTextEntry = !buatPasswordTextFieldOutlet.isSecureTextEntry
         if buatPasswordTextFieldOutlet.isSecureTextEntry == false {
             buttonShowPasswordOutlet.setImage(UIImage(systemName: "eye.fill"), for: .normal)
             buttonShowPasswordOutlet.tintColor = UIColor(named: "Purple4")
@@ -36,7 +35,21 @@ final class RegisterViewController: UIViewController{
         }
     }
     
+    @IBAction func keHalamanDaftarFullTapIn(_ sender: Any) {
+        if buatNamaTextFieldOutlet.text?.isEmpty == true ||
+           buatEmailTextFieldOutlet.text?.isEmpty == true ||
+           buatPasswordTextFieldOutlet.text?.isEmpty == true ||
+           buatEmailTextFieldOutlet.text?.isValidEmail() == false {
+            CustomToast.show(message: "Lengkapi Data", bgColor: .systemRed, textColor: .white, labelFont: .systemFont(ofSize: 17), showIn: .bottom, controller: self)
+        } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "RegisterViewController", bundle:nil)
+            let daftarLengkap = storyBoard.instantiateViewController(withIdentifier: "DaftarLengkap")
+            self.navigationController?.pushViewController(daftarLengkap, animated: true)
+        }
+    }
+
     @IBAction func keHalamanMasukTapIn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+        
 }

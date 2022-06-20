@@ -176,7 +176,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="KOP-Kx-H6D" kind="show" id="Apb-s9-3lE"/>
+                                    <segue destination="KOP-Kx-H6D" kind="presentation" modalPresentationStyle="fullScreen" id="Apb-s9-3lE"/>
                                 </connections>
                             </button>
                         </subviews>

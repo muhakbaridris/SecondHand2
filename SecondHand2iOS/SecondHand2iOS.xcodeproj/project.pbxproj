@@ -18,12 +18,12 @@
 		310AA2FF2856541E0066F90D /* SecondHand2iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */; };
 		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
 		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
+		314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FDDFF285BCA790077CCC7 /* String+Extension.swift */; };
 		315F73822859206D009F3511 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F73812859206D009F3511 /* LoginViewController.storyboard */; };
 		315F738428592078009F3511 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738328592078009F3511 /* LoginViewController.swift */; };
 		315F738728592A91009F3511 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738628592A91009F3511 /* RegisterViewController.swift */; };
 		315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F738828592AD0009F3511 /* RegisterViewController.storyboard */; };
 		315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738A28592FBD009F3511 /* UbahAkunViewController.swift */; };
-		315F738E28593AB3009F3511 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738D28593AB3009F3511 /* UITextField+Extension.swift */; };
 		315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738F28599448009F3511 /* UIViewController+Extension.swift */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
 		318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB14628576B33003EB9B1 /* HomeViewController.swift */; };
@@ -35,6 +35,8 @@
 		318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15428577625003EB9B1 /* DaftarJualViewController.swift */; };
 		318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB15728577722003EB9B1 /* AkunViewController.storyboard */; };
 		318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15928577789003EB9B1 /* AkunViewController.swift */; };
+		31A5422E285BD0AB0073CCDA /* SecondHandAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5422D285BD0AB0073CCDA /* SecondHandAPI.swift */; };
+		31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A54232285C08820073CCDA /* SHLoginResponseModel.swift */; };
 		349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */; };
 		5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E6362859C28000208372 /* NotificationTableViewCell.swift */; };
 		5915E6392859C28000208372 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E6372859C28000208372 /* NotificationTableViewCell.xib */; };
@@ -76,12 +78,12 @@
 		310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITests.swift; sourceTree = "<group>"; };
 		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
+		314FDDFF285BCA790077CCC7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		315F73812859206D009F3511 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		315F738328592078009F3511 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		315F738628592A91009F3511 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		315F738828592AD0009F3511 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		315F738A28592FBD009F3511 /* UbahAkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahAkunViewController.swift; sourceTree = "<group>"; };
-		315F738D28593AB3009F3511 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		315F738F28599448009F3511 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		318CB14628576B33003EB9B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		318CB15428577625003EB9B1 /* DaftarJualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarJualViewController.swift; sourceTree = "<group>"; };
 		318CB15728577722003EB9B1 /* AkunViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AkunViewController.storyboard; sourceTree = "<group>"; };
 		318CB15928577789003EB9B1 /* AkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunViewController.swift; sourceTree = "<group>"; };
+		31A5422D285BD0AB0073CCDA /* SecondHandAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHandAPI.swift; sourceTree = "<group>"; };
+		31A54232285C08820073CCDA /* SHLoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLoginResponseModel.swift; sourceTree = "<group>"; };
 		501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5915E6362859C28000208372 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		5915E6372859C28000208372 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		310AA2DC2856541B0066F90D /* SecondHand2iOS */ = {
 			isa = PBXGroup;
 			children = (
+				31A5422B285BD04C0073CCDA /* DataLayer */,
 				3159B0AF2856576900E19F52 /* App */,
 				3159B0AE2856573800E19F52 /* PresentationLayer */,
 				3159B0B02856579400E19F52 /* Resource */,
@@ -265,8 +270,8 @@
 		315F738C28593A9E009F3511 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				315F738D28593AB3009F3511 /* UITextField+Extension.swift */,
 				315F738F28599448009F3511 /* UIViewController+Extension.swift */,
+				314FDDFF285BCA790077CCC7 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -327,6 +332,31 @@
 				315F738A28592FBD009F3511 /* UbahAkunViewController.swift */,
 			);
 			path = Akun;
+			sourceTree = "<group>";
+		};
+		31A5422B285BD04C0073CCDA /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				31A5422C285BD05D0073CCDA /* API */,
+				31A5422F285BD93A0073CCDA /* Model */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		31A5422C285BD05D0073CCDA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				31A5422D285BD0AB0073CCDA /* SecondHandAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		31A5422F285BD93A0073CCDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31A54232285C08820073CCDA /* SHLoginResponseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		31EE106D285660C10053EEB3 /* LaunchScreen */ = {
@@ -607,15 +637,15 @@
 				318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */,
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
+				31A5422E285BD0AB0073CCDA /* SecondHandAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
-<<<<<<< HEAD
-				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
-=======
 				A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */,
 				A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */,
->>>>>>> main
+				314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */,
+				31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */,
+				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
 				5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
@@ -623,7 +653,6 @@
 				315F738428592078009F3511 /* LoginViewController.swift in Sources */,
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
-				315F738E28593AB3009F3511 /* UITextField+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,9 +828,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UT5GP7P326;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -818,6 +847,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.binar.SecondHand2iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -830,9 +860,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UT5GP7P326;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -849,6 +879,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.binar.SecondHand2iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -21,11 +21,10 @@ final class LoginViewController: UIViewController{
         self.hideKeyboardWhenTappedAround() 
         self.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Purple4")
-        
     }
     
     @IBAction func showhidePasswordTapIn(_ sender: Any) {
-        passwordTextFieldOutlet.togglePasswordVisibility()
+        passwordTextFieldOutlet.isSecureTextEntry = !passwordTextFieldOutlet.isSecureTextEntry
         if passwordTextFieldOutlet.isSecureTextEntry == false {
             buttonShowPasswordOutlet.setImage(UIImage(systemName: "eye.fill"), for: .normal)
             buttonShowPasswordOutlet.tintColor = UIColor(named: "Purple4")
@@ -37,6 +36,20 @@ final class LoginViewController: UIViewController{
     
     @IBAction func buttonMasukTapIn(_ sender: Any) {
         print("Tap Button Masuk")
+        if emailTextFieldOutlet.text?.isEmpty == true || passwordTextFieldOutlet.text?.isEmpty == true {
+            CustomToast.show(message: "Lengkapi Data", bgColor: .systemRed, textColor: .white, labelFont: .systemFont(ofSize: 17), showIn: .bottom, controller: self)
+        } else {
+            let loginData = LoginModel(email: emailTextFieldOutlet.text!, password: passwordTextFieldOutlet.text!)
+            RequestAPI.shareInstance.loginSecondHand(login: loginData) { result in
+                switch result {
+                case .success(let json):                    
+                    print(json as AnyObject)
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
+        }
+        
     }
     
 }
