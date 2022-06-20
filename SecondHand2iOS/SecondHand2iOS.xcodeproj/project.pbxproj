@@ -17,6 +17,7 @@
 		310AA2FF2856541E0066F90D /* SecondHand2iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */; };
 		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
 		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
+		316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 316FF1252860832B0088768D /* GoogleService-Info.plist */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
 		318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB14628576B33003EB9B1 /* HomeViewController.swift */; };
 		318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */; };
@@ -29,9 +30,7 @@
 		318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15928577789003EB9B1 /* AkunViewController.swift */; };
 		3903D52AE1421A6590C6A59E /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E95857C3868EE856D79D3A /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework */; };
 		4108428ABCBE64EB8263F438 /* Pods_SecondHand2iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2273DB6AAE8BEEA1D1786686 /* Pods_SecondHand2iOS.framework */; };
-		A444A3DE285C779000307326 /* Rectangle 33.png in Resources */ = {isa = PBXBuildFile; fileRef = A444A3DD285C779000307326 /* Rectangle 33.png */; };
 		A444A3E0285CAA3600307326 /* Seller18ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3DF285CAA3600307326 /* Seller18ViewController.swift */; };
-		A444A3E6285CBCB500307326 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A444A3E5285CBCB500307326 /* GoogleService-Info.plist */; };
 		A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */; };
 		CE7F85E526E68BDB14028CFF /* Pods_SecondHand2iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72F24150F15E7568F4A5992 /* Pods_SecondHand2iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +69,7 @@
 		310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITests.swift; sourceTree = "<group>"; };
 		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
+		316FF1252860832B0088768D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		318CB14628576B33003EB9B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotifikasiTableViewController.storyboard; sourceTree = "<group>"; };
@@ -82,9 +82,7 @@
 		318CB15928577789003EB9B1 /* AkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunViewController.swift; sourceTree = "<group>"; };
 		501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A444A3DD285C779000307326 /* Rectangle 33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Rectangle 33.png"; path = "../../../../../Downloads/Rectangle 33.png"; sourceTree = "<group>"; };
 		A444A3DF285CAA3600307326 /* Seller18ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seller18ViewController.swift; sourceTree = "<group>"; };
-		A444A3E5285CBCB500307326 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A72F24150F15E7568F4A5992 /* Pods_SecondHand2iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,9 +216,8 @@
 		3159B0B02856579400E19F52 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A444A3DC285C777E00307326 /* Images */,
+				316FF1252860832B0088768D /* GoogleService-Info.plist */,
 				310AA2EB2856541E0066F90D /* Info.plist */,
-				A444A3E5285CBCB500307326 /* GoogleService-Info.plist */,
 				310AA2E62856541E0066F90D /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -298,14 +295,6 @@
 				A72F24150F15E7568F4A5992 /* Pods_SecondHand2iOSTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A444A3DC285C777E00307326 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				A444A3DD285C779000307326 /* Rectangle 33.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		A444A3E7285F4E5C00307326 /* Cell */ = {
@@ -427,12 +416,11 @@
 			files = (
 				318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */,
 				318CB153285775D7003EB9B1 /* DaftarJualViewController.storyboard in Resources */,
+				316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */,
 				318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */,
 				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
 				310AA2E72856541E0066F90D /* Assets.xcassets in Resources */,
 				310AA2E52856541B0066F90D /* TabBarMainViewController.storyboard in Resources */,
-				A444A3DE285C779000307326 /* Rectangle 33.png in Resources */,
-				A444A3E6285CBCB500307326 /* GoogleService-Info.plist in Resources */,
 				318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */,
 				318CB14E2857714D003EB9B1 /* JualViewController.storyboard in Resources */,
 			);
@@ -748,9 +736,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UT5GP7P326;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -767,6 +755,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.binar.SecondHand2iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -779,9 +768,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8TLZ23A858;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecondHand2iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -798,6 +787,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.binar.SecondHand2iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
