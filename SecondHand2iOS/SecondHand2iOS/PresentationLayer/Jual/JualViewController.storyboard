@@ -212,11 +212,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 33.png" translatesAutoresizingMaskIntoConstraints="NO" id="638-6Q-hDF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="638-6Q-hDF">
                                 <rect key="frame" x="20" y="405" width="374" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 33.png" translatesAutoresizingMaskIntoConstraints="NO" id="Udw-Y4-bGm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="Udw-Y4-bGm">
                                 <rect key="frame" x="20" y="511" width="374" height="483"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -316,8 +316,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rectangle 33.png" width="336" height="106"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="rectangle" width="84" height="26.5"/>
         <namedColor name="Purple4">
             <color red="0.44299998879432678" green="0.14900000393390656" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
