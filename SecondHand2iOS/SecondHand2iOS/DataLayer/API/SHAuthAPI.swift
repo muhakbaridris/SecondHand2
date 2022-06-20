@@ -1,5 +1,5 @@
 //
-//  SecondHandAPI.swift
+//  SHAuthAPI.swift
 //  SecondHand2iOS
 //
 //  Created by Maulana Frasha on 17/06/22.
@@ -12,7 +12,7 @@ enum APIError: Error {
     case custom(message: String)
 }
 
-class RequestAPI {
+class SHAuthAPI {
     
     func registerUserSecondHand(register: RegisUpdateModel,
                             completionHandler: @escaping (Result<RegisUpdateResponseModel, AFError>) -> Void) {
