@@ -10,11 +10,17 @@ import UIKit
 final class JualViewController: UIViewController {
     @IBOutlet weak var previewLabel: UILabel!
     @IBOutlet weak var pushLabel: UILabel!
+    @IBOutlet weak var uiPreviewLabel: UILabel!
+    @IBOutlet weak var uiNamaProduk: UITextField!
+    @IBOutlet weak var uiPushLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+        uiPreviewLabel.layer.cornerRadius = 22
+        uiPushLabel.layer.cornerRadius = 22
+        uiNamaProduk.layer.cornerRadius = 22
         previewLabel.layer.borderWidth = 0.2
         previewLabel.layer.cornerRadius = 3
         previewLabel.layer.masksToBounds = true

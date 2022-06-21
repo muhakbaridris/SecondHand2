@@ -32,6 +32,7 @@
 		4108428ABCBE64EB8263F438 /* Pods_SecondHand2iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2273DB6AAE8BEEA1D1786686 /* Pods_SecondHand2iOS.framework */; };
 		A444A3E0285CAA3600307326 /* Seller18ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3DF285CAA3600307326 /* Seller18ViewController.swift */; };
 		A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */; };
+		B143C1702861FC64004F674F /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B143C16F2861FC64004F674F /* Poppins-Regular.otf */; };
 		CE7F85E526E68BDB14028CFF /* Pods_SecondHand2iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72F24150F15E7568F4A5992 /* Pods_SecondHand2iOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		A444A3DF285CAA3600307326 /* Seller18ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seller18ViewController.swift; sourceTree = "<group>"; };
 		A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A72F24150F15E7568F4A5992 /* Pods_SecondHand2iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B143C16F2861FC64004F674F /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.otf"; path = "../../Downloads/poppins 2/Poppins-Regular.otf"; sourceTree = "<group>"; };
 		B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD978846B0F4B7E3BCF7F5B8 /* Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		310AA2D12856541A0066F90D = {
 			isa = PBXGroup;
 			children = (
+				B143C16F2861FC64004F674F /* Poppins-Regular.otf */,
 				310AA2DC2856541B0066F90D /* SecondHand2iOS */,
 				310AA2F32856541E0066F90D /* SecondHand2iOSTests */,
 				310AA2FD2856541E0066F90D /* SecondHand2iOSUITests */,
@@ -418,6 +421,7 @@
 				318CB153285775D7003EB9B1 /* DaftarJualViewController.storyboard in Resources */,
 				316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */,
 				318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */,
+				B143C1702861FC64004F674F /* Poppins-Regular.otf in Resources */,
 				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
 				310AA2E72856541E0066F90D /* Assets.xcassets in Resources */,
 				310AA2E52856541B0066F90D /* TabBarMainViewController.storyboard in Resources */,
