@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1iF-ws-JHc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1iF-ws-JHc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -257,7 +256,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="Purple4"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Terbitkan"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3bT-wA-JaZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="331"/>
@@ -277,11 +275,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="331"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-5q-Juu">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-5q-Juu">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="331"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="331" id="3el-UF-sbc"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lqd-5q-Juu" firstAttribute="leading" secondItem="pzc-xb-XHp" secondAttribute="leading" id="1o5-QY-OhK"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lqd-5q-Juu" secondAttribute="trailing" id="FNu-hK-YQi"/>
+                                                <constraint firstItem="Lqd-5q-Juu" firstAttribute="top" secondItem="pzc-xb-XHp" secondAttribute="top" id="hCq-ZQ-ufQ"/>
+                                                <constraint firstItem="Lqd-5q-Juu" firstAttribute="centerX" secondItem="pzc-xb-XHp" secondAttribute="centerX" id="mJb-mM-QBp"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="bannerImage" destination="Lqd-5q-Juu" id="8W7-oy-8Og"/>
@@ -299,9 +305,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-ys-kWb">
+                                <rect key="frame" x="23.5" y="269" width="367" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="mdW-R3-qXC"/>
+                                    <constraint firstAttribute="width" constant="367" id="sZg-Pb-0T0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Cy-T1-5rl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fVn-ys-kWb" firstAttribute="centerX" secondItem="bnA-U9-ZHj" secondAttribute="centerX" id="Z3d-Rm-slH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UVu-7Y-dZF"/>
                     <connections>
