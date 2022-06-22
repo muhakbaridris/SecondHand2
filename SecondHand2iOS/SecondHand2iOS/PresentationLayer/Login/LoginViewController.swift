@@ -48,7 +48,7 @@ final class LoginViewController: UIViewController{
                 switch result {
                 case let .success(data):
                     self.loginResponse.append(data)
-                    
+                    print("Hasilny \(self.loginResponse)")
                 case let .failure(err):
                     print(err.localizedDescription)
                 }

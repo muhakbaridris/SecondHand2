@@ -14,32 +14,31 @@ enum APIError: Error {
 
 class RequestAPI {
     
-    func registerUserSecondHand(register: RegisUpdateModel,
-                            completionHandler: @escaping (Result<RegisUpdateResponseModel, AFError>) -> Void) {
+    func registerUserSecondHand(register: RegisterModel,
+                            completionHandler: @escaping (Result<RegisterResponseModel, AFError>) -> Void) {
         let url = "https://market-final-project.herokuapp.com/auth/register"
         let headers: HTTPHeaders = [.accept("body"), .contentType("multipart/form-data")]
-        AF.request(url,
-                   method: .post,
-                   parameters: register,
-                   encoder: JSONParameterEncoder.default,
-                   headers: headers)
-        .responseDecodable(of: RegisUpdateResponseModel.self ) { response in
-            completionHandler(response.result)
+        AF.upload(multipartFormData: { (multipartFormData) in
+            <#code#> //code here
+        },
+                  to: url,
+                  method: .post,
+                  headers: headers).response { response in
+            //code here
         }
     }
-        
-        func updateUserSecondHand(register: RegisUpdateModel    ,
-                                completionHandler: @escaping (Result<RegisUpdateResponseModel, AFError>) -> Void) {
-            let url = "https://market-final-project.herokuapp.com/auth/register"
-            let headers: HTTPHeaders = [.accept("body"), .contentType("multipart/form-data")]
-            AF.request(url,
-                       method: .post,
-                       parameters: register,
-                       encoder: JSONParameterEncoder.default,
-                       headers: headers)
-            .responseDecodable(of: RegisUpdateResponseModel.self ) { response in
-                completionHandler(response.result)
-            }
+    
+    func getUserDataSecondHand(access_token: String,
+                               completionHandler: @escaping (Result<UserDataResponseModel, AFError>) -> Void){
+        let url = "https://market-final-project.herokuapp.com/auth/user"
+        let headers: HTTPHeaders = ["accept": "body",
+                                    "access_token": "\(access_token)"]
+        AF.request(url,
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: UserDataResponseModel.self) { response in
+            completionHandler(response.result)
+        }
     }
     
     func loginUserSecondHand(login: LoginModel,
@@ -54,6 +53,23 @@ class RequestAPI {
         .responseDecodable(of: LoginResponseModel.self ) { response in
             completionHandler(response.result)
         }
+    }
+        
+        func updateUserSecondHand(access_token: String,
+                                  register: UpdateModel,
+                                  completionHandler: @escaping (Result<UpdateResponseModel, AFError>) -> Void) {
+            let url = "https://market-final-project.herokuapp.com/auth/user"
+            let headers: HTTPHeaders = ["accept": "body",
+                                        "access_token": "\(access_token)",
+                                        "Content-Type": "multipart/form-data"]
+            AF.upload(multipartFormData: { (multipartFormData) in
+                <#code#> //code here
+            },
+                      to: url,
+                      method: .put,
+                      headers: headers).response { response in
+                //code here
+            }
     }
 }
 
