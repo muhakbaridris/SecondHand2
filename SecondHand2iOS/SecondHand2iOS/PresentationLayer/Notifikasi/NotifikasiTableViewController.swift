@@ -49,6 +49,5 @@ final class NotifikasiTableViewController: UITableViewController {
         
         return cell
     }
-    
-    
+        
 }

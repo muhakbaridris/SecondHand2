@@ -1,13 +1,13 @@
 //
-//  SHRegisterResponseModel.swift
+//  SHUpdateResponseModel.swift
 //  SecondHand2iOS
 //
-//  Created by Maulana Frasha on 21/06/22.
+//  Created by Maulana Frasha on 22/06/22.
 //
 
 import Foundation
 
-struct RegisUpdateModel: Codable {
+struct UpdateModel: Codable {
     let full_name: String
     let email: String
     let password: String
@@ -17,7 +17,7 @@ struct RegisUpdateModel: Codable {
     let city: String
 }
 
-struct RegisUpdateResponseModel: Decodable {
+struct UpdateResponseModel: Decodable {
     let id: Int
     let full_name: String
     let email: String
