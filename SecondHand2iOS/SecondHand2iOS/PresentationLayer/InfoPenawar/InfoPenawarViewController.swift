@@ -47,6 +47,7 @@ final class InfoPenawarViewController: UIViewController, UITableViewDataSource, 
         cell.productPrice.text = dataproduk.hargadata
         cell.productTawarHarga.text = dataproduk.hargatawar
         cell.dateStatus.text = dataproduk.tanggal
+        cell.btnStatus.tag = indexPath.row
         
         return cell
     }

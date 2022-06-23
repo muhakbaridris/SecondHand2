@@ -35,4 +35,10 @@ class ProductDataTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    
+    @IBAction func btnStatus(_ sender: UIButton) {
+        print("you tapped btn status")
+    }
+//    
 }

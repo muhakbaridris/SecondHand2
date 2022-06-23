@@ -60,6 +60,9 @@
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Status"/>
+                        <connections>
+                            <action selector="btnStatus:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bs1-9N-pHF"/>
+                        </connections>
                     </button>
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBE-Po-GuK">
                         <rect key="frame" x="229" y="129" width="156" height="36"/>

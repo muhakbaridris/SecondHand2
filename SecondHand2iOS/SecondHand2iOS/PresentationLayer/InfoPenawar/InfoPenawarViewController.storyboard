@@ -91,16 +91,43 @@
                         <outlet property="kotaPembeli" destination="iNV-gT-na5" id="oqV-FR-joh"/>
                         <outlet property="namaPembeli" destination="eYc-mW-7yt" id="bCW-v3-OlP"/>
                         <outlet property="tableView" destination="Q63-yp-yyf" id="egt-4J-tIn"/>
+                        <segue destination="kgn-Wi-Gyd" kind="show" identifier="Window" id="yWb-yv-PGP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="71.651785714285708"/>
         </scene>
+        <!--Window Info Penawar View Controller-->
+        <scene sceneID="YWr-LA-Ijt">
+            <objects>
+                <viewController storyboardIdentifier="Window" id="kgn-Wi-Gyd" customClass="WindowInfoPenawarViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ckc-En-ceW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aos-nB-lRq">
+                                <rect key="frame" x="0.0" y="542" width="414" height="354"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3FF-Rj-I1k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FxK-P9-qcp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGI-Kh-zz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166.6666666666667" y="71.651785714285708"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

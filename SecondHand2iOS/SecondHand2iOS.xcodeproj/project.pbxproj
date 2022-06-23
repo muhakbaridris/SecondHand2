@@ -45,6 +45,7 @@
 		5915E6392859C28000208372 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E6372859C28000208372 /* NotificationTableViewCell.xib */; };
 		5915E63B2859C7AD00208372 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5915E63A2859C7AD00208372 /* Assets */; };
 		A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4418CA3285A9EF3003EE4A2 /* HomeCollectionViewCell.swift */; };
+		A48589AF2864DE0C0015BAB9 /* WindowInfoPenawarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48589AE2864DE0C0015BAB9 /* WindowInfoPenawarViewController.swift */; };
 		A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */; };
 		A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */; };
 		A4C72B8B2863384C00F67AE8 /* ProductDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */; };
@@ -113,6 +114,7 @@
 		85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4418CA3285A9EF3003EE4A2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A48589AE2864DE0C0015BAB9 /* WindowInfoPenawarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInfoPenawarViewController.swift; sourceTree = "<group>"; };
 		A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCollectionCell.swift; sourceTree = "<group>"; };
 		A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataTableViewCell.swift; sourceTree = "<group>"; };
 		A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDataTableViewCell.xib; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 		31F8DDFD2861FB2600843B3F /* InfoPenawar */ = {
 			isa = PBXGroup;
 			children = (
+				A48589AD2864DDEA0015BAB9 /* Window */,
 				A4C72B852863372700F67AE8 /* Cell */,
 				31F8DDFE2861FB4700843B3F /* InfoPenawarViewController.swift */,
 				31F8DE002861FB7300843B3F /* InfoPenawarViewController.storyboard */,
@@ -414,6 +417,14 @@
 				A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A48589AD2864DDEA0015BAB9 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				A48589AE2864DE0C0015BAB9 /* WindowInfoPenawarViewController.swift */,
+			);
+			path = Window;
 			sourceTree = "<group>";
 		};
 		A4C72B852863372700F67AE8 /* Cell */ = {
@@ -692,6 +703,7 @@
 				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
 				5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */,
+				A48589AF2864DE0C0015BAB9 /* WindowInfoPenawarViewController.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
 				315F738428592078009F3511 /* LoginViewController.swift in Sources */,
