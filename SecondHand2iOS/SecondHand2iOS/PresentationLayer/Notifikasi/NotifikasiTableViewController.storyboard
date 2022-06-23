@@ -55,6 +55,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Notifikasi" id="1dy-CC-bb6"/>
                     <connections>
+                        <outlet property="judul" destination="xyt-Nz-ZC9" id="ymJ-AE-Qgi"/>
                         <outlet property="notificationTableView" destination="QQO-ve-LxD" id="G3F-VU-DCE"/>
                     </connections>
                 </tableViewController>
