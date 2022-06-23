@@ -16,8 +16,12 @@ final class NotifikasiTableViewController: UITableViewController {
     let hargatawar = ["Rp 200.000","Rp 200.000","Rp 200.000"]
     let tanggal = ["20 Apr, 14:04","20 Apr, 14:04","20 Apr, 14:04"]
     
+    @IBOutlet var judul: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        judul.font = UIFont(name: "Poppins-ExtraBold.ttf", size: 40)
         
         notificationTableView.register(UINib.init(nibName:"NotificationTableViewCell" , bundle: nil), forCellReuseIdentifier: "NotificationTableViewCell")
         notificationTableView.delegate = self
@@ -45,6 +49,8 @@ final class NotifikasiTableViewController: UITableViewController {
         cell.notificationPrice.text = hargadata[indexPath.row]
         cell.notificationTawar.text = hargatawar[indexPath.row]
         cell.notificationDate.text = tanggal[indexPath.row]
+        
+        
         
         return cell
     }

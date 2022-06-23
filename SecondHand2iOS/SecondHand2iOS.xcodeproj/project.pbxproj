@@ -31,7 +31,10 @@
 		349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */; };
 		5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E6362859C28000208372 /* NotificationTableViewCell.swift */; };
 		5915E6392859C28000208372 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E6372859C28000208372 /* NotificationTableViewCell.xib */; };
-		5915E63B2859C7AD00208372 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5915E63A2859C7AD00208372 /* Assets */; };
+		5915E66C285B1C7100208372 /* DaftarJualTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E66A285B1C7100208372 /* DaftarJualTableViewCell.xib */; };
+		5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E66B285B1C7100208372 /* DaftarJualTableViewCell.swift */; };
+		5915E675285C946D00208372 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E674285C946D00208372 /* CustomView.swift */; };
+		5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */; };
 		B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,10 @@
 		5915E6362859C28000208372 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		5915E6372859C28000208372 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		5915E63A2859C7AD00208372 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = SecondHand2iOS/Assets; sourceTree = "<group>"; };
+		5915E66A285B1C7100208372 /* DaftarJualTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaftarJualTableViewCell.xib; sourceTree = "<group>"; };
+		5915E66B285B1C7100208372 /* DaftarJualTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaftarJualTableViewCell.swift; sourceTree = "<group>"; };
+		5915E674285C946D00208372 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarJualCollectionViewCell.swift; sourceTree = "<group>"; };
 		796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,8 +271,12 @@
 		318CB151285775BE003EB9B1 /* DaftarJual */ = {
 			isa = PBXGroup;
 			children = (
+				5915E66B285B1C7100208372 /* DaftarJualTableViewCell.swift */,
+				5915E66A285B1C7100208372 /* DaftarJualTableViewCell.xib */,
 				318CB152285775D7003EB9B1 /* DaftarJualViewController.storyboard */,
 				318CB15428577625003EB9B1 /* DaftarJualViewController.swift */,
+				5915E674285C946D00208372 /* CustomView.swift */,
+				5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */,
 			);
 			path = DaftarJual;
 			sourceTree = "<group>";
@@ -406,12 +417,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5915E66C285B1C7100208372 /* DaftarJualTableViewCell.xib in Resources */,
 				318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */,
 				318CB153285775D7003EB9B1 /* DaftarJualViewController.storyboard in Resources */,
 				318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */,
 				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
 				310AA2E72856541E0066F90D /* Assets.xcassets in Resources */,
-				5915E63B2859C7AD00208372 /* Assets in Resources */,
 				310AA2E52856541B0066F90D /* TabBarMainViewController.storyboard in Resources */,
 				318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */,
 				318CB14E2857714D003EB9B1 /* JualViewController.storyboard in Resources */,
@@ -545,6 +556,7 @@
 			files = (
 				318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */,
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
+				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
@@ -552,7 +564,9 @@
 				5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
+				5915E675285C946D00208372 /* CustomView.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
+				5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
