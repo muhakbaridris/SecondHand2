@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1330"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB031C2E95E92F1E7F58C8E25ADFB653"
-               BuildableName = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"
+               BuildableName = "Pods_SecondHand2iOS_SecondHand2iOSUITests.framework"
                BlueprintName = "Pods-SecondHand2iOS-SecondHand2iOSUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

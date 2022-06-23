@@ -20,6 +20,7 @@ class NotificationTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        notificationImage.layer.cornerRadius = 5
         // Initialization code
     }
 

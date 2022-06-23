@@ -13,13 +13,14 @@ final class NotifikasiTableViewController: UITableViewController {
     let testdata = ["Penawaran Produk","Penawaran Produk","Penawaran Produk"]
     let namadata = ["Jam Tangan Casio","Jam Tangan Casio","Jam Tangan Casio"]
     let hargadata = ["Rp 250.000","Rp 250.000","Rp 250.000"]
-    let hargatawar = ["Rp 200.000","Rp 200.000","Rp 200.000"]
+    let hargatawar = ["Ditawar Rp 200.000","Ditawar Rp 200.000","Ditawar Rp 200.000"]
     let tanggal = ["20 Apr, 14:04","20 Apr, 14:04","20 Apr, 14:04"]
     
     @IBOutlet var judul: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         judul.font = UIFont(name: "Poppins-ExtraBold.ttf", size: 40)
         
@@ -54,6 +55,5 @@ final class NotifikasiTableViewController: UITableViewController {
         
         return cell
     }
-    
-    
+        
 }
