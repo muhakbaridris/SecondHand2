@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfX-4a-iAN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -20,22 +20,21 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="HQb-4B-avr">
+        <!--Navigation Controller-->
+        <scene sceneID="zVF-ak-W4K">
             <objects>
-                <tabBarController id="z3A-Ds-e34" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jHF-6b-Hel">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                <navigationController id="yfX-4a-iAN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tFw-8u-77z">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    </navigationBar>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="Jz0-vW-hO4"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="2Po-bs-EFz"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nmA-Gt-pUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qoM-Bp-QK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-771" y="-1712"/>
+            <point key="canvasLocation" x="-715" y="-1713"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="s0d-6b-0kx">
@@ -176,7 +175,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FvQ-Pm-83Z">
-                                <rect key="frame" x="0.0" y="384" width="390" height="377"/>
+                                <rect key="frame" x="0.0" y="384" width="390" height="426"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91K-ZK-R4W">
                                     <size key="itemSize" width="151" height="235"/>
@@ -274,6 +273,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="zDU-K6-lA6">
                         <imageReference key="image" image="homekit" catalog="system" symbolScale="default"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="H5y-2A-hZw"/>
                     <connections>
                         <outlet property="collectionView" destination="n91-af-LwL" id="U9r-VY-Qje"/>
                         <outlet property="collectionViewB" destination="FvQ-Pm-83Z" id="O5Q-7v-IFh"/>
