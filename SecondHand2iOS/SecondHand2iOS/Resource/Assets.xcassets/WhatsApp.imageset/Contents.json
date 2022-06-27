@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Rectangle 22.png",
+      "filename" : "Whatsapp.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Rectangle 22@2x.png",
+      "filename" : "Whatsapp@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Rectangle 22@3x.png",
+      "filename" : "Whatsapp@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
