@@ -37,8 +37,9 @@ class ProductDataTableViewCell: UITableViewCell {
     
     
     
-    @IBAction func btnStatus(_ sender: UIButton) {
-        print("you tapped btn status")
-    }
+//    @IBAction func btnStatus(_ sender: UIButton) {
+//        print("you tapped btn status")
+//    }
 //
 }
+

@@ -47,11 +47,15 @@ final class InfoPenawarViewController: UIViewController, UITableViewDataSource, 
         cell.productPrice.text = dataproduk.hargadata
         cell.productTawarHarga.text = dataproduk.hargatawar
         cell.dateStatus.text = dataproduk.tanggal
-        cell.btnStatus.tag = indexPath.row
-        
+        cell.btnStatus.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
         return cell
     }
-    
+    @objc func openListPickerVC(_ sender: UIButton) {
+        let vc = OverlayPenawarView()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = self
+        self.present(vc, animated: true)
+    }
     private func configureShadow(view: UIView) {
         view.layer.cornerRadius = 16
         view.layer.shadowOffset = CGSize.zero
@@ -75,5 +79,12 @@ final class InfoPenawarViewController: UIViewController, UITableViewDataSource, 
                           hargatawar: "Ditawar Rp 200.000",
                           tanggal: "20 Apr, 14:04"))
     }
+}
+
+
+extension InfoPenawarViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+            PresentationController(presentedViewController: presented, presenting: presenting)
+        }
 }
 
