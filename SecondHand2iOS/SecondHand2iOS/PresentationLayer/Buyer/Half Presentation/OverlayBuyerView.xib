@@ -12,8 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OverlayBuyerView" customModule="SecondHand2iOS" customModuleProvider="target">
             <connections>
-                <outlet property="borderView" destination="rxk-2b-ehz" id="vWe-C7-MQm"/>
+                <outlet property="borderView" destination="uqS-4Y-Qcq" id="2FD-Hk-3Qx"/>
                 <outlet property="btnSend" destination="LcB-cM-gfb" id="MqX-0f-vNe"/>
+                <outlet property="priceView" destination="uqS-4Y-Qcq" id="HYG-7p-rHV"/>
                 <outlet property="sliderView" destination="YpE-DO-VIC" id="yel-Er-zAa"/>
                 <outlet property="view" destination="0Xp-Oc-rwh" id="7hW-uN-jtS"/>
             </connections>
@@ -45,7 +46,7 @@
                     <rect key="frame" x="32" y="69" width="296" height="52"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxk-2b-ehz">
@@ -60,9 +61,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqS-4Y-Qcq">
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rp 0,00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqS-4Y-Qcq">
                     <rect key="frame" x="32" y="276" width="296" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
