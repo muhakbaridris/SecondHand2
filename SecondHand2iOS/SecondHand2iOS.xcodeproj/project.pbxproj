@@ -26,6 +26,7 @@
 		315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F738828592AD0009F3511 /* RegisterViewController.storyboard */; };
 		315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738A28592FBD009F3511 /* UbahAkunViewController.swift */; };
 		315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738F28599448009F3511 /* UIViewController+Extension.swift */; };
+		316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 316FF1252860832B0088768D /* GoogleService-Info.plist */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
 		318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB14628576B33003EB9B1 /* HomeViewController.swift */; };
 		318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */; };
@@ -57,6 +58,8 @@
 		A487A1282869669700E29A33 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A1272869669700E29A33 /* PresentationController.swift */; };
 		A487A12A2869679B00E29A33 /* OverlayBuyerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A487A1292869679B00E29A33 /* OverlayBuyerView.xib */; };
 		A487A12C286967FE00E29A33 /* OverlayBuyerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A12B286967FE00E29A33 /* OverlayBuyerView.swift */; };
+		A444A3E0285CAA3600307326 /* Seller18ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3DF285CAA3600307326 /* Seller18ViewController.swift */; };
+		A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */; };
 		A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */; };
 		A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A1ED3428651E7100633689 /* BuyerViewController.swift */; };
 		A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */; };
@@ -105,6 +108,7 @@
 		315F738828592AD0009F3511 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		315F738A28592FBD009F3511 /* UbahAkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahAkunViewController.swift; sourceTree = "<group>"; };
 		315F738F28599448009F3511 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		316FF1252860832B0088768D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		318CB14628576B33003EB9B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotifikasiTableViewController.storyboard; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		A487A1272869669700E29A33 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		A487A1292869679B00E29A33 /* OverlayBuyerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayBuyerView.xib; sourceTree = "<group>"; };
 		A487A12B286967FE00E29A33 /* OverlayBuyerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayBuyerView.swift; sourceTree = "<group>"; };
+		A444A3DF285CAA3600307326 /* Seller18ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seller18ViewController.swift; sourceTree = "<group>"; };
+		A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCollectionCell.swift; sourceTree = "<group>"; };
 		A4A1ED3428651E7100633689 /* BuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerViewController.swift; sourceTree = "<group>"; };
 		A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyerViewController.storyboard; sourceTree = "<group>"; };
@@ -292,6 +298,7 @@
 		3159B0B02856579400E19F52 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				316FF1252860832B0088768D /* GoogleService-Info.plist */,
 				310AA2EB2856541E0066F90D /* Info.plist */,
 				310AA2E62856541E0066F90D /* Assets.xcassets */,
 			);
@@ -357,8 +364,10 @@
 		318CB14C28577138003EB9B1 /* Jual */ = {
 			isa = PBXGroup;
 			children = (
+				A444A3E7285F4E5C00307326 /* Cell */,
 				318CB14D2857714D003EB9B1 /* JualViewController.storyboard */,
 				318CB14F285771A2003EB9B1 /* JualViewController.swift */,
+				A444A3DF285CAA3600307326 /* Seller18ViewController.swift */,
 			);
 			path = Jual;
 			sourceTree = "<group>";
@@ -507,6 +516,14 @@
 			path = InfoPenawarCell;
 			sourceTree = "<group>";
 		};
+		A444A3E7285F4E5C00307326 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,6 +640,7 @@
 				315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */,
 				A44DC0222869846F00CD4053 /* OverlayPenawarView.xib in Resources */,
 				318CB153285775D7003EB9B1 /* DaftarJualViewController.storyboard in Resources */,
+				316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */,
 				31F8DE012861FB7300843B3F /* InfoPenawarViewController.storyboard in Resources */,
 				318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */,
 				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
@@ -769,6 +787,7 @@
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
+				A444A3E0285CAA3600307326 /* Seller18ViewController.swift in Sources */,
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
 				A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */,
@@ -792,6 +811,7 @@
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
 				5915E675285C946D00208372 /* CustomView.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
+				A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */,
 				5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1037,7 +1057,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1061,7 +1081,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ulfras.SecondHand2iOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

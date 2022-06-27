@@ -4,6 +4,7 @@ use_frameworks!
 target 'SecondHand2iOS' do
   pod 'IQKeyboardManagerSwift'
   pod 'DropDown'
+  pod 'Firebase/RemoteConfig'
   pod 'IBAnimatable'
   pod 'Alamofire'
 
