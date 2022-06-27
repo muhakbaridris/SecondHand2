@@ -15,6 +15,7 @@ struct Product {
 }
 
 final class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
             return carouselButton.count
@@ -47,24 +48,28 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     var lastIndexActive:IndexPath = [1 ,0]
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.collectionView {
+            if self.lastIndexActive != indexPath {
+                let cell = collectionView.cellForItem(at: indexPath) as! HomeCollectionViewCell
+                cell.nameCell.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cell.viewCell.backgroundColor = UIColor(named: "Purple4")
+                cell.viewCell.layer.masksToBounds = true
 
-        if self.lastIndexActive != indexPath {
-
-            // change here
-        let cell = collectionView.cellForItem(at: indexPath) as! HomeCollectionViewCell
-        cell.nameCell.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.viewCell.backgroundColor = UIColor(named: "Purple4")
-        cell.viewCell.layer.masksToBounds = true
-
-        let cell1 = collectionView.cellForItem(at: self.lastIndexActive) as? HomeCollectionViewCell
-        cell1?.nameCell.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cell1?.viewCell.backgroundColor = UIColor(named: "PurpleHalf")
-        cell1?.viewCell.layer.masksToBounds = true
-        self.lastIndexActive = indexPath
-
+                let cell1 = collectionView.cellForItem(at: self.lastIndexActive) as? HomeCollectionViewCell
+                cell1?.nameCell.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                cell1?.viewCell.backgroundColor = UIColor(named: "PurpleHalf")
+                cell1?.viewCell.layer.masksToBounds = true
+                self.lastIndexActive = indexPath
+            }
+        }else{
+            let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController")
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
+    private func open(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     
     @IBOutlet weak var textLabelKategori: UILabel!
     @IBOutlet weak var headlineLabel: UILabel!
@@ -93,11 +98,18 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         
         collectionView.delegate = self
         collectionViewB.delegate = self
+//        collectionViewB.reloadData()
     }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 156, height: 210)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 156, height: 210)
-    }
+
+            return CGSize(width: collectionView.frame.size.width/1, height: collectionView.frame.size.height/1)
+
+        }
 }

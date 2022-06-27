@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yfX-4a-iAN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fNC-A8-bZH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,21 +20,23 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="zVF-ak-W4K">
+        <!--Item-->
+        <scene sceneID="U8J-Rd-NYb">
             <objects>
-                <navigationController id="yfX-4a-iAN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tFw-8u-77z">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPt-nS-Jf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="fNC-A8-bZH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wGg-KF-tSp"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CGc-7M-TMx">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="2Po-bs-EFz"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="nOs-Sg-bul"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qoM-Bp-QK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-715" y="-1713"/>
+            <point key="canvasLocation" x="-780" y="-1713"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="s0d-6b-0kx">
@@ -178,7 +180,7 @@
                                 <rect key="frame" x="0.0" y="384" width="390" height="426"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91K-ZK-R4W">
-                                    <size key="itemSize" width="151" height="235"/>
+                                    <size key="itemSize" width="156" height="210"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -273,7 +275,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="zDU-K6-lA6">
                         <imageReference key="image" image="homekit" catalog="system" symbolScale="default"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="H5y-2A-hZw"/>
+                    <navigationItem key="navigationItem" id="eyu-eH-dwK"/>
                     <connections>
                         <outlet property="collectionView" destination="n91-af-LwL" id="U9r-VY-Qje"/>
                         <outlet property="collectionViewB" destination="FvQ-Pm-83Z" id="O5Q-7v-IFh"/>
