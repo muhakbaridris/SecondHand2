@@ -1,4 +1,4 @@
-module Pods_SecondHand2iOS {
+framework module Pods_SecondHand2iOS {
   umbrella header "Pods-SecondHand2iOS-umbrella.h"
 
   export *

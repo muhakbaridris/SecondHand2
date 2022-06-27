@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16B7DEE2A3D5B8ECA1465BAF /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */; };
+		209BB31C060740785998EC21 /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D1DBAFE848CF31370A992B /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework */; };
+		216AA476AD2489E52D36C2E3 /* Pods_SecondHand2iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD06DFA0798F06DD0D9DF417 /* Pods_SecondHand2iOS.framework */; };
 		310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2DD2856541B0066F90D /* AppDelegate.swift */; };
 		310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2DF2856541B0066F90D /* SceneDelegate.swift */; };
 		310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2E12856541B0066F90D /* TabBarMainViewController.swift */; };
@@ -37,13 +38,18 @@
 		318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15928577789003EB9B1 /* AkunViewController.swift */; };
 		31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */; };
 		31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A54232285C08820073CCDA /* SHLoginResponseModel.swift */; };
-		31B2CA11286127F500C8213B /* SHRegisUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2CA10286127F500C8213B /* SHRegisUpdateResponseModel.swift */; };
+		31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */; };
 		31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8DDFE2861FB4700843B3F /* InfoPenawarViewController.swift */; };
 		31F8DE012861FB7300843B3F /* InfoPenawarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F8DE002861FB7300843B3F /* InfoPenawarViewController.storyboard */; };
-		349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */; };
+		31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8DE022862AC7800843B3F /* SHUpdateResponseModel.swift */; };
+		31F8DE052862BC2300843B3F /* SHUserDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8DE042862BC2300843B3F /* SHUserDataResponseModel.swift */; };
+		57B3C8A1E951A827DA80BAF6 /* Pods_SecondHand2iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9F4BA413F4AD2DFD61F710 /* Pods_SecondHand2iOSTests.framework */; };
 		5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E6362859C28000208372 /* NotificationTableViewCell.swift */; };
 		5915E6392859C28000208372 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E6372859C28000208372 /* NotificationTableViewCell.xib */; };
-		5915E63B2859C7AD00208372 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 5915E63A2859C7AD00208372 /* Assets */; };
+		5915E66C285B1C7100208372 /* DaftarJualTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5915E66A285B1C7100208372 /* DaftarJualTableViewCell.xib */; };
+		5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E66B285B1C7100208372 /* DaftarJualTableViewCell.swift */; };
+		5915E675285C946D00208372 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E674285C946D00208372 /* CustomView.swift */; };
+		5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */; };
 		A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4418CA3285A9EF3003EE4A2 /* HomeCollectionViewCell.swift */; };
 		A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */; };
 		A44DC0222869846F00CD4053 /* OverlayPenawarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */; };
@@ -77,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24D1DBAFE848CF31370A992B /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOS_SecondHand2iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		310AA2DA2856541B0066F90D /* SecondHand2iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondHand2iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		310AA2DD2856541B0066F90D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		310AA2DF2856541B0066F90D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,16 +117,21 @@
 		318CB15928577789003EB9B1 /* AkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunViewController.swift; sourceTree = "<group>"; };
 		31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAuthAPI.swift; sourceTree = "<group>"; };
 		31A54232285C08820073CCDA /* SHLoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLoginResponseModel.swift; sourceTree = "<group>"; };
-		31B2CA10286127F500C8213B /* SHRegisUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRegisUpdateResponseModel.swift; sourceTree = "<group>"; };
+		31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRegisterResponseModel.swift; sourceTree = "<group>"; };
 		31F8DDFE2861FB4700843B3F /* InfoPenawarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPenawarViewController.swift; sourceTree = "<group>"; };
 		31F8DE002861FB7300843B3F /* InfoPenawarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoPenawarViewController.storyboard; sourceTree = "<group>"; };
+		31F8DE022862AC7800843B3F /* SHUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHUpdateResponseModel.swift; sourceTree = "<group>"; };
+		31F8DE042862BC2300843B3F /* SHUserDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHUserDataResponseModel.swift; sourceTree = "<group>"; };
 		501FC04F10D1FF3B5B23673C /* Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5915E6362859C28000208372 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		5915E6372859C28000208372 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		5915E63A2859C7AD00208372 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = SecondHand2iOS/Assets; sourceTree = "<group>"; };
+		5915E66A285B1C7100208372 /* DaftarJualTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaftarJualTableViewCell.xib; sourceTree = "<group>"; };
+		5915E66B285B1C7100208372 /* DaftarJualTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaftarJualTableViewCell.swift; sourceTree = "<group>"; };
+		5915E674285C946D00208372 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarJualCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B9F4BA413F4AD2DFD61F710 /* Pods_SecondHand2iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS-SecondHand2iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4418CA3285A9EF3003EE4A2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPenawarView.swift; sourceTree = "<group>"; };
 		A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayPenawarView.xib; sourceTree = "<group>"; };
@@ -132,7 +144,7 @@
 		A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyerViewController.storyboard; sourceTree = "<group>"; };
 		A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataTableViewCell.swift; sourceTree = "<group>"; };
 		A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDataTableViewCell.xib; sourceTree = "<group>"; };
-		AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SecondHand2iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD06DFA0798F06DD0D9DF417 /* Pods_SecondHand2iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD978846B0F4B7E3BCF7F5B8 /* Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349F5CAB6672991DFBC9D373 /* libPods-SecondHand2iOS.a in Frameworks */,
+				216AA476AD2489E52D36C2E3 /* Pods_SecondHand2iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */,
+				57B3C8A1E951A827DA80BAF6 /* Pods_SecondHand2iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16B7DEE2A3D5B8ECA1465BAF /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a in Frameworks */,
+				209BB31C060740785998EC21 /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,8 +366,12 @@
 		318CB151285775BE003EB9B1 /* DaftarJual */ = {
 			isa = PBXGroup;
 			children = (
+				5915E66B285B1C7100208372 /* DaftarJualTableViewCell.swift */,
+				5915E66A285B1C7100208372 /* DaftarJualTableViewCell.xib */,
 				318CB152285775D7003EB9B1 /* DaftarJualViewController.storyboard */,
 				318CB15428577625003EB9B1 /* DaftarJualViewController.swift */,
+				5915E674285C946D00208372 /* CustomView.swift */,
+				5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */,
 			);
 			path = DaftarJual;
 			sourceTree = "<group>";
@@ -399,7 +415,9 @@
 			isa = PBXGroup;
 			children = (
 				31A54232285C08820073CCDA /* SHLoginResponseModel.swift */,
-				31B2CA10286127F500C8213B /* SHRegisUpdateResponseModel.swift */,
+				31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */,
+				31F8DE022862AC7800843B3F /* SHUpdateResponseModel.swift */,
+				31F8DE042862BC2300843B3F /* SHUserDataResponseModel.swift */,
 			);
 			path = AuthModel;
 			sourceTree = "<group>";
@@ -426,9 +444,9 @@
 		4F8E39B775F15C0131CA66F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA04E30F7F3E37B77359C364 /* libPods-SecondHand2iOS.a */,
-				86F966E8F3656082069C9586 /* libPods-SecondHand2iOS-SecondHand2iOSUITests.a */,
-				85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */,
+				AD06DFA0798F06DD0D9DF417 /* Pods_SecondHand2iOS.framework */,
+				24D1DBAFE848CF31370A992B /* Pods_SecondHand2iOS_SecondHand2iOSUITests.framework */,
+				6B9F4BA413F4AD2DFD61F710 /* Pods_SecondHand2iOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -500,7 +518,7 @@
 				310AA2D62856541B0066F90D /* Sources */,
 				310AA2D72856541B0066F90D /* Frameworks */,
 				310AA2D82856541B0066F90D /* Resources */,
-				D51E361CE4F3D676861EE7B0 /* [CP] Copy Pods Resources */,
+				BDC462B959D9448E926579F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -538,7 +556,7 @@
 				310AA2F62856541E0066F90D /* Sources */,
 				310AA2F72856541E0066F90D /* Frameworks */,
 				310AA2F82856541E0066F90D /* Resources */,
-				AC60534E1FD503F605B8DBED /* [CP] Copy Pods Resources */,
+				DF7475FE8285BE5E8F22CBD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -599,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				315F73822859206D009F3511 /* LoginViewController.storyboard in Resources */,
+				5915E66C285B1C7100208372 /* DaftarJualTableViewCell.xib in Resources */,
 				318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */,
 				A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */,
 				315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */,
@@ -679,21 +698,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC60534E1FD503F605B8DBED /* [CP] Copy Pods Resources */ = {
+		BDC462B959D9448E926579F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C5BC556C0ACA99B0BACCCE38 /* [CP] Check Pods Manifest.lock */ = {
@@ -718,21 +737,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D51E361CE4F3D676861EE7B0 /* [CP] Copy Pods Resources */ = {
+		DF7475FE8285BE5E8F22CBD1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecondHand2iOS-SecondHand2iOSUITests/Pods-SecondHand2iOS-SecondHand2iOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -743,7 +762,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */,
+				31F8DE052862BC2300843B3F /* SHUserDataResponseModel.swift in Sources */,
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
+				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
@@ -751,14 +772,15 @@
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
 				A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */,
+				31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */,
 				A487A1282869669700E29A33 /* PresentationController.swift in Sources */,
-				31B2CA11286127F500C8213B /* SHRegisUpdateResponseModel.swift in Sources */,
 				A487A10F2869274200E29A33 /* BuyerCollectionViewCell.swift in Sources */,
 				A487A12C286967FE00E29A33 /* OverlayBuyerView.swift in Sources */,
 				A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */,
 				314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */,
 				A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */,
 				31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */,
+				31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */,
 				A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */,
 				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
@@ -768,7 +790,9 @@
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
 				315F738428592078009F3511 /* LoginViewController.swift in Sources */,
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
+				5915E675285C946D00208372 /* CustomView.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
+				5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
