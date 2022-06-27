@@ -14,21 +14,24 @@ final class InfoPenawarViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var cardBgView: UIView!
     @IBOutlet weak var namaPembeli: UILabel!
     @IBOutlet weak var kotaPembeli: UILabel!
-    @IBOutlet weak var justLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
         configureShadow(view: cardBgView)
         namaPembeli?.text = "Nama Pembeli"
         kotaPembeli?.text = "Kota"
-        justLabel?.text = "Daftar Produkmu yang Ditawar"
         tableView.register(UINib.init(nibName:"ProductDataTableViewCell" , bundle: nil), forCellReuseIdentifier: "ProductDataTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         configureProducts()
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 191
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

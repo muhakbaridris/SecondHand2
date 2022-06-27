@@ -8,13 +8,19 @@
 import UIKit
 
 final class OverlayPenawarView: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        topSliderOutlet.clipsToBounds = true
+        topSliderOutlet.layer.cornerRadius = 5
+        kirim.layer.cornerRadius = 16
+        
     }
     
     var flag = false
     var flag1 = false
     
+    @IBOutlet weak var topSliderOutlet: UIView!
     @IBOutlet var kirim: UIButton!
     @IBOutlet var berhasil: UIButton!
     @IBOutlet var batalkan: UIButton!

@@ -15,7 +15,7 @@
                 <outlet property="borderView" destination="uqS-4Y-Qcq" id="2FD-Hk-3Qx"/>
                 <outlet property="btnSend" destination="LcB-cM-gfb" id="MqX-0f-vNe"/>
                 <outlet property="priceView" destination="uqS-4Y-Qcq" id="HYG-7p-rHV"/>
-                <outlet property="sliderView" destination="YpE-DO-VIC" id="yel-Er-zAa"/>
+                <outlet property="topSliderOutlet" destination="YpE-DO-VIC" id="b2a-ym-uRb"/>
                 <outlet property="view" destination="0Xp-Oc-rwh" id="7hW-uN-jtS"/>
             </connections>
         </placeholder>

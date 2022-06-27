@@ -193,8 +193,8 @@
 		310AA2DC2856541B0066F90D /* SecondHand2iOS */ = {
 			isa = PBXGroup;
 			children = (
-				31A5422B285BD04C0073CCDA /* DataLayer */,
 				3159B0AF2856576900E19F52 /* App */,
+				31A5422B285BD04C0073CCDA /* DataLayer */,
 				3159B0AE2856573800E19F52 /* PresentationLayer */,
 				3159B0B02856579400E19F52 /* Resource */,
 				310AA30D285654370066F90D /* Utility */,
@@ -239,6 +239,15 @@
 				B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		31100F3E2869EEEE0001D823 /* NotifikasiCell */ = {
+			isa = PBXGroup;
+			children = (
+				5915E6362859C28000208372 /* NotificationTableViewCell.swift */,
+				5915E6372859C28000208372 /* NotificationTableViewCell.xib */,
+			);
+			path = NotifikasiCell;
 			sourceTree = "<group>";
 		};
 		3159B0AE2856573800E19F52 /* PresentationLayer */ = {
@@ -326,10 +335,9 @@
 		318CB14328576AC7003EB9B1 /* Notifikasi */ = {
 			isa = PBXGroup;
 			children = (
-				5915E6362859C28000208372 /* NotificationTableViewCell.swift */,
-				5915E6372859C28000208372 /* NotificationTableViewCell.xib */,
 				318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */,
 				318CB14A28576E15003EB9B1 /* NotifikasiTableViewController.swift */,
+				31100F3E2869EEEE0001D823 /* NotifikasiCell */,
 			);
 			path = Notifikasi;
 			sourceTree = "<group>";
@@ -407,8 +415,8 @@
 		31F8DDFD2861FB2600843B3F /* InfoPenawar */ = {
 			isa = PBXGroup;
 			children = (
-				A44DC01E2869844A00CD4053 /* Half Presentation */,
-				A4C72B852863372700F67AE8 /* Cell */,
+				A44DC01E2869844A00CD4053 /* OverlayPenawar */,
+				A4C72B852863372700F67AE8 /* InfoPenawarCell */,
 				31F8DDFE2861FB4700843B3F /* InfoPenawarViewController.swift */,
 				31F8DE002861FB7300843B3F /* InfoPenawarViewController.storyboard */,
 			);
@@ -434,13 +442,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A44DC01E2869844A00CD4053 /* Half Presentation */ = {
+		A44DC01E2869844A00CD4053 /* OverlayPenawar */ = {
 			isa = PBXGroup;
 			children = (
 				A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */,
 				A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */,
 			);
-			path = "Half Presentation";
+			path = OverlayPenawar;
 			sourceTree = "<group>";
 		};
 		A487A10D2869271B00E29A33 /* Cell */ = {
@@ -451,20 +459,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A487A1262869656500E29A33 /* Half Presentation */ = {
+		A487A1262869656500E29A33 /* OverlayBuyer */ = {
 			isa = PBXGroup;
 			children = (
 				A487A1272869669700E29A33 /* PresentationController.swift */,
 				A487A1292869679B00E29A33 /* OverlayBuyerView.xib */,
 				A487A12B286967FE00E29A33 /* OverlayBuyerView.swift */,
 			);
-			path = "Half Presentation";
+			path = OverlayBuyer;
 			sourceTree = "<group>";
 		};
 		A4A1ED3328651DD900633689 /* Buyer */ = {
 			isa = PBXGroup;
 			children = (
-				A487A1262869656500E29A33 /* Half Presentation */,
+				A487A1262869656500E29A33 /* OverlayBuyer */,
 				A487A10D2869271B00E29A33 /* Cell */,
 				A4A1ED3428651E7100633689 /* BuyerViewController.swift */,
 				A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */,
@@ -472,13 +480,13 @@
 			path = Buyer;
 			sourceTree = "<group>";
 		};
-		A4C72B852863372700F67AE8 /* Cell */ = {
+		A4C72B852863372700F67AE8 /* InfoPenawarCell */ = {
 			isa = PBXGroup;
 			children = (
 				A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */,
 				A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */,
 			);
-			path = Cell;
+			path = InfoPenawarCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
