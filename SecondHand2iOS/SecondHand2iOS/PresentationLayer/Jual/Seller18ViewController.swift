@@ -12,26 +12,29 @@ final class Seller18ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var terbitkanButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var productView: UIView!
+    @IBOutlet weak var deskripsiView: UIView!
+    @IBOutlet weak var penjualView: UIView!
     
     var currentPage = 0
-    var arrBannerImage: [String] = ["BannerImage", "AppIcon", "BannerImage", "BannerImage"]
+    var arrBannerImage: [String] = ["AppIcon", "AppIcon", "AppIcon", "AppIcon"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControl?.currentPage = 0
-        pageControl?.numberOfPages = arrBannerImage.count
         terbitkanButton.clipsToBounds = true
-        terbitkanButton.backgroundColor = UIColor(named: "Purple4")
         terbitkanButton.layer.cornerRadius = 16
+        configureView(view: productView)
+        configureView(view: deskripsiView)
+        configureView(view: penjualView)
     }
 }
 
 extension Seller18ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(arrBannerImage.count)
         return arrBannerImage.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerImageCollectionViewCell", for: indexPath) as! BannerImageCollectionViewCell
@@ -48,11 +51,20 @@ extension Seller18ViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+    private func configureView(view: UIView!){
+        view.clipsToBounds = true
+        view.backgroundColor = UIColor.white
+        view.layer.cornerRadius = 16
+        view.layer.shadowOffset = CGSize.zero
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowRadius = 4
+        view.layer.shadowOpacity = 0.15
+        view.layer.masksToBounds = false
+    }
 }
 
 extension Seller18ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 420, height: 330)
+        return CGSize(width: 420, height: 476)
     }
 }

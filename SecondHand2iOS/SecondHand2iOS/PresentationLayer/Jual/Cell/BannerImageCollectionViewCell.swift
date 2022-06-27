@@ -9,7 +9,6 @@ import UIKit
 
 class BannerImageCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var indicatorDot: UIPageControl!
     @IBOutlet weak var bannerImage: UIImageView!
     
 }

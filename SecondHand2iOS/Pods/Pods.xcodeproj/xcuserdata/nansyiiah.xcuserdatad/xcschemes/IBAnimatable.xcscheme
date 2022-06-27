@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6396C4AEC3E957AC8702ACF5934B970F"
-               BuildableName = "libIBAnimatable.a"
+               BuildableName = "IBAnimatable.framework"
                BlueprintName = "IBAnimatable"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
