@@ -62,20 +62,10 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 self.lastIndexActive = indexPath
             }
         }else{
-            print(indexPath.row)
-            let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController") as! BuyerViewController
-
+            let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController")
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let cell = sender as? UICollectionViewCell, let indexPath = self.collectionViewB.indexPath(for: cell) {
-//            let vc = segue.destination as! BuyerViewController
-//            let getProducts = products[indexPath.row]
-//            vc.title = getProducts.productName as String
-//        }
-//    }
     
     private func open(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
@@ -122,9 +112,4 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.size.width/1, height: collectionView.frame.size.height/1)
 
         }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//           let cellsize = CGSize(width: (collectionViewB.bounds.size.width/2) - 12, height:(collectionViewB.bounds.size.height/3) - 20)
-//           return cellsize
-//       }
 }

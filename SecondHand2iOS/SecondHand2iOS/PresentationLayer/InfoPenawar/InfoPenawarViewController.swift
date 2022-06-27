@@ -21,9 +21,9 @@ final class InfoPenawarViewController: UIViewController, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureShadow(view: cardBgView)
-        namaPembeli.text = "Nama Pembeli"
-        kotaPembeli.text = "Kota"
-        justLabel.text = "Daftar Produkmu yang Ditawar"
+        namaPembeli?.text = "Nama Pembeli"
+        kotaPembeli?.text = "Kota"
+        justLabel?.text = "Daftar Produkmu yang Ditawar"
         tableView.register(UINib.init(nibName:"ProductDataTableViewCell" , bundle: nil), forCellReuseIdentifier: "ProductDataTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,7 +52,7 @@ final class InfoPenawarViewController: UIViewController, UITableViewDataSource, 
         return cell
     }
     
-    func configureShadow(view: UIView) {
+    private func configureShadow(view: UIView) {
         view.layer.cornerRadius = 16
         view.layer.shadowOffset = CGSize.zero
         view.layer.shadowOpacity = 0.15
