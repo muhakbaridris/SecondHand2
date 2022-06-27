@@ -24,8 +24,6 @@ final class NotifikasiTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        judul.font = UIFont(name: "Poppins-ExtraBold.ttf", size: 40)
-        
         notificationTableView.register(UINib.init(nibName:"NotificationTableViewCell" , bundle: nil), forCellReuseIdentifier: "NotificationTableViewCell")
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
