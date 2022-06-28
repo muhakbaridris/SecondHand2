@@ -37,7 +37,7 @@ final class JualViewController: UIViewController {
     
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "JualViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? Seller18ViewController else {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? PreviewJualViewController else {
             return
         }
         navigationController?.pushViewController(viewController, animated: true)

@@ -52,20 +52,19 @@
 		5915E675285C946D00208372 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E674285C946D00208372 /* CustomView.swift */; };
 		5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915E67628646AB100208372 /* DaftarJualCollectionViewCell.swift */; };
 		A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4418CA3285A9EF3003EE4A2 /* HomeCollectionViewCell.swift */; };
+		A444A3E0285CAA3600307326 /* PreviewJualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3DF285CAA3600307326 /* PreviewJualViewController.swift */; };
+		A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */; };
 		A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */; };
 		A44DC0222869846F00CD4053 /* OverlayPenawarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */; };
 		A487A10F2869274200E29A33 /* BuyerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A10E2869274200E29A33 /* BuyerCollectionViewCell.swift */; };
 		A487A1282869669700E29A33 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A1272869669700E29A33 /* PresentationController.swift */; };
 		A487A12A2869679B00E29A33 /* OverlayBuyerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A487A1292869679B00E29A33 /* OverlayBuyerView.xib */; };
 		A487A12C286967FE00E29A33 /* OverlayBuyerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A12B286967FE00E29A33 /* OverlayBuyerView.swift */; };
-		A444A3E0285CAA3600307326 /* Seller18ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3DF285CAA3600307326 /* Seller18ViewController.swift */; };
-		A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */; };
 		A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */; };
 		A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A1ED3428651E7100633689 /* BuyerViewController.swift */; };
 		A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */; };
 		A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */; };
 		A4C72B8B2863384C00F67AE8 /* ProductDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */; };
-		B81BD4DDA89132FC3F1D5773 /* libPods-SecondHand2iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85124B3E6DC189885E6E92DE /* libPods-SecondHand2iOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,14 +136,14 @@
 		6B9F4BA413F4AD2DFD61F710 /* Pods_SecondHand2iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		796B8C3869D4CB05B18590CF /* Pods-SecondHand2iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4418CA3285A9EF3003EE4A2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A444A3DF285CAA3600307326 /* PreviewJualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewJualViewController.swift; sourceTree = "<group>"; };
+		A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPenawarView.swift; sourceTree = "<group>"; };
 		A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayPenawarView.xib; sourceTree = "<group>"; };
 		A487A10E2869274200E29A33 /* BuyerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerCollectionViewCell.swift; sourceTree = "<group>"; };
 		A487A1272869669700E29A33 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		A487A1292869679B00E29A33 /* OverlayBuyerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayBuyerView.xib; sourceTree = "<group>"; };
 		A487A12B286967FE00E29A33 /* OverlayBuyerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayBuyerView.swift; sourceTree = "<group>"; };
-		A444A3DF285CAA3600307326 /* Seller18ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seller18ViewController.swift; sourceTree = "<group>"; };
-		A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCollectionCell.swift; sourceTree = "<group>"; };
 		A4A1ED3428651E7100633689 /* BuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerViewController.swift; sourceTree = "<group>"; };
 		A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyerViewController.storyboard; sourceTree = "<group>"; };
@@ -367,7 +366,7 @@
 				A444A3E7285F4E5C00307326 /* Cell */,
 				318CB14D2857714D003EB9B1 /* JualViewController.storyboard */,
 				318CB14F285771A2003EB9B1 /* JualViewController.swift */,
-				A444A3DF285CAA3600307326 /* Seller18ViewController.swift */,
+				A444A3DF285CAA3600307326 /* PreviewJualViewController.swift */,
 			);
 			path = Jual;
 			sourceTree = "<group>";
@@ -469,6 +468,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A444A3E7285F4E5C00307326 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A44DC01E2869844A00CD4053 /* OverlayPenawar */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,14 +521,6 @@
 				A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */,
 			);
 			path = InfoPenawarCell;
-			sourceTree = "<group>";
-		};
-		A444A3E7285F4E5C00307326 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -646,7 +645,6 @@
 				310AA2EA2856541E0066F90D /* LaunchScreen.storyboard in Resources */,
 				310AA2E72856541E0066F90D /* Assets.xcassets in Resources */,
 				A487A12A2869679B00E29A33 /* OverlayBuyerView.xib in Resources */,
-				5915E63B2859C7AD00208372 /* Assets in Resources */,
 				A4C72B8B2863384C00F67AE8 /* ProductDataTableViewCell.xib in Resources */,
 				310AA2E52856541B0066F90D /* TabBarMainViewController.storyboard in Resources */,
 				318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */,
@@ -787,7 +785,7 @@
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
-				A444A3E0285CAA3600307326 /* Seller18ViewController.swift in Sources */,
+				A444A3E0285CAA3600307326 /* PreviewJualViewController.swift in Sources */,
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
 				A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */,

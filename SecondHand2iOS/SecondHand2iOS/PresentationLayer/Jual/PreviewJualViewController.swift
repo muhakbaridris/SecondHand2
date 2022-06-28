@@ -1,5 +1,5 @@
 //
-//  Seller18ViewController.swift
+//  PreviewJualViewController.swift
 //  SecondHand2iOS
 //
 //  Created by Adrian K on 17/06/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class Seller18ViewController: UIViewController {
+final class PreviewJualViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var terbitkanButton: UIButton!
@@ -29,7 +29,7 @@ final class Seller18ViewController: UIViewController {
     }
 }
 
-extension Seller18ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension PreviewJualViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrBannerImage.count
@@ -63,7 +63,7 @@ extension Seller18ViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 }
 
-extension Seller18ViewController: UICollectionViewDelegateFlowLayout {
+extension PreviewJualViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 420, height: 476)
     }

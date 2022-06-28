@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         Thread.sleep(forTimeInterval: 0.75)
         IQKeyboardManager.shared.enable = true
+        UINavigationBar.appearance().tintColor = UIColor(named: "Purple4")
         return true
     }
 
