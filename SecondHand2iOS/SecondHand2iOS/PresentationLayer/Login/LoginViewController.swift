@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        buttonMasukOutlet.layer.cornerRadius = 5
+        buttonMasukOutlet.layer.cornerRadius = 16
         self.hideKeyboardWhenTappedAround() 
         self.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Purple4")

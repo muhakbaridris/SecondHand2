@@ -20,6 +20,7 @@
 		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
 		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
 		314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FDDFF285BCA790077CCC7 /* String+Extension.swift */; };
+		31582DED286C27BD00383FD6 /* RegisterFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */; };
 		315F73822859206D009F3511 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F73812859206D009F3511 /* LoginViewController.storyboard */; };
 		315F738428592078009F3511 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738328592078009F3511 /* LoginViewController.swift */; };
 		315F738728592A91009F3511 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738628592A91009F3511 /* RegisterViewController.swift */; };
@@ -101,6 +102,7 @@
 		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
 		314FDDFF285BCA790077CCC7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFullViewController.swift; sourceTree = "<group>"; };
 		315F73812859206D009F3511 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		315F738328592078009F3511 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		315F738628592A91009F3511 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				315F738828592AD0009F3511 /* RegisterViewController.storyboard */,
 				315F738628592A91009F3511 /* RegisterViewController.swift */,
+				31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
+				31582DED286C27BD00383FD6 /* RegisterFullViewController.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				A444A3E0285CAA3600307326 /* PreviewJualViewController.swift in Sources */,

@@ -20,7 +20,7 @@ final class RegisterViewController: UIViewController{
         self.hideKeyboardWhenTappedAround()
         self.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor(named: "Purple4")
-        buttonDaftarOutlet.layer.cornerRadius = 5
+        buttonDaftarOutlet.layer.cornerRadius = 16
         
     }
     
