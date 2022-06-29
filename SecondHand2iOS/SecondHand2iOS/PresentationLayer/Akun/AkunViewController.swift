@@ -17,20 +17,15 @@ final class AkunViewController: UIViewController{
         userImageOutlet.layer.cornerRadius = 20
         
     }
-    
+       
     @IBAction func buttonPengaturanTapIn(_ sender: Any) {
-        CustomToast.show(
-            message: "Fitur ini sedang dikembangkan",
-            bgColor: .red,
-            textColor: .white,
-            labelFont: .systemFont(ofSize: 18),
-            showIn: .bottom,
-            controller: self
-        )
+        print("tap")
+        let viewController = UIStoryboard(name: "PengaturanViewController", bundle: nil).instantiateViewController(withIdentifier: "PengaturanViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func buttonKeluarTapIn(_ sender: Any) {
-        
+        print("tap")
     }
     
     
