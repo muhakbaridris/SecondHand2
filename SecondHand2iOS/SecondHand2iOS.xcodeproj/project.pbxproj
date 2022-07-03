@@ -56,6 +56,9 @@
 		A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */; };
 		A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */; };
 		A44DC0222869846F00CD4053 /* OverlayPenawarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */; };
+		A465F17028714B3A0003772C /* SHBuyerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A465F16F28714B3A0003772C /* SHBuyerAPI.swift */; };
+		A465F17428714B4C0003772C /* SHProductDataIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A465F17228714B4C0003772C /* SHProductDataIdResponseModel.swift */; };
+		A465F17528714B4C0003772C /* SHProductDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A465F17328714B4C0003772C /* SHProductDataResponseModel.swift */; };
 		A487A10F2869274200E29A33 /* BuyerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A10E2869274200E29A33 /* BuyerCollectionViewCell.swift */; };
 		A487A1282869669700E29A33 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487A1272869669700E29A33 /* PresentationController.swift */; };
 		A487A12A2869679B00E29A33 /* OverlayBuyerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A487A1292869679B00E29A33 /* OverlayBuyerView.xib */; };
@@ -140,6 +143,9 @@
 		A444A3E8285F4E8800307326 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A44DC01F2869846200CD4053 /* OverlayPenawarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPenawarView.swift; sourceTree = "<group>"; };
 		A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayPenawarView.xib; sourceTree = "<group>"; };
+		A465F16F28714B3A0003772C /* SHBuyerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SHBuyerAPI.swift; path = "../../../../../CODING/Belajar-Swift/templatingAlamofire/Data Layer/API/SHBuyerAPI.swift"; sourceTree = "<group>"; };
+		A465F17228714B4C0003772C /* SHProductDataIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProductDataIdResponseModel.swift; sourceTree = "<group>"; };
+		A465F17328714B4C0003772C /* SHProductDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProductDataResponseModel.swift; sourceTree = "<group>"; };
 		A487A10E2869274200E29A33 /* BuyerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerCollectionViewCell.swift; sourceTree = "<group>"; };
 		A487A1272869669700E29A33 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		A487A1292869679B00E29A33 /* OverlayBuyerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayBuyerView.xib; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 		31A5422C285BD05D0073CCDA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A465F16F28714B3A0003772C /* SHBuyerAPI.swift */,
 				31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */,
 			);
 			path = API;
@@ -414,6 +421,7 @@
 		31A5422F285BD93A0073CCDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A465F17128714B4C0003772C /* BuyerModel */,
 				31B2CA1228612E4F00C8213B /* AuthModel */,
 			);
 			path = Model;
@@ -483,6 +491,16 @@
 				A44DC0212869846F00CD4053 /* OverlayPenawarView.xib */,
 			);
 			path = OverlayPenawar;
+			sourceTree = "<group>";
+		};
+		A465F17128714B4C0003772C /* BuyerModel */ = {
+			isa = PBXGroup;
+			children = (
+				A465F17228714B4C0003772C /* SHProductDataIdResponseModel.swift */,
+				A465F17328714B4C0003772C /* SHProductDataResponseModel.swift */,
+			);
+			name = BuyerModel;
+			path = "../../../../../CODING/Belajar-Swift/templatingAlamofire/Data Layer/Model/BuyerModel";
 			sourceTree = "<group>";
 		};
 		A487A10D2869271B00E29A33 /* Cell */ = {
@@ -785,6 +803,7 @@
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
+				A465F17428714B4C0003772C /* SHProductDataIdResponseModel.swift in Sources */,
 				A444A3E0285CAA3600307326 /* PreviewJualViewController.swift in Sources */,
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
@@ -792,12 +811,14 @@
 				31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */,
 				A487A1282869669700E29A33 /* PresentationController.swift in Sources */,
 				A487A10F2869274200E29A33 /* BuyerCollectionViewCell.swift in Sources */,
+				A465F17528714B4C0003772C /* SHProductDataResponseModel.swift in Sources */,
 				A487A12C286967FE00E29A33 /* OverlayBuyerView.swift in Sources */,
 				A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */,
 				314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */,
 				A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */,
 				31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */,
 				31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */,
+				A465F17028714B3A0003772C /* SHBuyerAPI.swift in Sources */,
 				A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */,
 				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
