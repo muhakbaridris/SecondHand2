@@ -46,9 +46,8 @@ final class LoginViewController: UIViewController{
             callAPI.loginUserSecondHand(login: loginData) { result in
                 switch result {
                 case let .success(data):
-                    print(data)
                     self.loginResponse.append(data)
-                    print("Hasilnya \(self.loginResponse)")
+//                    print("Hasilnya \(self.loginResponse)")
                 case let .failure(err):
                     print(err.localizedDescription)
                 }
