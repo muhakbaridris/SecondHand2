@@ -9,31 +9,16 @@ import LocalAuthentication
 import UIKit
 
 final class PengaturanViewController: UIViewController {
+    
+    @IBOutlet weak var switchButton: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+        switchButton.isOn =  UserDefaults.standard.bool(forKey: "switchState")
     }
     
-    @IBAction func authenticateUser(_ sender: Any) {
-       setBiometricAuth()
-    }
-    
-    func setBiometricAuth() {
-        let context:LAContext = LAContext()
-        if context.canEvaluatePolicy(
-            .deviceOwnerAuthenticationWithBiometrics,
-            error: nil) { context.evaluatePolicy (
-                LAPolicy.deviceOwnerAuthenticationWithBiometrics,
-                localizedReason: "Membutuhkan Face ID Kamu untuk login",
-                reply: { (wascorrect, error) in
-                    if wascorrect {
-                        print("Benar")
-                    } else {
-                        print("Salah")
-                    }
-                })
-        } else {
-            print("Tidak dapat mengakses otentikasi")
+    @IBAction func saveSwitchPressed(_ sender: UISwitch) {
+            UserDefaults.standard.set(sender.isOn, forKey: "switchState")
         }
-    }
 }
