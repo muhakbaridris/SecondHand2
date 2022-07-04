@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgn-7e-QbS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgn-7e-QbS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-796" y="68"/>
         </scene>
-        <!--Pengatuan-->
+        <!--Pengaturan-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="PengaturanViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PengaturanViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,73 +33,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keamanan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucs-Hq-XfB">
-                                <rect key="frame" x="20" y="95" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5gC-En-Tmc"/>
-                                    <constraint firstAttribute="width" constant="374" id="xqN-vs-lRj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-xY-oLm">
-                                <rect key="frame" x="20" y="170" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="BEK-yr-HX5"/>
-                                    <constraint firstAttribute="height" constant="21" id="m5X-Xh-5SS"/>
-                                </constraints>
-                                <string key="text">Jika diaktifkan, Anda memerlukan Face ID untuk membuka kunci SecondHand. Anda tetap mendapatkan notifikasi dan pemberitahuan jika SecondHand terkunci.</string>
-                                <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="9"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6A-A8-3C0">
-                                <rect key="frame" x="0.0" y="120" width="414" height="37"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="FWe-de-uPK"/>
+                                    <constraint firstAttribute="height" constant="40" id="FWe-de-uPK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pY-XF-CmU">
-                                <rect key="frame" x="347" y="123" width="49" height="31"/>
+                                <rect key="frame" x="345" y="134" width="51" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Ltw-6I-B2X"/>
-                                    <constraint firstAttribute="width" constant="47" id="jU6-XW-znq"/>
+                                    <constraint firstAttribute="width" constant="49" id="nrg-2b-MUE"/>
+                                    <constraint firstAttribute="height" constant="31" id="yJP-2K-0jK"/>
                                 </constraints>
                                 <connections>
                                     <action selector="authenticateUser:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1EL-T3-f25"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Face ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgY-1j-48O">
-                                <rect key="frame" x="20" y="128" width="307" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atur Face ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgY-1j-48O">
+                                <rect key="frame" x="20" y="140" width="84" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="S3S-7S-me2"/>
+                                    <constraint firstAttribute="height" constant="18" id="noP-GC-ad3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFI-xY-oLm">
+                                <rect key="frame" x="20" y="173" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cLa-HG-Z8h"/>
+                                    <constraint firstAttribute="width" constant="374" id="fJi-pL-jcb"/>
+                                </constraints>
+                                <string key="text">Jika diaktifkan, Anda memerlukan Face ID untuk membuka kunci SecondHand. Anda tetap mendapatkan notifikasi dan pemberitahuan jika SecondHand terkunci.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2pY-XF-CmU" firstAttribute="trailing" secondItem="ucs-Hq-XfB" secondAttribute="trailing" id="1aU-tJ-qlz"/>
-                            <constraint firstItem="2pY-XF-CmU" firstAttribute="leading" secondItem="HgY-1j-48O" secondAttribute="trailing" constant="20" id="7R4-92-1l0"/>
-                            <constraint firstItem="HgY-1j-48O" firstAttribute="leading" secondItem="ucs-Hq-XfB" secondAttribute="leading" id="8Ex-ej-Jtf"/>
+                            <constraint firstItem="2pY-XF-CmU" firstAttribute="leading" secondItem="HgY-1j-48O" secondAttribute="trailing" constant="241" id="7VD-PT-Mea"/>
                             <constraint firstItem="V6A-A8-3C0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DcL-eH-Be4"/>
-                            <constraint firstItem="ucs-Hq-XfB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hmv-jN-hA4"/>
                             <constraint firstItem="V6A-A8-3C0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MKY-Fc-xdp"/>
-                            <constraint firstItem="V6A-A8-3C0" firstAttribute="top" secondItem="ucs-Hq-XfB" secondAttribute="bottom" constant="4" id="WoK-JI-bt9"/>
-                            <constraint firstItem="AFI-xY-oLm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="YW6-Lz-CqY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2pY-XF-CmU" secondAttribute="trailing" constant="20" id="Mdj-K2-NL6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="V6A-A8-3C0" secondAttribute="trailing" id="Zjf-Yt-38s"/>
-                            <constraint firstItem="2pY-XF-CmU" firstAttribute="top" secondItem="ucs-Hq-XfB" secondAttribute="bottom" constant="7" id="lJI-gR-uqJ"/>
-                            <constraint firstItem="AFI-xY-oLm" firstAttribute="top" secondItem="2pY-XF-CmU" secondAttribute="bottom" constant="16" id="sQx-qx-gam"/>
-                            <constraint firstItem="HgY-1j-48O" firstAttribute="top" secondItem="ucs-Hq-XfB" secondAttribute="bottom" constant="12" id="u1Z-V3-dPB"/>
-                            <constraint firstItem="ucs-Hq-XfB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="zST-zp-e4P"/>
+                            <constraint firstItem="V6A-A8-3C0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="41" id="cF4-fd-GSM"/>
+                            <constraint firstItem="AFI-xY-oLm" firstAttribute="top" secondItem="V6A-A8-3C0" secondAttribute="bottom" constant="4" id="gcg-qo-ICv"/>
+                            <constraint firstItem="HgY-1j-48O" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="jSG-MD-wYy"/>
+                            <constraint firstItem="HgY-1j-48O" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="52" id="pzl-DJ-jns"/>
+                            <constraint firstItem="2pY-XF-CmU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="46" id="x4d-fz-NF0"/>
+                            <constraint firstItem="AFI-xY-oLm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xJi-46-Hyg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pengatuan" id="gk2-OQ-K08"/>
+                    <navigationItem key="navigationItem" title="Pengaturan" id="gk2-OQ-K08"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,8 +102,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
