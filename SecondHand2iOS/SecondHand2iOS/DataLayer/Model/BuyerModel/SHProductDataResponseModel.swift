@@ -11,12 +11,12 @@ import Foundation
 struct SHProductDataResponseModel: Decodable {
     let id: Int?
     let name: String?
-    let basePrice: Int?
-    let imageURL: String?
-    let imageName : String?
+    let base_price: Int?
+    let image_url: String?
+    let image_name : String?
     let location: String?
-    let userID: Int?
-//    let status: Status?
+    let user_id: Int?
+    let status: Status?
 //    let createdAt, updatedAt: String?
     let categories: [Category]?
 }
@@ -27,7 +27,7 @@ struct Category: Decodable {
     let name: String?
 }
 
-//enum Status: Decodable {
-//    case available
-//    case sold
-//}
+enum Status: String, Decodable {
+    case available = "available"
+    case sold = "sold"
+}

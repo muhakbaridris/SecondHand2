@@ -8,13 +8,14 @@
 import Foundation
 import Alamofire
 
-class SHBuyerAPI {
+class SHBuyerProductAPI {
     fileprivate var baseUrl = ""
     typealias productCallBack = (_ product:[SHProductDataResponseModel]?, _ status: Bool, _ message:String) -> Void
     var callBack:productCallBack?
     init(baseUrl: String) {
             self.baseUrl = baseUrl
         }
+    
     
     
     func getAllBuyerProduct(endPoint:String) {

@@ -10,46 +10,31 @@ import Foundation
 struct SHProductDataIdResponseModel: Codable {
     let id: Int
     let name: String
-    let productDescription: String?
-    let basePrice: Int
-    let imageURL, imageName: String?
+    let product_description: String?
+    let base_price: Int
+    let image_url, image_name: String?
     let location: String
-    let userID: Int
+    let user_id: Int
     let status: String?
     let createdAt, updatedAt: String
     let categories: [JSONAny]
-    let user: User
+//    let user: User
 
     enum CodingKeys: String, CodingKey {
         case id, name
-        case productDescription = "description"
-        case basePrice = "base_price"
-        case imageURL = "image_url"
-        case imageName = "image_name"
+        case product_description = "description"
+        case base_price = "base_price"
+        case image_url = "image_url"
+        case image_name = "image_name"
         case location
-        case userID = "user_id"
+        case user_id = "user_id"
         case status, createdAt, updatedAt
         case categories = "Categories"
-        case user = "User"
+//        case user = "User"
     }
 }
 
-// MARK: - User
-struct User: Codable {
-    let id: Int
-    let fullName, email, phoneNumber, address: String
-    let imageURL, city: String?
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case fullName = "full_name"
-        case email
-        case phoneNumber = "phone_number"
-        case address
-        case imageURL = "image_url"
-        case city
-    }
-}
 
 // MARK: - Encode/decode helpers
 
