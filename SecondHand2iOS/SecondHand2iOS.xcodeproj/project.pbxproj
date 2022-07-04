@@ -27,6 +27,7 @@
 		315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738A28592FBD009F3511 /* UbahAkunViewController.swift */; };
 		315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738F28599448009F3511 /* UIViewController+Extension.swift */; };
 		316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 316FF1252860832B0088768D /* GoogleService-Info.plist */; };
+		31785202287362A8000C92D7 /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31785201287362A8000C92D7 /* BiometricAuth.swift */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
 		318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB14628576B33003EB9B1 /* HomeViewController.swift */; };
 		318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */; };
@@ -110,6 +111,7 @@
 		315F738A28592FBD009F3511 /* UbahAkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahAkunViewController.swift; sourceTree = "<group>"; };
 		315F738F28599448009F3511 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		316FF1252860832B0088768D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31785201287362A8000C92D7 /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		318CB14628576B33003EB9B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotifikasiTableViewController.storyboard; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				315F738C28593A9E009F3511 /* Extension */,
 				310AA30E2856552D0066F90D /* CustomToast.swift */,
+				31785201287362A8000C92D7 /* BiometricAuth.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
+				31785202287362A8000C92D7 /* BiometricAuth.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				A444A3E0285CAA3600307326 /* PreviewJualViewController.swift in Sources */,
