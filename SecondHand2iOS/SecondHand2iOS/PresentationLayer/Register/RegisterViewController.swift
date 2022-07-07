@@ -49,14 +49,30 @@ final class RegisterViewController: UIViewController{
                              showIn: .bottom,
                              controller: self)
         } else {
-            callAPI.registerUserSecondHand(full_name: buatNamaTextFieldOutlet.text!,
-                                           email: buatEmailTextFieldOutlet.text!,
-                                           password: buatPasswordTextFieldOutlet.text!) { result in
+            let inputRegisterData = RegisterModelMini(full_name: buatNamaTextFieldOutlet.text!,
+                                                      email: buatEmailTextFieldOutlet.text!,
+                                                      password: buatPasswordTextFieldOutlet.text!)
+            callAPI.registerUserSecondHand(registerData: inputRegisterData) { result in
                 switch result {
-                case .success(let result):
-                    print(result)
+                case let .success(data):
+                    print("result \(data)")
+                    CustomToast.show(message: "Anda berhasil daftar, silahkan Login.",
+                                     bgColor: .systemGreen,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 case .failure(let err):
-                    print(err.localizedDescription)
+                    print("errornya \(err.localizedDescription)")
+                    CustomToast.show(message: "Email salah atau sudah terpakai.",
+                                     bgColor: .systemRed,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
                 }
             }
         }

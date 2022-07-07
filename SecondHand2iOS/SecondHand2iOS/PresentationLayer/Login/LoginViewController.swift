@@ -77,4 +77,8 @@ final class LoginViewController: UIViewController{
         
     }
     
+    @IBAction func halamanRegisterTapIn(_ sender: Any) {
+        let viewController = UIStoryboard(name: "RegisterViewController", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

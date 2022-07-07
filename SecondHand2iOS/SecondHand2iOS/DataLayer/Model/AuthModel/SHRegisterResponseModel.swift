@@ -27,9 +27,4 @@ struct RegisterResponseModel: Decodable {
     let id: Int
     let full_name: String
     let email: String
-    let password: String
-    let phone_number: String
-    let address: String
-    let image_url: String
-    let city: String
 }

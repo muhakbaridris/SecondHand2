@@ -172,7 +172,7 @@
         <!--Lengkapi Info Akun-->
         <scene sceneID="c01-8q-s39">
             <objects>
-                <viewController id="9d5-Nb-TDH" customClass="RegisterFullViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterFullViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9d5-Nb-TDH" customClass="RegisterFullViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8b-10-F3Y">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -12,13 +12,18 @@ final class AkunViewController: UIViewController{
     let callAPI = SHAuthAPI()
     var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
+    var access_token: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         userImageOutlet.layer.cornerRadius = 20
         
-        callAPI.getUserDataSecondHand(access_token: UserDefaults.standard.string(forKey: "access_token")!) { result in
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            access_token = UserDefaults.standard.string(forKey: "access_token")!
+            print(UserDefaults.standard.string(forKey: "access_token")!)
+        }
+        callAPI.getUserDataSecondHand(access_token: access_token) { result in
             switch result {
             case let .success(data):
                 self.userImageOutlet.loadImage(resource: data.image_url)
@@ -46,9 +51,11 @@ final class AkunViewController: UIViewController{
                          labelFont: .systemFont(ofSize: 17),
                          showIn: .bottom, controller: self)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(viewController, animated: true)
+            let viewController = UIStoryboard(name: "LoginViewController", bundle: nil)
+            let homePage = viewController.instantiateViewController(withIdentifier: "LoginViewController")
+            let navigation = UINavigationController(rootViewController: homePage)
+            navigation.modalPresentationStyle = .fullScreen
+            self.present(navigation, animated: true)
         }
     }
     
