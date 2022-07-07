@@ -17,6 +17,12 @@ struct RegisterModel: Codable {
     let city: String
 }
 
+struct RegisterModelMini: Codable {
+    let full_name: String
+    let email: String
+    let password: String
+}
+
 struct RegisterResponseModel: Decodable {
     let id: Int
     let full_name: String

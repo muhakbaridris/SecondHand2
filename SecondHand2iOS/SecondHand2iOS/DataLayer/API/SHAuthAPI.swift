@@ -29,6 +29,27 @@ class SHAuthAPI {
         }
     }
     
+    func registerUserSecondHand(full_name: String,
+                                email: String,
+                                password: String,
+                                completionHandler: @escaping (Result<RegisterResponseModel, AFError>) -> Void) {
+        let url = "https://market-final-project.herokuapp.com/auth/register"
+        let params: [String:String] = ["full_name":full_name,
+                                      "email":email,
+                                      "passowrd":password
+                                      ]
+        let headers: HTTPHeaders = [.accept("body"),
+                                    .contentType("multipart/form-data")]
+        AF.upload(multipartFormData: { multipartFormData in
+            //codehere
+        },
+                  to: url,
+                  method: .post,
+                  headers: headers).response { response in
+            //codehere
+        }
+    }
+    
     func getUserDataSecondHand(access_token: String,
                                completionHandler: @escaping (Result<UserDataResponseModel, AFError>) -> Void){
         let url = "https://market-final-project.herokuapp.com/auth/user"

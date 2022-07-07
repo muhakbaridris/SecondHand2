@@ -15,6 +15,8 @@ final class RegisterViewController: UIViewController{
     @IBOutlet weak var buttonShowPasswordOutlet: UIButton!
     @IBOutlet weak var buttonDaftarOutlet: UIButton!
     
+    let callAPI = SHAuthAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -40,16 +42,23 @@ final class RegisterViewController: UIViewController{
            buatEmailTextFieldOutlet.text?.isEmpty == true ||
            buatPasswordTextFieldOutlet.text?.isEmpty == true ||
            buatEmailTextFieldOutlet.text?.isValidEmail() == false {
-            CustomToast.show(message: "Lengkapi Data", bgColor: .systemRed, textColor: .white, labelFont: .systemFont(ofSize: 17), showIn: .bottom, controller: self)
+            CustomToast.show(message: "Lengkapi Data",
+                             bgColor: .systemRed,
+                             textColor: .white,
+                             labelFont: .systemFont(ofSize: 17),
+                             showIn: .bottom,
+                             controller: self)
         } else {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "RegisterViewController", bundle:nil)
-            let daftarLengkap = storyBoard.instantiateViewController(withIdentifier: "DaftarLengkap")
-            self.navigationController?.pushViewController(daftarLengkap, animated: true)
+            callAPI.registerUserSecondHand(full_name: buatNamaTextFieldOutlet.text!,
+                                           email: buatEmailTextFieldOutlet.text!,
+                                           password: buatPasswordTextFieldOutlet.text!) { result in
+                switch result {
+                case .success(let result):
+                    print(result)
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
         }
     }
-
-    @IBAction func keHalamanMasukTapIn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-        
 }
