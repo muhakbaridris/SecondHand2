@@ -111,6 +111,14 @@
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-on-tfh" userLabel="ButtonKategori">
+                                <rect key="frame" x="16" y="321" width="358" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                <connections>
+                                    <action selector="kategoriTextFieldTapIn:" destination="sIa-e4-t7F" eventType="touchUpInside" id="jDv-OK-HYX"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foto Produk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoq-wX-v1X">
                                 <rect key="frame" x="16" y="491" width="69" height="15"/>
                                 <constraints>
@@ -149,14 +157,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-on-tfh" userLabel="ButtonKategori">
-                                <rect key="frame" x="16" y="321" width="358" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" "/>
-                                <connections>
-                                    <action selector="kategoriTextFieldTapIn:" destination="sIa-e4-t7F" eventType="touchUpInside" id="jDv-OK-HYX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vdd-q2-gj7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

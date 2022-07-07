@@ -61,7 +61,7 @@
         <!--TabBarMainViewController-->
         <scene sceneID="Vxh-qe-caX">
             <objects>
-                <tabBarController title="TabBarMainViewController" id="eW4-E3-TCY" customClass="TabBarMainViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarMainViewController" title="TabBarMainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eW4-E3-TCY" customClass="TabBarMainViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QKu-RY-btz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

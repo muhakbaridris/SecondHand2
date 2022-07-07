@@ -14,6 +14,7 @@ import DropDown
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let biometricSetUp = BiometricAuth()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         Thread.sleep(forTimeInterval: 0.75)

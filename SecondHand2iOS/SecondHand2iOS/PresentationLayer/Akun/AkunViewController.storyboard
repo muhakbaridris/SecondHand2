@@ -236,10 +236,129 @@
                     <view key="view" contentMode="scaleToFill" id="xGI-D5-Flc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JWv-Yv-aQM">
+                                <rect key="frame" x="147" y="112" width="96" height="96"/>
+                                <color key="backgroundColor" name="Purple1"/>
+                                <color key="tintColor" name="PurpleHalf"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="1wc-1T-zal"/>
+                                    <constraint firstAttribute="height" constant="96" id="TP1-8v-Zf0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nt-Qy-zBa">
+                                <rect key="frame" x="16" y="232" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-Wn-iiy">
+                                <rect key="frame" x="16" y="257" width="358" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="aZq-2h-gri"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kota*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACE-uG-iot">
+                                <rect key="frame" x="16" y="321" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pilih Kota" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-e5-FjN">
+                                <rect key="frame" x="16" y="346" width="358" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="h7u-ci-N9G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alamat*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzg-sp-jVb">
+                                <rect key="frame" x="15.999999999999996" y="410" width="60.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQM-lp-50R">
+                                <rect key="frame" x="16" y="435" width="358" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="lze-Fi-vvy"/>
+                                </constraints>
+                                <string key="placeholder">Contoh: Jalan Ikan Hiu 33
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Handphone*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSn-MV-IIF">
+                                <rect key="frame" x="15.999999999999993" y="531" width="122.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Om-GL-jn3">
+                                <rect key="frame" x="16" y="556" width="358" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="BUx-fY-IT2"/>
+                                </constraints>
+                                <string key="placeholder">contoh: 08123456789
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3j-OG-HcV">
+                                <rect key="frame" x="16" y="738" width="358" height="48"/>
+                                <color key="backgroundColor" name="Purple4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="a4W-nz-gj9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SImpan"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lzF-ug-klq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ry-Wn-iiy" firstAttribute="top" secondItem="6Nt-Qy-zBa" secondAttribute="bottom" constant="4" id="7ET-oi-CBA"/>
+                            <constraint firstItem="X3j-OG-HcV" firstAttribute="centerX" secondItem="xGI-D5-Flc" secondAttribute="centerX" id="7Jl-W3-fr7"/>
+                            <constraint firstItem="ACE-uG-iot" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="8eA-qX-IHk"/>
+                            <constraint firstItem="LSn-MV-IIF" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="9Na-eJ-fWb"/>
+                            <constraint firstItem="lzF-ug-klq" firstAttribute="trailing" secondItem="1Ry-Wn-iiy" secondAttribute="trailing" constant="16" id="Dqu-RW-VLG"/>
+                            <constraint firstItem="eiq-e5-FjN" firstAttribute="centerX" secondItem="xGI-D5-Flc" secondAttribute="centerX" id="FEE-js-18l"/>
+                            <constraint firstItem="5Om-GL-jn3" firstAttribute="top" secondItem="LSn-MV-IIF" secondAttribute="bottom" constant="4" id="JfU-0f-ED3"/>
+                            <constraint firstItem="1Ry-Wn-iiy" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="KNg-h7-Wnj"/>
+                            <constraint firstItem="JWv-Yv-aQM" firstAttribute="centerX" secondItem="xGI-D5-Flc" secondAttribute="centerX" id="Nxf-FJ-3dk"/>
+                            <constraint firstItem="lzF-ug-klq" firstAttribute="bottom" secondItem="X3j-OG-HcV" secondAttribute="bottom" constant="24" id="Rav-3o-TC1"/>
+                            <constraint firstItem="JWv-Yv-aQM" firstAttribute="top" secondItem="lzF-ug-klq" secondAttribute="top" constant="24" id="VrJ-MZ-OGg"/>
+                            <constraint firstItem="Qzg-sp-jVb" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="XWN-4A-qEm"/>
+                            <constraint firstItem="6Nt-Qy-zBa" firstAttribute="top" secondItem="JWv-Yv-aQM" secondAttribute="bottom" constant="24" id="cLn-HW-uZD"/>
+                            <constraint firstItem="X3j-OG-HcV" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="cmI-7C-cu9"/>
+                            <constraint firstItem="5Om-GL-jn3" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="cw9-Sg-CnY"/>
+                            <constraint firstItem="6Nt-Qy-zBa" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="dGl-aq-pZK"/>
+                            <constraint firstItem="LQM-lp-50R" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="dhT-Rb-yBQ"/>
+                            <constraint firstItem="lzF-ug-klq" firstAttribute="trailing" secondItem="X3j-OG-HcV" secondAttribute="trailing" constant="16" id="fyq-uX-MMg"/>
+                            <constraint firstItem="LQM-lp-50R" firstAttribute="top" secondItem="Qzg-sp-jVb" secondAttribute="bottom" constant="4" id="guS-rt-5Hj"/>
+                            <constraint firstItem="1Ry-Wn-iiy" firstAttribute="centerX" secondItem="xGI-D5-Flc" secondAttribute="centerX" id="hLc-51-mKA"/>
+                            <constraint firstItem="eiq-e5-FjN" firstAttribute="top" secondItem="ACE-uG-iot" secondAttribute="bottom" constant="4" id="lpK-HY-kcj"/>
+                            <constraint firstItem="lzF-ug-klq" firstAttribute="trailing" secondItem="5Om-GL-jn3" secondAttribute="trailing" constant="16" id="nJb-xw-Fby"/>
+                            <constraint firstItem="ACE-uG-iot" firstAttribute="top" secondItem="1Ry-Wn-iiy" secondAttribute="bottom" constant="16" id="rj3-pc-jNf"/>
+                            <constraint firstItem="lzF-ug-klq" firstAttribute="trailing" secondItem="LQM-lp-50R" secondAttribute="trailing" constant="16" id="sVj-ul-hdj"/>
+                            <constraint firstItem="eiq-e5-FjN" firstAttribute="leading" secondItem="lzF-ug-klq" secondAttribute="leading" constant="16" id="tDd-4P-x6r"/>
+                            <constraint firstItem="lzF-ug-klq" firstAttribute="trailing" secondItem="eiq-e5-FjN" secondAttribute="trailing" constant="16" id="vMN-cp-HSf"/>
+                            <constraint firstItem="LSn-MV-IIF" firstAttribute="top" secondItem="LQM-lp-50R" secondAttribute="bottom" constant="16" id="w9z-re-dY8"/>
+                            <constraint firstItem="Qzg-sp-jVb" firstAttribute="top" secondItem="eiq-e5-FjN" secondAttribute="bottom" constant="16" id="wDC-EQ-Hrv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ubah Akun" id="rI2-o7-jd2"/>
+                    <connections>
+                        <outlet property="buttonSimpanOutlet" destination="X3j-OG-HcV" id="Yhi-HW-6sB"/>
+                        <outlet property="ubahAlamatOutlet" destination="LQM-lp-50R" id="9aL-M5-uJi"/>
+                        <outlet property="ubahImageViewOutlet" destination="JWv-Yv-aQM" id="L7I-XD-vsm"/>
+                        <outlet property="ubahKotaOutlet" destination="eiq-e5-FjN" id="Cza-FH-w7n"/>
+                        <outlet property="ubahNamaOutlet" destination="1Ry-Wn-iiy" id="BLU-fD-zdz"/>
+                        <outlet property="ubahNomorOutlet" destination="5Om-GL-jn3" id="qam-UO-ndD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mk4-TS-fJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,8 +390,14 @@
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
+        <namedColor name="Purple1">
+            <color red="0.88599997758865356" green="0.83099997043609619" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="Purple4">
             <color red="0.44299998879432678" green="0.14900000393390656" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PurpleHalf">
+            <color red="0.87800002098083496" green="0.83499997854232788" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

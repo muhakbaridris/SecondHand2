@@ -25,7 +25,20 @@ final class AkunViewController: UIViewController{
     }
     
     @IBAction func buttonKeluarTapIn(_ sender: Any) {
-        print("tap")
+        if let domain = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+        }
+        CustomToast.show(message: "Anda berhasil logout!",
+                         bgColor: .systemGreen,
+                         textColor: .white,
+                         labelFont: .systemFont(ofSize: 17),
+                         showIn: .bottom, controller: self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true)
+        }
     }
     
     
