@@ -20,6 +20,7 @@
 		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
 		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
 		314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FDDFF285BCA790077CCC7 /* String+Extension.swift */; };
+		31582DED286C27BD00383FD6 /* RegisterFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */; };
 		3157235028731A5800ABA120 /* SHProductDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */; };
 		3157235428731A8400ABA120 /* URLComponentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157235228731A8400ABA120 /* URLComponentBuilder.swift */; };
 		3157235528731A8400ABA120 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157235328731A8400ABA120 /* URLRequestBuilder.swift */; };
@@ -30,6 +31,7 @@
 		315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738A28592FBD009F3511 /* UbahAkunViewController.swift */; };
 		315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738F28599448009F3511 /* UIViewController+Extension.swift */; };
 		316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 316FF1252860832B0088768D /* GoogleService-Info.plist */; };
+		31785202287362A8000C92D7 /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31785201287362A8000C92D7 /* BiometricAuth.swift */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
 		318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB14628576B33003EB9B1 /* HomeViewController.swift */; };
 		318CB14928576E09003EB9B1 /* NotifikasiTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */; };
@@ -43,6 +45,8 @@
 		31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */; };
 		31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A54232285C08820073CCDA /* SHLoginResponseModel.swift */; };
 		31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */; };
+		31CE2BF1286B28E500C664A9 /* PengaturanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE2BF0286B28E500C664A9 /* PengaturanViewController.swift */; };
+		31CE2BF3286B28F500C664A9 /* PengaturanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CE2BF2286B28F500C664A9 /* PengaturanViewController.storyboard */; };
 		31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8DDFE2861FB4700843B3F /* InfoPenawarViewController.swift */; };
 		31F8DE012861FB7300843B3F /* InfoPenawarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F8DE002861FB7300843B3F /* InfoPenawarViewController.storyboard */; };
 		31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8DE022862AC7800843B3F /* SHUpdateResponseModel.swift */; };
@@ -106,6 +110,7 @@
 		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
 		314FDDFF285BCA790077CCC7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFullViewController.swift; sourceTree = "<group>"; };
 		3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProductDataResponseModel.swift; sourceTree = "<group>"; };
 		3157235228731A8400ABA120 /* URLComponentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentBuilder.swift; sourceTree = "<group>"; };
 		3157235328731A8400ABA120 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 		315F738A28592FBD009F3511 /* UbahAkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahAkunViewController.swift; sourceTree = "<group>"; };
 		315F738F28599448009F3511 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		316FF1252860832B0088768D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31785201287362A8000C92D7 /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		318CB14628576B33003EB9B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		318CB14828576E09003EB9B1 /* NotifikasiTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotifikasiTableViewController.storyboard; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 		31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAuthAPI.swift; sourceTree = "<group>"; };
 		31A54232285C08820073CCDA /* SHLoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLoginResponseModel.swift; sourceTree = "<group>"; };
 		31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRegisterResponseModel.swift; sourceTree = "<group>"; };
+		31CE2BF0286B28E500C664A9 /* PengaturanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PengaturanViewController.swift; sourceTree = "<group>"; };
+		31CE2BF2286B28F500C664A9 /* PengaturanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PengaturanViewController.storyboard; sourceTree = "<group>"; };
 		31F8DDFE2861FB4700843B3F /* InfoPenawarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPenawarViewController.swift; sourceTree = "<group>"; };
 		31F8DE002861FB7300843B3F /* InfoPenawarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoPenawarViewController.storyboard; sourceTree = "<group>"; };
 		31F8DE022862AC7800843B3F /* SHUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHUpdateResponseModel.swift; sourceTree = "<group>"; };
@@ -251,6 +259,7 @@
 			children = (
 				315F738C28593A9E009F3511 /* Extension */,
 				310AA30E2856552D0066F90D /* CustomToast.swift */,
+				31785201287362A8000C92D7 /* BiometricAuth.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -298,17 +307,18 @@
 		3159B0AE2856573800E19F52 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				A4A1ED3328651DD900633689 /* Buyer */,
-				31F8DDFD2861FB2600843B3F /* InfoPenawar */,
-				315F738528592A7F009F3511 /* Register */,
-				315F738028592057009F3511 /* Login */,
 				318CB15628577716003EB9B1 /* Akun */,
+				A4A1ED3328651DD900633689 /* Buyer */,
 				318CB151285775BE003EB9B1 /* DaftarJual */,
-				318CB14C28577138003EB9B1 /* Jual */,
-				318CB14328576AC7003EB9B1 /* Notifikasi */,
 				318CB14228576ABF003EB9B1 /* Home */,
-				318CB14128576A7D003EB9B1 /* TabBarMain */,
+				31F8DDFD2861FB2600843B3F /* InfoPenawar */,
+				318CB14C28577138003EB9B1 /* Jual */,
 				31EE106D285660C10053EEB3 /* LaunchScreen */,
+				315F738028592057009F3511 /* Login */,
+				318CB14328576AC7003EB9B1 /* Notifikasi */,
+				31CE2BEF286B28CF00C664A9 /* Pengaturan */,
+				315F738528592A7F009F3511 /* Register */,
+				318CB14128576A7D003EB9B1 /* TabBarMain */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -346,6 +356,7 @@
 			children = (
 				315F738828592AD0009F3511 /* RegisterViewController.storyboard */,
 				315F738628592A91009F3511 /* RegisterViewController.swift */,
+				31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -459,6 +470,15 @@
 				31F8DE042862BC2300843B3F /* SHUserDataResponseModel.swift */,
 			);
 			path = AuthModel;
+			sourceTree = "<group>";
+		};
+		31CE2BEF286B28CF00C664A9 /* Pengaturan */ = {
+			isa = PBXGroup;
+			children = (
+				31CE2BF2286B28F500C664A9 /* PengaturanViewController.storyboard */,
+				31CE2BF0286B28E500C664A9 /* PengaturanViewController.swift */,
+			);
+			path = Pengaturan;
 			sourceTree = "<group>";
 		};
 		31EE106D285660C10053EEB3 /* LaunchScreen */ = {
@@ -666,6 +686,7 @@
 				315F73822859206D009F3511 /* LoginViewController.storyboard in Resources */,
 				5915E66C285B1C7100208372 /* DaftarJualTableViewCell.xib in Resources */,
 				318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */,
+				31CE2BF3286B28F500C664A9 /* PengaturanViewController.storyboard in Resources */,
 				A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */,
 				315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */,
 				A44DC0222869846F00CD4053 /* OverlayPenawarView.xib in Resources */,
@@ -815,6 +836,8 @@
 				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
+				31785202287362A8000C92D7 /* BiometricAuth.swift in Sources */,
+				31582DED286C27BD00383FD6 /* RegisterFullViewController.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				3157235528731A8400ABA120 /* URLRequestBuilder.swift in Sources */,
@@ -823,6 +846,7 @@
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
 				310AA30F2856552D0066F90D /* CustomToast.swift in Sources */,
 				A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */,
+				31CE2BF1286B28E500C664A9 /* PengaturanViewController.swift in Sources */,
 				31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */,
 				3157235428731A8400ABA120 /* URLComponentBuilder.swift in Sources */,
 				A487A1282869669700E29A33 /* PresentationController.swift in Sources */,
