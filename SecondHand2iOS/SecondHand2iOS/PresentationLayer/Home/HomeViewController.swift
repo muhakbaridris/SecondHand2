@@ -81,6 +81,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private let itemsPerRow: CGFloat = 3
     var access_token: String = ""
+    let getAPI = SHBuyerAPI()
     
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
     let products: [Product] = [
@@ -93,6 +94,18 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             access_token = UserDefaults.standard.string(forKey: "access_token")!
             print(UserDefaults.standard.string(forKey: "access_token")!)
         }
+        
+        getAPI.getBuyerOrderId(token: access_token, id: 475) { result in
+            switch result{
+            case let .success(data):
+                print(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
+        
+        
         self.view.backgroundColor = UIColor.white
         textLabelKategori.text = "Telusuri Kategori"
         headlineLabel.text = "Bulan Ramadhan Banyak diskon!"

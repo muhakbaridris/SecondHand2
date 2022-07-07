@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="idY-Tx-4AH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="idY-Tx-4AH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -155,16 +155,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eS9-Or-HRb">
-                                <rect key="frame" x="150" y="529" width="90" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Home"/>
-                                <connections>
-                                    <action selector="btnHomeTapIn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KFy-Ky-0Ou"/>
-                                    <segue destination="2Zv-oc-JAT" kind="presentation" modalPresentationStyle="fullScreen" id="Yy0-sb-8GG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -190,7 +180,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jm0-rf-BHm"/>
                     <connections>
-                        <outlet property="btnHome" destination="eS9-Or-HRb" id="O2b-nW-K97"/>
                         <outlet property="buttonMasukOutlet" destination="VKS-pY-igl" id="rCn-4T-BgT"/>
                         <outlet property="buttonShowPasswordOutlet" destination="MMh-Tw-EGx" id="05Q-sj-V5l"/>
                         <outlet property="emailTextFieldOutlet" destination="6Ig-oK-wPA" id="gz3-hf-E1g"/>
@@ -210,16 +199,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLX-Y4-x8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724" y="75"/>
-        </scene>
-        <!--TabBarMainViewController-->
-        <scene sceneID="i47-Fa-WhY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TabBarMainViewController" id="2Zv-oc-JAT" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="CSd-s5-UVL"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f81-RU-c9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="659" y="220"/>
         </scene>
     </scenes>
     <resources>
