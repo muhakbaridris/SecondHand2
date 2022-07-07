@@ -80,6 +80,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionViewB: UICollectionView!
     
     private let itemsPerRow: CGFloat = 3
+    var access_token: String = UserDefaults.standard.string(forKey: "access_token")!
 
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
     let products: [Product] = [
@@ -88,6 +89,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UserDefaults.standard.string(forKey: "access_token")!)
         self.view.backgroundColor = UIColor.white
         textLabelKategori.text = "Telusuri Kategori"
         headlineLabel.text = "Bulan Ramadhan Banyak diskon!"

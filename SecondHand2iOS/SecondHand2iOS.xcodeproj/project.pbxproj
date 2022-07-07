@@ -19,6 +19,7 @@
 		310AA2FF2856541E0066F90D /* SecondHand2iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */; };
 		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
 		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
+		31477E172876FE090051361F /* LoginCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31477E162876FE090051361F /* LoginCondition.swift */; };
 		314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FDDFF285BCA790077CCC7 /* String+Extension.swift */; };
 		31582DED286C27BD00383FD6 /* RegisterFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */; };
 		315F73822859206D009F3511 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F73812859206D009F3511 /* LoginViewController.storyboard */; };
@@ -104,6 +105,7 @@
 		310AA2FE2856541E0066F90D /* SecondHand2iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITests.swift; sourceTree = "<group>"; };
 		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
+		31477E162876FE090051361F /* LoginCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCondition.swift; sourceTree = "<group>"; };
 		314FDDFF285BCA790077CCC7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFullViewController.swift; sourceTree = "<group>"; };
 		315F73812859206D009F3511 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				315F738C28593A9E009F3511 /* Extension */,
 				310AA30E2856552D0066F90D /* CustomToast.swift */,
 				31785201287362A8000C92D7 /* BiometricAuth.swift */,
+				31477E162876FE090051361F /* LoginCondition.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */,
 				31F8DE052862BC2300843B3F /* SHUserDataResponseModel.swift in Sources */,
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
+				31477E172876FE090051361F /* LoginCondition.swift in Sources */,
 				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
