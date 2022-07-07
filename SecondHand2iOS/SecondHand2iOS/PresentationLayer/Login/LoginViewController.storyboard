@@ -52,7 +52,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="SXl-Sh-shE" kind="show" id="xGT-gt-5MN"/>
+                                            <segue destination="EfK-DT-ErG" kind="show" id="HUJ-g0-Aa4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum punya akun?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aey-Tg-rVJ">
@@ -199,16 +199,6 @@
             </objects>
             <point key="canvasLocation" x="44.615384615384613" y="75.355450236966817"/>
         </scene>
-        <!--RegisterViewController-->
-        <scene sceneID="6F3-4Y-mMB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RegisterViewController" id="SXl-Sh-shE" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="fnX-DB-WVS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xLX-Y4-x8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="724" y="75"/>
-        </scene>
         <!--TabBarMainViewController-->
         <scene sceneID="i47-Fa-WhY">
             <objects>
@@ -218,6 +208,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f81-RU-c9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="659" y="220"/>
+        </scene>
+        <!--RegisterViewController-->
+        <scene sceneID="wwc-Fe-ln0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RegisterViewController" id="EfK-DT-ErG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MGJ-Is-Lfe"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMd-uu-ra0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="94"/>
         </scene>
     </scenes>
     <resources>

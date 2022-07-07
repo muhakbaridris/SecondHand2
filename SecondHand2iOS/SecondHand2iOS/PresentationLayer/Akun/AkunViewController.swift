@@ -9,6 +9,8 @@ import UIKit
 
 final class AkunViewController: UIViewController{
     
+    let callAPI = SHAuthAPI()
+    var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
     
     override func viewDidLoad() {
@@ -16,7 +18,17 @@ final class AkunViewController: UIViewController{
         navigationController?.navigationBar.prefersLargeTitles = true
         userImageOutlet.layer.cornerRadius = 20
         
+        callAPI.getUserDataSecondHand(access_token: UserDefaults.standard.string(forKey: "access_token")!) { result in
+            switch result {
+            case let .success(data):
+                self.userImageOutlet.loadImage(resource: data.image_url)
+                print(data.city)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
     }
+        
        
     @IBAction func buttonPengaturanTapIn(_ sender: Any) {
         print("tap")
