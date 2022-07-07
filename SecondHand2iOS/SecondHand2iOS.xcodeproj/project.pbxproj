@@ -20,10 +20,6 @@
 		310AA3012856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */; };
 		310AA30F2856552D0066F90D /* CustomToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310AA30E2856552D0066F90D /* CustomToast.swift */; };
 		314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FDDFF285BCA790077CCC7 /* String+Extension.swift */; };
-		31572341287319E700ABA120 /* SHBuyerProductAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157233F287319E700ABA120 /* SHBuyerProductAPI.swift */; };
-		31572342287319E700ABA120 /* SHBuyerOrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31572340287319E700ABA120 /* SHBuyerOrderAPI.swift */; };
-		3157234E28731A5800ABA120 /* SHBuyerOrderProductResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157234B28731A5800ABA120 /* SHBuyerOrderProductResponseModel.swift */; };
-		3157234F28731A5800ABA120 /* SHProductDataIdResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157234C28731A5800ABA120 /* SHProductDataIdResponseModel.swift */; };
 		3157235028731A5800ABA120 /* SHProductDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */; };
 		3157235428731A8400ABA120 /* URLComponentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157235228731A8400ABA120 /* URLComponentBuilder.swift */; };
 		3157235528731A8400ABA120 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157235328731A8400ABA120 /* URLRequestBuilder.swift */; };
@@ -72,6 +68,8 @@
 		A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */; };
 		A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */; };
 		A4C72B8B2863384C00F67AE8 /* ProductDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */; };
+		A4D2F3552877096200BD6D04 /* SHBuyerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */; };
+		A4D2F357287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2F356287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,10 +106,6 @@
 		310AA3002856541E0066F90D /* SecondHand2iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHand2iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		310AA30E2856552D0066F90D /* CustomToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToast.swift; sourceTree = "<group>"; };
 		314FDDFF285BCA790077CCC7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		3157233F287319E700ABA120 /* SHBuyerProductAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHBuyerProductAPI.swift; sourceTree = "<group>"; };
-		31572340287319E700ABA120 /* SHBuyerOrderAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHBuyerOrderAPI.swift; sourceTree = "<group>"; };
-		3157234B28731A5800ABA120 /* SHBuyerOrderProductResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHBuyerOrderProductResponseModel.swift; sourceTree = "<group>"; };
-		3157234C28731A5800ABA120 /* SHProductDataIdResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProductDataIdResponseModel.swift; sourceTree = "<group>"; };
 		3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProductDataResponseModel.swift; sourceTree = "<group>"; };
 		3157235228731A8400ABA120 /* URLComponentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentBuilder.swift; sourceTree = "<group>"; };
 		3157235328731A8400ABA120 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
@@ -163,6 +157,8 @@
 		A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyerViewController.storyboard; sourceTree = "<group>"; };
 		A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataTableViewCell.swift; sourceTree = "<group>"; };
 		A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDataTableViewCell.xib; sourceTree = "<group>"; };
+		A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBuyerAPI.swift; sourceTree = "<group>"; };
+		A4D2F356287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBuyerOrderResponseModel.swift; sourceTree = "<group>"; };
 		AD06DFA0798F06DD0D9DF417 /* Pods_SecondHand2iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecondHand2iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B499025176A19AA468186C70 /* Pods-SecondHand2iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOSTests/Pods-SecondHand2iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4E40E68F5D76254D50DB71 /* Pods-SecondHand2iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecondHand2iOS.release.xcconfig"; path = "Target Support Files/Pods-SecondHand2iOS/Pods-SecondHand2iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,9 +280,8 @@
 		3157234A28731A4000ABA120 /* BuyerModel */ = {
 			isa = PBXGroup;
 			children = (
-				3157234B28731A5800ABA120 /* SHBuyerOrderProductResponseModel.swift */,
-				3157234C28731A5800ABA120 /* SHProductDataIdResponseModel.swift */,
 				3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */,
+				A4D2F356287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift */,
 			);
 			path = BuyerModel;
 			sourceTree = "<group>";
@@ -441,8 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */,
-				31572340287319E700ABA120 /* SHBuyerOrderAPI.swift */,
-				3157233F287319E700ABA120 /* SHBuyerProductAPI.swift */,
+				A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -814,15 +808,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3157234F28731A5800ABA120 /* SHProductDataIdResponseModel.swift in Sources */,
 				318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */,
+				A4D2F3552877096200BD6D04 /* SHBuyerAPI.swift in Sources */,
 				31F8DE052862BC2300843B3F /* SHUserDataResponseModel.swift in Sources */,
-				3157234E28731A5800ABA120 /* SHBuyerOrderProductResponseModel.swift in Sources */,
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
 				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
 				31F8DDFF2861FB4700843B3F /* InfoPenawarViewController.swift in Sources */,
-				31572341287319E700ABA120 /* SHBuyerProductAPI.swift in Sources */,
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				3157235528731A8400ABA120 /* URLRequestBuilder.swift in Sources */,
@@ -838,6 +830,7 @@
 				A487A12C286967FE00E29A33 /* OverlayBuyerView.swift in Sources */,
 				A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */,
 				314FDE00285BCA790077CCC7 /* String+Extension.swift in Sources */,
+				A4D2F357287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift in Sources */,
 				A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */,
 				31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */,
 				31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */,
@@ -851,7 +844,6 @@
 				315F738428592078009F3511 /* LoginViewController.swift in Sources */,
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
 				5915E675285C946D00208372 /* CustomView.swift in Sources */,
-				31572342287319E700ABA120 /* SHBuyerOrderAPI.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
 				A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */,
 				5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */,

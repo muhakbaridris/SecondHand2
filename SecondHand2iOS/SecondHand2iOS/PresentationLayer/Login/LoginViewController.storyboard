@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="idY-Tx-4AH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="idY-Tx-4AH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -161,6 +161,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Home"/>
                                 <connections>
+                                    <action selector="btnHomeTapIn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KFy-Ky-0Ou"/>
                                     <segue destination="2Zv-oc-JAT" kind="presentation" modalPresentationStyle="fullScreen" id="Yy0-sb-8GG"/>
                                 </connections>
                             </button>
@@ -189,6 +190,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jm0-rf-BHm"/>
                     <connections>
+                        <outlet property="btnHome" destination="eS9-Or-HRb" id="O2b-nW-K97"/>
                         <outlet property="buttonMasukOutlet" destination="VKS-pY-igl" id="rCn-4T-BgT"/>
                         <outlet property="buttonShowPasswordOutlet" destination="MMh-Tw-EGx" id="05Q-sj-V5l"/>
                         <outlet property="emailTextFieldOutlet" destination="6Ig-oK-wPA" id="gz3-hf-E1g"/>

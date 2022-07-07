@@ -13,9 +13,12 @@ final class LoginViewController: UIViewController{
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
     @IBOutlet weak var buttonShowPasswordOutlet: UIButton!
     @IBOutlet weak var buttonMasukOutlet: UIButton!
+    @IBOutlet weak var btnHome: UIButton!
     
     let callAPI = SHAuthAPI()
+    let getAPI = SHBuyerAPI()
     var loginResponse: [LoginResponseModel] = []
+    var dataResponse: [SHProductIDResponseModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,19 @@ final class LoginViewController: UIViewController{
         }
     }
     
+    
+    @IBAction func btnHomeTapIn(_ sender: Any) {
+        print("Tap Button Home")
+        getAPI.getBuyerOrderId(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJpYXQiOjE2NTY4MzI2Njd9.h7_-gT52lcs4ZbxZNxHp4TNjt-OKB_aNxNfVu-QPka4", id: 6) { result in
+            switch result{
+            case let .success(data):
+                print(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     @IBAction func buttonMasukTapIn(_ sender: Any) {
         print("Tap Button Masuk")
         if emailTextFieldOutlet.text?.isEmpty == true || passwordTextFieldOutlet.text?.isEmpty == true {
@@ -54,8 +70,6 @@ final class LoginViewController: UIViewController{
                 }
             }
         }
-        
-        
     }
     
 }
