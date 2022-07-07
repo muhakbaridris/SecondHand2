@@ -29,6 +29,33 @@ class SHAuthAPI {
         }
     }
     
+    func registerUserSecondHand(registerData: RegisterModelMini,
+                                completionHandler: @escaping (Result<RegisterResponseModel, AFError>) -> Void) {
+        let url = "https://market-final-project.herokuapp.com/auth/register"
+        let params: [String:String] = ["full_name":registerData.full_name,
+                                       "email":registerData.email,
+                                       "password":registerData.password
+                                      ]
+        let headers: HTTPHeaders = [.accept("body"),
+                                    .contentType("multipart/form-data")]
+        AF.upload(multipartFormData: { multipartFormData in
+            for (key, value) in params {
+                multipartFormData.append(value.data(using: .utf8)!, withName: key)
+            }
+        },
+                  to: url,
+                  method: .post,
+                  headers: headers)
+        .uploadProgress(queue: .main, closure: { progress in
+            //Current upload progress of file
+            print("Upload Progress: \(progress.fractionCompleted)")
+            
+        })
+        .responseDecodable(of: RegisterResponseModel.self) { response in
+            completionHandler(response.result)
+        }
+    }
+    
     func getUserDataSecondHand(access_token: String,
                                completionHandler: @escaping (Result<UserDataResponseModel, AFError>) -> Void){
         let url = "https://market-final-project.herokuapp.com/auth/user"
@@ -39,6 +66,9 @@ class SHAuthAPI {
                    headers: headers)
         .responseDecodable(of: UserDataResponseModel.self) { response in
             completionHandler(response.result)
+        }
+        .responseString { response in
+            print("get user responnya \(response)")
         }
     }
     
