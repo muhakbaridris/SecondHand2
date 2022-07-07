@@ -89,7 +89,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="buttonPengaturanTapIn:" destination="BQ7-x5-TUJ" eventType="touchUpInside" id="YZC-Sg-k37"/>
+                                            <action selector="buttonPengaturanTapIn:" destination="BQ7-x5-TUJ" eventType="touchUpInside" id="wAr-dD-4RT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -227,7 +227,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsX-bc-mzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="-134"/>
+            <point key="canvasLocation" x="430" y="-124"/>
         </scene>
         <!--Ubah Akun-->
         <scene sceneID="gPr-1q-sVD">

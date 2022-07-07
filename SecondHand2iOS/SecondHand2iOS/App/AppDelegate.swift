@@ -12,15 +12,15 @@ import DropDown
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    let biometricSetUp = BiometricAuth()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         Thread.sleep(forTimeInterval: 0.75)
         IQKeyboardManager.shared.enable = true
         UINavigationBar.appearance().tintColor = UIColor(named: "Purple4")
         DropDown.startListeningToKeyboard()
+        biometricSetUp.setBiometricAuth()
         return true
     }
 
