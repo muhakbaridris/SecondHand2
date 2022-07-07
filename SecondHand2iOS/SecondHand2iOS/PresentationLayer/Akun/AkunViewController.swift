@@ -27,7 +27,6 @@ final class AkunViewController: UIViewController{
     @IBAction func buttonKeluarTapIn(_ sender: Any) {
         if let domain = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: domain)
-            UserDefaults.standard.synchronize()
         }
         CustomToast.show(message: "Anda berhasil logout!",
                          bgColor: .systemGreen,
