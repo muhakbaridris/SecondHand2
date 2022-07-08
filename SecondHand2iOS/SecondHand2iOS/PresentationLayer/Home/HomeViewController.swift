@@ -105,17 +105,14 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         }
         
-        
-        getAPI.getBuyerOrderId(token: access_token, id: 475) { result in
-            switch result{
+        getAPI.getBuyerProductId(id: 98) { result in
+            switch result {
             case let .success(data):
                 print(data)
             case let .failure(err):
                 print(err.localizedDescription)
             }
         }
-        
-        
         
         self.view.backgroundColor = UIColor.white
         textLabelKategori.text = "Telusuri Kategori"

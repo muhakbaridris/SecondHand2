@@ -9,21 +9,31 @@ import Foundation
 import Alamofire
 
 class SHBuyerAPI{
-    func getAllBuyerProduct(completionHandler: @escaping (Result<[SHAllProductResponseModelElement], AFError>) -> Void){
+    func getAllBuyerProduct(completionHandler: @escaping (Result<[SHAllProductResponseModel], AFError>) -> Void){
         let url = "https://market-final-project.herokuapp.com/buyer/product"
         let headers: HTTPHeaders = [.accept("body")]
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: [SHAllProductResponseModelElement].self){
-            response in completionHandler(response.result)
+        AF.request(url,
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: [SHAllProductResponseModel].self){ response in
+            completionHandler(response.result)
+        }.responseString { response in
+            print(response)
         }
     }
     
-    func getBuyerProductId(id: Int, completionHandler: @escaping (Result<SHProductIDResponseModel, AFError>) -> Void){
+    func getBuyerProductId(id: Int,
+                           completionHandler: @escaping (Result<SHProductIDResponseModel, AFError>) -> Void){
         let url = "https://market-final-project.herokuapp.com/buyer/product/\(id)"
-        let headers: HTTPHeaders = [.accept("body"), .contentType("application/json; charset=utf-8")]
-        print(url)
+        let headers: HTTPHeaders = [.accept("body"),
+                                    .contentType("application/json; charset=utf-8")]
         AF.request(url,
-                   method: .get, headers: headers).responseDecodable(of: SHProductIDResponseModel.self) {
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: SHProductIDResponseModel.self) {
             response in completionHandler(response.result)
+        }.responseString { response in
+            print(response)
         }
     }
 }
@@ -37,11 +47,20 @@ extension SHBuyerAPI{
         }
     }
     
-    func getBuyerOrderId(token: String, id: Int, completionHandler: @escaping(Result<SHBuyerOrderIDResponseModel, AFError>) -> Void){
+    func getBuyerOrderId(token: String,
+                         id: Int,
+                         completionHandler: @escaping(Result<SHBuyerOrderIDResponseModel, AFError>) -> Void) {
         let url = "https://market-final-project.herokuapp.com/buyer/order/\(id)"
-        let headers: HTTPHeaders = ["accept": "body", "access_token" : "\(token)"]
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: SHBuyerOrderIDResponseModel.self) {
+        let headers: HTTPHeaders = ["accept": "body",
+                                    "access_token" : "\(token)"]
+        AF.request(url,
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: SHBuyerOrderIDResponseModel.self) {
             response in completionHandler(response.result)
+        }
+        .responseString { response in
+            print(response)
         }
     }
 }
