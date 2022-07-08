@@ -17,8 +17,6 @@ class SHBuyerAPI{
                    headers: headers)
         .responseDecodable(of: [SHAllProductResponseModel].self){ response in
             completionHandler(response.result)
-        }.responseString { response in
-            print(response)
         }
     }
     

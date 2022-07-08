@@ -8,19 +8,19 @@
 import Foundation
 
 // MARK: - SHProductDataResponseModelElement
-struct SHAllProductResponseModel: Decodable {
+struct SHAllProductResponseModel: Codable {
     let id: Int?
     let name: String?
     let base_price: Int?
     let image_url: String?
     let image_name, location: String?
     let user_id: Int?
-    let status: Status?
-//    let createdAt, updatedAt: String?
-    let Categories: [kategori]
+//    let status: Status?
+////    let createdAt, updatedAt: String?
+    let Categories: [kategori]?
 }
 
-struct SHProductIDResponseModel: Decodable {
+struct SHProductIDResponseModel: Codable {
     let id: Int?
     let name: String?
     let base_price: Int?
@@ -33,18 +33,18 @@ struct SHProductIDResponseModel: Decodable {
 }
 
 // MARK: - Category
-struct kategori: Decodable {
+struct kategori: Codable {
     let id: Int?
     let name: String?
 }
 
-enum Status: String, Decodable {
+enum Status: String, Codable {
     case available = "available"
     case sold = "sold"
 }
 
 // MARK: - User
-struct user_detail: Decodable {
+struct user_detail: Codable {
     let id: Int?
     let full_name, email, phone_number, address: String?
     let image_url: String?

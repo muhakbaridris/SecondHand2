@@ -82,11 +82,13 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
             let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
-            if(products.status == .available){
-                cellB.productName.text = "\(products.name!)"
-                cellB.productPrice.text = "\(products.base_price!)"
-                cellB.productType.text = "\(products.status!)"
-            }
+            cellB.productName.text = "\(products.name!)"
+//            "Rp \((dataproduk.Product.base_price).formattedWithSeparator)"
+            cellB.productPrice.text = "Rp \((products.base_price!).formattedWithSeparator)"
+            cellB.productImage.loadImage(resource: products.image_url)
+            cellB.productType.text = "\(products.Categories!.first!.name!)"
+            cellB.layer.borderWidth = 1
+            cellB.layer.borderColor = UIColor.black.cgColor
             return cellB
         }
     }
@@ -120,10 +122,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     let callAuthAPI = SHAuthAPI()
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
-    let products: [Product] = [
-        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Jam Tangan Casio", productType: "Aksesoris", productPrice: "Rp 250.000"),
-        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Smartwatch Samsung", productType: "Aksesoris", productPrice: "Rp 3.550.000")
-    ]
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
