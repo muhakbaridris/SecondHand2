@@ -13,10 +13,10 @@ class HomeProductCollectionCell: UICollectionViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productType: UILabel!
     @IBOutlet weak var productPrice: UILabel!
-    func setup(with product: Product){
-        productImage.image = product.productImage
-        productName.text = product.productName
-        productType.text = product.productType
-        productPrice.text = product.productPrice
+    func setup(with product: SHAllProductResponseModelElement){
+//        productImage.image = product.image_url
+        productName.text = product.name
+//        productType.text = product.categories
+        productPrice.text = "\(product.base_price)"
     }
 }

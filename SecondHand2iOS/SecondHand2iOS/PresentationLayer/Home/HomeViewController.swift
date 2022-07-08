@@ -7,20 +7,62 @@
 
 import UIKit
 
-struct Product {
-    let productImage: UIImage
-    let productName: String
-    let productType: String
-    let productPrice: String
-}
 
 final class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var textLabelKategori: UILabel!
+    @IBOutlet weak var headlineLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var labelDiskon: UILabel!
+    @IBOutlet weak var labelPercent: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewB: UICollectionView!
+    
+    private let itemsPerRow: CGFloat = 3
+    var access_token: String = ""
+    let getAPI = SHBuyerAPI()
+    var responseBuyerOrderAll = [SHAllProductResponseModelElement]()
+    var displayedProduct: [SHAllProductResponseModelElement] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            access_token = UserDefaults.standard.string(forKey: "access_token")!
+            print(UserDefaults.standard.string(forKey: "access_token")!)
+        }
+        collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        
+        getAPI.getAllBuyerProduct() { [weak self](result) in
+            guard let _self = self else {
+                return
+            }
+            
+            switch result {
+            case let .success(data):
+                _self.displayedProduct = data
+                _self.collectionViewB.reloadData()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+
+        self.view.backgroundColor = UIColor.white
+        textLabelKategori.text = "Telusuri Kategori"
+        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
+        labelDiskon.text = "Diskon Hingga"
+        labelPercent.text = "60%"
+        collectionView.dataSource = self
+        collectionViewB.dataSource = self
+        
+        collectionView.delegate = self
+        collectionViewB.delegate = self
+//        collectionViewB.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
             return carouselButton.count
         }else {
-            return products.count
+            return displayedProduct.count
         }
     }
     
@@ -39,7 +81,9 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             return cellA
         }else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
-            cellB.setup(with: products[indexPath.row])
+            let products: SHAllProductResponseModelElement = displayedProduct[indexPath.row]
+            cellB.productName.text = "\(products.name!)"
+            cellB.productPrice.text = "\(products.base_price!)"
             return cellB
         }
 
@@ -62,6 +106,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 self.lastIndexActive = indexPath
             }
         }else{
+            print(indexPath.row)
             let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController")
             self.navigationController?.pushViewController(viewController, animated: true)
         }
@@ -71,53 +116,11 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBOutlet weak var textLabelKategori: UILabel!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var labelDiskon: UILabel!
-    @IBOutlet weak var labelPercent: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionViewB: UICollectionView!
-    
-    private let itemsPerRow: CGFloat = 3
-    var access_token: String = ""
-    let getAPI = SHBuyerAPI()
+
     
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
-    let products: [Product] = [
-        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Jam Tangan Casio", productType: "Aksesoris", productPrice: "Rp 250.000"),
-        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Smartwatch Samsung", productType: "Aksesoris", productPrice: "Rp 3.550.000")
-    ]
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print(UserDefaults.standard.string(forKey: "access_token")!)
-        }
-        
-        getAPI.getBuyerOrderId(token: access_token, id: 475) { result in
-            switch result{
-            case let .success(data):
-                print(data)
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
-        
-        
-        
-        self.view.backgroundColor = UIColor.white
-        textLabelKategori.text = "Telusuri Kategori"
-        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
-        labelDiskon.text = "Diskon Hingga"
-        labelPercent.text = "60%"
-        collectionView.dataSource = self
-        collectionViewB.dataSource = self
-        
-        collectionView.delegate = self
-        collectionViewB.delegate = self
-//        collectionViewB.reloadData()
-    }
+    
+
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

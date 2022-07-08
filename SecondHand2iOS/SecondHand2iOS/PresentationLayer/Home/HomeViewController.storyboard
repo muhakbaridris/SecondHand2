@@ -23,7 +23,6 @@
         <!--Item-->
         <scene sceneID="U8J-Rd-NYb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kPt-nS-Jf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="fNC-A8-bZH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="wGg-KF-tSp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -35,6 +34,7 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="nOs-Sg-bul"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPt-nS-Jf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-780" y="-1713"/>
         </scene>
@@ -176,11 +176,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FvQ-Pm-83Z">
-                                <rect key="frame" x="0.0" y="384" width="390" height="426"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FvQ-Pm-83Z">
+                                <rect key="frame" x="0.0" y="384" width="390" height="377"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91K-ZK-R4W">
-                                    <size key="itemSize" width="156" height="210"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91K-ZK-R4W">
+                                    <size key="itemSize" width="156" height="206"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
