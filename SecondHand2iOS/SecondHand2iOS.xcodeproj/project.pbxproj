@@ -40,6 +40,9 @@
 		318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15428577625003EB9B1 /* DaftarJualViewController.swift */; };
 		318CB15828577722003EB9B1 /* AkunViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB15728577722003EB9B1 /* AkunViewController.storyboard */; };
 		318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318CB15928577789003EB9B1 /* AkunViewController.swift */; };
+		31A4B23C2877AEBF000209F7 /* SHNotificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4B23B2877AEBF000209F7 /* SHNotificationAPI.swift */; };
+		31A4B23E2877B0BF000209F7 /* SHNotificationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4B23D2877B0BF000209F7 /* SHNotificationResponseModel.swift */; };
+		31A4B2402877C35C000209F7 /* NumericFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4B23F2877C35C000209F7 /* NumericFormatter+Extension.swift */; };
 		31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */; };
 		31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A54232285C08820073CCDA /* SHLoginResponseModel.swift */; };
 		31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */; };
@@ -126,6 +129,9 @@
 		318CB15428577625003EB9B1 /* DaftarJualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarJualViewController.swift; sourceTree = "<group>"; };
 		318CB15728577722003EB9B1 /* AkunViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AkunViewController.storyboard; sourceTree = "<group>"; };
 		318CB15928577789003EB9B1 /* AkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunViewController.swift; sourceTree = "<group>"; };
+		31A4B23B2877AEBF000209F7 /* SHNotificationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHNotificationAPI.swift; sourceTree = "<group>"; };
+		31A4B23D2877B0BF000209F7 /* SHNotificationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHNotificationResponseModel.swift; sourceTree = "<group>"; };
+		31A4B23F2877C35C000209F7 /* NumericFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumericFormatter+Extension.swift"; sourceTree = "<group>"; };
 		31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAuthAPI.swift; sourceTree = "<group>"; };
 		31A54232285C08820073CCDA /* SHLoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLoginResponseModel.swift; sourceTree = "<group>"; };
 		31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRegisterResponseModel.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 				315F738F28599448009F3511 /* UIViewController+Extension.swift */,
 				314FDDFF285BCA790077CCC7 /* String+Extension.swift */,
 				31477E18287753040051361F /* UIImageView+Extension.swift */,
+				31A4B23F2877C35C000209F7 /* NumericFormatter+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -408,6 +415,14 @@
 			path = Akun;
 			sourceTree = "<group>";
 		};
+		31A4B23A2877AEAD000209F7 /* NotificationModel */ = {
+			isa = PBXGroup;
+			children = (
+				31A4B23D2877B0BF000209F7 /* SHNotificationResponseModel.swift */,
+			);
+			path = NotificationModel;
+			sourceTree = "<group>";
+		};
 		31A5422B285BD04C0073CCDA /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */,
+				31A4B23B2877AEBF000209F7 /* SHNotificationAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -428,6 +444,7 @@
 		31A5422F285BD93A0073CCDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				31A4B23A2877AEAD000209F7 /* NotificationModel */,
 				31B2CA1228612E4F00C8213B /* AuthModel */,
 			);
 			path = Model;
@@ -803,6 +820,7 @@
 			files = (
 				318CB14728576B33003EB9B1 /* HomeViewController.swift in Sources */,
 				31F8DE052862BC2300843B3F /* SHUserDataResponseModel.swift in Sources */,
+				31A4B23E2877B0BF000209F7 /* SHNotificationResponseModel.swift in Sources */,
 				310AA2E22856541B0066F90D /* TabBarMainViewController.swift in Sources */,
 				5915E67728646AB100208372 /* DaftarJualCollectionViewCell.swift in Sources */,
 				310AA2DE2856541B0066F90D /* AppDelegate.swift in Sources */,
@@ -833,10 +851,12 @@
 				A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
+				31A4B2402877C35C000209F7 /* NumericFormatter+Extension.swift in Sources */,
 				315F738428592078009F3511 /* LoginViewController.swift in Sources */,
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
 				5915E675285C946D00208372 /* CustomView.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
+				31A4B23C2877AEBF000209F7 /* SHNotificationAPI.swift in Sources */,
 				A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */,
 				5915E66D285B1C7100208372 /* DaftarJualTableViewCell.swift in Sources */,
 			);

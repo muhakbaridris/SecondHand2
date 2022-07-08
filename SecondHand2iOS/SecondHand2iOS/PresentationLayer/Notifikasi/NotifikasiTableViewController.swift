@@ -9,7 +9,10 @@ import UIKit
 
 final class NotifikasiTableViewController: UITableViewController {
     
-    var products = [ProductDitawar]()
+//    var products = [ProductDitawar]()
+    var access_token = ""
+    let callNotifAPI = SHNotificationAPI()
+    var notifArray: [NotificationResponseModel] = []
     
     @IBOutlet var notificationTableView: UITableView!
 //    let testdata = ["Penawaran Produk","Penawaran Produk","Penawaran Produk"]
@@ -22,17 +25,38 @@ final class NotifikasiTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            access_token = UserDefaults.standard.string(forKey: "access_token")!
+            print(UserDefaults.standard.string(forKey: "access_token")!)
+        }
+        
+        callNotifAPI.getNotificationAll(access_token: access_token) { result in
+            switch result {
+            case let .success(data):
+                for i in data {
+                    self.notifArray.append(i)
+                }
+                print(self.notifArray.count)
+                self.tableView.reloadData()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         
         notificationTableView.register(UINib.init(nibName:"NotificationTableViewCell" , bundle: nil), forCellReuseIdentifier: "NotificationTableViewCell")
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
-        configureProducts()
+//        configureProducts()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
-        
+        if notifArray.count == 0 {
+            return 1
+        } else {
+            return notifArray.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,16 +70,37 @@ final class NotifikasiTableViewController: UITableViewController {
         guard let cell = reusableCell as? NotificationTableViewCell else {
             return reusableCell
         }
-        let dataproduk = products[indexPath.row]
-        cell.notificationType.text = dataproduk.testdata
-        cell.notificationnName.text = dataproduk.namadata
-        cell.notificationPrice.text = dataproduk.hargadata
-        cell.notificationTawar.text = dataproduk.hargatawar
-        cell.notificationDate.text = dataproduk.tanggal
         
-        
-        
-        return cell
+        if notifArray.count == 0 {
+            cell.notificationnName.text = "Tidak ada data"
+            cell.notificationType.text = ""
+            cell.notificationTawar.text = ""
+            cell.notificationDate.text = ""
+            cell.notificationPrice.text = ""
+            return cell
+        } else {
+            let dataproduk = notifArray[indexPath.row]
+            switch dataproduk.status {
+            case "bid":
+                cell.notificationType.text = "Penawaran produk"
+            case "create":
+                cell.notificationType.text = "Berhasil diterbitkan"
+            default:
+                fatalError("Syntax Error")
+            }
+            
+            cell.notificationnName.text = dataproduk.product_name
+            cell.notificationPrice.text = "Rp \((dataproduk.Product.base_price).formattedWithSeparator)"
+            switch dataproduk.bid_price {
+            case nil:
+                cell.notificationTawar.text = .none
+            default:
+                cell.notificationTawar.text =  "Ditawar Rp \((dataproduk.bid_price!).formattedWithSeparator)"
+            }
+            cell.notificationImage.loadImage(resource: dataproduk.image_url)
+            cell.notificationDate.text = dateFormatter(date: dataproduk.updatedAt)
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,26 +108,33 @@ final class NotifikasiTableViewController: UITableViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    
-    func configureProducts() {
-        products.append(ProductDitawar(namadata: "Jam Tangan Casio",
-                          hargadata: "Rp 250.000",
-                          testdata: "Penawaran Produk",
-                          hargatawar: "Ditawar Rp 200.000",
-                          tanggal: "20 Apr, 14:04"))
-        products.append(ProductDitawar(namadata: "Jam Tangan Casio",
-                          hargadata: "Rp 250.000",
-                          testdata: "Penawaran Produk",
-                          hargatawar: "Ditawar Rp 200.000",
-                          tanggal: "20 Apr, 14:04"))
-        products.append(ProductDitawar(namadata: "Jam Tangan Casio",
-                          hargadata: "Rp 250.000",
-                          testdata: "Penawaran Produk",
-                          hargatawar: "Ditawar Rp 200.000",
-                          tanggal: "20 Apr, 14:04"))
+    func dateFormatter(date: String) -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd MMM, HH:mm"
+        return dateFormatterPrint.string(from: dateFormatterGet.date(from: date)!)
     }
+    
+//    func configureProducts() {
+//        products.append(ProductDitawar(namadata: "Jam Tangan Casio",
+//                          hargadata: "Rp 250.000",
+//                          testdata: "Penawaran Produk",
+//                          hargatawar: "Ditawar Rp 200.000",
+//                          tanggal: "20 Apr, 14:04"))
+//        products.append(ProductDitawar(namadata: "Jam Tangan Casio",
+//                          hargadata: "Rp 250.000",
+//                          testdata: "Penawaran Produk",
+//                          hargatawar: "Ditawar Rp 200.000",
+//                          tanggal: "20 Apr, 14:04"))
+//        products.append(ProductDitawar(namadata: "Jam Tangan Casio",
+//                          hargadata: "Rp 250.000",
+//                          testdata: "Penawaran Produk",
+//                          hargatawar: "Ditawar Rp 200.000",
+//                          tanggal: "20 Apr, 14:04"))
+//    }
 }
-
+//
 struct ProductDitawar {
     let namadata: String
     let hargadata: String

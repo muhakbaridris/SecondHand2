@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-enum APIError: Error {
-    case custom(message: String)
-}
-
 class SHAuthAPI {
     
     func registerUserSecondHand(register: RegisterModel,
@@ -66,9 +62,6 @@ class SHAuthAPI {
                    headers: headers)
         .responseDecodable(of: UserDataResponseModel.self) { response in
             completionHandler(response.result)
-        }
-        .responseString { response in
-            print("get user responnya \(response)")
         }
     }
     
