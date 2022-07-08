@@ -116,6 +116,10 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userData = UserProfileCache.get()
+        namaAkun.text = userData!.full_name
+        kotaAkun.text = userData!.city
+        akunImg.loadImage(resource: userData!.image_url)
         
 //        judul.font = UIFont(name: "Poppins-ExtraBold.ttf", size: 40)
        
@@ -126,9 +130,6 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
         
         daftarJualCollectionView.delegate = self
         daftarJualCollectionView.dataSource = self
-        
-        namaAkun.text = "Arief"
-        kotaAkun.text = "Bekasi"
         btnAkun.layer.cornerRadius = 12
         btnAkun.layer.borderWidth = 1
         btnAkun.layer.borderColor = UIColor.purple.cgColor

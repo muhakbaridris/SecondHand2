@@ -14,7 +14,7 @@
         <!--Navigation Controller-->
         <scene sceneID="98t-ej-w2e">
             <objects>
-                <navigationController id="idY-Tx-4AH" sceneMemberID="viewController">
+                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="idY-Tx-4AH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Waa-Su-DIC">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,7 +52,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="SXl-Sh-shE" kind="show" id="xGT-gt-5MN"/>
+                                            <action selector="halamanRegisterTapIn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="I7y-FN-Bt6"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belum punya akun?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aey-Tg-rVJ">
@@ -189,16 +189,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44.615384615384613" y="75.355450236966817"/>
-        </scene>
-        <!--RegisterViewController-->
-        <scene sceneID="6F3-4Y-mMB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RegisterViewController" id="SXl-Sh-shE" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="fnX-DB-WVS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xLX-Y4-x8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="724" y="75"/>
         </scene>
     </scenes>
     <resources>

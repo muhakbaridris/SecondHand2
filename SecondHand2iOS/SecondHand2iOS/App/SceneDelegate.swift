@@ -13,22 +13,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if UserDefaults.standard.object(forKey: "access_token") != nil {
-            if let windowScene = scene as? UIWindowScene {
-                let window = UIWindow(windowScene: windowScene)
-                let viewController: UIStoryboard = UIStoryboard(name: "TabBarMainViewController", bundle: nil)
-                let homePage = viewController.instantiateViewController(withIdentifier: "TabBarMainViewController")
-                window.rootViewController = homePage
-                self.window = window
-                window.makeKeyAndVisible()
-                }
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            let window = UIWindow(windowScene: windowScene)
+            let viewController: UIStoryboard = UIStoryboard(name: "TabBarMainViewController", bundle: nil)
+            let homePage = viewController.instantiateViewController(withIdentifier: "TabBarMainViewController")
+            window.rootViewController = homePage
+            self.window = window
+            
         } else {
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 let viewController: UIStoryboard = UIStoryboard(name: "LoginViewController", bundle: nil)
                 let homePage = viewController.instantiateViewController(withIdentifier: "LoginViewController")
-                window.rootViewController = homePage
+                let navigation = UINavigationController(rootViewController: homePage)
+                window.rootViewController = navigation
+                
                 self.window = window
-                window.makeKeyAndVisible()
                 }
         }
         

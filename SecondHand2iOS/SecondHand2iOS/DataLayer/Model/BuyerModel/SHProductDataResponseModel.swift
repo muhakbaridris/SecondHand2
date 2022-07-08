@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - SHProductDataResponseModelElement
-struct SHAllProductResponseModelElement: Decodable {
+struct SHAllProductResponseModel: Decodable {
     let id: Int?
     let name: String?
     let base_price: Int?
@@ -17,25 +17,23 @@ struct SHAllProductResponseModelElement: Decodable {
     let user_id: Int?
     let status: Status?
 //    let createdAt, updatedAt: String?
-    let categories: [Category]?
+    let Categories: [kategori]
 }
 
 struct SHProductIDResponseModel: Decodable {
     let id: Int?
     let name: String?
-//    let shProductIDResponseModelDescription: NSNull?
     let base_price: Int?
     let image_url, image_name: String?
     let location: String?
     let user_id: Int?
     let status: Status?
-//    let createdAt, updatedAt: String?
-    let categories: [Category]?
-    let user: User?
+    let Categories: [kategori]
+    let User: user_detail?
 }
 
 // MARK: - Category
-struct Category: Decodable {
+struct kategori: Decodable {
     let id: Int?
     let name: String?
 }
@@ -46,7 +44,7 @@ enum Status: String, Decodable {
 }
 
 // MARK: - User
-struct User : Decodable {
+struct user_detail: Decodable {
     let id: Int?
     let full_name, email, phone_number, address: String?
     let image_url: String?

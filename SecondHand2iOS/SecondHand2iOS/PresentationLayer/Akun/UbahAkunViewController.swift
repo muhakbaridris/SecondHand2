@@ -22,6 +22,12 @@ final class UbahAkunViewController: UIViewController {
         buttonSimpanOutlet.layer.cornerRadius = 16
         ubahImageViewOutlet.layer.cornerRadius = 20
         
+        let userData = UserProfileCache.get()
+        ubahNamaOutlet.text = userData!.full_name
+        ubahImageViewOutlet.loadImage(resource: userData!.image_url)
+        ubahKotaOutlet.text = userData!.city
+        ubahAlamatOutlet.text = userData!.address
+        ubahNomorOutlet.text = userData!.phone_number
     }
 }
 

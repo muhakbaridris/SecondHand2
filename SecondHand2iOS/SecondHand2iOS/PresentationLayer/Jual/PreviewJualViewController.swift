@@ -12,15 +12,38 @@ final class PreviewJualViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var terbitkanButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    
     @IBOutlet weak var productView: UIView!
-    @IBOutlet weak var deskripsiView: UIView!
+    @IBOutlet weak var namaProdukOutlet: UILabel!
+    @IBOutlet weak var kategoriProdukOutlet: UILabel!
+    @IBOutlet weak var hargaProdukOutlet: UILabel!
+    
     @IBOutlet weak var penjualView: UIView!
+    @IBOutlet weak var namaPenjualOutlet: UILabel!
+    @IBOutlet weak var kotaPenjualOutlet: UILabel!
+    @IBOutlet weak var gambarPenjualOutlet: UIImageView!
+    
+    @IBOutlet weak var deskripsiView: UIView!
+    
     
     var currentPage = 0
     var arrBannerImage: [String] = ["AppIcon", "AppIcon", "AppIcon", "AppIcon"]
     
+    var produkName: String = ""
+    var produkPrice: Int = 0
+    var produkKategori: String = ""
+    var namaPenjual: String = ""
+    var kotaPenjual: String = ""
+    var deskripsiProduk: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let userData = UserProfileCache.get()
+        namaPenjualOutlet.text = userData!.full_name
+        kotaPenjualOutlet.text = userData!.city
+        gambarPenjualOutlet.loadImage(resource: userData!.image_url)
+        
         terbitkanButton.clipsToBounds = true
         terbitkanButton.layer.cornerRadius = 16
         configureView(view: productView)

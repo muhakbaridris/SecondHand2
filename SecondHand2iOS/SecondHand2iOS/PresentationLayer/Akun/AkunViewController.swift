@@ -9,14 +9,18 @@ import UIKit
 
 final class AkunViewController: UIViewController{
     
+    var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         userImageOutlet.layer.cornerRadius = 20
+        let userData = UserProfileCache.get()
+        userImageOutlet.loadImage(resource: userData!.image_url)
         
     }
+        
        
     @IBAction func buttonPengaturanTapIn(_ sender: Any) {
         print("tap")
@@ -34,9 +38,11 @@ final class AkunViewController: UIViewController{
                          labelFont: .systemFont(ofSize: 17),
                          showIn: .bottom, controller: self)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let viewController = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(viewController, animated: true)
+            let viewController = UIStoryboard(name: "LoginViewController", bundle: nil)
+            let homePage = viewController.instantiateViewController(withIdentifier: "LoginViewController")
+            let navigation = UINavigationController(rootViewController: homePage)
+            navigation.modalPresentationStyle = .fullScreen
+            self.present(navigation, animated: true)
         }
     }
     

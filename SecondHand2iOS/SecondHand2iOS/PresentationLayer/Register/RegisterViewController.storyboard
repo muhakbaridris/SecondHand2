@@ -14,7 +14,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6av-uD-r9P">
             <objects>
-                <navigationController id="Wgs-OJ-tM2" sceneMemberID="viewController">
+                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wgs-OJ-tM2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OZC-0P-3IY">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,55 +30,11 @@
         <!--Register View Controller-->
         <scene sceneID="qTc-Fh-9sd">
             <objects>
-                <viewController id="ZY3-tO-L6Q" customClass="RegisterViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZY3-tO-L6Q" customClass="RegisterViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vwg-ug-mBt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-qx-Ym2" userLabel="MasukView">
-                                <rect key="frame" x="75" y="762" width="240" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-nQ-8Xg">
-                                        <rect key="frame" x="0.0" y="-0.33333333333337123" width="240" height="31"/>
-                                        <color key="tintColor" name="Purple4"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Masuk di sini">
-                                                    <attributes>
-                                                        <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="keHalamanMasukTapIn:" destination="ZY3-tO-L6Q" eventType="touchUpInside" id="OXx-Z2-DKX"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sudah punya akun?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVX-cF-whE">
-                                        <rect key="frame" x="8" y="6.6666666666666288" width="130" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="PS9-Tp-kIZ"/>
-                                            <constraint firstAttribute="width" constant="130" id="qxG-bt-4ig"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="8S8-re-xsm"/>
-                                    <constraint firstItem="JVX-cF-whE" firstAttribute="centerY" secondItem="RHX-qx-Ym2" secondAttribute="centerY" id="A6Z-27-gcv"/>
-                                    <constraint firstItem="ihb-nQ-8Xg" firstAttribute="centerX" secondItem="RHX-qx-Ym2" secondAttribute="centerX" id="B7L-ID-l67"/>
-                                    <constraint firstItem="JVX-cF-whE" firstAttribute="leading" secondItem="RHX-qx-Ym2" secondAttribute="leading" constant="8" id="W9i-pO-hCU"/>
-                                    <constraint firstAttribute="trailing" secondItem="ihb-nQ-8Xg" secondAttribute="trailing" id="WgE-vc-e5H"/>
-                                    <constraint firstAttribute="height" constant="30" id="qPJ-GU-mUc"/>
-                                    <constraint firstItem="ihb-nQ-8Xg" firstAttribute="leading" secondItem="RHX-qx-Ym2" secondAttribute="leading" id="rx7-Sr-54G"/>
-                                    <constraint firstItem="ihb-nQ-8Xg" firstAttribute="centerY" secondItem="RHX-qx-Ym2" secondAttribute="centerY" id="uen-oa-QPJ"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daftar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7b-bg-T3g">
                                 <rect key="frame" x="35" y="122" width="75" height="29"/>
                                 <constraints>
@@ -164,7 +120,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Daftar"/>
                                 <connections>
                                     <action selector="keHalamanDaftarFullTapIn:" destination="ZY3-tO-L6Q" eventType="touchUpInside" id="SaJ-zD-VBN"/>
-                                    <segue destination="9d5-Nb-TDH" kind="show" id="ew3-gQ-KCV"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Masukan Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPd-b2-KXI">
@@ -192,11 +147,9 @@
                             <constraint firstItem="XPd-b2-KXI" firstAttribute="leading" secondItem="W9U-Bp-g6z" secondAttribute="leading" id="Ylu-Y1-DeB"/>
                             <constraint firstItem="W9U-Bp-g6z" firstAttribute="top" secondItem="wJ7-2e-X8J" secondAttribute="bottom" constant="20" id="bPB-C2-21b"/>
                             <constraint firstItem="X7b-bg-T3g" firstAttribute="top" secondItem="Oeh-Sy-N9r" secondAttribute="top" constant="34" id="cQC-bg-N99"/>
-                            <constraint firstItem="Oeh-Sy-N9r" firstAttribute="bottom" secondItem="RHX-qx-Ym2" secondAttribute="bottom" constant="18" id="iHQ-Yh-DDL"/>
                             <constraint firstItem="X7b-bg-T3g" firstAttribute="leading" secondItem="LYl-ZD-NzX" secondAttribute="leading" id="ogV-FV-Ior"/>
                             <constraint firstItem="iMG-P2-1Xf" firstAttribute="centerX" secondItem="vwg-ug-mBt" secondAttribute="centerX" id="osh-Oh-ebg"/>
                             <constraint firstItem="qsS-Qf-JCG" firstAttribute="top" secondItem="LYl-ZD-NzX" secondAttribute="bottom" constant="20" id="pMA-0H-1Uw"/>
-                            <constraint firstItem="RHX-qx-Ym2" firstAttribute="centerX" secondItem="vwg-ug-mBt" secondAttribute="centerX" id="qyk-NO-Prc"/>
                             <constraint firstItem="XPd-b2-KXI" firstAttribute="top" secondItem="W9U-Bp-g6z" secondAttribute="bottom" constant="4" id="t3b-Bn-Bfa"/>
                             <constraint firstItem="mVn-mB-irC" firstAttribute="leading" secondItem="XPd-b2-KXI" secondAttribute="trailing" constant="5" id="u70-TS-KXt"/>
                             <constraint firstItem="iMG-P2-1Xf" firstAttribute="top" secondItem="XPd-b2-KXI" secondAttribute="bottom" constant="28" id="uKP-cW-ZBk"/>
@@ -219,13 +172,13 @@
         <!--Lengkapi Info Akun-->
         <scene sceneID="c01-8q-s39">
             <objects>
-                <viewController id="9d5-Nb-TDH" customClass="RegisterFullViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterFullViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9d5-Nb-TDH" customClass="RegisterFullViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8b-10-F3Y">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EwC-ZG-zQP">
-                                <rect key="frame" x="147" y="112" width="96" height="96"/>
+                                <rect key="frame" x="147" y="68" width="96" height="96"/>
                                 <color key="backgroundColor" name="Purple1"/>
                                 <color key="tintColor" name="PurpleHalf"/>
                                 <constraints>
@@ -234,7 +187,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pilih Kota" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-BW-4eH">
-                                <rect key="frame" x="35" y="346" width="320" height="48"/>
+                                <rect key="frame" x="35" y="302" width="320" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="oWh-h1-1kG"/>
                                 </constraints>
@@ -242,13 +195,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Handphone*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0e-Yu-BX1">
-                                <rect key="frame" x="34.999999999999993" y="531" width="122.33333333333331" height="21"/>
+                                <rect key="frame" x="34.999999999999993" y="487" width="122.33333333333331" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Lengkap" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm2-lH-5wA">
-                                <rect key="frame" x="35" y="257" width="320" height="48"/>
+                                <rect key="frame" x="35" y="213" width="320" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="fz2-TW-nnl"/>
                                 </constraints>
@@ -266,13 +219,13 @@
                                 <buttonConfiguration key="configuration" style="plain" title="SImpan"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alamat*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-71-Bss">
-                                <rect key="frame" x="35" y="410" width="60.666666666666657" height="21"/>
+                                <rect key="frame" x="35" y="366" width="60.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0oN-gF-N4s">
-                                <rect key="frame" x="35" y="435" width="320" height="80"/>
+                                <rect key="frame" x="35" y="391" width="320" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="wBN-ad-zqw"/>
                                 </constraints>
@@ -282,19 +235,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQW-7D-d3N">
-                                <rect key="frame" x="35" y="232" width="53" height="21"/>
+                                <rect key="frame" x="35" y="188" width="53" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kota*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-6s-cDk">
-                                <rect key="frame" x="35" y="321" width="42" height="21"/>
+                                <rect key="frame" x="35" y="277" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mde-Af-lpA">
-                                <rect key="frame" x="35" y="556" width="320" height="48"/>
+                                <rect key="frame" x="35" y="512" width="320" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1LR-8E-vSu"/>
                                 </constraints>

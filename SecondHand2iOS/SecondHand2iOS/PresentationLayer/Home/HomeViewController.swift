@@ -118,11 +118,61 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-
+    @IBOutlet weak var textLabelKategori: UILabel!
+    @IBOutlet weak var headlineLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var labelDiskon: UILabel!
+    @IBOutlet weak var labelPercent: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewB: UICollectionView!
+    
+    let callAuthAPI = SHAuthAPI()
+    private let itemsPerRow: CGFloat = 3
+    var access_token: String = ""
+    let getAPI = SHBuyerAPI()
     
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
-    
-
+    let products: [Product] = [
+        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Jam Tangan Casio", productType: "Aksesoris", productPrice: "Rp 250.000"),
+        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Smartwatch Samsung", productType: "Aksesoris", productPrice: "Rp 3.550.000")
+    ]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            access_token = UserDefaults.standard.string(forKey: "access_token")!
+            print(UserDefaults.standard.string(forKey: "access_token")!)
+        }
+        
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+            switch result {
+            case let .success(data):
+                UserProfileCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
+        getAPI.getBuyerProductId(id: 98) { result in
+            switch result {
+            case let .success(data):
+                print(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
+        self.view.backgroundColor = UIColor.white
+        textLabelKategori.text = "Telusuri Kategori"
+        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
+        labelDiskon.text = "Diskon Hingga"
+        labelPercent.text = "60%"
+        collectionView.dataSource = self
+        collectionViewB.dataSource = self
+        
+        collectionView.delegate = self
+        collectionViewB.delegate = self
+//        collectionViewB.reloadData()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

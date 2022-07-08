@@ -15,6 +15,8 @@ final class RegisterViewController: UIViewController{
     @IBOutlet weak var buttonShowPasswordOutlet: UIButton!
     @IBOutlet weak var buttonDaftarOutlet: UIButton!
     
+    let callAPI = SHAuthAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -40,16 +42,39 @@ final class RegisterViewController: UIViewController{
            buatEmailTextFieldOutlet.text?.isEmpty == true ||
            buatPasswordTextFieldOutlet.text?.isEmpty == true ||
            buatEmailTextFieldOutlet.text?.isValidEmail() == false {
-            CustomToast.show(message: "Lengkapi Data", bgColor: .systemRed, textColor: .white, labelFont: .systemFont(ofSize: 17), showIn: .bottom, controller: self)
+            CustomToast.show(message: "Lengkapi Data",
+                             bgColor: .systemRed,
+                             textColor: .white,
+                             labelFont: .systemFont(ofSize: 17),
+                             showIn: .bottom,
+                             controller: self)
         } else {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "RegisterViewController", bundle:nil)
-            let daftarLengkap = storyBoard.instantiateViewController(withIdentifier: "DaftarLengkap")
-            self.navigationController?.pushViewController(daftarLengkap, animated: true)
+            let inputRegisterData = RegisterModelMini(full_name: buatNamaTextFieldOutlet.text!,
+                                                      email: buatEmailTextFieldOutlet.text!,
+                                                      password: buatPasswordTextFieldOutlet.text!)
+            callAPI.registerUserSecondHand(registerData: inputRegisterData) { result in
+                switch result {
+                case let .success(data):
+                    print("result \(data)")
+                    CustomToast.show(message: "Anda berhasil daftar, silahkan Login.",
+                                     bgColor: .systemGreen,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                case .failure(let err):
+                    print("errornya \(err.localizedDescription)")
+                    CustomToast.show(message: "Email salah atau sudah terpakai.",
+                                     bgColor: .systemRed,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                }
+            }
         }
     }
-
-    @IBAction func keHalamanMasukTapIn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-        
 }
