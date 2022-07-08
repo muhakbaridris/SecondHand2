@@ -9,29 +9,16 @@ import UIKit
 
 final class AkunViewController: UIViewController{
     
-    let callAPI = SHAuthAPI()
     var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
-    var access_token: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         userImageOutlet.layer.cornerRadius = 20
+        let userData = UserProfileCache.get()
+        userImageOutlet.loadImage(resource: userData!.image_url)
         
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print(UserDefaults.standard.string(forKey: "access_token")!)
-        }
-        callAPI.getUserDataSecondHand(access_token: access_token) { result in
-            switch result {
-            case let .success(data):
-                self.userImageOutlet.loadImage(resource: data.image_url)
-                print(data.city)
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
     }
         
        

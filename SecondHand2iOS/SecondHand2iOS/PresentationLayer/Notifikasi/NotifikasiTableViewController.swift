@@ -85,6 +85,10 @@ final class NotifikasiTableViewController: UITableViewController {
                 cell.notificationType.text = "Penawaran produk"
             case "create":
                 cell.notificationType.text = "Berhasil diterbitkan"
+            case "terima":
+                cell.notificationType.text = "Berhasil diterima"
+            case "declined":
+                cell.notificationType.text = "Penawaran ditolak"
             default:
                 fatalError("Syntax Error")
             }

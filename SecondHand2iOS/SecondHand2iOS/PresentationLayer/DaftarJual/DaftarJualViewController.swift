@@ -23,8 +23,6 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
     var cvnama = [String]()
     var cvharga = [String]()
     var cvtipe = [String]()
-    var access_token = ""
-    let callAuthAPI = SHAuthAPI()
     
     @IBOutlet var judul: UILabel!
     @IBOutlet var akunImg: UIImageView!
@@ -118,23 +116,10 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print(UserDefaults.standard.string(forKey: "access_token")!)
-        }
-        
-        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
-            switch result {
-            case let .success(data):
-                self.namaAkun.text = data.full_name
-                self.akunImg.loadImage(resource: data.image_url)
-                self.kotaAkun.text = data.city
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
-        
+        let userData = UserProfileCache.get()
+        namaAkun.text = userData!.full_name
+        kotaAkun.text = userData!.city
+        akunImg.loadImage(resource: userData!.image_url)
         
 //        judul.font = UIFont(name: "Poppins-ExtraBold.ttf", size: 40)
        
@@ -145,9 +130,6 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
         
         daftarJualCollectionView.delegate = self
         daftarJualCollectionView.dataSource = self
-        
-        namaAkun.text = "Arief"
-        kotaAkun.text = "Bekasi"
         btnAkun.layer.cornerRadius = 12
         btnAkun.layer.borderWidth = 1
         btnAkun.layer.borderColor = UIColor.purple.cgColor

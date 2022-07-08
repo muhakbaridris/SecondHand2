@@ -79,8 +79,10 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
     
+    let callAuthAPI = SHAuthAPI()
     private let itemsPerRow: CGFloat = 3
     var access_token: String = ""
+    var response: [UserDataResponseModel] = []
     
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
     let products: [Product] = [
@@ -93,6 +95,16 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             access_token = UserDefaults.standard.string(forKey: "access_token")!
             print(UserDefaults.standard.string(forKey: "access_token")!)
         }
+        
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+            switch result {
+            case let .success(data):
+                UserProfileCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
         self.view.backgroundColor = UIColor.white
         textLabelKategori.text = "Telusuri Kategori"
         headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
