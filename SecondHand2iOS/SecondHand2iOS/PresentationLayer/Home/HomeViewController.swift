@@ -82,11 +82,13 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
             let products: SHAllProductResponseModelElement = displayedProduct[indexPath.row]
-            cellB.productName.text = "\(products.name!)"
-            cellB.productPrice.text = "\(products.base_price!)"
+            if(products.status == .available){
+                cellB.productName.text = "\(products.name!)"
+                cellB.productPrice.text = "\(products.base_price!)"
+                cellB.productType.text = "\(products.status!)"
+            }
             return cellB
         }
-
     }
 
     var lastIndexActive:IndexPath = [1 ,0]
@@ -124,13 +126,8 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 156, height: 210)
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-            return CGSize(width: collectionView.frame.size.width/1, height: collectionView.frame.size.height/1)
-
-        }
+        return CGSize(width: 156, height: 210)
+    }
+    
 }
