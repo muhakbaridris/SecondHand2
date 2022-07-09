@@ -95,5 +95,29 @@ class SHAuthAPI {
             //code here
         }
     }
+    
+    func changePasswordSecondHand(changePasswrdData: ChangePasswordModel ,
+                                  access_token: String,
+                                  completionHandler: @escaping (Result<ChangePasswordResponseModel, AFError>) -> Void) {
+        let url = "https://market-final-project.herokuapp.com/auth/change-password"
+        let headers: HTTPHeaders = ["accept": "body",
+                                    "access_token": "\(access_token)",
+                                    "Content-Type": "multipart/form-data"]
+        let params: [String:String] = ["current_password": changePasswrdData.current_password,
+                                       "new_password": changePasswrdData.new_password,
+                                       "confirm_password": changePasswrdData.confirm_password
+                                      ]
+        AF.upload(multipartFormData: { multipartFormData in
+            for (key, value) in params {
+                multipartFormData.append(value.data(using: .utf8)!, withName: key)
+            }
+        },
+                  to: url,
+                  method: .put,
+                  headers: headers)
+        .responseDecodable(of: ChangePasswordResponseModel.self) { response in
+            completionHandler(response.result)
+        }
+    }
 }
 

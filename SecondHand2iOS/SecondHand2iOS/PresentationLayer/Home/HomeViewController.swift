@@ -7,20 +7,73 @@
 
 import UIKit
 
-struct Product {
-    let productImage: UIImage
-    let productName: String
-    let productType: String
-    let productPrice: String
-}
 
 final class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var textLabelKategori: UILabel!
+    @IBOutlet weak var headlineLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var labelDiskon: UILabel!
+    @IBOutlet weak var labelPercent: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewB: UICollectionView!
+    
+    private let itemsPerRow: CGFloat = 3
+    var access_token: String = ""
+    let getAPI = SHBuyerAPI()
+    var responseBuyerOrderAll = [SHAllProductResponseModel]()
+    var displayedProduct: [SHAllProductResponseModel] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            access_token = UserDefaults.standard.string(forKey: "access_token")!
+            print(UserDefaults.standard.string(forKey: "access_token")!)
+        }
+        
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+            switch result {
+            case let .success(data):
+                UserProfileCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+
+        
+        collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        
+        getAPI.getAllBuyerProduct() { [weak self](result) in
+            guard let _self = self else {
+                return
+            }
+            
+            switch result {
+            case let .success(data):
+                _self.displayedProduct = data
+                _self.collectionViewB.reloadData()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+
+        self.view.backgroundColor = UIColor.white
+        textLabelKategori.text = "Telusuri Kategori"
+        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
+        labelDiskon.text = "Diskon Hingga"
+        labelPercent.text = "60%"
+        collectionView.dataSource = self
+        collectionViewB.dataSource = self
+        
+        collectionView.delegate = self
+        collectionViewB.delegate = self
+//        collectionViewB.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
             return carouselButton.count
         }else {
-            return products.count
+            return displayedProduct.count
         }
     }
     
@@ -39,10 +92,16 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             return cellA
         }else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
-            cellB.setup(with: products[indexPath.row])
+            let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
+            cellB.productName.text = "\(products.name!)"
+//            "Rp \((dataproduk.Product.base_price).formattedWithSeparator)"
+            cellB.productPrice.text = "Rp \((products.base_price!).formattedWithSeparator)"
+            cellB.productImage.loadImage(resource: products.image_url)
+            cellB.productType.text = "\(products.Categories!.first!.name!)"
+            cellB.layer.borderWidth = 1
+            cellB.layer.borderColor = UIColor.black.cgColor
             return cellB
         }
-
     }
 
     var lastIndexActive:IndexPath = [1 ,0]
@@ -62,6 +121,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 self.lastIndexActive = indexPath
             }
         }else{
+            print(indexPath.row)
             let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController")
             self.navigationController?.pushViewController(viewController, animated: true)
         }
@@ -71,62 +131,13 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBOutlet weak var textLabelKategori: UILabel!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var labelDiskon: UILabel!
-    @IBOutlet weak var labelPercent: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionViewB: UICollectionView!
-    
     let callAuthAPI = SHAuthAPI()
-    private let itemsPerRow: CGFloat = 3
-    var access_token: String = ""
-    var response: [UserDataResponseModel] = []
-    
     var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
-    let products: [Product] = [
-        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Jam Tangan Casio", productType: "Aksesoris", productPrice: "Rp 250.000"),
-        Product(productImage: UIImage(named: "AppIconImage")!, productName: "Smartwatch Samsung", productType: "Aksesoris", productPrice: "Rp 3.550.000")
-    ]
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print(UserDefaults.standard.string(forKey: "access_token")!)
-        }
-        
-        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
-            switch result {
-            case let .success(data):
-                UserProfileCache.save(data)
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
-        
-        self.view.backgroundColor = UIColor.white
-        textLabelKategori.text = "Telusuri Kategori"
-        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
-        labelDiskon.text = "Diskon Hingga"
-        labelPercent.text = "60%"
-        collectionView.dataSource = self
-        collectionViewB.dataSource = self
-        
-        collectionView.delegate = self
-        collectionViewB.delegate = self
-//        collectionViewB.reloadData()
-    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 156, height: 210)
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-            return CGSize(width: collectionView.frame.size.width/1, height: collectionView.frame.size.height/1)
-
-        }
+        return CGSize(width: 156, height: 210)
+    }
+    
 }

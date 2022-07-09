@@ -15,6 +15,7 @@ final class LoginViewController: UIViewController{
     @IBOutlet weak var buttonMasukOutlet: UIButton!
     
     let callAPI = SHAuthAPI()
+    var loginResponse: [LoginResponseModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,9 @@ final class LoginViewController: UIViewController{
                                      labelFont: .systemFont(ofSize: 17),
                                      showIn: .bottom, controller: self)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        let viewController = UIStoryboard(name: "TabBarMainViewController", bundle: nil).instantiateViewController(withIdentifier: "TabBarMainViewController")
+                        let viewController = UIStoryboard(name: "TabBarMainViewController",
+                                                          bundle: nil)
+                            .instantiateViewController(withIdentifier: "TabBarMainViewController")
                         viewController.modalPresentationStyle = .fullScreen
                         self.present(viewController, animated: true)
                     }
@@ -73,8 +76,6 @@ final class LoginViewController: UIViewController{
                 }
             }
         }
-        
-        
     }
     
     @IBAction func halamanRegisterTapIn(_ sender: Any) {

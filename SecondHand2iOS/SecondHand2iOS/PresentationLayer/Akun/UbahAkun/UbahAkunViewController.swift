@@ -29,5 +29,10 @@ final class UbahAkunViewController: UIViewController {
         ubahAlamatOutlet.text = userData!.address
         ubahNomorOutlet.text = userData!.phone_number
     }
+    
+    @IBAction func buttonUbahPasswordTapIn(_ sender: Any) {let viewController = UIStoryboard(name: "UbahPasswordViewController", bundle: nil).instantiateViewController(withIdentifier: "UbahPasswordViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 

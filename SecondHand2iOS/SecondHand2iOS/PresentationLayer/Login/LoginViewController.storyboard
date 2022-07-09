@@ -155,15 +155,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eS9-Or-HRb">
-                                <rect key="frame" x="150" y="529" width="90" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Home"/>
-                                <connections>
-                                    <segue destination="2Zv-oc-JAT" kind="presentation" modalPresentationStyle="fullScreen" id="Yy0-sb-8GG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -198,16 +189,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44.615384615384613" y="75.355450236966817"/>
-        </scene>
-        <!--TabBarMainViewController-->
-        <scene sceneID="i47-Fa-WhY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TabBarMainViewController" id="2Zv-oc-JAT" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="CSd-s5-UVL"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f81-RU-c9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="659" y="220"/>
         </scene>
     </scenes>
     <resources>

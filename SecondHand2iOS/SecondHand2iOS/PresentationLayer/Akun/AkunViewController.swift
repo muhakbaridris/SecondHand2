@@ -20,8 +20,12 @@ final class AkunViewController: UIViewController{
         userImageOutlet.loadImage(resource: userData!.image_url)
         
     }
-        
-       
+    
+    @IBAction func buttonUbahAkunTapIn(_ sender: Any) {
+        let viewController = UIStoryboard(name: "UbahAkunViewController", bundle: nil).instantiateViewController(withIdentifier: "UbahAkunViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @IBAction func buttonPengaturanTapIn(_ sender: Any) {
         print("tap")
         let viewController = UIStoryboard(name: "PengaturanViewController", bundle: nil).instantiateViewController(withIdentifier: "PengaturanViewController")
