@@ -29,6 +29,17 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             access_token = UserDefaults.standard.string(forKey: "access_token")!
             print(UserDefaults.standard.string(forKey: "access_token")!)
         }
+        
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+            switch result {
+            case let .success(data):
+                UserProfileCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+
+        
         collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
         
         getAPI.getAllBuyerProduct() { [weak self](result) in
