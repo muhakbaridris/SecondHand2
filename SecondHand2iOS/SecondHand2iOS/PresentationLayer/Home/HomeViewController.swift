@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         if UserDefaults.standard.object(forKey: "access_token") != nil {
             access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print(UserDefaults.standard.string(forKey: "access_token")!)
+            print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
         }
         
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
@@ -38,6 +38,8 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(err.localizedDescription)
             }
         }
+        
+        
 
         
         collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
@@ -83,14 +85,14 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             cellA.nameCell.text = carouselButton[indexPath.row]
             if carouselButton[indexPath.row] == "Semua" {
                 cellA.viewCell.backgroundColor = UIColor(named: "Purple4")
-            }else{
+            } else {
                 cellA.nameCell.textColor = UIColor.black
                 cellA.imageCell.tintColor = .black
                 cellA.viewCell.backgroundColor = UIColor(named: "PurpleHalf")
             }
             
             return cellA
-        }else {
+        } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
             let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
             cellB.productName.text = "\(products.name!)"
@@ -120,10 +122,16 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 cell1?.viewCell.layer.masksToBounds = true
                 self.lastIndexActive = indexPath
             }
-        }else{
+        } else {
             print(indexPath.row)
-            let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController")
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
+            let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController") as? BuyerViewController
+            viewController?.idBarang = products.id!
+            viewController?.namaBarang = products.name!
+            viewController?.kategoriBarang = products.Categories!.first!.name!
+            viewController?.hargaBarang = products.base_price!
+            viewController?.urlGambarBarang = products.image_url!
+            self.navigationController?.pushViewController(viewController!, animated: true)
         }
     }
     

@@ -15,8 +15,6 @@ struct SHAllProductResponseModel: Codable {
     let image_url: String?
     let image_name, location: String?
     let user_id: Int?
-//    let status: Status?
-////    let createdAt, updatedAt: String?
     let Categories: [kategori]?
 }
 
@@ -29,6 +27,10 @@ struct SHProductIDResponseModel: Codable {
     let user_id: Int?
     let status: Status?
     let Categories: [kategori]
+    let User: user_detail?
+}
+
+struct SHBuyerProductIDUserOnlyModel: Decodable {
     let User: user_detail?
 }
 

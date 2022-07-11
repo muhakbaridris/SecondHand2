@@ -34,6 +34,22 @@ class SHBuyerAPI{
             print(response)
         }
     }
+    
+    func getBuyerProductIdUserOnly(id: Int,
+                           completionHandler: @escaping (Result<SHBuyerProductIDUserOnlyModel, AFError>) -> Void){
+        let url = "https://market-final-project.herokuapp.com/buyer/product/\(id)"
+        let headers: HTTPHeaders = [.accept("body"),
+                                    .contentType("application/json; charset=utf-8")]
+        AF.request(url,
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: SHBuyerProductIDUserOnlyModel.self) {
+            response in completionHandler(response.result)
+        }.responseString { response in
+            print(response)
+        }
+    }
+
 }
 
 extension SHBuyerAPI{

@@ -87,12 +87,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-JN-XSQ">
                                 <rect key="frame" x="16" y="343" width="382" height="98"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jam Tangan Casio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-D2-F2P">
-                                        <rect key="frame" x="24" y="18" width="334" height="20"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aksesoris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoS-4w-bix">
                                         <rect key="frame" x="24" y="42" width="334" height="14"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
@@ -102,6 +96,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 250.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csz-sf-Uv4">
                                         <rect key="frame" x="24" y="64" width="334" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jam Tangan Casio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-D2-F2P">
+                                        <rect key="frame" x="24" y="18" width="334" height="20"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -221,7 +221,14 @@
                     <connections>
                         <outlet property="btnBuy" destination="iFf-jj-7Af" id="Xyh-zF-aAN"/>
                         <outlet property="collectionView" destination="vL1-PM-0Sf" id="2Ag-oC-yXX"/>
+                        <outlet property="deskripsiBarangOutlet" destination="8Wa-Lb-zKm" id="7kG-8I-twx"/>
                         <outlet property="deskripsiView" destination="kly-T5-zKm" id="9RI-G8-EZ9"/>
+                        <outlet property="gambarPenjualOutlet" destination="W0K-Xa-K9z" id="Wvc-vP-DaU"/>
+                        <outlet property="hargaBarangOutlet" destination="csz-sf-Uv4" id="Mx7-8l-Q9b"/>
+                        <outlet property="kategoriBarangOutlet" destination="DoS-4w-bix" id="BYU-em-d12"/>
+                        <outlet property="kotaPenjualOutlet" destination="6Ep-JE-mdJ" id="1Sz-wG-7Ya"/>
+                        <outlet property="namaBarangOutlet" destination="5VH-D2-F2P" id="Qmf-Wy-21z"/>
+                        <outlet property="namaPenjualOutlet" destination="EkH-Mi-0iF" id="V8G-Mg-4rV"/>
                         <outlet property="pagerControl" destination="1kJ-PS-4pN" id="XAT-7d-Egm"/>
                         <outlet property="penjualView" destination="Rub-qj-yvV" id="Bzl-GJ-kyF"/>
                         <outlet property="productView" destination="TRP-JN-XSQ" id="ERm-zT-pr0"/>
