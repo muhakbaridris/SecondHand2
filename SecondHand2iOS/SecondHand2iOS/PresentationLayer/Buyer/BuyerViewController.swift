@@ -23,18 +23,19 @@ class BuyerViewController: UIViewController {
     @IBOutlet weak var kotaPenjualOutlet: UILabel!
     
     @IBOutlet weak var deskripsiView: UIView!
-    @IBOutlet weak var deskripsiBarangOutlet: UILabel!
+    @IBOutlet weak var deskripsiBarangOutlet: UITextView!
     
     @IBOutlet weak var btnBuy: UIButton!
     
     var currentPage = 0
-    var arrBannerImage = ["AppIcon", "BannerImage", "BannerImage"]
+    var arrBannerImage: [String] = []
     
     var urlGambarBarang: String = ""
     var idBarang: Int = 0
     var namaBarang: String = ""
     var kategoriBarang: String = ""
     var hargaBarang: Int = 0
+    var deskripsiBarang: String = ""
     let getProductAPI = SHBuyerAPI()
     
 //    var modalVC = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "HalfPresentationViewController") as? HalfPresentationViewController
@@ -50,13 +51,14 @@ class BuyerViewController: UIViewController {
         namaBarangOutlet.text = namaBarang
         kategoriBarangOutlet.text = kategoriBarang
         hargaBarangOutlet.text = "Rp \(hargaBarang.formattedWithSeparator)"
-        
+        deskripsiBarangOutlet.text = deskripsiBarang
         getProductAPI.getBuyerProductIdUserOnly(id: idBarang) { result in
             switch result {
             case let .success(data):
                 self.gambarPenjualOutlet.loadImage(resource: data.User?.image_url)
                 self.namaPenjualOutlet.text = data.User?.full_name
                 self.kotaPenjualOutlet.text = data.User?.city
+                self.pagerControl.numberOfPages = self.arrBannerImage.count
             case let .failure(err):
                 print(err.localizedDescription)
             }
@@ -91,7 +93,8 @@ extension BuyerViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BuyerCollectionViewCell", for: indexPath) as! BuyerCollectionViewCell
-        cell.bannerImage.image = UIImage(named: arrBannerImage[indexPath.row])
+        cell.bannerImage.loadImage(resource: arrBannerImage[indexPath.row])
+//        print(arrBannerImage[indexPath.row])
         return cell
     }
     

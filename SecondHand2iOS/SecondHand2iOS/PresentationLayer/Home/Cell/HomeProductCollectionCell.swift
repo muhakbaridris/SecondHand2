@@ -17,6 +17,7 @@ class HomeProductCollectionCell: UICollectionViewCell {
 //        productImage.image = product.image_url
         productName.text = product.name
 //        productType.text = product.categories
+        
         productPrice.text = "\(product.base_price)"
     }
 }

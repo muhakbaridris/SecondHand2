@@ -30,8 +30,6 @@ class SHBuyerAPI{
                    headers: headers)
         .responseDecodable(of: SHProductIDResponseModel.self) {
             response in completionHandler(response.result)
-        }.responseString { response in
-            print(response)
         }
     }
     
@@ -45,8 +43,6 @@ class SHBuyerAPI{
                    headers: headers)
         .responseDecodable(of: SHBuyerProductIDUserOnlyModel.self) {
             response in completionHandler(response.result)
-        }.responseString { response in
-            print(response)
         }
     }
 
@@ -72,9 +68,6 @@ extension SHBuyerAPI{
                    headers: headers)
         .responseDecodable(of: SHBuyerOrderIDResponseModel.self) {
             response in completionHandler(response.result)
-        }
-        .responseString { response in
-            print(response)
         }
     }
 }

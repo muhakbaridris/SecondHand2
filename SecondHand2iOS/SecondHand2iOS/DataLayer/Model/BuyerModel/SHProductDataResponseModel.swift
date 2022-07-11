@@ -11,6 +11,7 @@ import Foundation
 struct SHAllProductResponseModel: Codable {
     let id: Int?
     let name: String?
+    let description: String?
     let base_price: Int?
     let image_url: String?
     let image_name, location: String?

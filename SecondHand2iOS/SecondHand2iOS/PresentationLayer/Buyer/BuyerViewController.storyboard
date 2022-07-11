@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQ0-AT-QdK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQ0-AT-QdK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -166,20 +166,25 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wa-Lb-zKm">
-                                        <rect key="frame" x="16" y="44" width="304" height="240"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9MZ-Lw-rpK">
+                                        <rect key="frame" x="16" y="40" width="350" height="208"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9MZ-Lw-rpK" secondAttribute="trailing" constant="16" id="9GG-Mj-OZM"/>
                                     <constraint firstAttribute="height" constant="292" id="DFJ-jD-1BG"/>
+                                    <constraint firstItem="9MZ-Lw-rpK" firstAttribute="top" secondItem="c0s-bc-tZW" secondAttribute="bottom" constant="4" id="Vvv-kA-45t"/>
                                     <constraint firstItem="c0s-bc-tZW" firstAttribute="top" secondItem="kly-T5-zKm" secondAttribute="top" constant="16" id="Z8Z-41-8x2"/>
+                                    <constraint firstItem="9MZ-Lw-rpK" firstAttribute="leading" secondItem="kly-T5-zKm" secondAttribute="leading" constant="16" id="fdQ-WV-Alk"/>
                                     <constraint firstAttribute="trailing" secondItem="c0s-bc-tZW" secondAttribute="trailing" constant="16" id="ged-a4-9ED"/>
                                     <constraint firstItem="c0s-bc-tZW" firstAttribute="leading" secondItem="kly-T5-zKm" secondAttribute="leading" constant="16" id="kYA-QV-xpG"/>
+                                    <constraint firstAttribute="bottom" secondItem="9MZ-Lw-rpK" secondAttribute="bottom" constant="44" id="zJu-2W-Kqw"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFf-jj-7Af">
@@ -221,7 +226,7 @@
                     <connections>
                         <outlet property="btnBuy" destination="iFf-jj-7Af" id="Xyh-zF-aAN"/>
                         <outlet property="collectionView" destination="vL1-PM-0Sf" id="2Ag-oC-yXX"/>
-                        <outlet property="deskripsiBarangOutlet" destination="8Wa-Lb-zKm" id="7kG-8I-twx"/>
+                        <outlet property="deskripsiBarangOutlet" destination="9MZ-Lw-rpK" id="gPn-jh-LcZ"/>
                         <outlet property="deskripsiView" destination="kly-T5-zKm" id="9RI-G8-EZ9"/>
                         <outlet property="gambarPenjualOutlet" destination="W0K-Xa-K9z" id="Wvc-vP-DaU"/>
                         <outlet property="hargaBarangOutlet" destination="csz-sf-Uv4" id="Mx7-8l-Q9b"/>
