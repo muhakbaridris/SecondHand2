@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SHAllBuyerOrderResponseModelElement : Decodable {
+struct SHAllBuyerOrderResponseModel : Decodable {
     let id : Int?
     let product_id : Int?
     let buyer_id : Int?
@@ -28,4 +28,21 @@ struct SHBuyerOrderIDResponseModel: Decodable {
     let status: String?
 //    let product: Product?
 //    let user: User?
+}
+
+struct SHPostBuyerOrderModel: Encodable {
+    let product_id: Int
+    let bid_price: Int
+}
+
+struct SHPostBuyerOrderResponseModel: Decodable {
+    let id: Int
+    let buyer_id: Int
+    let product_id: Int
+    let price: Int
+    let product_name: String
+    let base_price: String
+    let updatedAt: String
+    let createdAt: String
+    let status: String
 }

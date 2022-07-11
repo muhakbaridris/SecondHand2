@@ -131,6 +131,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             viewController?.kategoriBarang = products.Categories!.first!.name!
             viewController?.hargaBarang = products.base_price!
             viewController?.deskripsiBarang = products.description!
+            viewController?.urlGambarBarang = products.image_url!
             viewController?.arrBannerImage = [products.image_url!]
             self.navigationController?.pushViewController(viewController!, animated: true)
         }

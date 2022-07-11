@@ -9,25 +9,84 @@ import UIKit
 
 final class OverlayBuyerView: UIViewController {
     
-    @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var topSliderOutlet: UIView!
+    @IBOutlet weak var borderViewProduct: UIView!
+    @IBOutlet weak var gambarBarangImageOutlet: UIImageView!
+    @IBOutlet weak var namaBarangLabelOutlet: UILabel!
+    @IBOutlet weak var hargaBarangLabelOutlet: UILabel!
     @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var priceView: UITextField!
+    @IBOutlet weak var btnSend: UIButton!
+    
+    var callBuyerAPI = SHBuyerOrderAPI()
+    var access_token: String = ""
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
-    @IBOutlet weak var borderViewProduct: UIView!
+    var idBarang: Int = 0
+    var barangImageURL: String = ""
+    var namaBarang: String = ""
+    var hargaBarang: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         overlayBuyerDesign()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
-        borderViewProduct.addGestureRecognizer(panGesture)
+        view.addGestureRecognizer(panGesture)
+        
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            access_token = UserDefaults.standard.string(forKey: "access_token")!
+            print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
+        }
+        
+        gambarBarangImageOutlet.loadImage(resource: barangImageURL)
+        namaBarangLabelOutlet.text = namaBarang
+        hargaBarangLabelOutlet.text = "Rp \(hargaBarang.formattedWithSeparator)"
     }
     
     override func viewDidLayoutSubviews() {
         if !hasSetPointOrigin {
             hasSetPointOrigin = true
             pointOrigin = self.borderViewProduct.frame.origin
+        }
+    }
+    
+    @IBAction func buttonKirimTapIn(_ sender: Any) {
+        if priceView.text?.isEmpty == true || priceView.text == "0" {
+            CustomToast.show(message: "Masukan harga tawar.",
+                             bgColor: .systemRed,
+                             textColor: .white,
+                             labelFont: .systemFont(ofSize: 17),
+                             showIn: .bottom,
+                             controller: self)
+        } else {
+            let rawPrice = priceView.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            let bid = SHPostBuyerOrderModel(product_id: idBarang, bid_price: Int(rawPrice)!)
+            callBuyerAPI.postBuyerOrder(access_token: access_token, bid: bid) { result in
+                switch result {
+                case let .success(data):
+                    print(data)
+                    CustomToast.show(message: "Anda berhasil menawar, tunggu konfirmasi dari penjual.",
+                                     bgColor: .systemGreen,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.dismiss(animated: true)
+                    }
+                case let .failure(err):
+                    print(err.localizedDescription)
+                    CustomToast.show(message: "Anda gagal menawar, barang sudah memenuhi batas order.",
+                                     bgColor: .systemRed,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.dismiss(animated: true)
+                    }
+                }
+            }
         }
     }
     

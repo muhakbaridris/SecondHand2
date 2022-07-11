@@ -51,6 +51,8 @@ class BuyerViewController: UIViewController {
         namaBarangOutlet.text = namaBarang
         kategoriBarangOutlet.text = kategoriBarang
         hargaBarangOutlet.text = "Rp \(hargaBarang.formattedWithSeparator)"
+        deskripsiBarangOutlet.isEditable = false
+        deskripsiBarangOutlet.isSelectable = false
         deskripsiBarangOutlet.text = deskripsiBarang
         getProductAPI.getBuyerProductIdUserOnly(id: idBarang) { result in
             switch result {
@@ -78,10 +80,13 @@ class BuyerViewController: UIViewController {
     
     @IBAction func btnBuyTouchUpInside(_ sender: Any) {
         let vc = OverlayBuyerView()
+        vc.idBarang = idBarang
+        vc.barangImageURL = urlGambarBarang
+        vc.namaBarang = namaBarang
+        vc.hargaBarang = hargaBarang
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = self
         self.present(vc, animated: true)
-        
     }
 }
 
