@@ -47,27 +47,3 @@ class SHBuyerAPI{
     }
 
 }
-
-extension SHBuyerAPI{
-    func getAllBuyerOrder(token: String, completionHandler: @escaping (Result<[SHAllBuyerOrderResponseModelElement], AFError>) -> Void) {
-        let url = "https://market-final-project.herokuapp.com/buyer/order"
-        let headers: HTTPHeaders = ["accept": "body", "access_token" : "\(token)"]
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: [SHAllBuyerOrderResponseModelElement].self) {
-            response in completionHandler(response.result)
-        }
-    }
-    
-    func getBuyerOrderId(token: String,
-                         id: Int,
-                         completionHandler: @escaping(Result<SHBuyerOrderIDResponseModel, AFError>) -> Void) {
-        let url = "https://market-final-project.herokuapp.com/buyer/order/\(id)"
-        let headers: HTTPHeaders = ["accept": "body",
-                                    "access_token" : "\(token)"]
-        AF.request(url,
-                   method: .get,
-                   headers: headers)
-        .responseDecodable(of: SHBuyerOrderIDResponseModel.self) {
-            response in completionHandler(response.result)
-        }
-    }
-}

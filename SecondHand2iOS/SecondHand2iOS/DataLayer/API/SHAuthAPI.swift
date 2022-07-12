@@ -68,7 +68,10 @@ class SHAuthAPI {
     func loginUserSecondHand(login: LoginModel,
                          completionHandler: @escaping (Result<LoginResponseModel, AFError>) -> Void) {
         let url = "https://market-final-project.herokuapp.com/auth/login"
-        let headers: HTTPHeaders = [ .accept("schema"), .contentType("application/json") ]
+        let headers: HTTPHeaders = [
+                .accept("schema"),
+                .contentType("application/json")
+        ]
         AF.request(url,
                    method: .post,
                    parameters: login,

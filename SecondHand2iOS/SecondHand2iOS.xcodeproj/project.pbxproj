@@ -28,6 +28,8 @@
 		3157235028731A5800ABA120 /* SHProductDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */; };
 		3157235428731A8400ABA120 /* URLComponentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157235228731A8400ABA120 /* URLComponentBuilder.swift */; };
 		3157235528731A8400ABA120 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157235328731A8400ABA120 /* URLRequestBuilder.swift */; };
+		3157A51C287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157A51B287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift */; };
+		3157A51E287CADCF00296C47 /* SHBuyerOrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157A51D287CADCF00296C47 /* SHBuyerOrderAPI.swift */; };
 		3157B8BA2878243900B0D60D /* getUserDataDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157B8B92878243900B0D60D /* getUserDataDefaults.swift */; };
 		31582DED286C27BD00383FD6 /* RegisterFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */; };
 		315F73822859206D009F3511 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F73812859206D009F3511 /* LoginViewController.storyboard */; };
@@ -127,6 +129,8 @@
 		3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHProductDataResponseModel.swift; sourceTree = "<group>"; };
 		3157235228731A8400ABA120 /* URLComponentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentBuilder.swift; sourceTree = "<group>"; };
 		3157235328731A8400ABA120 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		3157A51B287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFieldNumberFormatter+Extension.swift"; sourceTree = "<group>"; };
+		3157A51D287CADCF00296C47 /* SHBuyerOrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBuyerOrderAPI.swift; sourceTree = "<group>"; };
 		3157B8B92878243900B0D60D /* getUserDataDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserDataDefaults.swift; sourceTree = "<group>"; };
 		31582DEC286C27BD00383FD6 /* RegisterFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFullViewController.swift; sourceTree = "<group>"; };
 		315F73812859206D009F3511 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -325,8 +329,8 @@
 		3157234A28731A4000ABA120 /* BuyerModel */ = {
 			isa = PBXGroup;
 			children = (
-				3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */,
-				A4D2F356287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift */,
+				3157A520287CADFA00296C47 /* BuyerProduct */,
+				3157A51F287CADED00296C47 /* BuyerOrder */,
 			);
 			path = BuyerModel;
 			sourceTree = "<group>";
@@ -338,6 +342,22 @@
 				3157235328731A8400ABA120 /* URLRequestBuilder.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3157A51F287CADED00296C47 /* BuyerOrder */ = {
+			isa = PBXGroup;
+			children = (
+				A4D2F356287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift */,
+			);
+			path = BuyerOrder;
+			sourceTree = "<group>";
+		};
+		3157A520287CADFA00296C47 /* BuyerProduct */ = {
+			isa = PBXGroup;
+			children = (
+				3157234D28731A5800ABA120 /* SHProductDataResponseModel.swift */,
+			);
+			path = BuyerProduct;
 			sourceTree = "<group>";
 		};
 		3157B8B82878242700B0D60D /* UserDefaults */ = {
@@ -412,6 +432,7 @@
 				314FDDFF285BCA790077CCC7 /* String+Extension.swift */,
 				31477E18287753040051361F /* UIImageView+Extension.swift */,
 				31A4B23F2877C35C000209F7 /* NumericFormatter+Extension.swift */,
+				3157A51B287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -505,6 +526,7 @@
 				31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */,
 				31A4B23B2877AEBF000209F7 /* SHNotificationAPI.swift */,
 				A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */,
+				3157A51D287CADCF00296C47 /* SHBuyerOrderAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -921,6 +943,8 @@
 				A4D2F357287709FE00BD6D04 /* SHBuyerOrderResponseModel.swift in Sources */,
 				A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */,
 				31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */,
+				3157A51E287CADCF00296C47 /* SHBuyerOrderAPI.swift in Sources */,
+				3157A51C287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift in Sources */,
 				31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */,
 				A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */,
 				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
