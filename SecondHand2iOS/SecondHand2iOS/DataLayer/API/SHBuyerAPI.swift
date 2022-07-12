@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class SHBuyerAPI{
-    func getAllBuyerProduct(completionHandler: @escaping (Result<[SHAllProductResponseModel], AFError>) -> Void){
+    func getAllBuyerProduct(page: Int, perpage: Int, completionHandler: @escaping (Result<[SHAllProductResponseModel], AFError>) -> Void){
         let url = "https://market-final-project.herokuapp.com/buyer/product"
         let headers: HTTPHeaders = [.accept("body")]
         AF.request(url,

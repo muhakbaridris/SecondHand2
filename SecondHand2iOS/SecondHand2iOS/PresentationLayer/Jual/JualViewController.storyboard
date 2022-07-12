@@ -208,6 +208,7 @@
                     <connections>
                         <outlet property="deskripsiProdukOutlet" destination="uoO-5P-5mn" id="dUB-0J-jh3"/>
                         <outlet property="hargaProdukOutlet" destination="bQy-cb-BEp" id="kFb-bI-Oww"/>
+                        <outlet property="imagePicker" destination="lKx-Kp-0vr" id="5Yb-18-Iha"/>
                         <outlet property="kategoriProdukOutlet" destination="tzb-9D-6Bd" id="8u2-2S-cfn"/>
                         <outlet property="namaProdukOutlet" destination="lBI-a4-dMl" id="I0p-ev-T7U"/>
                         <outlet property="previewLabel" destination="Aei-hI-oLs" id="0Uy-Ft-Dqs"/>

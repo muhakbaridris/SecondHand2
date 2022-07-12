@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 
-final class JualViewController: UIViewController {
+final class JualViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var previewLabel: UILabel!
     @IBOutlet weak var pushLabel: UILabel!
     @IBOutlet weak var uiPreviewLabel: UILabel!
@@ -17,15 +17,20 @@ final class JualViewController: UIViewController {
     @IBOutlet weak var kategoriProdukOutlet: UITextField!
     @IBOutlet weak var deskripsiProdukOutlet: UITextField!
     @IBOutlet weak var uiPushLabel: UILabel!
+    @IBOutlet weak var imagePicker: UIImageView!
     let kategori: [String] = ["Pilih Kategori", "Elektronik", "Olahraga",
                               "Mainan Anak", "Pakaian", "Alat Tulis", "Lain-lain"]
     let dropDown = DropDown()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         jualViewControllerDesign()
         self.hideKeyboardWhenTappedAround()
         dropDownKategori()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+                    imagePicker.isUserInteractionEnabled = true
+                    imagePicker.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func tapFunction(sender: UITapGestureRecognizer) {
@@ -35,6 +40,26 @@ final class JualViewController: UIViewController {
         }
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+//        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        let imagePickers = UIImagePickerController()
+        imagePickers.delegate = self
+        imagePickers.allowsEditing = false
+        imagePickers.sourceType = .photoLibrary
+        present(imagePickers, animated: true)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            imagePicker.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     func dropDownKategori(){
         dropDown.anchorView = kategoriProdukOutlet
