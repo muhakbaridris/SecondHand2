@@ -44,7 +44,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         
         collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
         
-        getAPI.getAllBuyerProduct() { [weak self](result) in
+        getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
             guard let _self = self else {
                 return
             }
