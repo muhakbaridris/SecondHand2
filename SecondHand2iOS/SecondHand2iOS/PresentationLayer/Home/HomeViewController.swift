@@ -20,6 +20,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     private let itemsPerRow: CGFloat = 3
     var access_token: String = ""
     let getAPI = SHBuyerAPI()
+    let categoryAPI = SHSellerCategoryAPI()
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
     var displayedProduct: [SHAllProductResponseModel] = []
     
@@ -39,9 +40,15 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         }
         
-        
-
-        
+        categoryAPI.SellerCategoryAll { result in
+            switch result {
+            case let .success(data):
+                CategoryCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+    
         collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
         
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in

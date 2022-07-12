@@ -18,31 +18,28 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var deskripsiProdukOutlet: UITextField!
     @IBOutlet weak var uiPushLabel: UILabel!
     @IBOutlet weak var imagePicker: UIImageView!
-    let kategori: [String] = ["Pilih Kategori", "Elektronik", "Olahraga",
-                              "Mainan Anak", "Pakaian", "Alat Tulis", "Lain-lain"]
+    let kategoriModel = CategoryCache.get()
     let dropDown = DropDown()
+    var kategori: [String] = []
+    var idCategory: Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         jualViewControllerDesign()
+        previewLabelTapIn()
+        terbitkanLabelTapIn()
         self.hideKeyboardWhenTappedAround()
+        for i in kategoriModel! {
+            kategori.append(i.name)
+        }
         dropDownKategori()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
                     imagePicker.isUserInteractionEnabled = true
                     imagePicker.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc func tapFunction(sender: UITapGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "JualViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? PreviewJualViewController else {
-            return
-        }
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
 //        let tappedImage = tapGestureRecognizer.view as! UIImageView
         let imagePickers = UIImagePickerController()
         imagePickers.delegate = self
@@ -50,6 +47,25 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         imagePickers.sourceType = .photoLibrary
         present(imagePickers, animated: true)
         
+    }
+    
+    @objc func tapTerbitkanFunction(sender: UITapGestureRecognizer) {
+        for index in kategoriModel! {
+            if index.name == kategoriProdukOutlet.text {
+                print("Nama kategori \(index.name), id nya \(index.id)")
+                idCategory = index.id
+            }
+        }
+        
+        
+    }
+    
+    @objc func tapPreviewFunction(sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "JualViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? PreviewJualViewController else {
+            return
+        }
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -60,18 +76,13 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
     
-    
     func dropDownKategori(){
         dropDown.anchorView = kategoriProdukOutlet
         dropDown.dataSource = kategori
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            if index == 0 {
-                self.kategoriProdukOutlet.text = .none
-            } else {
-                self.kategoriProdukOutlet.text = kategori[index]
-            }
+            self.kategoriProdukOutlet.text = kategori[index]
           }
     }
     
@@ -81,7 +92,6 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
     
     func jualViewControllerDesign(){
         self.view.backgroundColor = UIColor.white
-        uiPreviewLabel.layer.cornerRadius = 22
         uiPushLabel.layer.cornerRadius = 22
         namaProdukOutlet.layer.cornerRadius = 22
         previewLabel.layer.borderWidth = 0.2
@@ -93,8 +103,17 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         pushLabel.layer.backgroundColor = UIColor(named: "Purple4")?.cgColor
         pushLabel.textColor = .white
         pushLabel.layer.cornerRadius = 3
-        let tap = UITapGestureRecognizer(target: self, action: #selector(JualViewController.tapFunction))
+    }
+    
+    func previewLabelTapIn(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(JualViewController.tapPreviewFunction))
         previewLabel.isUserInteractionEnabled = true
         previewLabel.addGestureRecognizer(tap)
+    }
+    
+    func terbitkanLabelTapIn(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(JualViewController.tapTerbitkanFunction))
+        pushLabel.isUserInteractionEnabled = true
+        pushLabel.addGestureRecognizer(tap)
     }
 }
