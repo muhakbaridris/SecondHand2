@@ -123,8 +123,11 @@ class SHAuthAPI {
         }
     }
     
-    func changeAccountSecondHand(changeAccountData: ChangeAccountModel, access_token: String, completionHandler: @escaping (Result<ChangeAccountResponseModel, AFError>) -> Void){
-        
+    func changeAccountSecondHand(changeAccountData: ChangeAccountModel,media: UIImage, access_token: String, completionHandler: @escaping (Result<ChangeAccountResponseModel, AFError>) -> Void){
+        guard media.jpegData(compressionQuality: 0.9) != nil else {
+                    return
+                }
+//        let imgData = media.jpegData(compressionQuality: 0.2)!
         let url = "https://market-final-project.herokuapp.com/auth/user"
         let headers: HTTPHeaders = ["accept": "body",
                                     "access_token" : "\(access_token)",
@@ -132,10 +135,11 @@ class SHAuthAPI {
         let params: [String:String] = ["full_name": changeAccountData.full_name,
                                        "phone_number": "\(changeAccountData.phone_number)",
                                        "address": changeAccountData.address,
-//                                       "image_url": changeAccountData.image,
+                                       "image_url": changeAccountData.image,
                                        "city": changeAccountData.city,
                                       ]
         AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(media.jpegData(compressionQuality: 0.1)!, withName: "image", fileName: "file.jpeg", mimeType: "image/jpeg")
             for (key, value) in params {
                 multipartFormData.append(value.data(using: .utf8)!, withName: key)
             }

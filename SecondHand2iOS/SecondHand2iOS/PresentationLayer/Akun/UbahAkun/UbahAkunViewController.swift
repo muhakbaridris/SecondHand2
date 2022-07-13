@@ -65,9 +65,9 @@ final class UbahAkunViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func buttonSimpanTapIn(_ sender: Any) {
-        let changeAccount = ChangeAccountModel(full_name: ubahNamaOutlet.text!, phone_number: ubahNomorOutlet.text!, address: ubahAlamatOutlet.text!, city: ubahKotaOutlet.text!)
+        let changeAccount = ChangeAccountModel(full_name: ubahNamaOutlet.text!, phone_number: ubahNomorOutlet.text!, address: ubahAlamatOutlet.text!, image: "\(String(describing: ubahImageViewOutlet.image))", city: ubahKotaOutlet.text!)
         
-        callAuthAPI.changeAccountSecondHand(changeAccountData: changeAccount, access_token: access_token) { result in
+        callAuthAPI.changeAccountSecondHand(changeAccountData: changeAccount, media: ubahImageViewOutlet.image!, access_token: access_token) { result in
             switch result {
             case let .success(data):
                 print(data)
