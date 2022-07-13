@@ -122,5 +122,30 @@ class SHAuthAPI {
             completionHandler(response.result)
         }
     }
+    
+    func changeAccountSecondHand(changeAccountData: ChangeAccountModel, access_token: String, completionHandler: @escaping (Result<ChangeAccountResponseModel, AFError>) -> Void){
+        
+        let url = "https://market-final-project.herokuapp.com/auth/user"
+        let headers: HTTPHeaders = ["accept": "body",
+                                    "access_token" : "\(access_token)",
+                                    "Content-Type" : "multipart/form-data"]
+        let params: [String:String] = ["full_name": changeAccountData.full_name,
+                                       "phone_number": "\(changeAccountData.phone_number)",
+                                       "address": changeAccountData.address,
+//                                       "image_url": changeAccountData.image,
+                                       "city": changeAccountData.city,
+                                      ]
+        AF.upload(multipartFormData: { multipartFormData in
+            for (key, value) in params {
+                multipartFormData.append(value.data(using: .utf8)!, withName: key)
+            }
+        },
+              to: url,
+              method: .put,
+              headers: headers)
+        .responseDecodable(of: ChangeAccountResponseModel.self) { response in
+            completionHandler(response.result)
+        }
+    }
 }
 
