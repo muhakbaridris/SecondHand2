@@ -10,7 +10,7 @@ import UIKit
 final class UbahAkunViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let callAuthAPI = SHAuthAPI()
-    var access_token: String = ""
+    let access_token = AccessTokenCache.get()
     
     @IBOutlet weak var ubahImageViewOutlet: UIImageView!
     @IBOutlet weak var ubahNamaOutlet: UITextField!
@@ -25,11 +25,6 @@ final class UbahAkunViewController: UIViewController, UIImagePickerControllerDel
         navigationItem.largeTitleDisplayMode = .never
         buttonSimpanOutlet.layer.cornerRadius = 16
         ubahImageViewOutlet.layer.cornerRadius = 20
-        
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print(access_token)
-        }
         
         let userData = UserProfileCache.get()
         ubahNamaOutlet.text = userData!.full_name
@@ -72,6 +67,7 @@ final class UbahAkunViewController: UIViewController, UIImagePickerControllerDel
             switch result {
             case let .success(data):
                 print(data)
+                UserProfileCache.save(data)
                 CustomToast.show(message: "Berhasil Ubah Data", bgColor: .systemGreen, textColor: .white, labelFont: .systemFont(ofSize: 17), showIn: .bottom, controller: self)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
                     self.navigationController?.popViewController(animated: true)

@@ -81,23 +81,6 @@ class SHAuthAPI {
             completionHandler(response.result)
         }
     }
-        
-    func updateUserSecondHand(access_token: String,
-                              register: UpdateModel,
-                              completionHandler: @escaping (Result<UpdateResponseModel, AFError>) -> Void) {
-        let url = "https://market-final-project.herokuapp.com/auth/user"
-        let headers: HTTPHeaders = ["accept": "body",
-                                    "access_token": "\(access_token)",
-                                    "Content-Type": "multipart/form-data"]
-        AF.upload(multipartFormData: { multipartFormData in
-            //code here
-        },
-                  to: url,
-                  method: .put,
-                  headers: headers).response { response in
-            //code here
-        }
-    }
     
     func changePasswordSecondHand(changePasswrdData: ChangePasswordModel ,
                                   access_token: String,
@@ -123,7 +106,7 @@ class SHAuthAPI {
         }
     }
     
-    func changeAccountSecondHand(changeAccountData: ChangeAccountModel,media: UIImage, access_token: String, completionHandler: @escaping (Result<ChangeAccountResponseModel, AFError>) -> Void){
+    func changeAccountSecondHand(changeAccountData: ChangeAccountModel,media: UIImage, access_token: String, completionHandler: @escaping (Result<UserDataResponseModel, AFError>) -> Void){
         guard media.jpegData(compressionQuality: 0.9) != nil else {
                     return
                 }
@@ -147,7 +130,7 @@ class SHAuthAPI {
               to: url,
               method: .put,
               headers: headers)
-        .responseDecodable(of: ChangeAccountResponseModel.self) { response in
+        .responseDecodable(of: UserDataResponseModel.self) { response in
             completionHandler(response.result)
         }
     }
