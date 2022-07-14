@@ -159,33 +159,12 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CO7-c5-Igq">
-                                <rect key="frame" x="120" y="674" width="150" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="1RE-Pa-dBe"/>
-                                    <constraint firstAttribute="width" constant="150" id="TCb-qU-jOL"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Ke halaman masuk">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="menu" size="14"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="KOP-Kx-H6D" kind="presentation" modalPresentationStyle="fullScreen" id="Apb-s9-3lE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nHz-Ki-tf6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tpp-Mv-tl9" firstAttribute="top" secondItem="nxs-7V-d4L" secondAttribute="bottom" constant="18" id="3x1-K2-J3x"/>
                             <constraint firstItem="fWP-bp-4zu" firstAttribute="centerX" secondItem="gJf-Sb-Vqp" secondAttribute="centerX" id="4qI-Ic-fnI"/>
-                            <constraint firstItem="CO7-c5-Igq" firstAttribute="centerX" secondItem="gJf-Sb-Vqp" secondAttribute="centerX" id="8v7-ZZ-qNm"/>
                             <constraint firstItem="jDk-IN-GPe" firstAttribute="centerX" secondItem="gJf-Sb-Vqp" secondAttribute="centerX" id="AsS-Ox-Xqi"/>
                             <constraint firstItem="jEY-83-TAQ" firstAttribute="leading" secondItem="gJf-Sb-Vqp" secondAttribute="leadingMargin" id="Bjc-Q1-Bri"/>
                             <constraint firstItem="fWP-bp-4zu" firstAttribute="top" secondItem="tFM-od-LoV" secondAttribute="bottom" constant="50" id="G4T-xz-mLd"/>
@@ -204,7 +183,6 @@
                             <constraint firstItem="t6M-uJ-WhX" firstAttribute="leading" secondItem="gJf-Sb-Vqp" secondAttribute="leading" id="lMf-rf-wHD"/>
                             <constraint firstItem="nxs-7V-d4L" firstAttribute="leading" secondItem="gJf-Sb-Vqp" secondAttribute="leadingMargin" id="oN2-TY-IcQ"/>
                             <constraint firstItem="jDk-IN-GPe" firstAttribute="top" secondItem="jEY-83-TAQ" secondAttribute="bottom" constant="18" id="rpt-eg-KTs"/>
-                            <constraint firstItem="nHz-Ki-tf6" firstAttribute="bottom" secondItem="CO7-c5-Igq" secondAttribute="bottom" constant="56" id="t6s-8S-gz2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jEY-83-TAQ" secondAttribute="trailing" id="w9F-nm-fkt"/>
                             <constraint firstItem="t6M-uJ-WhX" firstAttribute="centerX" secondItem="gJf-Sb-Vqp" secondAttribute="centerX" id="zFf-RT-Qwq"/>
                         </constraints>
@@ -218,16 +196,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0O-MQ-pUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="429.23076923076923" y="-522.51184834123217"/>
-        </scene>
-        <!--LoginViewController-->
-        <scene sceneID="NTa-VQ-Mfh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LoginViewController" id="KOP-Kx-H6D" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="uJV-jp-GfS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jsX-bc-mzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="430" y="-124"/>
         </scene>
         <!--Akun-->
         <scene sceneID="3Ad-bQ-Jtp">

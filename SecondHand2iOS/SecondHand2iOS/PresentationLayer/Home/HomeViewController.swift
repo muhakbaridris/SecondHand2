@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionViewB: UICollectionView!
     
     private let itemsPerRow: CGFloat = 3
-    var access_token: String = ""
+    var access_token: String = AccessTokenCache.get()
     let getAPI = SHBuyerAPI()
     let categoryAPI = SHSellerCategoryAPI()
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
@@ -26,10 +26,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        access_token = AccessTokenCache.get()
         print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
-        
-        
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
             switch result {
             case let .success(data):
