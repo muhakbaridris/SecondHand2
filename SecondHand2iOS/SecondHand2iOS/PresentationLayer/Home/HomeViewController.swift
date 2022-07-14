@@ -18,18 +18,15 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var collectionViewB: UICollectionView!
     
     private let itemsPerRow: CGFloat = 3
-    var access_token: String = ""
+    var access_token: String = AccessTokenCache.get()
     let getAPI = SHBuyerAPI()
+    let categoryAPI = SHSellerCategoryAPI()
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
     var displayedProduct: [SHAllProductResponseModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
-        }
-        
+        print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
             switch result {
             case let .success(data):
@@ -39,9 +36,15 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         }
         
-        
-
-        
+        categoryAPI.SellerCategoryAll { result in
+            switch result {
+            case let .success(data):
+                CategoryCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+    
         collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
         
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in

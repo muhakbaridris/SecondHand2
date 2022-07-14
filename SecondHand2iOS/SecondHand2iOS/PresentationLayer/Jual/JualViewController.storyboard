@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1iF-ws-JHc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1iF-ws-JHc">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -87,21 +87,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RP 0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQy-cb-BEp">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RP 0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQy-cb-BEp" customClass="IntegerField" customModule="SecondHand2iOS" customModuleProvider="target">
                                 <rect key="frame" x="16" y="229" width="358" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="QBB-NE-aQh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKx-Kp-0vr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="lKx-Kp-0vr">
                                 <rect key="frame" x="16" y="510" width="96" height="96"/>
-                                <color key="backgroundColor" name="Purple4"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="mPQ-zd-ZaJ"/>
                                     <constraint firstAttribute="width" constant="96" id="mV9-jI-IfL"/>
                                 </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pilih Kategori" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzb-9D-6Bd">
                                 <rect key="frame" x="16" y="312" width="358" height="48"/>
@@ -376,30 +376,35 @@
                                     <constraint firstAttribute="height" constant="263" id="wSX-uN-kUF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtH-eM-GdE" userLabel="TerbitkanButton">
-                                <rect key="frame" x="43" y="770" width="304" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-F7-QV6">
+                                <rect key="frame" x="16" y="687" width="358" height="48"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.14901960780000001" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="oOH-nV-BPf"/>
+                                    <constraint firstAttribute="height" constant="48" id="qPD-tG-53K"/>
                                 </constraints>
-                                <color key="tintColor" name="Purple4"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Terbitkan"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Terbitkan">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTerbitkanTapIn:" destination="40a-2m-nTI" eventType="touchUpInside" id="9dt-hh-fPY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Cy-T1-5rl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JtH-eM-GdE" secondAttribute="bottom" constant="26" id="5QV-9q-woM"/>
-                            <constraint firstItem="JtH-eM-GdE" firstAttribute="leading" secondItem="bnA-U9-ZHj" secondAttribute="leading" constant="43" id="8Ff-K3-rVO"/>
                             <constraint firstAttribute="bottom" secondItem="DgM-49-q3i" secondAttribute="bottom" constant="-31" id="HWr-FX-fIS"/>
+                            <constraint firstItem="4Cy-T1-5rl" firstAttribute="bottom" secondItem="WUb-F7-QV6" secondAttribute="bottom" constant="26" id="HwT-Qb-xsk"/>
                             <constraint firstItem="4Cy-T1-5rl" firstAttribute="trailing" secondItem="fg8-y3-MwQ" secondAttribute="trailing" constant="16" id="L89-ne-eaW"/>
+                            <constraint firstItem="4Cy-T1-5rl" firstAttribute="trailing" secondItem="WUb-F7-QV6" secondAttribute="trailing" constant="16" id="Ril-AK-6RU"/>
                             <constraint firstItem="w9Y-i5-9l5" firstAttribute="top" secondItem="fg8-y3-MwQ" secondAttribute="bottom" constant="16" id="TPF-9n-Pex"/>
                             <constraint firstItem="DgM-49-q3i" firstAttribute="top" secondItem="w9Y-i5-9l5" secondAttribute="bottom" constant="19" id="WKH-U3-Dw4"/>
                             <constraint firstItem="4Cy-T1-5rl" firstAttribute="trailing" secondItem="DgM-49-q3i" secondAttribute="trailing" constant="16" id="e21-hF-UOf"/>
                             <constraint firstItem="4Cy-T1-5rl" firstAttribute="trailing" secondItem="w9Y-i5-9l5" secondAttribute="trailing" constant="16" id="g6h-1y-aBh"/>
-                            <constraint firstAttribute="trailing" secondItem="JtH-eM-GdE" secondAttribute="trailing" constant="43" id="jxe-DM-ijk"/>
+                            <constraint firstItem="WUb-F7-QV6" firstAttribute="leading" secondItem="4Cy-T1-5rl" secondAttribute="leading" constant="16" id="mtF-CT-qtX"/>
                             <constraint firstItem="DgM-49-q3i" firstAttribute="leading" secondItem="4Cy-T1-5rl" secondAttribute="leading" constant="16" id="sph-x2-4dg"/>
-                            <constraint firstItem="JtH-eM-GdE" firstAttribute="centerX" secondItem="bnA-U9-ZHj" secondAttribute="centerX" id="tO9-Cs-iMF"/>
                             <constraint firstItem="w9Y-i5-9l5" firstAttribute="leading" secondItem="4Cy-T1-5rl" secondAttribute="leading" constant="16" id="tya-Rm-KkO"/>
                             <constraint firstItem="w9Y-i5-9l5" firstAttribute="centerX" secondItem="bnA-U9-ZHj" secondAttribute="centerX" id="wte-wF-8zR"/>
                             <constraint firstItem="fg8-y3-MwQ" firstAttribute="leading" secondItem="4Cy-T1-5rl" secondAttribute="leading" constant="16" id="zHB-0b-Zxe"/>
@@ -407,7 +412,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="UVu-7Y-dZF"/>
                     <connections>
+                        <outlet property="buttonTerbitkanOutlet" destination="WUb-F7-QV6" id="EHS-1U-dWc"/>
                         <outlet property="collectionView" destination="ZAE-nV-eVB" id="VqJ-GT-J5V"/>
+                        <outlet property="deskripsiProdukTextViewOutlet" destination="Ks0-Tc-xMd" id="nHK-l9-po0"/>
                         <outlet property="deskripsiView" destination="DgM-49-q3i" id="N6s-R0-gca"/>
                         <outlet property="gambarPenjualOutlet" destination="9mK-xT-30j" id="pod-W7-buZ"/>
                         <outlet property="hargaProdukOutlet" destination="5yX-vJ-6v7" id="Psh-cS-Aj2"/>
@@ -418,7 +425,6 @@
                         <outlet property="pageControl" destination="GRv-Pq-8Hf" id="oyZ-YM-cIJ"/>
                         <outlet property="penjualView" destination="w9Y-i5-9l5" id="sUA-hc-BEg"/>
                         <outlet property="productView" destination="fg8-y3-MwQ" id="DG8-d6-42y"/>
-                        <outlet property="terbitkanButton" destination="JtH-eM-GdE" id="JKV-g4-BQN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g01-i3-JCf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -427,10 +433,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addImage" width="32" height="32"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <namedColor name="Purple4">
-            <color red="0.44299998879432678" green="0.14900000393390656" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="PurpleHalf">
             <color red="0.87800002098083496" green="0.83499997854232788" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
