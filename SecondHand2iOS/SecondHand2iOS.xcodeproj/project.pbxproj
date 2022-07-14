@@ -87,6 +87,7 @@
 		A49BDAAA285B3E4C0009CB28 /* HomeProductCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */; };
 		A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A1ED3428651E7100633689 /* BuyerViewController.swift */; };
 		A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */; };
+		A4B92727287E8DD000EEB755 /* SHChangeAccountResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B92726287E8DD000EEB755 /* SHChangeAccountResponseModel.swift */; };
 		A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */; };
 		A4C72B8B2863384C00F67AE8 /* ProductDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */; };
 		A4D2F3552877096200BD6D04 /* SHBuyerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */; };
@@ -197,6 +198,7 @@
 		A49BDAA9285B3E4C0009CB28 /* HomeProductCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCollectionCell.swift; sourceTree = "<group>"; };
 		A4A1ED3428651E7100633689 /* BuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerViewController.swift; sourceTree = "<group>"; };
 		A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyerViewController.storyboard; sourceTree = "<group>"; };
+		A4B92726287E8DD000EEB755 /* SHChangeAccountResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHChangeAccountResponseModel.swift; sourceTree = "<group>"; };
 		A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataTableViewCell.swift; sourceTree = "<group>"; };
 		A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDataTableViewCell.xib; sourceTree = "<group>"; };
 		A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBuyerAPI.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 				31F8DE022862AC7800843B3F /* SHUpdateResponseModel.swift */,
 				31F8DE042862BC2300843B3F /* SHUserDataResponseModel.swift */,
 				312628D82879DA69001268DB /* SHChangePasswordResponseModel.swift */,
+				A4B92726287E8DD000EEB755 /* SHChangeAccountResponseModel.swift */,
 			);
 			path = AuthModel;
 			sourceTree = "<group>";
@@ -1039,6 +1042,7 @@
 				3167D6FD28800EFE002A6D12 /* SHSellerProductResponseModel.swift in Sources */,
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
 				5915E675285C946D00208372 /* CustomView.swift in Sources */,
+				A4B92727287E8DD000EEB755 /* SHChangeAccountResponseModel.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,
 				31A4B23C2877AEBF000209F7 /* SHNotificationAPI.swift in Sources */,
 				A444A3E9285F4E8800307326 /* BannerImageCollectionViewCell.swift in Sources */,

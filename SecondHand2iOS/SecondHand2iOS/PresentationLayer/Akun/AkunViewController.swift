@@ -12,13 +12,15 @@ final class AkunViewController: UIViewController{
     var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        let userData = UserProfileCache.get().image_url
+        userImageOutlet.loadImage(resource: userData)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         userImageOutlet.layer.cornerRadius = 20
-        let userData = UserProfileCache.get()
-        userImageOutlet.loadImage(resource: userData!.image_url)
-        
     }
     
     @IBAction func buttonUbahAkunTapIn(_ sender: Any) {
@@ -48,7 +50,5 @@ final class AkunViewController: UIViewController{
             navigation.modalPresentationStyle = .fullScreen
             self.present(navigation, animated: true)
         }
-    }
-    
-    
+    }    
 }
