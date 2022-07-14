@@ -38,6 +38,9 @@
 		315F738928592AD0009F3511 /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315F738828592AD0009F3511 /* RegisterViewController.storyboard */; };
 		315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738A28592FBD009F3511 /* UbahAkunViewController.swift */; };
 		315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F738F28599448009F3511 /* UIViewController+Extension.swift */; };
+		3167D6F9287FFCC0002A6D12 /* SHSellerProductAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167D6F8287FFCC0002A6D12 /* SHSellerProductAPI.swift */; };
+		3167D6FD28800EFE002A6D12 /* SHSellerProductResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167D6FC28800EFE002A6D12 /* SHSellerProductResponseModel.swift */; };
+		3167D6FF288010C4002A6D12 /* getUserAccessTokenDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167D6FE288010C4002A6D12 /* getUserAccessTokenDefaults.swift */; };
 		316FF1262860832B0088768D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 316FF1252860832B0088768D /* GoogleService-Info.plist */; };
 		31785202287362A8000C92D7 /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31785201287362A8000C92D7 /* BiometricAuth.swift */; };
 		318CB14528576AFF003EB9B1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */; };
@@ -56,7 +59,7 @@
 		31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */; };
 		31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A54232285C08820073CCDA /* SHLoginResponseModel.swift */; };
 		31B19F2C287DEC1F00F816BB /* SHSellerCategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B19F2B287DEC1F00F816BB /* SHSellerCategoryAPI.swift */; };
-		31B19F30287DECAA00F816BB /* SHSellerProductResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B19F2F287DECAA00F816BB /* SHSellerProductResponseModel.swift */; };
+		31B19F30287DECAA00F816BB /* SHSellerCategoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B19F2F287DECAA00F816BB /* SHSellerCategoryResponseModel.swift */; };
 		31B19F32287DEEFA00F816BB /* getSellerCategoryDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B19F31287DEEFA00F816BB /* getSellerCategoryDefaults.swift */; };
 		31B2CA11286127F500C8213B /* SHRegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */; };
 		31CE2BF1286B28E500C664A9 /* PengaturanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE2BF0286B28E500C664A9 /* PengaturanViewController.swift */; };
@@ -142,6 +145,9 @@
 		315F738828592AD0009F3511 /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		315F738A28592FBD009F3511 /* UbahAkunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbahAkunViewController.swift; sourceTree = "<group>"; };
 		315F738F28599448009F3511 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3167D6F8287FFCC0002A6D12 /* SHSellerProductAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerProductAPI.swift; sourceTree = "<group>"; };
+		3167D6FC28800EFE002A6D12 /* SHSellerProductResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerProductResponseModel.swift; sourceTree = "<group>"; };
+		3167D6FE288010C4002A6D12 /* getUserAccessTokenDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserAccessTokenDefaults.swift; sourceTree = "<group>"; };
 		316FF1252860832B0088768D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31785201287362A8000C92D7 /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
 		318CB14428576AFF003EB9B1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -160,7 +166,7 @@
 		31A5422D285BD0AB0073CCDA /* SHAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAuthAPI.swift; sourceTree = "<group>"; };
 		31A54232285C08820073CCDA /* SHLoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLoginResponseModel.swift; sourceTree = "<group>"; };
 		31B19F2B287DEC1F00F816BB /* SHSellerCategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerCategoryAPI.swift; sourceTree = "<group>"; };
-		31B19F2F287DECAA00F816BB /* SHSellerProductResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerProductResponseModel.swift; sourceTree = "<group>"; };
+		31B19F2F287DECAA00F816BB /* SHSellerCategoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerCategoryResponseModel.swift; sourceTree = "<group>"; };
 		31B19F31287DEEFA00F816BB /* getSellerCategoryDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSellerCategoryDefaults.swift; sourceTree = "<group>"; };
 		31B2CA10286127F500C8213B /* SHRegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRegisterResponseModel.swift; sourceTree = "<group>"; };
 		31CE2BF0286B28E500C664A9 /* PengaturanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PengaturanViewController.swift; sourceTree = "<group>"; };
@@ -371,6 +377,7 @@
 			children = (
 				3157B8B92878243900B0D60D /* getUserDataDefaults.swift */,
 				31B19F31287DEEFA00F816BB /* getSellerCategoryDefaults.swift */,
+				3167D6FE288010C4002A6D12 /* getUserAccessTokenDefaults.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -442,6 +449,14 @@
 				3157A51B287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3167D6FA287FFF11002A6D12 /* SellerProductModel */ = {
+			isa = PBXGroup;
+			children = (
+				3167D6FC28800EFE002A6D12 /* SHSellerProductResponseModel.swift */,
+			);
+			path = SellerProductModel;
 			sourceTree = "<group>";
 		};
 		318CB14128576A7D003EB9B1 /* TabBarMain */ = {
@@ -578,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				31B19F2B287DEC1F00F816BB /* SHSellerCategoryAPI.swift */,
+				3167D6F8287FFCC0002A6D12 /* SHSellerProductAPI.swift */,
 			);
 			path = Seller;
 			sourceTree = "<group>";
@@ -585,17 +601,18 @@
 		31B19F2D287DEC7D00F816BB /* SellerModel */ = {
 			isa = PBXGroup;
 			children = (
-				31B19F2E287DEC8600F816BB /* SellerProductModel */,
+				3167D6FA287FFF11002A6D12 /* SellerProductModel */,
+				31B19F2E287DEC8600F816BB /* SellerCategoryModel */,
 			);
 			path = SellerModel;
 			sourceTree = "<group>";
 		};
-		31B19F2E287DEC8600F816BB /* SellerProductModel */ = {
+		31B19F2E287DEC8600F816BB /* SellerCategoryModel */ = {
 			isa = PBXGroup;
 			children = (
-				31B19F2F287DECAA00F816BB /* SHSellerProductResponseModel.swift */,
+				31B19F2F287DECAA00F816BB /* SHSellerCategoryResponseModel.swift */,
 			);
-			path = SellerProductModel;
+			path = SellerCategoryModel;
 			sourceTree = "<group>";
 		};
 		31B2CA1228612E4F00C8213B /* AuthModel */ = {
@@ -983,7 +1000,7 @@
 				31A5422E285BD0AB0073CCDA /* SHAuthAPI.swift in Sources */,
 				318CB14B28576E15003EB9B1 /* NotifikasiTableViewController.swift in Sources */,
 				3157235528731A8400ABA120 /* URLRequestBuilder.swift in Sources */,
-				31B19F30287DECAA00F816BB /* SHSellerProductResponseModel.swift in Sources */,
+				31B19F30287DECAA00F816BB /* SHSellerCategoryResponseModel.swift in Sources */,
 				3157235028731A5800ABA120 /* SHProductDataResponseModel.swift in Sources */,
 				A444A3E0285CAA3600307326 /* PreviewJualViewController.swift in Sources */,
 				315F739028599448009F3511 /* UIViewController+Extension.swift in Sources */,
@@ -994,6 +1011,7 @@
 				31477E19287753040051361F /* UIImageView+Extension.swift in Sources */,
 				3157235428731A8400ABA120 /* URLComponentBuilder.swift in Sources */,
 				A487A1282869669700E29A33 /* PresentationController.swift in Sources */,
+				3167D6F9287FFCC0002A6D12 /* SHSellerProductAPI.swift in Sources */,
 				A487A10F2869274200E29A33 /* BuyerCollectionViewCell.swift in Sources */,
 				A487A12C286967FE00E29A33 /* OverlayBuyerView.swift in Sources */,
 				A4418CA4285A9EF3003EE4A2 /* HomeCollectionViewCell.swift in Sources */,
@@ -1007,6 +1025,7 @@
 				31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */,
 				A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */,
 				315F738B28592FBD009F3511 /* UbahAkunViewController.swift in Sources */,
+				3167D6FF288010C4002A6D12 /* getUserAccessTokenDefaults.swift in Sources */,
 				318CB15A28577789003EB9B1 /* AkunViewController.swift in Sources */,
 				5915E6382859C28000208372 /* NotificationTableViewCell.swift in Sources */,
 				A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */,
@@ -1017,6 +1036,7 @@
 				3157B8BA2878243900B0D60D /* getUserDataDefaults.swift in Sources */,
 				31A4B2402877C35C000209F7 /* NumericFormatter+Extension.swift in Sources */,
 				315F738428592078009F3511 /* LoginViewController.swift in Sources */,
+				3167D6FD28800EFE002A6D12 /* SHSellerProductResponseModel.swift in Sources */,
 				315F738728592A91009F3511 /* RegisterViewController.swift in Sources */,
 				5915E675285C946D00208372 /* CustomView.swift in Sources */,
 				310AA2E02856541B0066F90D /* SceneDelegate.swift in Sources */,

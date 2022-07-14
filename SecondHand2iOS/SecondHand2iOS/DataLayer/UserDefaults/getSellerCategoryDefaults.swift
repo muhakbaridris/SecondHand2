@@ -10,13 +10,13 @@ import Foundation
 struct CategoryCache {
     static let key = "categoryProductCache"
     static let userDefaults = UserDefaults.standard
-    static func save(_ value: [SellerProductResponseModel]!) {
+    static func save(_ value: [SellerCategoryResponseModel]!) {
         userDefaults.set(try? PropertyListEncoder().encode(value), forKey: key)
     }
-    static func get() -> [SellerProductResponseModel]! {
-        var userData: [SellerProductResponseModel]!
+    static func get() -> [SellerCategoryResponseModel]! {
+        var userData: [SellerCategoryResponseModel]!
         if let data = userDefaults.value(forKey: key) as? Data {
-            userData = try? PropertyListDecoder().decode([SellerProductResponseModel].self, from: data)
+            userData = try? PropertyListDecoder().decode([SellerCategoryResponseModel].self, from: data)
             return userData!
         } else {
             return userData

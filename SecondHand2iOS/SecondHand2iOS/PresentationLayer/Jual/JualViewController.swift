@@ -18,11 +18,15 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var deskripsiProdukOutlet: UITextField!
     @IBOutlet weak var uiPushLabel: UILabel!
     @IBOutlet weak var imagePicker: UIImageView!
+    
+    let postProductAPI = SHSellerProductAPI()
     let kategoriModel = CategoryCache.get()
+    let access_token = AccessTokenCache.get()
     let dropDown = DropDown()
     var kategori: [String] = []
     var idCategory: Int = 0
-    
+    var photoName: String = ""
+    var rawPrice: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +39,8 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         }
         dropDownKategori()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-                    imagePicker.isUserInteractionEnabled = true
-                    imagePicker.addGestureRecognizer(tapGestureRecognizer)
+        imagePicker.isUserInteractionEnabled = true
+        imagePicker.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
@@ -56,8 +60,55 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
                 idCategory = index.id
             }
         }
-        
-        
+        if namaProdukOutlet.text?.isEmpty == true ||
+            hargaProdukOutlet.text == "0" ||
+            kategoriProdukOutlet.text?.isEmpty == true ||
+            deskripsiProdukOutlet.text?.isEmpty == true ||
+            imagePicker.image == nil
+        {
+            CustomToast.show(message: "Harap lengkapi data produk.",
+                             bgColor: .systemRed,
+                             textColor: .white,
+                             labelFont: .systemFont(ofSize: 17),
+                             showIn: .bottom,
+                             controller: self)
+        } else {
+            rawPrice = hargaProdukOutlet.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            postProductAPI.postSellerProduct(
+                access_token: access_token,
+                name: namaProdukOutlet.text!,
+                description: deskripsiProdukOutlet.text!,
+                base_price: Int(rawPrice)!,
+                categoryID: idCategory,
+                location: UserProfileCache.get().city,
+                imageName: photoName,
+                image: imagePicker.image!)
+            { response in
+                switch response {
+                case .success(let data):
+                    print("Upload \(data.name) Success")
+                    self.namaProdukOutlet.text = nil
+                    self.hargaProdukOutlet.text = nil
+                    self.kategoriProdukOutlet.text = nil
+                    self.deskripsiProdukOutlet.text = nil
+                    self.imagePicker.image = nil
+                    CustomToast.show(message: "Berhasil posting produk.",
+                                     bgColor: .systemGreen,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    CustomToast.show(message: "Ada kesalahan pada sistem, silahkan coba lagi beberapa saat lagi.",
+                                     bgColor: .systemRed,
+                                     textColor: .white,
+                                     labelFont: .systemFont(ofSize: 17),
+                                     showIn: .bottom,
+                                     controller: self)
+                }
+            }
+        }
     }
     
     @objc func tapPreviewFunction(sender: UITapGestureRecognizer) {
@@ -65,7 +116,27 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? PreviewJualViewController else {
             return
         }
-        navigationController?.pushViewController(viewController, animated: true)
+        if namaProdukOutlet.text?.isEmpty == true ||
+            hargaProdukOutlet.text == "0" ||
+            kategoriProdukOutlet.text?.isEmpty == true ||
+            deskripsiProdukOutlet.text?.isEmpty == true ||
+            imagePicker.image == nil
+        {
+            CustomToast.show(message: "Harap lengkapi data produk.",
+                             bgColor: .systemRed,
+                             textColor: .white,
+                             labelFont: .systemFont(ofSize: 17),
+                             showIn: .bottom,
+                             controller: self)
+        } else {
+            viewController.produkName = namaProdukOutlet.text!
+            viewController.produkPrice = hargaProdukOutlet.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            viewController.produkKategori = kategoriProdukOutlet.text!
+            viewController.deskripsiProduk = deskripsiProdukOutlet.text!
+            viewController.imageData = imagePicker.image ?? nil
+            viewController.imageName = photoName
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -73,6 +144,10 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             imagePicker.image = pickedImage
         }
+        
+        guard let fileUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL else { return }
+        photoName = fileUrl.lastPathComponent
+        
         dismiss(animated: true, completion: nil)
     }
     

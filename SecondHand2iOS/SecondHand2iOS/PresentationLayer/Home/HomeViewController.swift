@@ -26,10 +26,9 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            access_token = UserDefaults.standard.string(forKey: "access_token")!
-            print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
-        }
+        access_token = AccessTokenCache.get()
+        print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
+        
         
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
             switch result {

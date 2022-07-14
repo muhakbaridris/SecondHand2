@@ -10,7 +10,6 @@ import UIKit
 final class PreviewJualViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var terbitkanButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var productView: UIView!
@@ -24,31 +23,75 @@ final class PreviewJualViewController: UIViewController {
     @IBOutlet weak var gambarPenjualOutlet: UIImageView!
     
     @IBOutlet weak var deskripsiView: UIView!
+    @IBOutlet weak var deskripsiProdukTextViewOutlet: UITextView!
     
+    @IBOutlet weak var buttonTerbitkanOutlet: UIButton!
+    
+    let callAPI = SHSellerProductAPI()
+    let access_token = AccessTokenCache.get()
     
     var currentPage = 0
     var arrBannerImage: [String] = ["AppIcon", "AppIcon", "AppIcon", "AppIcon"]
     
     var produkName: String = ""
-    var produkPrice: Int = 0
+    var produkPrice: String = ""
     var produkKategori: String = ""
     var namaPenjual: String = ""
     var kotaPenjual: String = ""
     var deskripsiProduk: String = ""
+    var imageName: String = ""
+    var imageData: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        namaProdukOutlet.text = produkName
+        kategoriProdukOutlet.text = produkKategori
+        hargaProdukOutlet.text = "Rp \(Int(produkPrice)!.formattedWithSeparator)"
         let userData = UserProfileCache.get()
         namaPenjualOutlet.text = userData!.full_name
         kotaPenjualOutlet.text = userData!.city
         gambarPenjualOutlet.loadImage(resource: userData!.image_url)
+        deskripsiProdukTextViewOutlet.text = deskripsiProduk
         
-        terbitkanButton.clipsToBounds = true
-        terbitkanButton.layer.cornerRadius = 16
+        buttonTerbitkanOutlet.layer.cornerRadius = 16
         configureView(view: productView)
         configureView(view: deskripsiView)
         configureView(view: penjualView)
+    }
+    
+    @IBAction func buttonTerbitkanTapIn(_ sender: Any) {
+        callAPI.postSellerProduct(
+            access_token: access_token,
+            name: produkName,
+            description: deskripsiProduk,
+            base_price: Int(produkPrice)!,
+            categoryID: Int(produkKategori)!,
+            location: UserProfileCache.get().city,
+            imageName: imageName,
+            image: imageData!)
+        { response in
+            switch response {
+            case .success(let data):
+                print("Upload \(data.name) Success")
+                CustomToast.show(message: "Berhasil posting produk.",
+                                 bgColor: .systemGreen,
+                                 textColor: .white,
+                                 labelFont: .systemFont(ofSize: 17),
+                                 showIn: .bottom,
+                                 controller: self)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+                CustomToast.show(message: "Ada kesalahan pada sistem, silahkan coba lagi beberapa saat lagi.",
+                                 bgColor: .systemRed,
+                                 textColor: .white,
+                                 labelFont: .systemFont(ofSize: 17),
+                                 showIn: .bottom,
+                                 controller: self)
+            }
+        }
     }
 }
 
@@ -61,7 +104,7 @@ extension PreviewJualViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerImageCollectionViewCell", for: indexPath) as! BannerImageCollectionViewCell
-        cell.bannerImage.image = UIImage(named: arrBannerImage[indexPath.row])
+        cell.bannerImage.image = imageData
         return cell
     }
     
@@ -74,6 +117,7 @@ extension PreviewJualViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     private func configureView(view: UIView!){
         view.clipsToBounds = true
         view.backgroundColor = UIColor.white

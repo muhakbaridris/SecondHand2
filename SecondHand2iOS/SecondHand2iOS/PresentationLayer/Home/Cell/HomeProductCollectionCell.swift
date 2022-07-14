@@ -18,6 +18,6 @@ class HomeProductCollectionCell: UICollectionViewCell {
         productName.text = product.name
 //        productType.text = product.categories
         
-        productPrice.text = "\(product.base_price)"
+        productPrice.text = (String(describing: product.base_price))
     }
 }

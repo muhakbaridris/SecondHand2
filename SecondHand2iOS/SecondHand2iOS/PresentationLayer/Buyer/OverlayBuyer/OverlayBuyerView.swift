@@ -60,7 +60,9 @@ final class OverlayBuyerView: UIViewController {
                              controller: self)
         } else {
             let rawPrice = priceView.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-            let bid = SHPostBuyerOrderModel(product_id: idBarang, bid_price: Int(rawPrice)!)
+            let bid = SHPostBuyerOrderModel(
+                product_id: idBarang,
+                bid_price: Int(rawPrice)!)
             callBuyerAPI.postBuyerOrder(access_token: access_token, bid: bid) { result in
                 switch result {
                 case let .success(data):
