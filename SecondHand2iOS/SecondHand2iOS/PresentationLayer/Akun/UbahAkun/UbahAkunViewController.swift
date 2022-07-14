@@ -18,6 +18,7 @@ final class UbahAkunViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var ubahAlamatOutlet: UITextField!
     @IBOutlet weak var ubahNomorOutlet: UITextField!
     @IBOutlet weak var buttonSimpanOutlet: UIButton!
+    let userData = UserProfileCache.get()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -52,7 +52,7 @@ final class LoginViewController: UIViewController{
             callAPI.loginUserSecondHand(login: loginData) { result in
                 switch result {
                 case let .success(data):
-                    UserDefaults.standard.set(data.access_token, forKey: "access_token")
+                    AccessTokenCache.save(data.access_token)
                     CustomToast.show(message: "Anda berhasil login!",
                                      bgColor: .systemGreen,
                                      textColor: .white,
