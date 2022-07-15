@@ -54,4 +54,21 @@ final class SHSellerProductAPI {
             print(response)
         }
     }
+    
+    func getAllSellerProduct(
+        access_token: String,
+        completionHandler: @escaping (Result<[SHAllProductResponseModel], AFError>) -> Void
+    ){
+        let url = "https://market-final-project.herokuapp.com/seller/product"
+        let headers: HTTPHeaders = [
+            "accept": "body",
+            "access_token" : access_token
+        ]
+        AF.request(url,
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: [SHAllProductResponseModel].self) { response in
+            completionHandler(response.result)
+        }
+    }
 }

@@ -38,6 +38,7 @@ final class RegisterFullViewController: UIViewController, UIImagePickerControlle
         
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             addImageViewOutlet.image = pickedImage
+            print(pickedImage)
         }
         dismiss(animated: true, completion: nil)
     }
