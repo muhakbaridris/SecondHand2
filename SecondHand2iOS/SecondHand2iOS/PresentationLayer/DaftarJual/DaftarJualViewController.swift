@@ -19,8 +19,11 @@ final class DaftarJualViewController: UIViewController{
     var cvtipe = [String]()
     
     var produkData: [SHAllProductResponseModel] = []
+    var diminatiData: [SHSellerOrderResponseModel] = []
     let userData = UserProfileCache.get()
+    var access_token: String = AccessTokenCache.get()
     let callProductAPI = SHSellerProductAPI()
+    let callOrderAPI = SHSellerOrderAPI()
     
     @IBOutlet var daftarJualTableView: UITableView!
     @IBOutlet var daftarJualCollectionView: UICollectionView!
@@ -111,11 +114,17 @@ final class DaftarJualViewController: UIViewController{
         buttonProdukOutlet.backgroundColor = UIColor(named: "Purple1")
         buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple4")
         buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple1")
-        testdata = ["Penawaran Produk","Penawaran Produk","Penawaran Produk"]
-        namadata = ["Jam Tangan Casio","Jam Tangan Casio","Jam Tangan Casio"]
-        hargadata = ["Rp 250.000","Rp 250.000","Rp 250.000"]
-        hargatawar = ["Rp 200.000","Rp 200.000","Rp 200.000"]
-        tanggal = ["20 Apr, 14:04","20 Apr, 14:04","20 Apr, 14:04"]
+        callOrderAPI.getAllSellerOrder(access_token: access_token, status: "pending") { [weak self](result) in
+            guard let _self = self else {return}
+            
+            switch result {
+            case let .success(data):
+                _self.diminatiData = data
+                _self.daftarJualTableView.reloadData()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
         daftarJualTableView.reloadData()
         daftarJualTableView.isHidden = false
         daftarJualCollectionView.isHidden = true
@@ -125,11 +134,17 @@ final class DaftarJualViewController: UIViewController{
         buttonProdukOutlet.backgroundColor = UIColor(named: "Purple1")
         buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple1")
         buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple4")
-        testdata = ["Penawaran Produk","Penawaran Produk"]
-        namadata = ["Jam Tangan Casio","Jam Tangan Casio"]
-        hargadata = ["Rp 250.000","Rp 250.000"]
-        hargatawar = ["Rp 200.000","Rp 200.000"]
-        tanggal = ["20 Apr, 14:04","20 Apr, 14:04"]
+        callOrderAPI.getAllSellerOrder(access_token: access_token, status: "accepted") { [weak self] (result) in
+            guard let _self = self else {return}
+            
+            switch result {
+            case let .success(data):
+                _self.diminatiData = data
+                _self.daftarJualTableView.reloadData()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
         daftarJualTableView.reloadData()
         daftarJualTableView.isHidden = false
         daftarJualCollectionView.isHidden = true
@@ -147,7 +162,7 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testdata.count
+        return diminatiData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -161,11 +176,21 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             return reusableCell
         }
         
-        cell.daftarJualType.text = testdata[indexPath.row]
-        cell.daftarJualName.text = namadata[indexPath.row]
-        cell.daftarJualPrice.text = hargadata[indexPath.row]
-        cell.daftarJualTawar.text = hargatawar[indexPath.row]
-        cell.daftarJualDate.text = tanggal[indexPath.row]
+        let diminati = diminatiData[indexPath.row]
+        
+        if diminati.status == "pending"{
+            cell.daftarJualType.text = "Penawaran Produk"
+        }else if diminati.status == "accepted"{
+            cell.daftarJualType.text = "Berhasil Terjual"
+        }else{
+            cell.daftarJualType.text = "Gagal Terjual"
+        }
+        cell.daftarJualName.text = diminati.product_name
+        cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
+        cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
+        cell.daftarJualDate.text = diminati.transaction_date
+        cell.daftarJualImage.loadImage(resource: diminati.Product!.image_url!)
+
         
         return cell
     }
