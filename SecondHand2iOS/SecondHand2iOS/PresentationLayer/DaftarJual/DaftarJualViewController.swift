@@ -7,13 +7,7 @@
 
 import UIKit
 
-
-
-final class DaftarJualViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet var akun: UIView!
-    @IBOutlet var daftarJualTableView: UITableView!
-    @IBOutlet var daftarJualCollectionView: UICollectionView!
+final class DaftarJualViewController: UIViewController{
     
     var testdata = [String]()
     var namadata = [String]()
@@ -23,23 +17,46 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
     var cvnama = [String]()
     var cvharga = [String]()
     var cvtipe = [String]()
-    var produkData: [SHAllProductResponseModel] = []
     
+    var produkData: [SHAllProductResponseModel] = []
     let userData = UserProfileCache.get()
     let callProductAPI = SHSellerProductAPI()
     
-    @IBOutlet var judul: UILabel!
+    @IBOutlet var daftarJualTableView: UITableView!
+    @IBOutlet var daftarJualCollectionView: UICollectionView!
+    
+    @IBOutlet var akun: UIView!
     @IBOutlet var akunImg: UIImageView!
     @IBOutlet var namaAkun: UILabel!
     @IBOutlet var btnAkun: UIButton!
     @IBOutlet var kotaAkun: UILabel!
     
-    @IBOutlet var btn1: UIButton!
-    @IBOutlet var btn2: UIButton!
-    @IBOutlet var btn3: UIButton!
+    @IBOutlet weak var buttonProdukOutlet: UIButton!
+    @IBOutlet weak var imageButtonProdukOutlet: UIImageView!
+    @IBOutlet weak var buttonDiminatiOutlet: UIButton!
+    @IBOutlet weak var imageButtonDiminatiOutlet: UIImageView!
+    @IBOutlet weak var buttonTerjualOutlet: UIButton!
+    @IBOutlet weak var imageButtonTerjualOutlet: UIImageView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        callProductAPI.getAllSellerProduct(access_token: AccessTokenCache.get()) { [weak self] (result) in
+            switch result {
+            case let .success(data):
+                self!.produkData = data
+                self!.daftarJualCollectionView.reloadData()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        akunViewDesign()
+        stackViewButtonDesign()
         namaAkun.text = userData!.full_name
         kotaAkun.text = userData!.city
         akunImg.loadImage(resource: userData!.image_url)
@@ -47,42 +64,53 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
         daftarJualTableView.register(UINib.init(nibName:"DaftarJualTableViewCell" , bundle: nil), forCellReuseIdentifier: "DaftarJualTableViewCell")
         daftarJualTableView.delegate = self
         daftarJualTableView.dataSource = self
+        daftarJualTableView.isHidden = true
         
         daftarJualCollectionView.delegate = self
         daftarJualCollectionView.dataSource = self
-        btnAkun.layer.cornerRadius = 12
-        btnAkun.layer.borderWidth = 1
-        btnAkun.layer.borderColor = UIColor.purple.cgColor
-        akun.layer.borderWidth = 1
+        daftarJualCollectionView.isHidden = false
+    }
+    
+    func akunViewDesign(){
+        akun.backgroundColor = UIColor.white
+        akun.clipsToBounds = true
         akun.layer.borderColor = UIColor.gray.cgColor
-        buttonDesign()
+        akun.layer.cornerRadius = 16
+        akun.layer.masksToBounds = false
+        akun.layer.shadowColor = UIColor.black.cgColor
+        akun.layer.shadowOffset = CGSize.zero
+        akun.layer.shadowOpacity = 0.15
+        akun.layer.shadowRadius = 4
         
-        callProductAPI.getAllSellerProduct(access_token: AccessTokenCache.get()) { [weak self] (result) in
-            switch result {
-            case let .success(data):
-                self!.produkData = data
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
+        btnAkun.backgroundColor = UIColor.white
+        btnAkun.clipsToBounds = true
+        btnAkun.layer.borderColor = UIColor(named: "Purple4")!.cgColor
+        btnAkun.layer.borderWidth = 1
+        btnAkun.layer.cornerRadius = 8
     }
     
-    func buttonDesign(){
-        btn1.backgroundColor = UIColor.init(red: 224/255, green: 213/255, blue: 238/255, alpha: 1.0)
-        btn2.backgroundColor = UIColor.init(red: 224/255, green: 213/255, blue: 238/255, alpha: 1.0)
-        btn3.backgroundColor = UIColor.init(red: 224/255, green: 213/255, blue: 238/255, alpha: 1.0)
-        btn2.layer.cornerRadius = 10
-        btn2.clipsToBounds = true
-        btn1.layer.cornerRadius = 10
-        btn1.clipsToBounds = true
-        btn3.layer.cornerRadius = 10
-        btn3.clipsToBounds = true
-        btn1.titleLabel?.font = .systemFont(ofSize: 10)
-        btn2.titleLabel?.font = .systemFont(ofSize: 10)
-        btn3.titleLabel?.font = .systemFont(ofSize: 10)
+    func stackViewButtonDesign(){
+        buttonProdukOutlet.layer.cornerRadius = 8
+        imageButtonProdukOutlet.image = UIImage(named: "boxIcon")
+        buttonDiminatiOutlet.layer.cornerRadius = 8
+        imageButtonDiminatiOutlet.image = UIImage(named: "heartIcon")
+        buttonTerjualOutlet.layer.cornerRadius = 8
+        imageButtonTerjualOutlet.image = UIImage(named: "dollarIcon")
     }
     
-    @IBAction func btn1(_ sender: Any) {
+    @IBAction func buttonProdukTapIn(_ sender: Any) {
+        buttonProdukOutlet.backgroundColor = UIColor(named: "Purple4")
+        buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple1")
+        buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple1")
+        daftarJualCollectionView.reloadData()
+        daftarJualTableView.isHidden = true
+        daftarJualCollectionView.isHidden = false
+    }
+    
+    @IBAction func buttonDiminatiTapIn(_ sender: Any) {
+        buttonProdukOutlet.backgroundColor = UIColor(named: "Purple1")
+        buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple4")
+        buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple1")
         testdata = ["Penawaran Produk","Penawaran Produk","Penawaran Produk"]
         namadata = ["Jam Tangan Casio","Jam Tangan Casio","Jam Tangan Casio"]
         hargadata = ["Rp 250.000","Rp 250.000","Rp 250.000"]
@@ -91,24 +119,12 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
         daftarJualTableView.reloadData()
         daftarJualTableView.isHidden = false
         daftarJualCollectionView.isHidden = true
-        btn1.titleLabel?.font = .systemFont(ofSize: 10)
-        btn2.titleLabel?.font = .systemFont(ofSize: 10)
-        btn3.titleLabel?.font = .systemFont(ofSize: 10)
-        btn1.setTitleColor(UIColor.white, for: .normal)
-        btn2.setTitleColor(UIColor.black, for: .normal)
-        btn3.setTitleColor(UIColor.black, for: .normal)
-        btn2.backgroundColor = UIColor.init(red: 224/255.0, green: 213/255.0, blue: 238/255.0, alpha: 1.0)
-        btn1.backgroundColor = UIColor.init(red: 104/255.0, green: 43/255.0, blue: 174/255.0, alpha: 1.0)
-        btn3.backgroundColor = UIColor.init(red: 224/255.0, green: 213/255.0, blue: 238/255.0, alpha: 1.0)
-        btn1.layer.cornerRadius = 10
-        btn1.clipsToBounds = true
-        btn2.layer.cornerRadius = 10
-        btn2.clipsToBounds = true
-        btn3.layer.cornerRadius = 10
-        btn3.clipsToBounds = true
     }
 
-    @IBAction func btn2(_ sender: Any) {
+    @IBAction func buttonTerjualTapIn(_ sender: Any) {
+        buttonProdukOutlet.backgroundColor = UIColor(named: "Purple1")
+        buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple1")
+        buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple4")
         testdata = ["Penawaran Produk","Penawaran Produk"]
         namadata = ["Jam Tangan Casio","Jam Tangan Casio"]
         hargadata = ["Rp 250.000","Rp 250.000"]
@@ -117,45 +133,17 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
         daftarJualTableView.reloadData()
         daftarJualTableView.isHidden = false
         daftarJualCollectionView.isHidden = true
-        btn1.titleLabel?.font = .systemFont(ofSize: 10)
-        btn2.titleLabel?.font = .systemFont(ofSize: 10)
-        btn3.titleLabel?.font = .systemFont(ofSize: 10)
-        btn2.setTitleColor(UIColor.white, for: .normal)
-        btn1.setTitleColor(UIColor.black, for: .normal)
-        btn3.setTitleColor(UIColor.black, for: .normal)
-        btn1.backgroundColor = UIColor.init(red: 224/255, green: 213/255, blue: 238/255, alpha: 1.0)
-        btn2.backgroundColor = UIColor.init(red: 104/255, green: 43/255, blue: 174/255, alpha: 1.0)
-        btn3.backgroundColor = UIColor.init(red: 224/255.0, green: 213/255.0, blue: 238/255.0, alpha: 1.0)
-        btn1.layer.cornerRadius = 10
-        btn1.clipsToBounds = true
-        btn2.layer.cornerRadius = 10
-        btn2.clipsToBounds = true
-        btn3.layer.cornerRadius = 10
-        btn3.clipsToBounds = true
+    }
+}
+
+extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    @IBAction func btn3(_ sender: Any) {
-        cvtipe = ["Aksesoris","Aksesoris"]
-        cvnama = ["Jam Tangan Casio","Jam Tangan Casio"]
-        cvharga = ["Rp 250.000","Rp 250.000"]
-        daftarJualCollectionView.reloadData()
-        daftarJualTableView.isHidden = true
-        daftarJualCollectionView.isHidden = false
-        btn1.titleLabel?.font = .systemFont(ofSize: 10)
-        btn2.titleLabel?.font = .systemFont(ofSize: 10)
-        btn3.titleLabel?.font = .systemFont(ofSize: 10)
-        btn3.setTitleColor(UIColor.white, for: .normal)
-        btn2.setTitleColor(UIColor.black, for: .normal)
-        btn1.setTitleColor(UIColor.black, for: .normal)
-        btn1.backgroundColor = UIColor.init(red: 224/255, green: 213/255, blue: 238/255, alpha: 1.0)
-        btn2.backgroundColor = UIColor.init(red: 224/255, green: 213/255, blue: 238/255, alpha: 1.0)
-        btn3.backgroundColor = UIColor.init(red: 104/255, green: 43/255, blue: 174/255, alpha: 1.0)
-        btn2.layer.cornerRadius = 10
-        btn2.clipsToBounds = true
-        btn1.layer.cornerRadius = 10
-        btn1.clipsToBounds = true
-        btn3.layer.cornerRadius = 10
-        btn3.clipsToBounds = true
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -178,7 +166,6 @@ final class DaftarJualViewController: UIViewController, UITableViewDelegate, UIT
         cell.daftarJualPrice.text = hargadata[indexPath.row]
         cell.daftarJualTawar.text = hargatawar[indexPath.row]
         cell.daftarJualDate.text = tanggal[indexPath.row]
-        
         
         return cell
     }
@@ -211,10 +198,6 @@ extension DaftarJualViewController: UICollectionViewDataSource, UICollectionView
         cell?.layer.borderColor = UIColor.gray.cgColor
         cell?.layer.borderWidth = 1
         cell?.isSelected = false
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
