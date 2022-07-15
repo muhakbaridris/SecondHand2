@@ -93,7 +93,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 cellA.imageCell.tintColor = .black
                 cellA.viewCell.backgroundColor = UIColor(named: "PurpleHalf")
             }
-            
             return cellA
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell

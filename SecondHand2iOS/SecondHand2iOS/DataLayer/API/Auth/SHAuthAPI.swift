@@ -9,22 +9,6 @@ import Foundation
 import Alamofire
 
 class SHAuthAPI {
-    
-    func registerUserSecondHand(register: RegisterModel,
-                            completionHandler: @escaping (Result<RegisterResponseModel, AFError>) -> Void) {
-        let url = "https://market-final-project.herokuapp.com/auth/register"
-        let headers: HTTPHeaders = [.accept("body"),
-                                    .contentType("multipart/form-data")]
-        AF.upload(multipartFormData: { multipartFormData in
-            //code here
-        },
-                  to: url,
-                  method: .post,
-                  headers: headers).response { response in
-            //code here
-        }
-    }
-    
     func registerUserSecondHand(registerData: RegisterModelMini,
                                 completionHandler: @escaping (Result<RegisterResponseModel, AFError>) -> Void) {
         let url = "https://market-final-project.herokuapp.com/auth/register"

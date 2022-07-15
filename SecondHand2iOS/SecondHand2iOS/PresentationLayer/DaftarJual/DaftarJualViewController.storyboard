@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZlV-YZ-f5i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oiN-1d-aT4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,22 +19,23 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="2PT-Wx-VuH">
+        <!--Item-->
+        <scene sceneID="i7C-vZ-6Cm">
             <objects>
-                <tabBarController id="ob5-lP-q45" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bxf-1j-gX5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                <navigationController id="oiN-1d-aT4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0l5-uI-3S2"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rjJ-tO-ZYn">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    </navigationBar>
                     <connections>
-                        <segue destination="ZlV-YZ-f5i" kind="relationship" relationship="viewControllers" id="kZX-t6-cHV"/>
+                        <segue destination="ZlV-YZ-f5i" kind="relationship" relationship="rootViewController" id="B4J-f4-Zp8"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mn7-Nt-tgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5Q-E5-ccq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="153"/>
+            <point key="canvasLocation" x="426" y="152"/>
         </scene>
         <!--DaftarJualViewController-->
         <scene sceneID="v5i-GV-ZK8">
@@ -104,6 +105,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="dollarsign.circle" catalog="system" title="Terjual" imagePadding="11">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -115,11 +117,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cube.box" catalog="system" title="Produk" imagePadding="7">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btn1:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="3pQ-0Z-u8u"/>
-                                    <action selector="btn3:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="F69-69-0zG"/>
+                                    <action selector="btn3:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="NNm-UC-pFC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbI-D8-etm">
@@ -127,6 +129,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="Diminati" imagePadding="7">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -134,7 +137,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4Yh-VT-k6y">
-                                <rect key="frame" x="0.0" y="265" width="390" height="239"/>
+                                <rect key="frame" x="0.0" y="265" width="390" height="496"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="xQl-vC-4QH">
@@ -217,6 +220,7 @@
                     <tabBarItem key="tabBarItem" title="Daftar Jual" id="8J1-8w-Krj">
                         <imageReference key="image" image="list.bullet" catalog="system" symbolScale="default"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="JHb-Vx-l0H"/>
                     <connections>
                         <outlet property="akun" destination="PsR-oO-XNQ" id="GUU-5O-DJV"/>
                         <outlet property="akunImg" destination="QXd-dC-Lgt" id="EVR-1D-i9Z"/>
