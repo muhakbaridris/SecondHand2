@@ -87,6 +87,8 @@
 		A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A1ED3428651E7100633689 /* BuyerViewController.swift */; };
 		A4A1ED3728651E8F00633689 /* BuyerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */; };
 		A4B92727287E8DD000EEB755 /* SHChangeAccountResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B92726287E8DD000EEB755 /* SHChangeAccountResponseModel.swift */; };
+		A4B9273728818BAF00EEB755 /* SHSellerOrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9273628818BAF00EEB755 /* SHSellerOrderAPI.swift */; };
+		A4B9273A28818F4800EEB755 /* SHSellerOrderResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9273928818F4800EEB755 /* SHSellerOrderResponseModel.swift */; };
 		A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */; };
 		A4C72B8B2863384C00F67AE8 /* ProductDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */; };
 		A4D2F3552877096200BD6D04 /* SHBuyerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */; };
@@ -197,6 +199,8 @@
 		A4A1ED3428651E7100633689 /* BuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerViewController.swift; sourceTree = "<group>"; };
 		A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyerViewController.storyboard; sourceTree = "<group>"; };
 		A4B92726287E8DD000EEB755 /* SHChangeAccountResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHChangeAccountResponseModel.swift; sourceTree = "<group>"; };
+		A4B9273628818BAF00EEB755 /* SHSellerOrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerOrderAPI.swift; sourceTree = "<group>"; };
+		A4B9273928818F4800EEB755 /* SHSellerOrderResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSellerOrderResponseModel.swift; sourceTree = "<group>"; };
 		A4C72B882863384C00F67AE8 /* ProductDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataTableViewCell.swift; sourceTree = "<group>"; };
 		A4C72B892863384C00F67AE8 /* ProductDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDataTableViewCell.xib; sourceTree = "<group>"; };
 		A4D2F3542877096200BD6D04 /* SHBuyerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHBuyerAPI.swift; sourceTree = "<group>"; };
@@ -593,6 +597,7 @@
 			children = (
 				31B19F2B287DEC1F00F816BB /* SHSellerCategoryAPI.swift */,
 				3167D6F8287FFCC0002A6D12 /* SHSellerProductAPI.swift */,
+				A4B9273628818BAF00EEB755 /* SHSellerOrderAPI.swift */,
 			);
 			path = Seller;
 			sourceTree = "<group>";
@@ -600,6 +605,7 @@
 		31B19F2D287DEC7D00F816BB /* SellerModel */ = {
 			isa = PBXGroup;
 			children = (
+				A4B9273828818E3E00EEB755 /* SellerOrderModel */,
 				3167D6FA287FFF11002A6D12 /* SellerProductModel */,
 				31B19F2E287DEC8600F816BB /* SellerCategoryModel */,
 			);
@@ -718,6 +724,14 @@
 				A4A1ED3628651E8F00633689 /* BuyerViewController.storyboard */,
 			);
 			path = Buyer;
+			sourceTree = "<group>";
+		};
+		A4B9273828818E3E00EEB755 /* SellerOrderModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9273928818F4800EEB755 /* SHSellerOrderResponseModel.swift */,
+			);
+			path = SellerOrderModel;
 			sourceTree = "<group>";
 		};
 		A4C72B852863372700F67AE8 /* InfoPenawarCell */ = {
@@ -1021,6 +1035,7 @@
 				A44DC0202869846200CD4053 /* OverlayPenawarView.swift in Sources */,
 				31A54233285C08820073CCDA /* SHLoginResponseModel.swift in Sources */,
 				3157A51E287CADCF00296C47 /* SHBuyerOrderAPI.swift in Sources */,
+				A4B9273728818BAF00EEB755 /* SHSellerOrderAPI.swift in Sources */,
 				3157A51C287C9E9300296C47 /* UITextFieldNumberFormatter+Extension.swift in Sources */,
 				31F8DE032862AC7800843B3F /* SHUpdateResponseModel.swift in Sources */,
 				A4C72B8A2863384C00F67AE8 /* ProductDataTableViewCell.swift in Sources */,
@@ -1031,6 +1046,7 @@
 				A4A1ED3528651E7100633689 /* BuyerViewController.swift in Sources */,
 				31B19F32287DEEFA00F816BB /* getSellerCategoryDefaults.swift in Sources */,
 				318CB150285771A2003EB9B1 /* JualViewController.swift in Sources */,
+				A4B9273A28818F4800EEB755 /* SHSellerOrderResponseModel.swift in Sources */,
 				318CB15528577625003EB9B1 /* DaftarJualViewController.swift in Sources */,
 				312628D92879DA69001268DB /* SHChangePasswordResponseModel.swift in Sources */,
 				3157B8BA2878243900B0D60D /* getUserDataDefaults.swift in Sources */,
