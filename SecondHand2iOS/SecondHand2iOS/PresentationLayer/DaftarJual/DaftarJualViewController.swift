@@ -162,7 +162,11 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return diminatiData.count
+        if diminatiData.count == 0 {
+            return 1
+        }else{
+            return diminatiData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -175,24 +179,31 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
         guard let cell = reusableCell as? DaftarJualTableViewCell else {
             return reusableCell
         }
-        
-        let diminati = diminatiData[indexPath.row]
-        
-        if diminati.status == "pending"{
-            cell.daftarJualType.text = "Penawaran Produk"
-        }else if diminati.status == "accepted"{
-            cell.daftarJualType.text = "Berhasil Terjual"
+        if diminatiData.count == 0 {
+            cell.daftarJualName.text = "Tidak ada data"
+            cell.daftarJualType.text = ""
+            cell.daftarJualTawar.text = ""
+            cell.daftarJualPrice.text = ""
+            return cell
         }else{
-            cell.daftarJualType.text = "Gagal Terjual"
-        }
-        cell.daftarJualName.text = diminati.product_name
-        cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
-        cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
-        cell.daftarJualDate.text = diminati.transaction_date
-        cell.daftarJualImage.loadImage(resource: diminati.Product!.image_url!)
+            let diminati = diminatiData[indexPath.row]
+            print(diminatiData.isEmpty)
+            if diminati.status == "pending"{
+                cell.daftarJualType.text = "Penawaran Produk"
+            }else if diminati.status == "accepted"{
+                cell.daftarJualType.text = "Berhasil Terjual"
+            }else{
+                cell.daftarJualType.text = "Gagal Terjual"
+            }
+            cell.daftarJualName.text = diminati.product_name
+            cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
+            cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
+            cell.daftarJualDate.text = diminati.transaction_date
+            cell.daftarJualImage.loadImage(resource: diminati.Product!.image_url!)
 
-        
-        return cell
+            
+            return cell
+        }
     }
 }
 
