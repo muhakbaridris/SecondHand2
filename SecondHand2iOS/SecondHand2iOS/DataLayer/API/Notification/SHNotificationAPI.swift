@@ -16,9 +16,5 @@ final class SHNotificationAPI {
             .responseDecodable(of: [NotificationResponseModel].self) { response in
                 completionHandler(response.result)
             }
-//Check Response
-//            .responseString { response in
-//                print("responsenya \(response)")
-//            }
     }
 }

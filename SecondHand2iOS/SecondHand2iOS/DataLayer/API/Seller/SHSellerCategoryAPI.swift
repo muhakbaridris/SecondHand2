@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 final class SHSellerCategoryAPI {
-    func SellerCategoryAll(completionHandler: @escaping (Result<[SellerCategoryResponseModel], AFError>) -> Void) {
+    func getSellerCategoryAll(completionHandler: @escaping (Result<[SellerCategoryResponseModel], AFError>) -> Void) {
         let url = "https://market-final-project.herokuapp.com/seller/category"
         let headers: HTTPHeaders = [.accept("*/*")]
         AF.request(url,

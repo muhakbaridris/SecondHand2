@@ -77,7 +77,7 @@ final class NotifikasiTableViewController: UITableViewController {
             case "declined":
                 cell.notificationType.text = "Penawaran ditolak"
             default:
-                fatalError("Syntax Error")
+                break
             }
             
             cell.notificationnName.text = dataproduk.product_name

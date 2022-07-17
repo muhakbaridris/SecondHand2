@@ -24,9 +24,16 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
     var displayedProduct: [SHAllProductResponseModel] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
+    override func viewDidAppear(_ animated: Bool) {
+        categoryAPI.getSellerCategoryAll { result in
+            switch result {
+            case let .success(data):
+                CategoryCache.save(data)
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
             switch result {
             case let .success(data):
@@ -35,23 +42,14 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(err.localizedDescription)
             }
         }
-        
-        categoryAPI.SellerCategoryAll { result in
-            switch result {
-            case let .success(data):
-                CategoryCache.save(data)
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
+    }
     
-        collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
         
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
-            guard let _self = self else {
-                return
-            }
-            
+            guard let _self = self else { return }
             switch result {
             case let .success(data):
                 _self.displayedProduct = data
@@ -60,6 +58,8 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(err.localizedDescription)
             }
         }
+        
+        collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
 
         self.view.backgroundColor = UIColor.white
         textLabelKategori.text = "Telusuri Kategori"
@@ -71,7 +71,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         
         collectionView.delegate = self
         collectionViewB.delegate = self
-//        collectionViewB.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
