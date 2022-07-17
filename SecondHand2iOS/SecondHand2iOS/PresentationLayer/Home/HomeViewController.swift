@@ -97,12 +97,13 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
             let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
             cellB.productName.text = "\(products.name!)"
-//            "Rp \((dataproduk.Product.base_price).formattedWithSeparator)"
             cellB.productPrice.text = "Rp \((products.base_price!).formattedWithSeparator)"
             cellB.productImage.loadImage(resource: products.image_url)
+            cellB.productImage.layer.cornerRadius = 4
             cellB.productType.text = "\(products.Categories!.first!.name!)"
             cellB.layer.borderWidth = 1
-            cellB.layer.borderColor = UIColor.black.cgColor
+            cellB.layer.borderColor = UIColor.systemGray5.cgColor
+            cellB.layer.cornerRadius = 4
             return cellB
         }
     }

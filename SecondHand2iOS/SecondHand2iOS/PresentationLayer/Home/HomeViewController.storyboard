@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fNC-A8-bZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fNC-A8-bZH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -180,17 +180,17 @@
                                 <rect key="frame" x="0.0" y="384" width="390" height="377"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="91K-ZK-R4W">
-                                    <size key="itemSize" width="156" height="206"/>
+                                    <size key="itemSize" width="156" height="215"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="10"/>
+                                    <inset key="sectionInset" minX="25" minY="0.0" maxX="25" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeProductCollectionCell" id="uCV-Kh-Mq8" customClass="HomeProductCollectionCell" customModule="SecondHand2iOS" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="156" height="206"/>
+                                        <rect key="frame" x="25" y="0.0" width="156" height="215"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="156" height="206"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-DM-OEc">
@@ -210,13 +210,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG0-zL-PcQ">
-                                                    <rect key="frame" x="8" y="169" width="140" height="12"/>
+                                                    <rect key="frame" x="8" y="165" width="140" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6o-Cg-Nb4">
-                                                    <rect key="frame" x="8" y="193" width="140" height="17"/>
+                                                    <rect key="frame" x="8" y="187" width="140" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -225,7 +225,7 @@
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="NWC-DM-OEc" secondAttribute="trailing" constant="8" id="1sP-s6-kB5"/>
-                                            <constraint firstItem="E6o-Cg-Nb4" firstAttribute="top" secondItem="wG0-zL-PcQ" secondAttribute="bottom" constant="12" id="5Tt-s2-MCH"/>
+                                            <constraint firstItem="E6o-Cg-Nb4" firstAttribute="top" secondItem="wG0-zL-PcQ" secondAttribute="bottom" constant="10" id="5Tt-s2-MCH"/>
                                             <constraint firstItem="wG0-zL-PcQ" firstAttribute="leading" secondItem="5tG-os-IHu" secondAttribute="leading" id="6Am-Wo-nAR"/>
                                             <constraint firstItem="NWC-DM-OEc" firstAttribute="top" secondItem="uCV-Kh-Mq8" secondAttribute="top" constant="8" id="6Ka-xQ-OTe"/>
                                             <constraint firstItem="E6o-Cg-Nb4" firstAttribute="trailing" secondItem="wG0-zL-PcQ" secondAttribute="trailing" id="JVV-5E-kMk"/>
@@ -233,13 +233,13 @@
                                             <constraint firstItem="NWC-DM-OEc" firstAttribute="centerX" secondItem="uCV-Kh-Mq8" secondAttribute="centerX" id="LxO-9M-uBF"/>
                                             <constraint firstItem="wG0-zL-PcQ" firstAttribute="trailing" secondItem="5tG-os-IHu" secondAttribute="trailing" id="SRr-rz-v36"/>
                                             <constraint firstItem="E6o-Cg-Nb4" firstAttribute="leading" secondItem="wG0-zL-PcQ" secondAttribute="leading" id="YOq-Vg-N4K"/>
-                                            <constraint firstItem="wG0-zL-PcQ" firstAttribute="top" secondItem="5tG-os-IHu" secondAttribute="bottom" constant="8" id="cXd-PO-cId"/>
+                                            <constraint firstItem="wG0-zL-PcQ" firstAttribute="top" secondItem="5tG-os-IHu" secondAttribute="bottom" constant="4" id="cXd-PO-cId"/>
                                             <constraint firstItem="NWC-DM-OEc" firstAttribute="leading" secondItem="uCV-Kh-Mq8" secondAttribute="leading" constant="8" id="iiV-dt-M3p"/>
                                             <constraint firstItem="5tG-os-IHu" firstAttribute="top" secondItem="NWC-DM-OEc" secondAttribute="bottom" constant="4" id="mp8-2a-H9W"/>
                                             <constraint firstItem="5tG-os-IHu" firstAttribute="trailing" secondItem="NWC-DM-OEc" secondAttribute="trailing" id="zPg-oM-69M"/>
                                             <constraint firstItem="5tG-os-IHu" firstAttribute="leading" secondItem="NWC-DM-OEc" secondAttribute="leading" id="zms-Ll-1ye"/>
                                         </constraints>
-                                        <size key="customSize" width="156" height="206"/>
+                                        <size key="customSize" width="156" height="215"/>
                                         <connections>
                                             <outlet property="productImage" destination="NWC-DM-OEc" id="nm2-CG-zZo"/>
                                             <outlet property="productName" destination="5tG-os-IHu" id="GOT-py-9dX"/>

@@ -232,18 +232,21 @@ extension DaftarJualViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = daftarJualCollectionView.dequeueReusableCell(withReuseIdentifier: "TambahProduk", for: indexPath)
-            cell.layer.borderColor = UIColor.gray.cgColor
             cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.systemGray5.cgColor
+            cell.layer.cornerRadius = 4
+            
             return cell
         } else {
             let cell = daftarJualCollectionView.dequeueReusableCell(withReuseIdentifier: "DaftarJualCollectionViewCell", for: indexPath) as! DaftarJualCollectionViewCell
-            cell.layer.borderColor = UIColor.gray.cgColor
-            cell.layer.borderWidth = 1
             let products = produkData[indexPath.row - 1]
             cell.image.loadImage(resource: products.image_url)
             cell.nama.text = products.name
             cell.tipe.text = products.Categories!.first?.name ?? ""
             cell.harga.text = "Rp \(products.base_price!.formattedWithSeparator)"
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.systemGray5.cgColor
+            cell.layer.cornerRadius = 4
             return cell
         }
     }
