@@ -50,7 +50,7 @@ final class PreviewJualViewController: UIViewController {
         let userData = UserProfileCache.get()
         namaPenjualOutlet.text = userData!.full_name
         kotaPenjualOutlet.text = userData!.city
-        gambarPenjualOutlet.loadImage(resource: userData!.image_url)
+        gambarPenjualOutlet.setImageFrom(userData!.image_url)
         deskripsiProdukTextViewOutlet.text = deskripsiProduk
         
         buttonTerbitkanOutlet.layer.cornerRadius = 16

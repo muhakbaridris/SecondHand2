@@ -88,8 +88,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonProdukTapIn:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="t8X-OT-cb8"/>
-                                    <action selector="buttonTerjualTapIn:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="JTE-6v-Psj"/>
+                                    <action selector="buttonTerjualTapIn:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="5KS-ei-WSu"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Szx-Ul-zN1">
@@ -309,6 +308,13 @@
                                     <outlet property="delegate" destination="ZlV-YZ-f5i" id="7fd-UX-fF1"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RSf-M1-aec">
+                                <rect key="frame" x="165" y="392" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="lmh-B7-gwk"/>
+                                    <constraint firstAttribute="height" constant="60" id="nBd-QY-pOk"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YTP-g9-fYV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -332,6 +338,7 @@
                             <constraint firstItem="XA7-5U-Aqw" firstAttribute="leading" secondItem="YTP-g9-fYV" secondAttribute="leading" constant="16" id="ciX-Hc-wCm"/>
                             <constraint firstItem="S0i-Sw-tNZ" firstAttribute="top" secondItem="5Q2-uC-voI" secondAttribute="bottom" constant="24" id="dCd-A7-h7s"/>
                             <constraint firstItem="Pdx-x8-GbD" firstAttribute="leading" secondItem="YTP-g9-fYV" secondAttribute="leading" id="dgh-gS-Zhf"/>
+                            <constraint firstItem="RSf-M1-aec" firstAttribute="centerY" secondItem="071-ZP-neu" secondAttribute="centerY" id="eHR-ff-Ui4"/>
                             <constraint firstItem="Qkz-Ts-a5r" firstAttribute="leading" secondItem="b8x-n2-7AM" secondAttribute="trailing" constant="10" id="eWb-4K-frD"/>
                             <constraint firstItem="e2L-6h-KFu" firstAttribute="top" secondItem="5Q2-uC-voI" secondAttribute="bottom" constant="35" id="fPp-hc-I5d"/>
                             <constraint firstItem="e2L-6h-KFu" firstAttribute="leading" secondItem="cYl-rN-k06" secondAttribute="trailing" constant="10" id="fSa-ir-KBQ"/>
@@ -343,6 +350,7 @@
                             <constraint firstItem="Szx-Ul-zN1" firstAttribute="leading" secondItem="YTP-g9-fYV" secondAttribute="leading" constant="35" id="n34-i9-Cyi"/>
                             <constraint firstItem="OQX-Sm-iq0" firstAttribute="top" secondItem="XA7-5U-Aqw" secondAttribute="bottom" constant="24" id="owj-6z-90N"/>
                             <constraint firstItem="b8x-n2-7AM" firstAttribute="leading" secondItem="p0C-gm-TY5" secondAttribute="trailing" constant="30.670000000000002" id="pYq-zR-JLa"/>
+                            <constraint firstItem="RSf-M1-aec" firstAttribute="centerX" secondItem="071-ZP-neu" secondAttribute="centerX" id="r81-8Z-aVz"/>
                             <constraint firstItem="cYl-rN-k06" firstAttribute="leading" secondItem="XA7-5U-Aqw" secondAttribute="trailing" constant="31.329999999999998" id="tVE-EI-PSz"/>
                             <constraint firstItem="Pdx-x8-GbD" firstAttribute="top" secondItem="XA7-5U-Aqw" secondAttribute="bottom" constant="24" id="uOn-wb-Brg"/>
                             <constraint firstItem="5Q2-uC-voI" firstAttribute="leading" secondItem="YTP-g9-fYV" secondAttribute="leading" constant="16" id="vJv-wI-qaa"/>
@@ -366,6 +374,7 @@
                         <outlet property="imageButtonProdukOutlet" destination="Szx-Ul-zN1" id="6Il-c8-7fT"/>
                         <outlet property="imageButtonTerjualOutlet" destination="b8x-n2-7AM" id="0mv-QO-saO"/>
                         <outlet property="kotaAkun" destination="tHJ-pH-8ah" id="nfJ-fp-oz6"/>
+                        <outlet property="loadingAnimationOutlet" destination="RSf-M1-aec" id="zkB-Z6-2db"/>
                         <outlet property="namaAkun" destination="1KM-cp-5o3" id="Rih-Y5-8Dw"/>
                     </connections>
                 </viewController>

@@ -97,7 +97,7 @@
                                 <color key="textColor" name="ColorDiskon"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerImage" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-1b-WWn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BannerImage" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-1b-WWn">
                                 <rect key="frame" x="232" y="117" width="127" height="123"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="5e0-6t-ZqY"/>
@@ -114,21 +114,21 @@
                                     <size key="itemSize" width="169" height="56"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="anZ-mH-igR" customClass="HomeCollectionViewCell" customModule="SecondHand2iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="8.6666666666666661" width="169" height="56"/>
+                                        <rect key="frame" x="16" y="8.6666666666666661" width="169" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NoZ-ey-CVd">
                                             <rect key="frame" x="0.0" y="0.0" width="169" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66k-qi-1I3" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="10" y="4" width="149" height="48"/>
+                                                    <rect key="frame" x="14.666666666666671" y="4" width="140" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-uc-3bv">
-                                                            <rect key="frame" x="46" y="14.33333333333333" width="93" height="19.666666666666671"/>
+                                                            <rect key="frame" x="46" y="14.33333333333333" width="84" height="19.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -154,14 +154,13 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="28"/>
+                                                            <real key="value" value="12"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="wobble"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="66k-qi-1I3" firstAttribute="leading" secondItem="NoZ-ey-CVd" secondAttribute="leading" constant="10" id="XL7-xL-77K"/>
                                                 <constraint firstAttribute="bottom" secondItem="66k-qi-1I3" secondAttribute="bottom" constant="4" id="f8T-gG-1Af"/>
                                                 <constraint firstItem="66k-qi-1I3" firstAttribute="centerX" secondItem="NoZ-ey-CVd" secondAttribute="centerX" id="icZ-A1-G6m"/>
                                                 <constraint firstItem="66k-qi-1I3" firstAttribute="top" secondItem="NoZ-ey-CVd" secondAttribute="top" constant="4" id="mZj-Xa-5ua"/>
@@ -249,6 +248,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Cic-rp-6g8">
+                                <rect key="frame" x="165" y="392" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="ftT-SI-U0q"/>
+                                    <constraint firstAttribute="height" constant="60" id="vzc-mR-CBs"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -269,6 +275,9 @@
                             <constraint firstItem="fFq-sW-DME" firstAttribute="top" secondItem="9xL-0R-ws3" secondAttribute="bottom" constant="21" id="gJH-Xf-ed6"/>
                             <constraint firstItem="FvQ-Pm-83Z" firstAttribute="top" secondItem="n91-af-LwL" secondAttribute="bottom" constant="4" id="h4Y-bF-hEB"/>
                             <constraint firstItem="diQ-1b-WWn" firstAttribute="trailing" secondItem="9xL-0R-ws3" secondAttribute="trailing" id="i2p-Hp-QpF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="diQ-1b-WWn" secondAttribute="trailing" constant="31" id="iMq-2F-Vrw"/>
+                            <constraint firstItem="Cic-rp-6g8" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="jTj-3Q-56s"/>
+                            <constraint firstItem="Cic-rp-6g8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="l7a-ge-P8y"/>
                             <constraint firstItem="iai-5V-EnK" firstAttribute="top" secondItem="fFq-sW-DME" secondAttribute="bottom" constant="12" id="yEe-rw-gbY"/>
                         </constraints>
                     </view>
@@ -282,6 +291,7 @@
                         <outlet property="headlineLabel" destination="fFq-sW-DME" id="8G8-9R-N1S"/>
                         <outlet property="labelDiskon" destination="iai-5V-EnK" id="w3S-oZ-pkF"/>
                         <outlet property="labelPercent" destination="HoA-uh-j8v" id="hWe-rx-65X"/>
+                        <outlet property="loadingAnimationOutlet" destination="Cic-rp-6g8" id="9Nh-HP-Yse"/>
                         <outlet property="searchBar" destination="9xL-0R-ws3" id="kSp-sW-ps6"/>
                         <outlet property="textLabelKategori" destination="bY6-do-3Tw" id="jeo-Tp-7Rs"/>
                     </connections>
@@ -293,7 +303,7 @@
     </scenes>
     <resources>
         <image name="BackgroundGradientImage" width="90" height="99.333335876464844"/>
-        <image name="bannerImage" width="31.666666030883789" height="30.666666030883789"/>
+        <image name="BannerImage" width="31.666666030883789" height="30.666666030883789"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="ColorDiskon">

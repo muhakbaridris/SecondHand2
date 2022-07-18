@@ -40,29 +40,28 @@ final class DaftarJualViewController: UIViewController{
     @IBOutlet weak var imageButtonDiminatiOutlet: UIImageView!
     @IBOutlet weak var buttonTerjualOutlet: UIButton!
     @IBOutlet weak var imageButtonTerjualOutlet: UIImageView!
+    @IBOutlet weak var loadingAnimationOutlet: UIActivityIndicatorView!
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        loadingAnimationOutlet.startAnimating()
         callProductAPI.getAllSellerProduct(access_token: AccessTokenCache.get()) { [weak self] (result) in
             switch result {
             case let .success(data):
                 self!.produkData = data
                 self!.daftarJualCollectionView.reloadData()
+                self!.loadingAnimationOutlet.stopAnimating()
             case let .failure(err):
                 print(err.localizedDescription)
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
         
         akunViewDesign()
         stackViewButtonDesign()
         namaAkun.text = userData!.full_name
         kotaAkun.text = userData!.city
-        akunImg.loadImage(resource: userData!.image_url)
+        akunImg.setImageFrom(userData!.image_url)
         
         daftarJualTableView.register(UINib.init(nibName:"DaftarJualTableViewCell" , bundle: nil), forCellReuseIdentifier: "DaftarJualTableViewCell")
         daftarJualTableView.delegate = self
@@ -116,7 +115,6 @@ final class DaftarJualViewController: UIViewController{
         buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple1")
         callOrderAPI.getAllSellerOrder(access_token: access_token, status: "pending") { [weak self](result) in
             guard let _self = self else {return}
-            
             switch result {
             case let .success(data):
                 _self.diminatiData = data
@@ -125,7 +123,6 @@ final class DaftarJualViewController: UIViewController{
                 print(err.localizedDescription)
             }
         }
-        daftarJualTableView.reloadData()
         daftarJualTableView.isHidden = false
         daftarJualCollectionView.isHidden = true
     }
@@ -180,16 +177,16 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
         
         if diminati.status == "pending"{
             cell.daftarJualType.text = "Penawaran Produk"
-        }else if diminati.status == "accepted"{
+        } else if diminati.status == "accepted" {
             cell.daftarJualType.text = "Berhasil Terjual"
-        }else{
+        } else {
             cell.daftarJualType.text = "Gagal Terjual"
         }
         cell.daftarJualName.text = diminati.product_name
         cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
         cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
         cell.daftarJualDate.text = diminati.transaction_date
-        cell.daftarJualImage.loadImage(resource: diminati.Product!.image_url!)
+        cell.daftarJualImage.setImageFrom(diminati.Product!.image_url!)
 
         
         return cell
@@ -210,6 +207,7 @@ extension DaftarJualViewController: UICollectionViewDataSource, UICollectionView
             viewController?.deskripsiBarang = produk.description!
             viewController?.urlGambarBarang = produk.image_url!
             viewController?.arrBannerImage = [produk.image_url!]
+            viewController?.pastValue = true
             self.navigationController?.pushViewController(viewController!, animated: true)
         }
         let cell = daftarJualCollectionView.cellForItem(at: indexPath)
@@ -232,15 +230,12 @@ extension DaftarJualViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = daftarJualCollectionView.dequeueReusableCell(withReuseIdentifier: "TambahProduk", for: indexPath)
-            cell.layer.borderWidth = 1
-            cell.layer.borderColor = UIColor.systemGray5.cgColor
-            cell.layer.cornerRadius = 4
-            
+            cell.addLineDashedStroke(pattern: [15, 5], radius: 4, color: UIColor.systemGray2.cgColor)
             return cell
         } else {
             let cell = daftarJualCollectionView.dequeueReusableCell(withReuseIdentifier: "DaftarJualCollectionViewCell", for: indexPath) as! DaftarJualCollectionViewCell
             let products = produkData[indexPath.row - 1]
-            cell.image.loadImage(resource: products.image_url)
+            cell.image.setImageFrom(products.image_url!)
             cell.nama.text = products.name
             cell.tipe.text = products.Categories!.first?.name ?? ""
             cell.harga.text = "Rp \(products.base_price!.formattedWithSeparator)"

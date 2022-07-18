@@ -12,9 +12,10 @@ final class AkunViewController: UIViewController{
     var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
     
-    override func viewDidAppear(_ animated: Bool) {
-        let userData = UserProfileCache.get().image_url
-        userImageOutlet.loadImage(resource: userData)
+    override func viewWillAppear(_ animated: Bool) {
+        let userImage = UserProfileCache.get().image_url
+        userImageOutlet.image = nil
+        userImageOutlet.setImageFrom(userImage)
     }
     
     override func viewDidLoad() {

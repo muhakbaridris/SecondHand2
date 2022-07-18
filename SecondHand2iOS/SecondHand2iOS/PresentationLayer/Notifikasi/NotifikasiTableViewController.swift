@@ -88,7 +88,7 @@ final class NotifikasiTableViewController: UITableViewController {
             default:
                 cell.notificationTawar.text =  "Ditawar Rp \((dataproduk.bid_price!).formattedWithSeparator)"
             }
-            cell.notificationImage.loadImage(resource: dataproduk.image_url)
+            cell.notificationImage.setImageFrom(dataproduk.image_url!)
             cell.notificationDate.text = dateFormatter(date: dataproduk.updatedAt)
             return cell
         }
