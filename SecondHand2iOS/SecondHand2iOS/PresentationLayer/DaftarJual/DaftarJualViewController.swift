@@ -104,6 +104,16 @@ final class DaftarJualViewController: UIViewController{
         buttonProdukOutlet.backgroundColor = UIColor(named: "Purple4")
         buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple1")
         buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple1")
+        callProductAPI.getAllSellerProduct(access_token: AccessTokenCache.get()) { [weak self] (result) in
+            switch result {
+            case let .success(data):
+                self!.produkData = data
+                self!.daftarJualCollectionView.reloadData()
+                self!.loadingAnimationOutlet.stopAnimating()
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
         daftarJualCollectionView.reloadData()
         daftarJualTableView.isHidden = true
         daftarJualCollectionView.isHidden = false
@@ -133,7 +143,6 @@ final class DaftarJualViewController: UIViewController{
         buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple4")
         callOrderAPI.getAllSellerOrder(access_token: access_token, status: "accepted") { [weak self] (result) in
             guard let _self = self else {return}
-            
             switch result {
             case let .success(data):
                 _self.diminatiData = data
@@ -159,7 +168,11 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return diminatiData.count
+        if diminatiData.count == 0 {
+            return 1
+        }else{
+            return diminatiData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -172,24 +185,32 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
         guard let cell = reusableCell as? DaftarJualTableViewCell else {
             return reusableCell
         }
-        
-        let diminati = diminatiData[indexPath.row]
-        
-        if diminati.status == "pending"{
-            cell.daftarJualType.text = "Penawaran Produk"
-        } else if diminati.status == "accepted" {
-            cell.daftarJualType.text = "Berhasil Terjual"
+        if diminatiData.count == 0 {
+            cell.daftarJualName.text = "Tidak ada data"
+            cell.daftarJualImage.backgroundColor = UIColor(named: "Purple4")
+            cell.daftarJualType.text = ""
+            cell.daftarJualTawar.text = ""
+            cell.daftarJualPrice.text = ""
+            return cell
         } else {
-            cell.daftarJualType.text = "Gagal Terjual"
-        }
-        cell.daftarJualName.text = diminati.product_name
-        cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
-        cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
-        cell.daftarJualDate.text = diminati.transaction_date
-        cell.daftarJualImage.setImageFrom(diminati.Product!.image_url!)
+            let diminati = diminatiData[indexPath.row]
+            print(diminatiData.isEmpty)
+            if diminati.status == "pending"{
+                cell.daftarJualType.text = "Penawaran Produk"
+            } else if diminati.status == "accepted"{
+                cell.daftarJualType.text = "Berhasil Terjual"
+            } else {
+                cell.daftarJualType.text = "Gagal Terjual"
+            }
+            cell.daftarJualName.text = diminati.product_name
+            cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
+            cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
+            cell.daftarJualDate.text = diminati.transaction_date
+            cell.daftarJualImage.setImageFrom(diminati.Product!.image_url ?? "")
 
-        
-        return cell
+            
+            return cell
+        }
     }
 }
 

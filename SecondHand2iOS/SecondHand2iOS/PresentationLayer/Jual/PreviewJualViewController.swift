@@ -36,6 +36,7 @@ final class PreviewJualViewController: UIViewController {
     var produkName: String = ""
     var produkPrice: String = ""
     var produkKategori: String = ""
+    var idKategori: Int = 0
     var namaPenjual: String = ""
     var kotaPenjual: String = ""
     var deskripsiProduk: String = ""
@@ -65,7 +66,7 @@ final class PreviewJualViewController: UIViewController {
             name: produkName,
             description: deskripsiProduk,
             base_price: Int(produkPrice)!,
-            categoryID: Int(produkKategori)!,
+            categoryID: idKategori,
             location: UserProfileCache.get().city,
             imageName: imageName,
             image: imageData!)

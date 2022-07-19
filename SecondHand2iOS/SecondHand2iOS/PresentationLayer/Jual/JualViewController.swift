@@ -43,8 +43,13 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         imagePicker.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    func fromPreview(value: Bool){
+        if value == true {
+            
+        }
+    }
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
-//        let tappedImage = tapGestureRecognizer.view as! UIImageView
         let imagePickers = UIImagePickerController()
         imagePickers.delegate = self
         imagePickers.allowsEditing = false
@@ -132,6 +137,7 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
             viewController.produkName = namaProdukOutlet.text!
             viewController.produkPrice = hargaProdukOutlet.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             viewController.produkKategori = kategoriProdukOutlet.text!
+            viewController.idKategori = idCategory
             viewController.deskripsiProduk = deskripsiProdukOutlet.text!
             viewController.imageData = imagePicker.image ?? nil
             viewController.imageName = photoName

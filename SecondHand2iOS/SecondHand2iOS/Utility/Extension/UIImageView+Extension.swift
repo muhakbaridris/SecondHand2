@@ -33,8 +33,7 @@ extension UIImageView {
           self.addConstraints([centerX, centerY])
           return activityIndicator
       }
-
-      /// Asynchronous downloading and setting the image from the provided urlString
+    
       func setImageFrom(_ urlString: String, completion: (() -> Void)? = nil) {
           guard let url = URL(string: urlString) else { return }
 
