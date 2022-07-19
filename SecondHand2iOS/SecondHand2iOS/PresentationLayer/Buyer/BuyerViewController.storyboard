@@ -198,7 +198,7 @@
                                     <color key="baseBackgroundColor" name="Purple4"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnBuyTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fq4-0e-oGK"/>
+                                    <action selector="btnBuyTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EhM-E6-yV3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -224,7 +224,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kX8-gR-wz1"/>
                     <connections>
-                        <outlet property="btnBuy" destination="iFf-jj-7Af" id="Xyh-zF-aAN"/>
+                        <outlet property="btnBuyOutlet" destination="iFf-jj-7Af" id="XCP-Lq-3rw"/>
                         <outlet property="collectionView" destination="vL1-PM-0Sf" id="2Ag-oC-yXX"/>
                         <outlet property="deskripsiBarangOutlet" destination="9MZ-Lw-rpK" id="gPn-jh-LcZ"/>
                         <outlet property="deskripsiView" destination="kly-T5-zKm" id="9RI-G8-EZ9"/>

@@ -38,7 +38,7 @@ final class OverlayBuyerView: UIViewController {
             print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
         }
         
-        gambarBarangImageOutlet.loadImage(resource: barangImageURL)
+        gambarBarangImageOutlet.setImageFrom(barangImageURL)
         namaBarangLabelOutlet.text = namaBarang
         hargaBarangLabelOutlet.text = "Rp \(hargaBarang.formattedWithSeparator)"
     }
@@ -106,7 +106,6 @@ final class OverlayBuyerView: UIViewController {
             if dragVelocity.y >= 1300 {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                // Set back to original position of the view controller
                 UIView.animate(withDuration: 0.3) {
                     self.borderViewProduct.frame.origin = self.pointOrigin ?? CGPoint(x: 0, y: 400)
                 }

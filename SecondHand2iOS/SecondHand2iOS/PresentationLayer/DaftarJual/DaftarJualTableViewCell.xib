@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,53 +22,65 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="05.png" translatesAutoresizingMaskIntoConstraints="NO" id="TDX-Xu-3nS">
-                        <rect key="frame" x="15" y="19" width="61" height="61"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="05.png" translatesAutoresizingMaskIntoConstraints="NO" id="TDX-Xu-3nS">
+                        <rect key="frame" x="16" y="16" width="61" height="61"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="61" id="7ie-dc-naW"/>
+                            <constraint firstAttribute="width" constant="61" id="f8R-8f-hgU"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Penawaran Produk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEd-or-8dh">
-                        <rect key="frame" x="94" y="19" width="142" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penawaran Produk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEd-or-8dh">
+                        <rect key="frame" x="93" y="16" width="203" height="14"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                         <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jam Tangan Casio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-Ym-RB1">
-                        <rect key="frame" x="94" y="38" width="139" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jam Tangan Casio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-Ym-RB1">
+                        <rect key="frame" x="93" y="34" width="305" height="20"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rp 250.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-VT-Hxp">
-                        <rect key="frame" x="94" y="63" width="90" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 250.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-VT-Hxp">
+                        <rect key="frame" x="93" y="58" width="285" height="20"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ditawar Rp 200.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-S2-pOa">
-                        <rect key="frame" x="94" y="92" width="152" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ditawar Rp 200.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-S2-pOa">
+                        <rect key="frame" x="93" y="92" width="285" height="20"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="img" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF4-MS-Khf">
-                        <rect key="frame" x="31" y="37" width="29" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20, Apr,14:04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXm-dJ-zRU">
-                        <rect key="frame" x="306" y="22" width="61" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20, Apr,14:04" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXm-dJ-zRU">
+                        <rect key="frame" x="312" y="16" width="70" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="iF0-cO-2kf"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                         <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Bnx-S2-pOa" firstAttribute="leading" secondItem="VkG-VT-Hxp" secondAttribute="leading" id="1lf-hI-vnt"/>
+                    <constraint firstItem="VkG-VT-Hxp" firstAttribute="leading" secondItem="TDX-Xu-3nS" secondAttribute="trailing" constant="16" id="6OX-ac-0aD"/>
+                    <constraint firstItem="aEd-or-8dh" firstAttribute="leading" secondItem="TDX-Xu-3nS" secondAttribute="trailing" constant="16" id="CVM-E6-Htm"/>
+                    <constraint firstItem="q0Z-Ym-RB1" firstAttribute="leading" secondItem="TDX-Xu-3nS" secondAttribute="trailing" constant="16" id="EfG-y4-RIh"/>
+                    <constraint firstItem="lXm-dJ-zRU" firstAttribute="leading" secondItem="aEd-or-8dh" secondAttribute="trailing" constant="16" id="H7k-GF-U43"/>
+                    <constraint firstItem="TDX-Xu-3nS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Qgf-5z-OW9"/>
+                    <constraint firstItem="lXm-dJ-zRU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="SSt-Oj-XEW"/>
+                    <constraint firstItem="q0Z-Ym-RB1" firstAttribute="top" secondItem="aEd-or-8dh" secondAttribute="bottom" constant="4" id="V4a-Dy-FI4"/>
+                    <constraint firstAttribute="trailing" secondItem="lXm-dJ-zRU" secondAttribute="trailing" constant="32" id="VAu-aL-T7Z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VkG-VT-Hxp" secondAttribute="trailing" constant="16" id="bFV-Xc-raR"/>
+                    <constraint firstItem="VkG-VT-Hxp" firstAttribute="top" secondItem="q0Z-Ym-RB1" secondAttribute="bottom" constant="4" id="cTQ-dU-Dpv"/>
+                    <constraint firstAttribute="trailing" secondItem="q0Z-Ym-RB1" secondAttribute="trailing" constant="16" id="hlb-Tz-dVe"/>
+                    <constraint firstItem="aEd-or-8dh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="jRz-Ow-2Fc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Bnx-S2-pOa" secondAttribute="trailing" constant="16" id="kQf-94-DON"/>
+                    <constraint firstItem="Bnx-S2-pOa" firstAttribute="top" secondItem="VkG-VT-Hxp" secondAttribute="bottom" constant="14" id="pYP-q9-Mco"/>
+                    <constraint firstItem="TDX-Xu-3nS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="xuc-fK-Ood"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

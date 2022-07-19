@@ -77,7 +77,7 @@ final class NotifikasiTableViewController: UITableViewController {
             case "declined":
                 cell.notificationType.text = "Penawaran ditolak"
             default:
-                fatalError("Syntax Error")
+                break
             }
             
             cell.notificationnName.text = dataproduk.product_name
@@ -88,7 +88,7 @@ final class NotifikasiTableViewController: UITableViewController {
             default:
                 cell.notificationTawar.text =  "Ditawar Rp \((dataproduk.bid_price!).formattedWithSeparator)"
             }
-            cell.notificationImage.loadImage(resource: dataproduk.image_url)
+            cell.notificationImage.setImageFrom(dataproduk.image_url!)
             cell.notificationDate.text = dateFormatter(date: dataproduk.updatedAt)
             return cell
         }

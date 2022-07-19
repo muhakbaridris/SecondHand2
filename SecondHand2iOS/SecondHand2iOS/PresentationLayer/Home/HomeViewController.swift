@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var labelPercent: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
+    @IBOutlet weak var loadingAnimationOutlet: UIActivityIndicatorView!
     
     private let itemsPerRow: CGFloat = 3
     var access_token: String = AccessTokenCache.get()
@@ -26,17 +27,9 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
-        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
-            switch result {
-            case let .success(data):
-                UserProfileCache.save(data)
-            case let .failure(err):
-                print(err.localizedDescription)
-            }
-        }
-        
-        categoryAPI.SellerCategoryAll { result in
+        tabBarController?.tabBar.isUserInteractionEnabled = false
+        loadingAnimationOutlet.startAnimating()
+        categoryAPI.getSellerCategoryAll { result in
             switch result {
             case let .success(data):
                 CategoryCache.save(data)
@@ -44,14 +37,22 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(err.localizedDescription)
             }
         }
-    
-        collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+            switch result {
+            case let .success(data):
+                UserProfileCache.save(data)
+                self.loadingAnimationOutlet.stopAnimating()
+                self.tabBarController?.tabBar.isUserInteractionEnabled = true
+            case let .failure(err):
+                print(err.localizedDescription)
+            }
+        }
+        
+        print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
         
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
-            guard let _self = self else {
-                return
-            }
-            
+            guard let _self = self else { return }
             switch result {
             case let .success(data):
                 _self.displayedProduct = data
@@ -60,18 +61,15 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(err.localizedDescription)
             }
         }
+        
+        collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
 
         self.view.backgroundColor = UIColor.white
-        textLabelKategori.text = "Telusuri Kategori"
-        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
-        labelDiskon.text = "Diskon Hingga"
-        labelPercent.text = "60%"
         collectionView.dataSource = self
         collectionViewB.dataSource = self
         
         collectionView.delegate = self
         collectionViewB.delegate = self
-//        collectionViewB.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,24 +84,21 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         if collectionView == self.collectionView {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             cellA.nameCell.text = carouselButton[indexPath.row]
-            if carouselButton[indexPath.row] == "Semua" {
-                cellA.viewCell.backgroundColor = UIColor(named: "Purple4")
-            } else {
                 cellA.nameCell.textColor = UIColor.black
                 cellA.imageCell.tintColor = .black
-                cellA.viewCell.backgroundColor = UIColor(named: "PurpleHalf")
-            }
+                cellA.viewCell.backgroundColor = UIColor(named: "Purple1")
             return cellA
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
             let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
             cellB.productName.text = "\(products.name!)"
-//            "Rp \((dataproduk.Product.base_price).formattedWithSeparator)"
             cellB.productPrice.text = "Rp \((products.base_price!).formattedWithSeparator)"
-            cellB.productImage.loadImage(resource: products.image_url)
+            cellB.productImage.setImageFrom(products.image_url ?? "")
+            cellB.productImage.layer.cornerRadius = 4
             cellB.productType.text = "\(products.Categories!.first!.name!)"
             cellB.layer.borderWidth = 1
-            cellB.layer.borderColor = UIColor.black.cgColor
+            cellB.layer.borderColor = UIColor.systemGray5.cgColor
+            cellB.layer.cornerRadius = 4
             return cellB
         }
     }
@@ -120,7 +115,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
 
                 let cell1 = collectionView.cellForItem(at: self.lastIndexActive) as? HomeCollectionViewCell
                 cell1?.nameCell.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                cell1?.viewCell.backgroundColor = UIColor(named: "PurpleHalf")
+                cell1?.viewCell.backgroundColor = UIColor(named: "Purple1")
                 cell1?.viewCell.layer.masksToBounds = true
                 self.lastIndexActive = indexPath
             }
@@ -144,7 +139,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     let callAuthAPI = SHAuthAPI()
-    var carouselButton: [String] = ["Semua", "Hobi", "Kendaraan"]
+    var carouselButton: [String] = ["Elekronik", "Hobi", "Kendaraan"]
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

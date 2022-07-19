@@ -36,6 +36,7 @@ final class PreviewJualViewController: UIViewController {
     var produkName: String = ""
     var produkPrice: String = ""
     var produkKategori: String = ""
+    var idKategori: Int = 0
     var namaPenjual: String = ""
     var kotaPenjual: String = ""
     var deskripsiProduk: String = ""
@@ -50,7 +51,7 @@ final class PreviewJualViewController: UIViewController {
         let userData = UserProfileCache.get()
         namaPenjualOutlet.text = userData!.full_name
         kotaPenjualOutlet.text = userData!.city
-        gambarPenjualOutlet.loadImage(resource: userData!.image_url)
+        gambarPenjualOutlet.setImageFrom(userData!.image_url)
         deskripsiProdukTextViewOutlet.text = deskripsiProduk
         
         buttonTerbitkanOutlet.layer.cornerRadius = 16
@@ -65,7 +66,7 @@ final class PreviewJualViewController: UIViewController {
             name: produkName,
             description: deskripsiProduk,
             base_price: Int(produkPrice)!,
-            categoryID: Int(produkKategori)!,
+            categoryID: idKategori,
             location: UserProfileCache.get().city,
             imageName: imageName,
             image: imageData!)

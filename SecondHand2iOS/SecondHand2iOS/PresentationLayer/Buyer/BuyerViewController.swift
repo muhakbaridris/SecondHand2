@@ -25,7 +25,7 @@ class BuyerViewController: UIViewController {
     @IBOutlet weak var deskripsiView: UIView!
     @IBOutlet weak var deskripsiBarangOutlet: UITextView!
     
-    @IBOutlet weak var btnBuy: UIButton!
+    @IBOutlet weak var btnBuyOutlet: UIButton!
     
     var currentPage = 0
     var arrBannerImage: [String] = []
@@ -36,17 +36,22 @@ class BuyerViewController: UIViewController {
     var kategoriBarang: String = ""
     var hargaBarang: Int = 0
     var deskripsiBarang: String = ""
+    var pastValue: Bool = false
     let getProductAPI = SHBuyerAPI()
-    
-//    var modalVC = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "HalfPresentationViewController") as? HalfPresentationViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView(view: productView)
         configureView(view: penjualView)
         configureView(view: deskripsiView)
-        btnBuy.clipsToBounds = true
-        btnBuy.layer.cornerRadius = 16
+        btnBuyOutlet.clipsToBounds = true
+        btnBuyOutlet.layer.cornerRadius = 16
+        btnBuyOutlet.backgroundColor = .systemGreen
+        if pastValue == true {
+            btnBuyOutlet.isHidden = true
+        } else {
+            btnBuyOutlet.tintColor = UIColor(named: "Purple4")
+        }
         
         namaBarangOutlet.text = namaBarang
         kategoriBarangOutlet.text = kategoriBarang
@@ -57,7 +62,7 @@ class BuyerViewController: UIViewController {
         getProductAPI.getBuyerProductIdUserOnly(id: idBarang) { result in
             switch result {
             case let .success(data):
-                self.gambarPenjualOutlet.loadImage(resource: data.User?.image_url)
+                self.gambarPenjualOutlet.setImageFrom((data.User?.image_url)!)
                 self.namaPenjualOutlet.text = data.User?.full_name
                 self.kotaPenjualOutlet.text = data.User?.city
                 self.pagerControl.numberOfPages = self.arrBannerImage.count
@@ -66,6 +71,7 @@ class BuyerViewController: UIViewController {
             }
         }
     }
+    
     private func configureView(view: UIView) {
         view.backgroundColor = UIColor.white
         view.clipsToBounds = true
@@ -98,7 +104,7 @@ extension BuyerViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BuyerCollectionViewCell", for: indexPath) as! BuyerCollectionViewCell
-        cell.bannerImage.loadImage(resource: arrBannerImage[indexPath.row])
+        cell.bannerImage.setImageFrom(arrBannerImage[indexPath.row])
 //        print(arrBannerImage[indexPath.row])
         return cell
     }
