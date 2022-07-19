@@ -65,10 +65,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionViewB!.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
 
         self.view.backgroundColor = UIColor.white
-        textLabelKategori.text = "Telusuri Kategori"
-        headlineLabel.text = "Bulan Ramadhan Banyak diskon!"
-        labelDiskon.text = "Diskon Hingga"
-        labelPercent.text = "60%"
         collectionView.dataSource = self
         collectionViewB.dataSource = self
         
