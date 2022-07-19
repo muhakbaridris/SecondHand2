@@ -20,11 +20,12 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private let itemsPerRow: CGFloat = 3
     var access_token: String = AccessTokenCache.get()
+    var categoryJSON: [SellerCategoryResponseModel] = []
+    var category: [String] = ["Semua"]
     let getAPI = SHBuyerAPI()
     let categoryAPI = SHSellerCategoryAPI()
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
     var displayedProduct: [SHAllProductResponseModel] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isUserInteractionEnabled = false
@@ -36,6 +37,10 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             case let .failure(err):
                 print(err.localizedDescription)
             }
+        }
+        categoryJSON = CategoryCache.get()
+        for i in categoryJSON {
+            category.append(i.name)
         }
         
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
@@ -50,7 +55,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }
         
         print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
-        
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
             guard let _self = self else { return }
             switch result {
@@ -74,19 +78,27 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
-            return carouselButton.count
+            return category.count
         }else {
             return displayedProduct.count
         }
     }
+    var lastIndexActive:IndexPath = [1 ,0]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionView {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-            cellA.nameCell.text = carouselButton[indexPath.row]
-                cellA.nameCell.textColor = UIColor.black
-                cellA.imageCell.tintColor = .black
-                cellA.viewCell.backgroundColor = UIColor(named: "Purple1")
+            let categories = category[indexPath.row]
+            cellA.nameCell.text = categories
+            cellA.nameCell.textColor = UIColor.black
+            cellA.imageCell.tintColor = .black
+            cellA.viewCell.backgroundColor = UIColor(named: "Purple1")
+            if indexPath.row == 0 {
+                cellA.nameCell.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cellA.viewCell.backgroundColor = UIColor(named: "Purple4")
+                cellA.viewCell.layer.masksToBounds = true
+                self.lastIndexActive = indexPath
+            }
             return cellA
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
@@ -103,7 +115,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
 
-    var lastIndexActive:IndexPath = [1 ,0]
+    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
@@ -139,7 +151,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     let callAuthAPI = SHAuthAPI()
-    var carouselButton: [String] = ["Elekronik", "Hobi", "Kendaraan"]
+//    var carouselButton: [String] = ["Elekronik", "Hobi", "Kendaraan"]
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
