@@ -15,6 +15,10 @@ final class NotifikasiTableViewController: UITableViewController {
     
     @IBOutlet var notificationTableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
@@ -24,7 +28,7 @@ final class NotifikasiTableViewController: UITableViewController {
                 for i in data {
                     self.notifArray.append(i)
                 }
-                print(self.notifArray.count)
+//                print(self.notifArray.count)
                 self.tableView.reloadData()
             case let .failure(err):
                 print(err.localizedDescription)
@@ -81,7 +85,7 @@ final class NotifikasiTableViewController: UITableViewController {
             }
             
             cell.notificationnName.text = dataproduk.product_name
-            cell.notificationPrice.text = "Rp \((dataproduk.Product.base_price).formattedWithSeparator)"
+            cell.notificationPrice.text = "Rp \(Int(dataproduk.base_price)!.formattedWithSeparator)"
             switch dataproduk.bid_price {
             case nil:
                 cell.notificationTawar.text = .none

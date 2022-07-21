@@ -17,8 +17,8 @@ struct NotificationResponseModel: Codable {
     let buyer_name: String?
     let receiver_id: Int
     let updatedAt: String
-    let Product: ProductDetail
-    let User: user
+    let Product: ProductDetail?
+    let User: user?
 }
 struct ProductDetail: Codable {
     let id: Int
