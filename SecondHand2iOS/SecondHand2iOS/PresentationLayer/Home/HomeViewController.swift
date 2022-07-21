@@ -9,6 +9,7 @@ import UIKit
 
 
 final class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     @IBOutlet weak var textLabelKategori: UILabel!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -20,10 +21,16 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private let itemsPerRow: CGFloat = 3
     var access_token: String = AccessTokenCache.get()
+    var categoryJSON: [SellerCategoryResponseModel] = []
+    var category: [String] = ["Semua"]
     let getAPI = SHBuyerAPI()
     let categoryAPI = SHSellerCategoryAPI()
+    let callAuthAPI = SHAuthAPI()
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
     var displayedProduct: [SHAllProductResponseModel] = []
+    var searchedProduct : [SHAllProductResponseModel] = []
+    var scopeButtons = ""
+    @IBOutlet weak var seachBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +43,10 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             case let .failure(err):
                 print(err.localizedDescription)
             }
+        }
+        categoryJSON = CategoryCache.get()
+        for i in categoryJSON {
+            category.append(i.name)
         }
         
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { [weak self] result in
@@ -51,12 +62,12 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }
         
         print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
-        
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
             guard let _self = self else { return }
             switch result {
             case let .success(data):
                 _self.displayedProduct = data
+                _self.searchedProduct = _self.displayedProduct
                 _self.collectionViewB.reloadData()
             case let .failure(err):
                 print(err.localizedDescription)
@@ -75,28 +86,39 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
-            return carouselButton.count
-        }else {
-            return displayedProduct.count
+            return category.count
+        } else {
+            if scopeButtons == "Semua" || scopeButtons.isEmpty {
+                searchedProduct = displayedProduct
+                return displayedProduct.count
+            } else {
+                return searchedProduct.count
+            }
         }
     }
+    var lastIndexActive:IndexPath = [1 ,0]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionView {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-            cellA.nameCell.text = carouselButton[indexPath.row]
-                cellA.nameCell.textColor = UIColor.black
-                cellA.imageCell.tintColor = .black
-                cellA.viewCell.backgroundColor = UIColor(named: "Purple1")
+            let categories = category[indexPath.row]
+            cellA.nameCell.text = categories
+            cellA.nameCell.textColor = UIColor.black
+            cellA.imageCell.tintColor = .black
+            cellA.viewCell.backgroundColor = UIColor(named: "Purple1")
+            if indexPath.row == 0 {
+                cellA.nameCell.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cellA.viewCell.backgroundColor = UIColor(named: "Purple4")
+                cellA.viewCell.layer.masksToBounds = true
+                self.lastIndexActive = indexPath
+            }
             return cellA
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
-            let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
-            cellB.productName.text = "\(products.name!)"
-            cellB.productPrice.text = "Rp \((products.base_price!).formattedWithSeparator)"
-            cellB.productImage.setImageFrom(products.image_url ?? "")
-            cellB.productImage.layer.cornerRadius = 4
-            cellB.productType.text = "\(products.Categories!.first?.name ?? "")"
+            cellB.productName.text = "\((String(describing: searchedProduct[indexPath.row].name!)))"
+            cellB.productImage.setImageFrom(searchedProduct[indexPath.row].image_url ?? "")
+            cellB.productPrice.text = "Rp \(searchedProduct[indexPath.row].base_price!.formattedWithSeparator)"
+            cellB.productType.text = "\(searchedProduct[indexPath.row].Categories!.first?.name ?? "" )"
             cellB.layer.borderWidth = 1
             cellB.layer.borderColor = UIColor.systemGray5.cgColor
             cellB.layer.cornerRadius = 4
@@ -104,7 +126,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
 
-    var lastIndexActive:IndexPath = [1 ,0]
+    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
@@ -113,24 +135,33 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 cell.nameCell.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 cell.viewCell.backgroundColor = UIColor(named: "Purple4")
                 cell.viewCell.layer.masksToBounds = true
-
+                
+                scopeButtons = cell.nameCell.text!
+                print(scopeButtons)
+                searchedProduct.removeAll()
+                for i in displayedProduct {
+                    if i.Categories!.first?.name! == scopeButtons{
+                        searchedProduct.append(i)
+                    }
+                }
+                
                 let cell1 = collectionView.cellForItem(at: self.lastIndexActive) as? HomeCollectionViewCell
                 cell1?.nameCell.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 cell1?.viewCell.backgroundColor = UIColor(named: "Purple1")
                 cell1?.viewCell.layer.masksToBounds = true
                 self.lastIndexActive = indexPath
+                collectionViewB.reloadData()
             }
         } else {
             print(indexPath.row)
-            let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
             let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController") as? BuyerViewController
-            viewController?.idBarang = products.id!
-            viewController?.namaBarang = products.name!
-            viewController?.kategoriBarang = products.Categories!.first?.name ?? ""
-            viewController?.hargaBarang = products.base_price!
-            viewController?.deskripsiBarang = products.description!
-            viewController?.urlGambarBarang = products.image_url!
-            viewController?.arrBannerImage = [products.image_url!]
+            viewController?.idBarang = searchedProduct[indexPath.row].id!
+            viewController?.namaBarang = searchedProduct[indexPath.row].name!
+            viewController?.kategoriBarang = searchedProduct[indexPath.row].Categories!.first?.name ?? ""
+            viewController?.hargaBarang = searchedProduct[indexPath.row].base_price!
+            viewController?.deskripsiBarang = searchedProduct[indexPath.row].description!
+            viewController?.urlGambarBarang = searchedProduct[indexPath.row].image_url!
+            viewController?.arrBannerImage = [searchedProduct[indexPath.row].image_url!]
             self.navigationController?.pushViewController(viewController!, animated: true)
         }
     }
@@ -138,9 +169,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     private func open(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    let callAuthAPI = SHAuthAPI()
-    var carouselButton: [String] = ["Elekronik", "Hobi", "Kendaraan"]
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
