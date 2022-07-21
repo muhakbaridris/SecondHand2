@@ -25,6 +25,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     var category: [String] = ["Semua"]
     let getAPI = SHBuyerAPI()
     let categoryAPI = SHSellerCategoryAPI()
+    let callAuthAPI = SHAuthAPI()
     var responseBuyerOrderAll = [SHAllProductResponseModel]()
     var displayedProduct: [SHAllProductResponseModel] = []
     var searchedProduct : [SHAllProductResponseModel] = []
@@ -85,11 +86,11 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
             return category.count
-        }else {
+        } else {
             if scopeButtons == "Semua" || scopeButtons.isEmpty {
                 searchedProduct = displayedProduct
                 return displayedProduct.count
-            }else{
+            } else {
                 return searchedProduct.count
             }
         }
@@ -118,7 +119,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             cellB.productName.text = "\((String(describing: searchedProduct[indexPath.row].name!)))"
             cellB.productImage.setImageFrom(searchedProduct[indexPath.row].image_url ?? "")
             cellB.productPrice.text = "\(searchedProduct[indexPath.row].base_price!)"
-            cellB.productType.text = "\(searchedProduct[indexPath.row].Categories!.first!.name!)"
+            cellB.productType.text = "\(searchedProduct[indexPath.row].Categories!.first?.name ?? "" )"
             cellB.layer.borderWidth = 1
             cellB.layer.borderColor = UIColor.systemGray5.cgColor
             cellB.layer.cornerRadius = 4
@@ -154,7 +155,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         } else {
             print(indexPath.row)
-//            let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
             let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController") as? BuyerViewController
             viewController?.idBarang = searchedProduct[indexPath.row].id!
             viewController?.namaBarang = searchedProduct[indexPath.row].name!
@@ -170,9 +170,6 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     private func open(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    let callAuthAPI = SHAuthAPI()
-//    var carouselButton: [String] = ["Elekronik", "Hobi", "Kendaraan"]
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
