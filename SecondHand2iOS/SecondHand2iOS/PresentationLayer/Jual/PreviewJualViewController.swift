@@ -32,8 +32,6 @@ final class PreviewJualViewController: UIViewController {
     
     var jualViewController: JualViewController?
     var currentPage = 0
-    var arrBannerImage: [String] = ["AppIcon", "AppIcon", "AppIcon", "AppIcon"]
-    
     var produkName: String = ""
     var produkPrice: String = ""
     var produkKategori: String = ""
@@ -44,15 +42,18 @@ final class PreviewJualViewController: UIViewController {
     var imageName: String = ""
     var imageData: UIImage?
     
+    public var completion: ((Bool?) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("id Kategori di preview \(idKategori)")
         namaProdukOutlet.text = produkName
         kategoriProdukOutlet.text = produkKategori
         hargaProdukOutlet.text = "Rp \(Int(produkPrice)!.formattedWithSeparator)"
         let userData = UserProfileCache.get()
         namaPenjualOutlet.text = userData!.full_name
         kotaPenjualOutlet.text = userData!.city
-        gambarPenjualOutlet.setImageFrom(userData!.image_url)
+        gambarPenjualOutlet.setImageFrom(userData?.image_url ?? "")
         deskripsiProdukTextViewOutlet.text = deskripsiProduk
         
         buttonTerbitkanOutlet.layer.cornerRadius = 16
@@ -68,7 +69,7 @@ final class PreviewJualViewController: UIViewController {
             description: deskripsiProduk,
             base_price: Int(produkPrice)!,
             categoryID: idKategori,
-            location: UserProfileCache.get().city,
+            location: UserProfileCache.get().city ?? "",
             imageName: imageName,
             image: imageData!)
         { response in
@@ -81,7 +82,7 @@ final class PreviewJualViewController: UIViewController {
                                  labelFont: .systemFont(ofSize: 17),
                                  showIn: .bottom,
                                  controller: self)
-                
+                self.completion?(true)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -101,7 +102,7 @@ final class PreviewJualViewController: UIViewController {
 extension PreviewJualViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrBannerImage.count
+        return 1
     }
     
     

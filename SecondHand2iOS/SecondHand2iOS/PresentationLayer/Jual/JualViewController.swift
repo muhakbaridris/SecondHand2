@@ -40,17 +40,18 @@ final class JualViewController: UIViewController {
         imagePicker.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc func tapTerbitkanFunction(sender: UITapGestureRecognizer) {
-        
-    }
-    
     func dropDownKategori(){
         dropDown.anchorView = kategoriProdukOutlet
         dropDown.dataSource = kategori
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
             self.kategoriProdukOutlet.text = kategori[index]
+            for index in kategoriModel! {
+                if index.name == kategoriProdukOutlet.text {
+                    print("Nama kategori \(index.name), id nya \(index.id)")
+                    idCategory = index.id
+                }
+            }
           }
     }
     
@@ -92,17 +93,23 @@ final class JualViewController: UIViewController {
             viewController.deskripsiProduk = deskripsiProdukOutlet.text!
             viewController.imageData = imagePicker.image ?? nil
             viewController.imageName = photoName
+            viewController.completion = { [weak self] value in
+                DispatchQueue.main.async {
+                    if value == true {
+                        self?.namaProdukOutlet.text = nil
+                        self?.hargaProdukOutlet.text = nil
+                        self?.kategoriProdukOutlet.text = nil
+                        self?.deskripsiProdukOutlet.text = nil
+                        self?.imagePicker.image = UIImage(named: "addImage")
+                    }
+                }
+            }
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
     @IBAction func terbitkanButtonTapIn(_ sender: Any) {
-        for index in kategoriModel! {
-            if index.name == kategoriProdukOutlet.text {
-                print("Nama kategori \(index.name), id nya \(index.id)")
-                idCategory = index.id
-            }
-        }
+        print(idCategory)
         if namaProdukOutlet.text?.isEmpty == true ||
             hargaProdukOutlet.text == "0" ||
             kategoriProdukOutlet.text?.isEmpty == true ||
@@ -123,24 +130,24 @@ final class JualViewController: UIViewController {
                 description: deskripsiProdukOutlet.text!,
                 base_price: Int(rawPrice)!,
                 categoryID: idCategory,
-                location: UserProfileCache.get().city,
+                location: UserProfileCache.get().city ?? "",
                 imageName: photoName,
                 image: imagePicker.image!)
-            { response in
+            { [weak self] response in
                 switch response {
                 case .success(let data):
                     print("Upload \(data.name) Success")
-                    self.namaProdukOutlet.text = nil
-                    self.hargaProdukOutlet.text = nil
-                    self.kategoriProdukOutlet.text = nil
-                    self.deskripsiProdukOutlet.text = nil
-                    self.imagePicker.image = UIImage(named: "addImage")
+                    self?.namaProdukOutlet.text = nil
+                    self?.hargaProdukOutlet.text = nil
+                    self?.kategoriProdukOutlet.text = nil
+                    self?.deskripsiProdukOutlet.text = nil
+                    self?.imagePicker.image = UIImage(named: "addImage")
                     CustomToast.show(message: "Berhasil posting produk.",
                                      bgColor: .systemGreen,
                                      textColor: .white,
                                      labelFont: .systemFont(ofSize: 17),
                                      showIn: .bottom,
-                                     controller: self)
+                                     controller: self!)
                 case .failure(let err):
                     print(err.localizedDescription)
                     CustomToast.show(message: "Ada kesalahan pada sistem, silahkan coba lagi beberapa saat lagi.",
@@ -148,7 +155,7 @@ final class JualViewController: UIViewController {
                                      textColor: .white,
                                      labelFont: .systemFont(ofSize: 17),
                                      showIn: .bottom,
-                                     controller: self)
+                                     controller: self!)
                 }
             }
         }

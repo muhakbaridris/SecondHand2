@@ -38,12 +38,13 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             }
         }
         
-        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { [weak self] result in
             switch result {
             case let .success(data):
+                print(data)
                 UserProfileCache.save(data)
-                self.loadingAnimationOutlet.stopAnimating()
-                self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                self?.loadingAnimationOutlet.stopAnimating()
+                self?.tabBarController?.tabBar.isUserInteractionEnabled = true
             case let .failure(err):
                 print(err.localizedDescription)
             }
@@ -95,7 +96,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             cellB.productPrice.text = "Rp \((products.base_price!).formattedWithSeparator)"
             cellB.productImage.setImageFrom(products.image_url ?? "")
             cellB.productImage.layer.cornerRadius = 4
-            cellB.productType.text = "\(products.Categories!.first!.name!)"
+            cellB.productType.text = "\(products.Categories!.first?.name ?? "")"
             cellB.layer.borderWidth = 1
             cellB.layer.borderColor = UIColor.systemGray5.cgColor
             cellB.layer.cornerRadius = 4
@@ -125,7 +126,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController") as? BuyerViewController
             viewController?.idBarang = products.id!
             viewController?.namaBarang = products.name!
-            viewController?.kategoriBarang = products.Categories!.first!.name!
+            viewController?.kategoriBarang = products.Categories!.first?.name ?? ""
             viewController?.hargaBarang = products.base_price!
             viewController?.deskripsiBarang = products.description!
             viewController?.urlGambarBarang = products.image_url!

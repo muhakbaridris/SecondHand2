@@ -12,8 +12,8 @@ struct UserDataResponseModel: Codable {
     let full_name: String
     let email: String
     let password: String
-    let phone_number: String
-    let address: String
-    let image_url: String
-    let city: String
+    let phone_number: String?
+    let address: String?
+    let image_url: String?
+    let city: String?
 }
