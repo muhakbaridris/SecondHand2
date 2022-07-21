@@ -31,7 +31,7 @@ final class DaftarJualViewController: UIViewController{
     @IBOutlet var akun: UIView!
     @IBOutlet var akunImg: UIImageView!
     @IBOutlet var namaAkun: UILabel!
-    @IBOutlet var btnAkun: UIButton!
+    @IBOutlet var btnEditAkunOutlet: UIButton!
     @IBOutlet var kotaAkun: UILabel!
     
     @IBOutlet weak var buttonProdukOutlet: UIButton!
@@ -88,11 +88,11 @@ final class DaftarJualViewController: UIViewController{
         akun.layer.shadowOpacity = 0.15
         akun.layer.shadowRadius = 4
         
-        btnAkun.backgroundColor = UIColor.white
-        btnAkun.clipsToBounds = true
-        btnAkun.layer.borderColor = UIColor(named: "Purple4")!.cgColor
-        btnAkun.layer.borderWidth = 1
-        btnAkun.layer.cornerRadius = 8
+        btnEditAkunOutlet.backgroundColor = UIColor.white
+        btnEditAkunOutlet.clipsToBounds = true
+        btnEditAkunOutlet.layer.borderColor = UIColor(named: "Purple4")!.cgColor
+        btnEditAkunOutlet.layer.borderWidth = 1
+        btnEditAkunOutlet.layer.cornerRadius = 8
     }
     
     func stackViewButtonDesign(){
@@ -102,6 +102,11 @@ final class DaftarJualViewController: UIViewController{
         imageButtonDiminatiOutlet.image = UIImage(named: "heartIcon")
         buttonTerjualOutlet.layer.cornerRadius = 8
         imageButtonTerjualOutlet.image = UIImage(named: "dollarIcon")
+    }
+    
+    @IBAction func buttonEditAkunTapIn(_ sender: Any) {
+        let viewController = UIStoryboard(name: "UbahAkunViewController", bundle: nil).instantiateViewController(withIdentifier: "UbahAkunViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func buttonProdukTapIn(_ sender: Any) {
@@ -190,15 +195,18 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             return reusableCell
         }
         if diminatiData.count == 0 {
+            tableView.allowsSelection = false
             cell.daftarJualName.text = "Tidak ada data"
+            cell.daftarJualImage.image = nil
             cell.daftarJualImage.backgroundColor = UIColor(named: "Purple4")
             cell.daftarJualType.text = ""
             cell.daftarJualTawar.text = ""
             cell.daftarJualPrice.text = ""
+            cell.daftarJualDate.text = ""
             return cell
         } else {
+            tableView.allowsSelection = true
             let diminati = diminatiData[indexPath.row]
-//            print(diminatiData.isEmpty)
             if diminati.status == "pending"{
                 cell.daftarJualType.text = "Penawaran Produk"
             } else if diminati.status == "accepted"{
@@ -209,12 +217,21 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             cell.daftarJualName.text = diminati.product_name
             cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
             cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
-            cell.daftarJualDate.text = diminati.transaction_date
+            cell.daftarJualDate.text = DateFormatter.convertFromISO(date: diminati.transaction_date!)
             cell.daftarJualImage.setImageFrom(diminati.Product!.image_url ?? "")
 
             
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let diminati = diminatiData[indexPath.row]
+        let viewController = UIStoryboard(name: "InfoPenawarViewController",
+                                          bundle: nil)
+            .instantiateViewController(withIdentifier: "InfoPenawarViewController") as? InfoPenawarViewController
+        viewController?.orderID = diminati.id
+        self.navigationController?.pushViewController(viewController!, animated: true)
     }
 }
 

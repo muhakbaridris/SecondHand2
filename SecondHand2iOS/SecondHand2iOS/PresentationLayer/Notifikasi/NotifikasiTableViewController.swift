@@ -28,7 +28,6 @@ final class NotifikasiTableViewController: UITableViewController {
                 for i in data {
                     self.notifArray.append(i)
                 }
-//                print(self.notifArray.count)
                 self.tableView.reloadData()
             case let .failure(err):
                 print(err.localizedDescription)
@@ -93,17 +92,9 @@ final class NotifikasiTableViewController: UITableViewController {
                 cell.notificationTawar.text =  "Ditawar Rp \((dataproduk.bid_price!).formattedWithSeparator)"
             }
             cell.notificationImage.setImageFrom(dataproduk.image_url!)
-            cell.notificationDate.text = dateFormatter(date: dataproduk.updatedAt)
+            cell.notificationDate.text = DateFormatter.convertFromISO(date: dataproduk.updatedAt)
             return cell
         }
-    }
-    
-    func dateFormatter(date: String) -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd MMM, HH:mm"
-        return dateFormatterPrint.string(from: dateFormatterGet.date(from: date)!)
     }
 }
 

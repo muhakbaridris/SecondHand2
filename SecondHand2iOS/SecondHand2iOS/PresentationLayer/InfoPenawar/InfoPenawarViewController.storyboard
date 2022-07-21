@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +29,7 @@
         <!--Info Penawar-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="penawar" title="Info Penawar" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="InfoPenawarViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoPenawarViewController" title="Info Penawar" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="InfoPenawarViewController" customModule="SecondHand2iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +63,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="Purple2"/>
                                 <constraints>
                                     <constraint firstItem="eYc-mW-7yt" firstAttribute="top" secondItem="MXF-ce-Yc7" secondAttribute="top" constant="16" id="Esv-9W-Lym"/>
                                     <constraint firstItem="g0T-Vl-zbR" firstAttribute="leading" secondItem="MXF-ce-Yc7" secondAttribute="leading" constant="16" id="IE3-FK-B5b"/>
@@ -117,6 +118,7 @@
                         <outlet property="cardBgView" destination="MXF-ce-Yc7" id="jsG-Jj-e94"/>
                         <outlet property="kotaPembeli" destination="iNV-gT-na5" id="oqV-FR-joh"/>
                         <outlet property="namaPembeli" destination="eYc-mW-7yt" id="bCW-v3-OlP"/>
+                        <outlet property="penawarImageOutlet" destination="g0T-Vl-zbR" id="Aqd-41-Rb4"/>
                         <outlet property="tableView" destination="Q63-yp-yyf" id="egt-4J-tIn"/>
                         <segue destination="kgn-Wi-Gyd" kind="show" identifier="Window" id="yWb-yv-PGP"/>
                     </connections>
@@ -150,6 +152,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Purple2">
+            <color red="0.81599998474121094" green="0.71799999475479126" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

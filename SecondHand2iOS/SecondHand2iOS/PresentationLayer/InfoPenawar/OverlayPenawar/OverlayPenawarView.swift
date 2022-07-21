@@ -26,7 +26,6 @@ final class OverlayPenawarView: UIViewController {
         kirim.layer.cornerRadius = 16
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,6 +88,10 @@ final class OverlayPenawarView: UIViewController {
     }
     
     @IBAction func kirim(_ sender: Any) {
-        
+        if berhasil.isSelected == true {
+            
+        } else {
+            
+        }
     }
 }

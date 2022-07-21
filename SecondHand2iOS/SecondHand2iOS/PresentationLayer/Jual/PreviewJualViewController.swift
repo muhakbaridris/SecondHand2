@@ -75,7 +75,7 @@ final class PreviewJualViewController: UIViewController {
         { response in
             switch response {
             case .success(let data):
-                print("Upload \(data.name) Success")
+                print("Upload \(String(describing: data.name)) Success")
                 CustomToast.show(message: "Berhasil posting produk.",
                                  bgColor: .systemGreen,
                                  textColor: .white,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SHAllBuyerOrderResponseModel : Decodable {
+struct SHAllBuyerOrderResponseModel: Codable {
     let id : Int?
     let product_id : Int?
     let buyer_id : Int?
@@ -21,7 +21,7 @@ struct SHAllBuyerOrderResponseModel : Decodable {
 //    let user: User?
 }
 
-struct SHBuyerOrderIDResponseModel: Decodable {
+struct SHBuyerOrderIDResponseModel: Codable {
     let id, product_id, buyer_id, price: Int?
     let product_name, base_price: String?
     let image_product: String?
@@ -35,7 +35,7 @@ struct SHPostBuyerOrderModel: Encodable {
     let bid_price: Int
 }
 
-struct SHPostBuyerOrderResponseModel: Decodable {
+struct SHPostBuyerOrderResponseModel: Codable {
     let id: Int
     let buyer_id: Int
     let product_id: Int
