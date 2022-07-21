@@ -31,7 +31,7 @@ final class JualViewController: UIViewController {
         super.viewDidLoad()
         jualViewControllerDesign()
         self.hideKeyboardWhenTappedAround()
-        for i in kategoriModel! {
+        for i in CategoryCache.get()! {
             kategori.append(i.name)
         }
         dropDownKategori()

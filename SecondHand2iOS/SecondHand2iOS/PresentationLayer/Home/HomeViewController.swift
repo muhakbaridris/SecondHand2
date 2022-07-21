@@ -40,15 +40,16 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             switch result {
             case let .success(data):
                 CategoryCache.save(data)
+                self.categoryJSON = data
+                print("hasilnya \(self.categoryJSON.count)")
+                for i in self.categoryJSON {
+                    self.category.append(i.name)
+                }
+                self.collectionView.reloadData()
             case let .failure(err):
                 print(err.localizedDescription)
             }
         }
-        categoryJSON = CategoryCache.get()
-        for i in categoryJSON {
-            category.append(i.name)
-        }
-        
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { [weak self] result in
             switch result {
             case let .success(data):
