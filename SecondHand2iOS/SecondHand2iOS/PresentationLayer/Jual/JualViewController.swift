@@ -8,16 +8,15 @@
 import UIKit
 import DropDown
 
-final class JualViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet weak var previewLabel: UILabel!
-    @IBOutlet weak var pushLabel: UILabel!
-    @IBOutlet weak var uiPreviewLabel: UILabel!
+final class JualViewController: UIViewController {
+    
     @IBOutlet weak var namaProdukOutlet: UITextField!
     @IBOutlet weak var hargaProdukOutlet: UITextField!
     @IBOutlet weak var kategoriProdukOutlet: UITextField!
     @IBOutlet weak var deskripsiProdukOutlet: UITextField!
-    @IBOutlet weak var uiPushLabel: UILabel!
     @IBOutlet weak var imagePicker: UIImageView!
+    @IBOutlet weak var buttonPreviewOutlet: UIButton!
+    @IBOutlet weak var buttonTerbitkanOutlet: UIButton!
     
     let postProductAPI = SHSellerProductAPI()
     let kategoriModel = CategoryCache.get()
@@ -31,8 +30,6 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         jualViewControllerDesign()
-        previewLabelTapIn()
-        terbitkanLabelTapIn()
         self.hideKeyboardWhenTappedAround()
         for i in kategoriModel! {
             kategori.append(i.name)
@@ -43,22 +40,63 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         imagePicker.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    func fromPreview(value: Bool){
-        if value == true {
-            
-        }
-    }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
-        let imagePickers = UIImagePickerController()
-        imagePickers.delegate = self
-        imagePickers.allowsEditing = false
-        imagePickers.sourceType = .photoLibrary
-        present(imagePickers, animated: true)
+    @objc func tapTerbitkanFunction(sender: UITapGestureRecognizer) {
         
     }
     
-    @objc func tapTerbitkanFunction(sender: UITapGestureRecognizer) {
+    func dropDownKategori(){
+        dropDown.anchorView = kategoriProdukOutlet
+        dropDown.dataSource = kategori
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.kategoriProdukOutlet.text = kategori[index]
+          }
+    }
+    
+    func jualViewControllerDesign(){
+        buttonPreviewOutlet.layer.cornerRadius = 16
+        buttonPreviewOutlet.layer.backgroundColor = UIColor.white.cgColor
+        buttonPreviewOutlet.layer.borderWidth = 1
+        buttonPreviewOutlet.layer.borderColor = UIColor(named: "Purple4")!.cgColor
+        
+        buttonTerbitkanOutlet.layer.cornerRadius = 16
+    }
+    
+    @IBAction func kategoriTextFieldTapIn(_ sender: Any) {
+        dropDown.show()
+    }
+    
+    @IBAction func previewButtonTapIn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "JualViewController", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? PreviewJualViewController else {
+            return
+        }
+        if namaProdukOutlet.text?.isEmpty == true ||
+            hargaProdukOutlet.text == "0" ||
+            kategoriProdukOutlet.text?.isEmpty == true ||
+            deskripsiProdukOutlet.text?.isEmpty == true ||
+            imagePicker.image == nil
+        {
+            CustomToast.show(message: "Harap lengkapi data produk.",
+                             bgColor: .systemRed,
+                             textColor: .white,
+                             labelFont: .systemFont(ofSize: 17),
+                             showIn: .bottom,
+                             controller: self)
+        } else {
+            viewController.produkName = namaProdukOutlet.text!
+            viewController.produkPrice = hargaProdukOutlet.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            viewController.produkKategori = kategoriProdukOutlet.text!
+            viewController.idKategori = idCategory
+            viewController.deskripsiProduk = deskripsiProdukOutlet.text!
+            viewController.imageData = imagePicker.image ?? nil
+            viewController.imageName = photoName
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
+    @IBAction func terbitkanButtonTapIn(_ sender: Any) {
         for index in kategoriModel! {
             if index.name == kategoriProdukOutlet.text {
                 print("Nama kategori \(index.name), id nya \(index.id)")
@@ -96,7 +134,7 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
                     self.hargaProdukOutlet.text = nil
                     self.kategoriProdukOutlet.text = nil
                     self.deskripsiProdukOutlet.text = nil
-                    self.imagePicker.image = nil
+                    self.imagePicker.image = UIImage(named: "addImage")
                     CustomToast.show(message: "Berhasil posting produk.",
                                      bgColor: .systemGreen,
                                      textColor: .white,
@@ -115,34 +153,17 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
             }
         }
     }
+
+}
+
+extension JualViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @objc func tapPreviewFunction(sender: UITapGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "JualViewController", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "showPreview") as? PreviewJualViewController else {
-            return
-        }
-        if namaProdukOutlet.text?.isEmpty == true ||
-            hargaProdukOutlet.text == "0" ||
-            kategoriProdukOutlet.text?.isEmpty == true ||
-            deskripsiProdukOutlet.text?.isEmpty == true ||
-            imagePicker.image == nil
-        {
-            CustomToast.show(message: "Harap lengkapi data produk.",
-                             bgColor: .systemRed,
-                             textColor: .white,
-                             labelFont: .systemFont(ofSize: 17),
-                             showIn: .bottom,
-                             controller: self)
-        } else {
-            viewController.produkName = namaProdukOutlet.text!
-            viewController.produkPrice = hargaProdukOutlet.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-            viewController.produkKategori = kategoriProdukOutlet.text!
-            viewController.idKategori = idCategory
-            viewController.deskripsiProduk = deskripsiProdukOutlet.text!
-            viewController.imageData = imagePicker.image ?? nil
-            viewController.imageName = photoName
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let imagePickers = UIImagePickerController()
+        imagePickers.delegate = self
+        imagePickers.allowsEditing = false
+        imagePickers.sourceType = .photoLibrary
+        present(imagePickers, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -155,46 +176,5 @@ final class JualViewController: UIViewController, UIImagePickerControllerDelegat
         photoName = fileUrl.lastPathComponent
         
         dismiss(animated: true, completion: nil)
-    }
-    
-    func dropDownKategori(){
-        dropDown.anchorView = kategoriProdukOutlet
-        dropDown.dataSource = kategori
-        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self.kategoriProdukOutlet.text = kategori[index]
-          }
-    }
-    
-    @IBAction func kategoriTextFieldTapIn(_ sender: Any) {
-        dropDown.show()
-    }
-    
-    func jualViewControllerDesign(){
-        self.view.backgroundColor = UIColor.white
-        uiPushLabel.layer.cornerRadius = 22
-        namaProdukOutlet.layer.cornerRadius = 22
-        previewLabel.layer.borderWidth = 0.2
-        previewLabel.layer.cornerRadius = 3
-        previewLabel.layer.masksToBounds = true
-        previewLabel.layer.borderColor = UIColor(named: "Purple4")?.cgColor
-        previewLabel.text = "Preview"
-        pushLabel.text = "Terbitkan"
-        pushLabel.layer.backgroundColor = UIColor(named: "Purple4")?.cgColor
-        pushLabel.textColor = .white
-        pushLabel.layer.cornerRadius = 3
-    }
-    
-    func previewLabelTapIn(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(JualViewController.tapPreviewFunction))
-        previewLabel.isUserInteractionEnabled = true
-        previewLabel.addGestureRecognizer(tap)
-    }
-    
-    func terbitkanLabelTapIn(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(JualViewController.tapTerbitkanFunction))
-        pushLabel.isUserInteractionEnabled = true
-        pushLabel.addGestureRecognizer(tap)
     }
 }

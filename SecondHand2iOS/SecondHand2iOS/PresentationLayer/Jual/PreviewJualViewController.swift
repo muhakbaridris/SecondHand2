@@ -30,6 +30,7 @@ final class PreviewJualViewController: UIViewController {
     let callAPI = SHSellerProductAPI()
     let access_token = AccessTokenCache.get()
     
+    var jualViewController: JualViewController?
     var currentPage = 0
     var arrBannerImage: [String] = ["AppIcon", "AppIcon", "AppIcon", "AppIcon"]
     
@@ -80,6 +81,7 @@ final class PreviewJualViewController: UIViewController {
                                  labelFont: .systemFont(ofSize: 17),
                                  showIn: .bottom,
                                  controller: self)
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.navigationController?.popViewController(animated: true)
                 }
