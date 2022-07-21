@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class AkunViewController: UIViewController{
+final class AkunViewController: UIViewController {
     
     var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
-        let userImage = UserProfileCache.get().image_url
+        let userImage: String? = UserProfileCache.get().image_url
         userImageOutlet.image = nil
-        userImageOutlet.setImageFrom(userImage)
+        userImageOutlet.setImageFrom(userImage ?? "")
     }
     
     override func viewDidLoad() {

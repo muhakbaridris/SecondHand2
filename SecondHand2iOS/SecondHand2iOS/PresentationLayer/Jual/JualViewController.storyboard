@@ -137,26 +137,38 @@
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-hI-oLs">
-                                <rect key="frame" x="16" y="660" width="170" height="48"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Md-uc-0m4">
+                                <rect key="frame" x="16" y="638" width="358" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCv-8C-hVc">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="50"/>
+                                        <color key="backgroundColor" name="Purple4"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" Preview">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="previewButtonTapIn:" destination="sIa-e4-t7F" eventType="touchUpInside" id="ys0-fh-EVg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZK-pK-4g8">
+                                        <rect key="frame" x="187" y="0.0" width="171" height="50"/>
+                                        <color key="backgroundColor" name="Purple4"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" Terbitkan">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="terbitkanButtonTapIn:" destination="sIa-e4-t7F" eventType="touchUpInside" id="BrD-eB-dDM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Ola-zc-hsv"/>
-                                    <constraint firstAttribute="width" constant="170" id="ja9-SO-cwS"/>
+                                    <constraint firstAttribute="height" constant="50" id="IY4-3H-sio"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-wW-3eP">
-                                <rect key="frame" x="204" y="660" width="170" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="Bzm-LX-ts4"/>
-                                    <constraint firstAttribute="height" constant="48" id="aY5-l6-85l"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vdd-q2-gj7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -166,18 +178,18 @@
                             <constraint firstItem="Zoq-wX-v1X" firstAttribute="top" secondItem="uoO-5P-5mn" secondAttribute="bottom" constant="16" id="3WW-VT-prF"/>
                             <constraint firstItem="tzb-9D-6Bd" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="5KR-yV-Jfb"/>
                             <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="uoO-5P-5mn" secondAttribute="trailing" constant="16" id="7Gm-vE-ag4"/>
-                            <constraint firstItem="vdd-q2-gj7" firstAttribute="bottom" secondItem="Aei-hI-oLs" secondAttribute="bottom" constant="4" id="8Tv-Uw-diS"/>
+                            <constraint firstItem="2Md-uc-0m4" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="7u8-UG-qdr"/>
                             <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="bQy-cb-BEp" secondAttribute="trailing" constant="16" id="9z6-ok-7d3"/>
                             <constraint firstItem="bQy-cb-BEp" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="9zq-c9-9Ld"/>
+                            <constraint firstItem="2Md-uc-0m4" firstAttribute="centerX" secondItem="Dwq-Uo-cyc" secondAttribute="centerX" id="ATn-MJ-jHK"/>
                             <constraint firstAttribute="trailing" secondItem="TLH-gB-DMK" secondAttribute="trailing" constant="16" id="Cgb-uz-w78"/>
                             <constraint firstItem="wJS-ea-KrO" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="D5p-4K-FGp"/>
-                            <constraint firstItem="vdd-q2-gj7" firstAttribute="bottom" secondItem="9dj-wW-3eP" secondAttribute="bottom" constant="4" id="F6E-p8-7bX"/>
                             <constraint firstAttribute="trailing" secondItem="Mol-54-iRX" secondAttribute="trailing" constant="16" id="GuP-BO-t4M"/>
+                            <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="2Md-uc-0m4" secondAttribute="trailing" constant="16" id="J08-m5-eFC"/>
                             <constraint firstItem="xih-UT-pv7" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="JBN-hr-KUd"/>
                             <constraint firstItem="uoO-5P-5mn" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="KJR-AI-1cL"/>
                             <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="lBI-a4-dMl" secondAttribute="trailing" constant="16" id="KOk-MH-EPy"/>
                             <constraint firstItem="TLH-gB-DMK" firstAttribute="top" secondItem="Cvi-on-tfh" secondAttribute="bottom" constant="24" id="KVl-L2-FD3"/>
-                            <constraint firstItem="Aei-hI-oLs" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="KvF-h9-pdb"/>
                             <constraint firstItem="Zoq-wX-v1X" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="LNA-dJ-nS4"/>
                             <constraint firstItem="TLH-gB-DMK" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="NL6-1N-b9F"/>
                             <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="Cvi-on-tfh" secondAttribute="trailing" constant="16" id="UZT-U6-jSA"/>
@@ -190,10 +202,10 @@
                             <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="tzb-9D-6Bd" secondAttribute="trailing" constant="16" id="lYj-a8-wAZ"/>
                             <constraint firstItem="tzb-9D-6Bd" firstAttribute="top" secondItem="Mol-54-iRX" secondAttribute="bottom" constant="4" id="oX7-VW-9rE"/>
                             <constraint firstItem="TLH-gB-DMK" firstAttribute="top" secondItem="tzb-9D-6Bd" secondAttribute="bottom" constant="16" id="piU-24-aRa"/>
-                            <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="9dj-wW-3eP" secondAttribute="trailing" constant="16" id="q0u-dT-5Rg"/>
                             <constraint firstItem="lBI-a4-dMl" firstAttribute="top" secondItem="xih-UT-pv7" secondAttribute="bottom" constant="4" id="qIg-2Q-z0U"/>
                             <constraint firstItem="lKx-Kp-0vr" firstAttribute="leading" secondItem="vdd-q2-gj7" secondAttribute="leading" constant="16" id="qPv-gl-fpX"/>
                             <constraint firstItem="bQy-cb-BEp" firstAttribute="top" secondItem="wJS-ea-KrO" secondAttribute="bottom" constant="4" id="saH-Um-MRU"/>
+                            <constraint firstItem="vdd-q2-gj7" firstAttribute="bottom" secondItem="2Md-uc-0m4" secondAttribute="bottom" constant="24" id="ta2-bD-u9E"/>
                             <constraint firstItem="xih-UT-pv7" firstAttribute="top" secondItem="vdd-q2-gj7" secondAttribute="top" constant="40" id="y4M-kY-J8T"/>
                             <constraint firstItem="vdd-q2-gj7" firstAttribute="trailing" secondItem="wJS-ea-KrO" secondAttribute="trailing" constant="16" id="yeu-TI-bUo"/>
                             <constraint firstItem="Mol-54-iRX" firstAttribute="top" secondItem="bQy-cb-BEp" secondAttribute="bottom" constant="16" id="zZh-pV-orF"/>
@@ -206,21 +218,19 @@
                     <navigationItem key="navigationItem" title="Lengkapi Detail Produk" id="nI1-mq-4K8"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonPreviewOutlet" destination="KCv-8C-hVc" id="iUa-7e-CGx"/>
+                        <outlet property="buttonTerbitkanOutlet" destination="RZK-pK-4g8" id="Iqz-xc-bpT"/>
                         <outlet property="deskripsiProdukOutlet" destination="uoO-5P-5mn" id="dUB-0J-jh3"/>
                         <outlet property="hargaProdukOutlet" destination="bQy-cb-BEp" id="kFb-bI-Oww"/>
                         <outlet property="imagePicker" destination="lKx-Kp-0vr" id="5Yb-18-Iha"/>
                         <outlet property="kategoriProdukOutlet" destination="tzb-9D-6Bd" id="8u2-2S-cfn"/>
                         <outlet property="namaProdukOutlet" destination="lBI-a4-dMl" id="I0p-ev-T7U"/>
-                        <outlet property="previewLabel" destination="Aei-hI-oLs" id="0Uy-Ft-Dqs"/>
-                        <outlet property="pushLabel" destination="9dj-wW-3eP" id="abI-Jz-EoX"/>
-                        <outlet property="uiPreviewLabel" destination="Aei-hI-oLs" id="whd-xC-CDH"/>
-                        <outlet property="uiPushLabel" destination="9dj-wW-3eP" id="KHo-fP-tdC"/>
                         <segue destination="40a-2m-nTI" kind="show" identifier="showPreview" id="0S0-FP-DIA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOL-vQ-2xs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327.536231884058" y="-525"/>
+            <point key="canvasLocation" x="1326.1538461538462" y="-525.35545023696682"/>
         </scene>
         <!--Preview Jual View Controller-->
         <scene sceneID="nsV-NF-j8h">
@@ -265,7 +275,7 @@
                                     <outlet property="delegate" destination="40a-2m-nTI" id="2BV-Ww-FHJ"/>
                                 </connections>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GRv-Pq-8Hf" userLabel="PageControl">
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="GRv-Pq-8Hf" userLabel="PageControl">
                                 <rect key="frame" x="149" y="305" width="116" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
@@ -435,9 +445,15 @@
     <resources>
         <image name="addImage" width="32" height="32"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="Purple4">
+            <color red="0.44299998879432678" green="0.14900000393390656" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PurpleHalf">
             <color red="0.87800002098083496" green="0.83499997854232788" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

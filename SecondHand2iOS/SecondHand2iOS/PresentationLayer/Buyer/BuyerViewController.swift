@@ -62,7 +62,7 @@ class BuyerViewController: UIViewController {
         getProductAPI.getBuyerProductIdUserOnly(id: idBarang) { result in
             switch result {
             case let .success(data):
-                self.gambarPenjualOutlet.setImageFrom((data.User?.image_url)!)
+                self.gambarPenjualOutlet.setImageFrom((data.User?.image_url) ?? "")
                 self.namaPenjualOutlet.text = data.User?.full_name
                 self.kotaPenjualOutlet.text = data.User?.city
                 self.pagerControl.numberOfPages = self.arrBannerImage.count

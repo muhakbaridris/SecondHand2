@@ -49,12 +49,13 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             category.append(i.name)
         }
         
-        callAuthAPI.getUserDataSecondHand(access_token: access_token) { result in
+        callAuthAPI.getUserDataSecondHand(access_token: access_token) { [weak self] result in
             switch result {
             case let .success(data):
+                print(data)
                 UserProfileCache.save(data)
-                self.loadingAnimationOutlet.stopAnimating()
-                self.tabBarController?.tabBar.isUserInteractionEnabled = true
+                self?.loadingAnimationOutlet.stopAnimating()
+                self?.tabBarController?.tabBar.isUserInteractionEnabled = true
             case let .failure(err):
                 print(err.localizedDescription)
             }
@@ -114,11 +115,9 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             return cellA
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeProductCollectionCell", for: indexPath) as! HomeProductCollectionCell
-//            let products: SHAllProductResponseModel = displayedProduct[indexPath.row]
-            
             cellB.productName.text = "\((String(describing: searchedProduct[indexPath.row].name!)))"
             cellB.productImage.setImageFrom(searchedProduct[indexPath.row].image_url ?? "")
-            cellB.productPrice.text = "\(searchedProduct[indexPath.row].base_price!)"
+            cellB.productPrice.text = "Rp \(searchedProduct[indexPath.row].base_price!.formattedWithSeparator)"
             cellB.productType.text = "\(searchedProduct[indexPath.row].Categories!.first?.name ?? "" )"
             cellB.layer.borderWidth = 1
             cellB.layer.borderColor = UIColor.systemGray5.cgColor
@@ -158,7 +157,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             let viewController = UIStoryboard(name: "BuyerViewController", bundle: nil).instantiateViewController(withIdentifier: "BuyerViewController") as? BuyerViewController
             viewController?.idBarang = searchedProduct[indexPath.row].id!
             viewController?.namaBarang = searchedProduct[indexPath.row].name!
-            viewController?.kategoriBarang = searchedProduct[indexPath.row].Categories!.first!.name!
+            viewController?.kategoriBarang = searchedProduct[indexPath.row].Categories!.first?.name ?? ""
             viewController?.hargaBarang = searchedProduct[indexPath.row].base_price!
             viewController?.deskripsiBarang = searchedProduct[indexPath.row].description!
             viewController?.urlGambarBarang = searchedProduct[indexPath.row].image_url!

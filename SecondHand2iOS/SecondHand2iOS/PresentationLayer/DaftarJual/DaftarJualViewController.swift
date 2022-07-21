@@ -42,6 +42,12 @@ final class DaftarJualViewController: UIViewController{
     @IBOutlet weak var imageButtonTerjualOutlet: UIImageView!
     @IBOutlet weak var loadingAnimationOutlet: UIActivityIndicatorView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        namaAkun.text = userData?.full_name
+        kotaAkun.text = userData?.city
+        akunImg.setImageFrom(userData?.image_url ?? "")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -59,9 +65,6 @@ final class DaftarJualViewController: UIViewController{
         
         akunViewDesign()
         stackViewButtonDesign()
-        namaAkun.text = userData!.full_name
-        kotaAkun.text = userData!.city
-        akunImg.setImageFrom(userData!.image_url)
         
         daftarJualTableView.register(UINib.init(nibName:"DaftarJualTableViewCell" , bundle: nil), forCellReuseIdentifier: "DaftarJualTableViewCell")
         daftarJualTableView.delegate = self
