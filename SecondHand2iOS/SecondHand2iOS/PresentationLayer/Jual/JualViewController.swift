@@ -32,7 +32,7 @@ final class JualViewController: UIViewController {
         jualViewControllerDesign()
         self.hideKeyboardWhenTappedAround()
         for i in CategoryCache.get()! {
-            kategori.append(i.name)
+            kategori.append(i.name!)
         }
         dropDownKategori()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -46,10 +46,10 @@ final class JualViewController: UIViewController {
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.kategoriProdukOutlet.text = kategori[index]
-            for index in kategoriModel! {
+            for index in CategoryCache.get()! {
                 if index.name == kategoriProdukOutlet.text {
                     print("Nama kategori \(index.name), id nya \(index.id)")
-                    idCategory = index.id
+                    idCategory = index.id!
                 }
             }
           }

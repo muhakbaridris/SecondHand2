@@ -43,7 +43,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 self.categoryJSON = data
                 print("hasilnya \(self.categoryJSON.count)")
                 for i in self.categoryJSON {
-                    self.category.append(i.name)
+                    self.category.append(i.name!)
                 }
                 self.collectionView.reloadData()
             case let .failure(err):

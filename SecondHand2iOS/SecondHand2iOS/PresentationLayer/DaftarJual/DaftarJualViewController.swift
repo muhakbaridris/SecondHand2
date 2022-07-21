@@ -46,6 +46,7 @@ final class DaftarJualViewController: UIViewController{
         namaAkun.text = userData?.full_name
         kotaAkun.text = userData?.city
         akunImg.setImageFrom(userData?.image_url ?? "")
+        daftarJualTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -197,7 +198,7 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             return cell
         } else {
             let diminati = diminatiData[indexPath.row]
-            print(diminatiData.isEmpty)
+//            print(diminatiData.isEmpty)
             if diminati.status == "pending"{
                 cell.daftarJualType.text = "Penawaran Produk"
             } else if diminati.status == "accepted"{

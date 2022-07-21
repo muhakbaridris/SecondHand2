@@ -9,7 +9,8 @@ import Foundation
 
 struct SHSellerOrderResponseModel: Decodable {
     let id, product_id, buyer_id, price: Int?
-    let transaction_date, product_name, base_price: String?
+    let transaction_date, product_name: String?
+    let base_price: Int?
     let image_product: String?
     let status: String?
     let Product: Product?
