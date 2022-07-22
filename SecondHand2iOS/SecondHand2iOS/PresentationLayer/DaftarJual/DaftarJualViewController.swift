@@ -20,7 +20,6 @@ final class DaftarJualViewController: UIViewController{
     
     var produkData: [SHAllProductResponseModel] = []
     var diminatiData: [SHSellerOrderResponseModel] = []
-    let userData = UserProfileCache.get()
     var access_token: String = AccessTokenCache.get()
     let callProductAPI = SHSellerProductAPI()
     let callOrderAPI = SHSellerOrderAPI()
@@ -43,6 +42,7 @@ final class DaftarJualViewController: UIViewController{
     @IBOutlet weak var loadingAnimationOutlet: UIActivityIndicatorView!
     
     override func viewWillAppear(_ animated: Bool) {
+        let userData = UserProfileCache.get()
         namaAkun.text = userData?.full_name
         kotaAkun.text = userData?.city
         akunImg.setImageFrom(userData?.image_url ?? "")
