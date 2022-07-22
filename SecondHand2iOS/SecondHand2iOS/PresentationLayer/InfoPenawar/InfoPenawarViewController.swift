@@ -104,13 +104,36 @@ extension InfoPenawarViewController: UITableViewDataSource, UITableViewDelegate 
             cell.buttonHubungiOutlet.titleLabel?.text = "Terima"
             cell.buttonStatusOutlet.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
             return cell
-        default:
+        case "accepted":
+            cell.labelStatusProdukOutlet.text = "Penawaran Produk"
+            cell.barangImageOutlet.setImageFrom(dataproduk.image_product ?? "")
+            cell.labelNamaProdukOutlet.text = dataproduk.product_name
+            cell.labelHargaProdukOutlet.text = "Rp \(String(describing: dataproduk.base_price!.formattedWithSeparator))"
+            cell.labelHargaTawarOutlet.text = "Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
+            cell.tanggalTransaksiProdukOutlet.text = DateFormatter.convertFromISO(date: dataproduk.transaction_date!)
+            cell.buttonStatusOutlet.titleLabel?.text = "Status"
+            cell.buttonHubungiOutlet.titleLabel?.text = "Hubung"
+//            cell.buttonStatusOutlet.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
+            return cell
+        case "declined":
             cell.labelStatusProdukOutlet.text = ""
             cell.barangImageOutlet.setImageFrom(dataproduk.image_product ?? "")
             cell.labelNamaProdukOutlet.text = dataproduk.product_name
             cell.labelHargaProdukOutlet.text = "Rp \(String(describing: dataproduk.base_price!.formattedWithSeparator))"
             cell.labelHargaTawarOutlet.text = "Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
             cell.tanggalTransaksiProdukOutlet.text = DateFormatter.convertFromISO(date: dataproduk.transaction_date!)
+            cell.buttonStatusOutlet.isHidden = true
+            cell.buttonHubungiOutlet.isHidden = true
+            return cell
+        default:
+            cell.labelStatusProdukOutlet.text = "Penawaran Produk"
+            cell.barangImageOutlet.setImageFrom(dataproduk.image_product ?? "")
+            cell.labelNamaProdukOutlet.text = dataproduk.product_name
+            cell.labelHargaProdukOutlet.text = "Rp \(String(describing: dataproduk.base_price!.formattedWithSeparator))"
+            cell.labelHargaTawarOutlet.text = "Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
+            cell.tanggalTransaksiProdukOutlet.text = DateFormatter.convertFromISO(date: dataproduk.transaction_date!)
+            cell.buttonStatusOutlet.isHidden = true
+            cell.buttonHubungiOutlet.isHidden = true
             return cell
         }
     }

@@ -51,7 +51,6 @@ final class NotifikasiTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let reusableCell: UITableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "NotificationTableViewCell",
             for: indexPath
@@ -96,12 +95,4 @@ final class NotifikasiTableViewController: UITableViewController {
             return cell
         }
     }
-}
-
-struct ProductDitawar {
-    let namadata: String
-    let hargadata: String
-    let testdata: String
-    let hargatawar: String
-    let tanggal: String
 }
