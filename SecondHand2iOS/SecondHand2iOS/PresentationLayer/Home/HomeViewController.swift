@@ -50,6 +50,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
                 print(err.localizedDescription)
             }
         }
+        
         callAuthAPI.getUserDataSecondHand(access_token: access_token) { [weak self] result in
             switch result {
             case let .success(data):
@@ -63,6 +64,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         }
         
         print("\n\(UserDefaults.standard.string(forKey: "access_token")!)\n")
+        
         getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
             guard let _self = self else { return }
             switch result {
@@ -174,7 +176,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 156, height: 210)
+        return CGSize(width: 156, height: 215)
     }
     
 }

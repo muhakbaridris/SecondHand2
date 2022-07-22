@@ -160,6 +160,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="buttonEditAkunTapIn:" destination="ZlV-YZ-f5i" eventType="touchUpInside" id="icb-Nc-4ik"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34j-Iw-o7n">
                                         <rect key="frame" x="307" y="33" width="22" height="15"/>
@@ -362,7 +365,7 @@
                     <connections>
                         <outlet property="akun" destination="5Q2-uC-voI" id="x7y-AD-yF0"/>
                         <outlet property="akunImg" destination="QXd-dC-Lgt" id="EVR-1D-i9Z"/>
-                        <outlet property="btnAkun" destination="Tfr-8C-VFH" id="h87-9y-Li0"/>
+                        <outlet property="btnEditAkunOutlet" destination="Tfr-8C-VFH" id="Qfg-oP-MVE"/>
                         <outlet property="buttonDiminatiOutlet" destination="p0C-gm-TY5" id="Ffh-T4-0dp"/>
                         <outlet property="buttonProdukOutlet" destination="XA7-5U-Aqw" id="ne3-0s-RDb"/>
                         <outlet property="buttonTerjualOutlet" destination="S0i-Sw-tNZ" id="Jt8-1n-kk0"/>

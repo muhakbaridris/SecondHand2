@@ -38,7 +38,6 @@ final class LoginViewController: UIViewController{
     }
     
     @IBAction func buttonMasukTapIn(_ sender: Any) {
-        print("Tap Button Masuk")
         if emailTextFieldOutlet.text?.isEmpty == true || passwordTextFieldOutlet.text?.isEmpty == true {
             CustomToast.show(message: "Lengkapi Data",
                              bgColor: .systemRed,

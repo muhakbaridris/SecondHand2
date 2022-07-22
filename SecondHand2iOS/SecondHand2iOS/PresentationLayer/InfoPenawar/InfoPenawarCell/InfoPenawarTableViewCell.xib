@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="174" id="KGk-i7-Jjw" customClass="InfoPenawarTableViewCell" customModule="SecondHand2iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kRx-us-Q1V">
+                        <rect key="frame" x="16" y="16" width="48" height="48"/>
+                        <color key="backgroundColor" name="Purple4"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="DvY-Yg-aQ9"/>
+                            <constraint firstAttribute="height" constant="48" id="L8v-fu-qzR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Produk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOW-t5-lm4">
+                        <rect key="frame" x="80" y="16" width="138" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama Produk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg2-nY-9S0">
+                        <rect key="frame" x="80" y="32" width="224" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harga Produk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHE-ml-zXO">
+                        <rect key="frame" x="80" y="53" width="224" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harga Tawar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g3-Mq-h46">
+                        <rect key="frame" x="80" y="74" width="208" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-MQ-4Pt">
+                        <rect key="frame" x="234" y="16" width="70" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Olw-aD-F8O"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Etu-E3-ea1">
+                        <rect key="frame" x="16" y="107" width="288" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lP-KY-BR2">
+                                <rect key="frame" x="0.0" y="0.0" width="136.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TLX-HC-BVf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Status">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvM-1g-8K0">
+                                <rect key="frame" x="151.5" y="0.0" width="136.5" height="40"/>
+                                <color key="backgroundColor" name="Purple4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nus-fG-SSp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Hubungi">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vOW-t5-lm4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="1UZ-En-8hL"/>
+                    <constraint firstItem="kRx-us-Q1V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3UF-rH-DPa"/>
+                    <constraint firstItem="3Ed-MQ-4Pt" firstAttribute="leading" secondItem="vOW-t5-lm4" secondAttribute="trailing" constant="16" id="3YL-oI-Hni"/>
+                    <constraint firstItem="LHE-ml-zXO" firstAttribute="leading" secondItem="kRx-us-Q1V" secondAttribute="trailing" constant="16" id="6tF-a6-osT"/>
+                    <constraint firstItem="vOW-t5-lm4" firstAttribute="leading" secondItem="kRx-us-Q1V" secondAttribute="trailing" constant="16" id="8sX-5q-bOZ"/>
+                    <constraint firstAttribute="trailing" secondItem="yg2-nY-9S0" secondAttribute="trailing" constant="16" id="BuR-c4-LeZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0g3-Mq-h46" secondAttribute="trailing" constant="16" id="PHz-pf-DVm"/>
+                    <constraint firstAttribute="trailing" secondItem="3Ed-MQ-4Pt" secondAttribute="trailing" constant="16" id="Sr3-Tl-gJc"/>
+                    <constraint firstItem="LHE-ml-zXO" firstAttribute="top" secondItem="yg2-nY-9S0" secondAttribute="bottom" constant="4" id="Ubi-JY-bLm"/>
+                    <constraint firstItem="kRx-us-Q1V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="X5I-sF-f3o"/>
+                    <constraint firstAttribute="trailing" secondItem="LHE-ml-zXO" secondAttribute="trailing" constant="16" id="Z5y-Y5-in1"/>
+                    <constraint firstItem="Etu-E3-ea1" firstAttribute="leading" secondItem="kRx-us-Q1V" secondAttribute="leading" id="cFq-tU-Iet"/>
+                    <constraint firstItem="yg2-nY-9S0" firstAttribute="top" secondItem="vOW-t5-lm4" secondAttribute="bottom" constant="4" id="iFf-9R-6pp"/>
+                    <constraint firstItem="yg2-nY-9S0" firstAttribute="leading" secondItem="kRx-us-Q1V" secondAttribute="trailing" constant="16" id="jvL-E9-xbH"/>
+                    <constraint firstItem="Etu-E3-ea1" firstAttribute="trailing" secondItem="3Ed-MQ-4Pt" secondAttribute="trailing" id="kf1-s0-tIJ"/>
+                    <constraint firstItem="0g3-Mq-h46" firstAttribute="top" secondItem="LHE-ml-zXO" secondAttribute="bottom" constant="4" id="lQi-XF-8Eb"/>
+                    <constraint firstItem="3Ed-MQ-4Pt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qDZ-QV-bw3"/>
+                    <constraint firstItem="0g3-Mq-h46" firstAttribute="leading" secondItem="LHE-ml-zXO" secondAttribute="leading" id="qn1-UJ-9Td"/>
+                    <constraint firstItem="Etu-E3-ea1" firstAttribute="top" secondItem="0g3-Mq-h46" secondAttribute="bottom" constant="16" id="ywf-jw-vRv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="barangImageOutlet" destination="kRx-us-Q1V" id="M83-gM-cf4"/>
+                <outlet property="buttonHubungiOutlet" destination="TvM-1g-8K0" id="5mm-XT-1rI"/>
+                <outlet property="buttonStatusOutlet" destination="0lP-KY-BR2" id="wG8-Xg-cce"/>
+                <outlet property="labelHargaProdukOutlet" destination="LHE-ml-zXO" id="cHC-kU-eGb"/>
+                <outlet property="labelHargaTawarOutlet" destination="0g3-Mq-h46" id="VXF-zf-zCe"/>
+                <outlet property="labelNamaProdukOutlet" destination="yg2-nY-9S0" id="nHh-rX-PM0"/>
+                <outlet property="labelStatusProdukOutlet" destination="vOW-t5-lm4" id="GYv-Pb-edK"/>
+                <outlet property="tanggalTransaksiProdukOutlet" destination="3Ed-MQ-4Pt" id="Bnh-wj-moO"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="104.46428571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Purple4">
+            <color red="0.44299998879432678" green="0.14900000393390656" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

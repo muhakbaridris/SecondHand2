@@ -20,7 +20,7 @@ class DaftarJualTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        daftarJualImage.layer.cornerRadius = 12
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

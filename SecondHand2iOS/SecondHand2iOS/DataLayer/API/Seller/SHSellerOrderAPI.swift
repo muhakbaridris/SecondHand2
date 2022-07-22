@@ -18,4 +18,16 @@ final class SHSellerOrderAPI{
             response in completionHandler(response.result)
         }
     }
+    
+    func getSellerOrderId(access_token: String, id: Int, completionHandler: @escaping (Result<SHSellerOrderIDResponseModel, AFError>) -> Void) {
+        let url = "https://market-final-project.herokuapp.com/seller/order/\(id)"
+        let headers: HTTPHeaders = ["accept": "body",
+                                    "access_token": "\(access_token)"]
+        AF.request(url,
+                   method: .get,
+                   headers: headers)
+        .responseDecodable(of: SHSellerOrderIDResponseModel.self){
+            response in completionHandler(response.result)
+        }
+    }
 }

@@ -20,6 +20,7 @@ struct NotificationResponseModel: Codable {
     let Product: ProductDetail?
     let User: user?
 }
+
 struct ProductDetail: Codable {
     let id: Int
     let name: String

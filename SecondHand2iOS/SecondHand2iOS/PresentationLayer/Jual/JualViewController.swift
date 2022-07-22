@@ -48,7 +48,7 @@ final class JualViewController: UIViewController {
             self.kategoriProdukOutlet.text = kategori[index]
             for index in CategoryCache.get()! {
                 if index.name == kategoriProdukOutlet.text {
-                    print("Nama kategori \(index.name), id nya \(index.id)")
+                    print("Nama kategori \(String(describing: index.name)), id nya \(String(describing: index.id))")
                     idCategory = index.id!
                 }
             }
@@ -136,7 +136,7 @@ final class JualViewController: UIViewController {
             { [weak self] response in
                 switch response {
                 case .success(let data):
-                    print("Upload \(data.name) Success")
+                    print("Upload \(String(describing: data.name)) Success")
                     self?.namaProdukOutlet.text = nil
                     self?.hargaProdukOutlet.text = nil
                     self?.kategoriProdukOutlet.text = nil
