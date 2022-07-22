@@ -123,7 +123,6 @@ final class DaftarJualViewController: UIViewController{
                 print(err.localizedDescription)
             }
         }
-        daftarJualCollectionView.reloadData()
         daftarJualTableView.isHidden = true
         daftarJualCollectionView.isHidden = false
     }
@@ -160,7 +159,6 @@ final class DaftarJualViewController: UIViewController{
                 print(err.localizedDescription)
             }
         }
-        daftarJualTableView.reloadData()
         daftarJualTableView.isHidden = false
         daftarJualCollectionView.isHidden = true
     }
@@ -197,7 +195,7 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
         if diminatiData.count == 0 {
             tableView.allowsSelection = false
             cell.daftarJualName.text = "Tidak ada data"
-            cell.daftarJualImage.image = nil
+            cell.daftarJualImage.isHidden = true
             cell.daftarJualImage.backgroundColor = UIColor(named: "Purple4")
             cell.daftarJualType.text = ""
             cell.daftarJualTawar.text = ""
@@ -209,7 +207,7 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             let diminati = diminatiData[indexPath.row]
             if diminati.status == "pending"{
                 cell.daftarJualType.text = "Penawaran Produk"
-            } else if diminati.status == "accepted"{
+            } else if diminati.status == "accepted" {
                 cell.daftarJualType.text = "Berhasil Terjual"
             } else {
                 cell.daftarJualType.text = "Gagal Terjual"
@@ -219,8 +217,6 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
             cell.daftarJualDate.text = DateFormatter.convertFromISO(date: diminati.transaction_date!)
             cell.daftarJualImage.setImageFrom(diminati.Product!.image_url ?? "")
-
-            
             return cell
         }
     }
@@ -252,17 +248,6 @@ extension DaftarJualViewController: UICollectionViewDataSource, UICollectionView
             viewController?.pastValue = true
             self.navigationController?.pushViewController(viewController!, animated: true)
         }
-        let cell = daftarJualCollectionView.cellForItem(at: indexPath)
-        cell?.layer.borderColor =  UIColor.gray.cgColor
-        cell?.layer.borderWidth = 1
-        cell?.isSelected = true
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = daftarJualCollectionView.cellForItem(at: indexPath)
-        cell?.layer.borderColor = UIColor.gray.cgColor
-        cell?.layer.borderWidth = 1
-        cell?.isSelected = false
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

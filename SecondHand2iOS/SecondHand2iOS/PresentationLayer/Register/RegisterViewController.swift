@@ -56,18 +56,35 @@ final class RegisterViewController: UIViewController{
                 switch result {
                 case let .success(data):
                     print("result \(data)")
-                    CustomToast.show(message: "Anda berhasil daftar, silahkan Login.",
-                                     bgColor: .systemGreen,
-                                     textColor: .white,
-                                     labelFont: .systemFont(ofSize: 17),
-                                     showIn: .bottom,
-                                     controller: self)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.navigationController?.popViewController(animated: true)
+                    let loginData = LoginModel(email: self.buatEmailTextFieldOutlet.text!,
+                                               password: self.buatPasswordTextFieldOutlet.text!)
+                    self.callAPI.loginUserSecondHand(login: loginData) { result in
+                        switch result {
+                        case let .success(data):
+                            AccessTokenCache.save(data.access_token)
+                            CustomToast.show(message: "Anda berhasil daftar\nSilahkan lengkapi data akun anda.",
+                                             bgColor: .systemGreen,
+                                             textColor: .white,
+                                             labelFont: .systemFont(ofSize: 17),
+                                             showIn: .bottom,
+                                             controller: self)
+                            let viewController = UIStoryboard(name: "RegisterViewController",
+                                                              bundle: nil)
+                                .instantiateViewController(withIdentifier: "RegisterFullViewController") as! RegisterFullViewController
+                            viewController.namaTerdaftar = data.name
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                let navBar = UINavigationController(rootViewController: viewController)
+                                navBar.modalPresentationStyle = .fullScreen
+                                self.present(navBar, animated: true)
+                            }
+                        case let .failure(err):
+                            print(err.localizedDescription)
+                        }
                     }
+                    
                 case .failure(let err):
                     print("errornya \(err.localizedDescription)")
-                    CustomToast.show(message: "Email salah atau sudah terpakai.",
+                    CustomToast.show(message: "Email dan Password salah atau sudah terpakai.",
                                      bgColor: .systemRed,
                                      textColor: .white,
                                      labelFont: .systemFont(ofSize: 17),

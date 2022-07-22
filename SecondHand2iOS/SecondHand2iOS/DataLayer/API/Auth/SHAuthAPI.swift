@@ -90,7 +90,7 @@ class SHAuthAPI {
         }
     }
     
-    func changeAccountSecondHand(changeAccountData: ChangeAccountModel,media: UIImage, access_token: String, completionHandler: @escaping (Result<UserDataResponseModel, AFError>) -> Void){
+    func changeAccountSecondHand(changeAccountData: ChangeAccountModel, media: UIImage, access_token: String, completionHandler: @escaping (Result<UserDataResponseModel, AFError>) -> Void){
         guard media.jpegData(compressionQuality: 0.9) != nil else {
                     return
                 }

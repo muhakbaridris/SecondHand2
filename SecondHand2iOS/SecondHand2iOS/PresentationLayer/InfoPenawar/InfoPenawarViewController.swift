@@ -112,7 +112,7 @@ extension InfoPenawarViewController: UITableViewDataSource, UITableViewDelegate 
             cell.labelHargaTawarOutlet.text = "Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
             cell.tanggalTransaksiProdukOutlet.text = DateFormatter.convertFromISO(date: dataproduk.transaction_date!)
             cell.buttonStatusOutlet.titleLabel?.text = "Status"
-            cell.buttonHubungiOutlet.titleLabel?.text = "Hubung"
+            cell.buttonHubungiOutlet.titleLabel?.text = "Hubungi"
 //            cell.buttonStatusOutlet.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
             return cell
         case "declined":
