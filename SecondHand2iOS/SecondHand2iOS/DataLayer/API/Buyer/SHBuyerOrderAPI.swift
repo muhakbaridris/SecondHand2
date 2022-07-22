@@ -22,8 +22,6 @@ final class SHBuyerOrderAPI {
                    headers: headers)
         .responseDecodable(of: SHPostBuyerOrderResponseModel.self ) { response in
             completionHandler(response.result)
-        }.responseString { response in
-            print(response)
         }
     }
     

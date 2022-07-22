@@ -216,6 +216,7 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
             cell.daftarJualPrice.text = "Rp \(diminati.Product!.base_price!.formattedWithSeparator)"
             cell.daftarJualTawar.text = "Ditawar Rp \(String(describing: diminati.price!.formattedWithSeparator))"
             cell.daftarJualDate.text = DateFormatter.convertFromISO(date: diminati.transaction_date!)
+            cell.daftarJualImage.isHidden = false
             cell.daftarJualImage.setImageFrom(diminati.Product!.image_url ?? "")
             return cell
         }
