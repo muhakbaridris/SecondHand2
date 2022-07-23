@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fNC-A8-bZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fNC-A8-bZH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -67,13 +67,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Cari di Second Hand" id="9xL-0R-ws3">
-                                <rect key="frame" x="20" y="52" width="339" height="44"/>
+                            <searchBar clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Cari di Second Hand" translucent="NO" id="9xL-0R-ws3">
+                                <rect key="frame" x="20" y="45" width="339" height="51"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="xRX-6X-Vn1"/>
+                                </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diskon Hingga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iai-5V-EnK">
                                 <rect key="frame" x="20" y="189" width="90" height="12"/>
@@ -289,8 +292,7 @@
                         <outlet property="labelDiskon" destination="iai-5V-EnK" id="w3S-oZ-pkF"/>
                         <outlet property="labelPercent" destination="HoA-uh-j8v" id="hWe-rx-65X"/>
                         <outlet property="loadingAnimationOutlet" destination="Cic-rp-6g8" id="9Nh-HP-Yse"/>
-                        <outlet property="seachBar" destination="9xL-0R-ws3" id="7n2-Tw-3MY"/>
-                        <outlet property="searchBar" destination="9xL-0R-ws3" id="IVw-Vz-ycf"/>
+                        <outlet property="productSearchBar" destination="9xL-0R-ws3" id="CJN-N6-1Hn"/>
                         <outlet property="textLabelKategori" destination="bY6-do-3Tw" id="jeo-Tp-7Rs"/>
                     </connections>
                 </viewController>
