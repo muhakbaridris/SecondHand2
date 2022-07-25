@@ -153,6 +153,7 @@ final class DaftarJualViewController: UIViewController{
             guard let _self = self else {return}
             switch result {
             case let .success(data):
+                print(data)
                 _self.diminatiData = data
                 _self.daftarJualTableView.reloadData()
             case let .failure(err):
