@@ -8,11 +8,11 @@
 import UIKit
 
 
-final class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+final class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var textLabelKategori: UILabel!
     @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var productSearchBar: UISearchBar!
     @IBOutlet weak var labelDiskon: UILabel!
     @IBOutlet weak var labelPercent: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -30,10 +30,10 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
     var displayedProduct: [SHAllProductResponseModel] = []
     var searchedProduct : [SHAllProductResponseModel] = []
     var scopeButtons = ""
-    @IBOutlet weak var seachBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        productSearchBar.delegate = self
         tabBarController?.tabBar.isUserInteractionEnabled = false
         loadingAnimationOutlet.startAnimating()
         categoryAPI.getSellerCategoryAll { result in
@@ -70,7 +70,7 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
             switch result {
             case let .success(data):
                 _self.displayedProduct = data
-                _self.searchedProduct = _self.displayedProduct
+                _self.searchedProduct = data
                 _self.collectionViewB.reloadData()
             case let .failure(err):
                 print(err.localizedDescription)
@@ -85,6 +85,40 @@ final class HomeViewController: UIViewController, UICollectionViewDelegate, UICo
         
         collectionView.delegate = self
         collectionViewB.delegate = self
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        collectionViewB.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let findProducts: String = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let isSearchTextNotEmpty = !findProducts.isEmpty
+        let products: [SHAllProductResponseModel] = displayedProduct
+        if !findProducts.isEmpty {
+            let searchedProductss: [SHAllProductResponseModel] = products.filter { results in
+                let findProducts: String = findProducts.lowercased()
+                let product = results.name!.lowercased()
+                return product.contains(findProducts)
+            }
+            displayedProduct = searchedProductss
+            collectionViewB.reloadData()
+        }else {
+            getAPI.getAllBuyerProduct(page: 1, perpage: 5) { [weak self](result) in
+                guard let _self = self else { return }
+                switch result {
+                case let .success(data):
+                    _self.displayedProduct = data
+                    _self.searchedProduct = data
+                    _self.collectionViewB.reloadData()
+                case let .failure(err):
+                    print(err.localizedDescription)
+                }
+            }
+            collectionViewB.reloadData()
+            
+        }
+        collectionViewB.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
