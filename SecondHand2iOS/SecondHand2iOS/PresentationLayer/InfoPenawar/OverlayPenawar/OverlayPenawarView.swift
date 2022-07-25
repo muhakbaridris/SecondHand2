@@ -10,13 +10,15 @@ import UIKit
 final class OverlayPenawarView: UIViewController {
     
     @IBOutlet weak var topSliderOutlet: UIView!
-    @IBOutlet weak var kirim: UIButton!
     @IBOutlet weak var berhasil: UIButton!
     @IBOutlet weak var batalkan: UIButton!
+    @IBOutlet weak var kirim: UIButton!
+    let callAPI = SHSellerProductAPI()
     var flag = false
     var flag1 = false
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
+    var productID: Int?
     
     
     override func viewDidLoad() {
@@ -89,9 +91,77 @@ final class OverlayPenawarView: UIViewController {
     
     @IBAction func kirim(_ sender: Any) {
         if berhasil.isSelected == true {
-            
+            callAPI.patchSellerProductID(
+                access_token: AccessTokenCache.get(),
+                productID: productID!,
+                status: "sold") { response in
+                    switch response {
+                    case let .success(data):
+                        print("Barang \(data.name!) berhasil terjual.")
+                        CustomToast.show(
+                            message: "Selamat! produkmu berhasil terjual.",
+                            bgColor: .systemGreen,
+                            textColor: .white,
+                            labelFont: .systemFont(ofSize: 17),
+                            showIn: .bottom,
+                            controller: self)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.dismiss(animated: true)
+                        }
+                    case let .failure(err):
+                        print(err.localizedDescription)
+                        CustomToast.show(
+                            message: "Terjadi galat, silahkan coba lagi.",
+                            bgColor: .systemRed,
+                            textColor: .white,
+                            labelFont: .systemFont(ofSize: 17),
+                            showIn: .bottom,
+                            controller: self)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.dismiss(animated: true)
+                        }
+                }
+            }
+        } else if batalkan.isSelected == true {
+            callAPI.patchSellerProductID(
+                access_token: AccessTokenCache.get(),
+                productID: productID!,
+                status: "available") { response in
+                    switch response {
+                    case let .success(data):
+                        print("Barang \(data.name!) batal terjual.")
+                        CustomToast.show(
+                            message: "Pembatalan transaksi berhasil.",
+                            bgColor: .systemGreen,
+                            textColor: .white,
+                            labelFont: .systemFont(ofSize: 17),
+                            showIn: .bottom,
+                            controller: self)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.dismiss(animated: true)
+                        }
+                    case let .failure(err):
+                        print(err.localizedDescription)
+                        CustomToast.show(
+                            message: "Terjadi galat, silahkan coba lagi.",
+                            bgColor: .systemRed,
+                            textColor: .white,
+                            labelFont: .systemFont(ofSize: 17),
+                            showIn: .bottom,
+                            controller: self)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.dismiss(animated: true)
+                        }
+                }
+            }
         } else {
-            
+            CustomToast.show(
+                message: "Pilih perubahaan status produkmu.",
+                bgColor: .systemRed,
+                textColor: .white,
+                labelFont: .systemFont(ofSize: 17),
+                showIn: .bottom,
+                controller: self)
         }
     }
 }

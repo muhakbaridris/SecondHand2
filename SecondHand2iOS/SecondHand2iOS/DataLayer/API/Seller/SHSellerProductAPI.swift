@@ -71,4 +71,27 @@ final class SHSellerProductAPI {
             completionHandler(response.result)
         }
     }
+    
+    func patchSellerProductID(
+        access_token: String,
+        productID: Int,
+        status: String? = "",
+        completionHandler: @escaping (Result<PatchSellerProductResponseModel, AFError>) -> Void
+    ){
+        let url = "https://market-final-project.herokuapp.com/seller/product/\(productID)"
+        let headers: HTTPHeaders = [
+            "accept": "body",
+            "access_token": access_token,
+            "Content-Type": "multipart/form-data"
+        ]
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append((status?.data(using: .utf8))!, withName: "status")
+        },
+                  to: url,
+                  method: .patch,
+                  headers: headers
+        ).responseDecodable(of: PatchSellerProductResponseModel.self) { response in
+            completionHandler(response.result)
+        }
+    }
 }

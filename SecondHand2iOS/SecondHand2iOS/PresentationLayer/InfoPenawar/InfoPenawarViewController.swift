@@ -20,6 +20,7 @@ final class InfoPenawarViewController: UIViewController {
     let access_token = AccessTokenCache.get()
     var produkDitawar = [SHSellerOrderIDResponseModel]()
     var orderID: Int?
+    var productID: Int?
     
     override func viewWillAppear(_ animated: Bool) {
         callAPI.getSellerOrderId(access_token: access_token,
@@ -92,7 +93,6 @@ final class InfoPenawarViewController: UIViewController {
     }
     
     @objc func terimaTawaran(_ sender: UIButton){
-        
         callAPI.patchSellerOrderID(
             access_token: access_token,
             id: orderID!,
@@ -127,6 +127,7 @@ final class InfoPenawarViewController: UIViewController {
         let vc = OverlayPenawarView()
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = self
+        vc.productID = productID
         self.present(vc, animated: true)
     }
 }

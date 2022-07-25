@@ -229,6 +229,7 @@ extension DaftarJualViewController: UITableViewDelegate, UITableViewDataSource  
                                           bundle: nil)
             .instantiateViewController(withIdentifier: "InfoPenawarViewController") as? InfoPenawarViewController
         viewController?.orderID = diminati.id
+        viewController?.productID = diminati.product_id
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
 }

@@ -20,3 +20,31 @@ struct SellerProductResponseModel: Decodable {
     let createdAt: String?
     let status: String?
 }
+
+struct PatchSellerProductResponseModel: Decodable {
+    let id: Int?
+    let name: String?
+    let shSellerOrderIDResponseModelDescription: String?
+    let basePrice: Int?
+    let imageURL: String?
+    let imageName: String?
+    let location: String?
+    let userID: Int?
+    let status: String?
+    let createdAt: String?
+    let updatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case shSellerOrderIDResponseModelDescription = "description"
+        case basePrice = "base_price"
+        case imageURL = "image_url"
+        case imageName = "image_name"
+        case location = "location"
+        case userID = "user_id"
+        case status = "status"
+        case createdAt = "createdAt"
+        case updatedAt = "updatedAt"
+    }
+}

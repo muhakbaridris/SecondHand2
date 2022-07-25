@@ -84,6 +84,7 @@
                         <constraint firstAttribute="height" constant="31" id="X5s-tj-ErF"/>
                         <constraint firstAttribute="width" constant="31" id="trO-xc-C7X"/>
                     </constraints>
+                    <color key="tintColor" name="Purple4"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="circle" catalog="system"/>
                     <state key="selected" image="circle.fill" catalog="system"/>
@@ -111,6 +112,7 @@
                         <constraint firstAttribute="width" constant="31" id="alr-Kd-bdn"/>
                         <constraint firstAttribute="height" constant="31" id="whe-2X-w2j"/>
                     </constraints>
+                    <color key="tintColor" name="Purple4"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="circle" catalog="system"/>
                     <state key="selected" image="circle.fill" catalog="system"/>
@@ -146,7 +148,7 @@
                 <constraint firstItem="W4M-XT-2ru" firstAttribute="top" secondItem="9Lw-Tv-IUW" secondAttribute="bottom" constant="40" id="xa9-uY-DRC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="45" y="67"/>
+            <point key="canvasLocation" x="44.615384615384613" y="66.824644549763036"/>
         </view>
     </objects>
     <resources>
