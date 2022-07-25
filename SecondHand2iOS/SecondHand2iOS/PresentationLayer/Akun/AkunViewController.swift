@@ -9,7 +9,6 @@ import UIKit
 
 final class AkunViewController: UIViewController {
     
-    var userDataResponse: [UserDataResponseModel] = []
     @IBOutlet weak var userImageOutlet: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {

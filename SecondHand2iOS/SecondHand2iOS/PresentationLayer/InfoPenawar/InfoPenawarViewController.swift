@@ -61,11 +61,66 @@ final class InfoPenawarViewController: UIViewController {
     }
     
     @objc func tolakTawaran(_ sender: UIButton){
-        
+        callAPI.patchSellerOrderID(
+            access_token: access_token,
+            id: orderID!,
+            status: "declined") { response in
+                switch response {
+                case .success(let data):
+                    print("Tawaran \(data.productName!) berhasil ditolak.")
+                    CustomToast.show(
+                        message: "Berhasil menolak tawaran.",
+                        bgColor: .systemGreen,
+                        textColor: .white,
+                        labelFont: .systemFont(ofSize: 17),
+                        showIn: .bottom,
+                        controller: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    CustomToast.show(
+                        message: "Terjadi galat, silahkan coba beberapa saat lagi",
+                        bgColor: .systemRed,
+                        textColor: .white,
+                        labelFont: .systemFont(ofSize: 17),
+                        showIn: .bottom,
+                        controller: self)
+                }
+            }
     }
     
     @objc func terimaTawaran(_ sender: UIButton){
         
+        callAPI.patchSellerOrderID(
+            access_token: access_token,
+            id: orderID!,
+            status: "accepted") { response in
+                switch response {
+                case .success(let data):
+                    print("Tawaran \(data.productName!) berhasil ditolak.")
+                    CustomToast.show(
+                        message: "Berhasil menerima tawaran.",
+                        bgColor: .systemGreen,
+                        textColor: .white,
+                        labelFont: .systemFont(ofSize: 17),
+                        showIn: .bottom,
+                        controller: self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    CustomToast.show(
+                        message: "Terjadi galat, silahkan coba beberapa saat lagi",
+                        bgColor: .systemRed,
+                        textColor: .white,
+                        labelFont: .systemFont(ofSize: 17),
+                        showIn: .bottom,
+                        controller: self)
+                }
+            }
     }
     
     @objc func openListPickerVC(_ sender: UIButton) {
@@ -90,7 +145,7 @@ extension InfoPenawarViewController: UITableViewDataSource, UITableViewDelegate 
         guard let cell = reusableCell as? InfoPenawarTableViewCell else {
             return reusableCell
         }
-        
+        cell.selectionStyle = .none
         let dataproduk = produkDitawar[indexPath.row]
         switch dataproduk.status {
         case "pending":
@@ -98,11 +153,12 @@ extension InfoPenawarViewController: UITableViewDataSource, UITableViewDelegate 
             cell.barangImageOutlet.setImageFrom(dataproduk.image_product ?? "")
             cell.labelNamaProdukOutlet.text = dataproduk.product_name
             cell.labelHargaProdukOutlet.text = "Rp \(String(describing: dataproduk.base_price!.formattedWithSeparator))"
-            cell.labelHargaTawarOutlet.text = "Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
+            cell.labelHargaTawarOutlet.text = "Ditawar Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
             cell.tanggalTransaksiProdukOutlet.text = DateFormatter.convertFromISO(date: dataproduk.transaction_date!)
             cell.buttonStatusOutlet.titleLabel?.text = "Tolak"
             cell.buttonHubungiOutlet.titleLabel?.text = "Terima"
-            cell.buttonStatusOutlet.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
+            cell.buttonStatusOutlet.addTarget(self, action: #selector(tolakTawaran(_:)), for: .touchUpInside)
+            cell.buttonHubungiOutlet.addTarget(self, action: #selector(terimaTawaran(_:)), for: .touchUpInside)
             return cell
         case "accepted":
             cell.labelStatusProdukOutlet.text = "Penawaran Produk"
@@ -112,8 +168,8 @@ extension InfoPenawarViewController: UITableViewDataSource, UITableViewDelegate 
             cell.labelHargaTawarOutlet.text = "Rp \(String(describing: dataproduk.price!.formattedWithSeparator))"
             cell.tanggalTransaksiProdukOutlet.text = DateFormatter.convertFromISO(date: dataproduk.transaction_date!)
             cell.buttonStatusOutlet.titleLabel?.text = "Status"
-            cell.buttonHubungiOutlet.titleLabel?.text = "Hubung"
-//            cell.buttonStatusOutlet.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
+            cell.buttonHubungiOutlet.titleLabel?.text = "Hubungi"
+            cell.buttonStatusOutlet.addTarget(self, action: #selector(self.openListPickerVC(_:)), for: .touchUpInside)
             return cell
         case "declined":
             cell.labelStatusProdukOutlet.text = ""

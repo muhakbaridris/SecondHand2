@@ -43,9 +43,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundGradientImage" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-ss-uVm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundGradientImage" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-ss-uVm">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="332"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="332" id="nDh-fI-4jk"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulan Ramadhan Bannyak Diskon!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFq-sW-DME">
                                 <rect key="frame" x="20" y="117" width="180" height="60"/>
@@ -260,6 +262,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FvQ-Pm-83Z" secondAttribute="bottom" id="0es-EB-TST"/>
+                            <constraint firstItem="gbd-ss-uVm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="2l2-AK-t74"/>
+                            <constraint firstItem="gbd-ss-uVm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3vC-MB-gRA"/>
+                            <constraint firstItem="gbd-ss-uVm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="6tZ-SK-K1f"/>
                             <constraint firstItem="HoA-uh-j8v" firstAttribute="top" secondItem="iai-5V-EnK" secondAttribute="bottom" constant="4" id="Dsa-tS-jrR"/>
                             <constraint firstItem="bY6-do-3Tw" firstAttribute="top" secondItem="HoA-uh-j8v" secondAttribute="bottom" constant="40" id="MZV-jH-x2o"/>
                             <constraint firstItem="fFq-sW-DME" firstAttribute="leading" secondItem="9xL-0R-ws3" secondAttribute="leading" id="Nxd-6f-jdw"/>
