@@ -10,12 +10,25 @@ import Alamofire
 
 final class SHSellerOrderAPI{
     
-    func getAllSellerOrder(access_token: String, status: String, completionHandler: @escaping (Result<[SHSellerOrderResponseModel], AFError>) -> Void) {
-        let url = "https://market-final-project.herokuapp.com/seller/order?status=\(status)"
-        let headers: HTTPHeaders = ["accept": "body",
-                                    "access_token": "\(access_token)"]
-        AF.request(url, method: .get, headers: headers).responseDecodable(of: [SHSellerOrderResponseModel].self){
-            response in completionHandler(response.result)
+    func getAllSellerOrder(access_token: String, status: String? = nil, completionHandler: @escaping (Result<[SHSellerOrderResponseModel], AFError>) -> Void) {
+        if status == "pending" || status == "accepted" || status == "declined" {
+            let url = "https://market-final-project.herokuapp.com/seller/order?status=\(String(describing: status))"
+            let headers: HTTPHeaders = ["accept": "body",
+                                        "access_token": "\(access_token)"]
+            AF.request(url,
+                       method: .get,
+                       headers: headers).responseDecodable(of: [SHSellerOrderResponseModel].self){
+                response in completionHandler(response.result)
+            }
+        } else {
+            let url = "https://market-final-project.herokuapp.com/seller/order"
+            let headers: HTTPHeaders = ["accept": "body",
+                                        "access_token": "\(access_token)"]
+            AF.request(url,
+                       method: .get,
+                       headers: headers).responseDecodable(of: [SHSellerOrderResponseModel].self){
+                response in completionHandler(response.result)
+            }
         }
     }
     

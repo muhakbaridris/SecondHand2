@@ -131,7 +131,7 @@ final class DaftarJualViewController: UIViewController{
         buttonProdukOutlet.backgroundColor = UIColor(named: "Purple1")
         buttonDiminatiOutlet.backgroundColor = UIColor(named: "Purple4")
         buttonTerjualOutlet.backgroundColor = UIColor(named: "Purple1")
-        callOrderAPI.getAllSellerOrder(access_token: access_token, status: "pending") { [weak self](result) in
+        callOrderAPI.getAllSellerOrder(access_token: access_token) { [weak self](result) in
             guard let _self = self else {return}
             switch result {
             case let .success(data):
